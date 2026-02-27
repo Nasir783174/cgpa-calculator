@@ -49,6 +49,7 @@ h1 {
 .how-to-use {
   margin-top: 24px;
   padding: 30px;
+  width: 1178px;
   border-left: 6px solid var(--primary);
   background: var(--card);
   box-shadow: var(--shadow);
@@ -211,6 +212,7 @@ tr + tr { border-top: 1px solid var(--border); }
   100% { background-color: transparent; }
 
 }
+
 
 
 

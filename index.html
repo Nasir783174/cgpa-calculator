@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Professional CGPA Calculator</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>CGPA Calculator</h1>
+  <div class="layout">
+    
+    <!-- LEFT SIDE -->
+    <div>
+      <div id="semesterSection"></div>
+      <div class="card">
+        <button class="btn-primary btn-full" id="addSemesterBtn">Add Semester</button>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="sticky">
+      <div class="card" id="liveResultCard">
+        <h3>Live Result</h3>
+        <div>Overall CGPA</div>
+        <div class="result-value" id="cgpaDisplay">0.00</div>
+        <div>Total Earned Credit: <strong id="totalCredit">0</strong></div>
+        <div id="academicStatus"></div>
+      </div>
+
+      <div class="card">
+        <h3>Target CGPA Calculator</h3>
+        <input type="number" id="targetCgpa" placeholder="Desired CGPA (max 4.00)" step="0.01" max="4" />
+        <div style="height:12px;"></div>
+        <input type="number" id="nextCredit" placeholder="Next Semester Total Credit" step="0.5" />
+        <div style="height:12px;"></div>
+        <div><strong>Required SGPA:</strong> <span id="requiredSgpa">0.00</span></div>
+        <div id="targetWarning" style="margin-top:8px;"></div>
+      </div>
+
+      <div class="card">
+        <button class="btn-accent btn-full" id="downloadPdf">Download Result as PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- External JS -->
+<script src="script.js"></script>
+
+</body>
+</html>

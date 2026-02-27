@@ -120,7 +120,7 @@ tr + tr { border-top: 1px solid var(--border); }
 }
 
 .result-value {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin: 8px 0;
 }
@@ -152,6 +152,7 @@ tr + tr { border-top: 1px solid var(--border); }
   100% { background-color: transparent; }
 
 }
+
 
 
 

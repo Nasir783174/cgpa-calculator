@@ -46,6 +46,57 @@ h1 {
   grid-template-columns: 60% 40%;
   gap: 24px;
 }
+.how-to-use {
+  margin-top: 24px;
+  padding: 30px;
+  border-left: 6px solid var(--primary);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.how-to-use h2 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 0;
+}
+
+.steps-list li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.steps-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.steps-list li strong {
+  display: inline-block;
+}
 
 @media (max-width: 768px) {
   .layout { grid-template-columns: 1fr; }
@@ -160,6 +211,7 @@ tr + tr { border-top: 1px solid var(--border); }
   100% { background-color: transparent; }
 
 }
+
 
 
 

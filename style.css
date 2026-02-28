@@ -1,327 +1,517 @@
-/* =========================
+/* =====================================================
    ROOT VARIABLES
-========================= */
+===================================================== */
 
 :root {
+
   --bg: #f4f6f9;
   --card: #ffffff;
+
   --primary: #1e3a8a;
   --accent: #16a34a;
   --danger: #dc2626;
   --warning: #f59e0b;
+
   --border: #e5e7eb;
 
   --radius: 12px;
   --shadow: 0 10px 25px rgba(0,0,0,0.05);
   --transition: all 0.2s ease;
+
 }
 
-/* =========================
+
+/* =====================================================
    GLOBAL RESET
-========================= */
+===================================================== */
 
 * {
   box-sizing: border-box;
 }
 
 body {
+
   margin: 0;
+
   font-family: "Inter", "Poppins", sans-serif;
+
   background: var(--bg);
   color: #111827;
+
   line-height: 1.6;
+
 }
 
-/* =========================
+
+/* =====================================================
    CONTAINER
-========================= */
+===================================================== */
 
 .container {
+
   max-width: 1200px;
   margin: 0 auto;
+
   padding: 24px;
+
 }
 
-/* =========================
+
+/* =====================================================
    TYPOGRAPHY
-========================= */
+===================================================== */
 
 h1 {
+
   font-size: 28px;
-  margin-bottom: 16px;
   font-weight: 700;
+
+  margin-bottom: 16px;
+
   color: var(--primary);
+
   text-align: center;
+
 }
 
 .intro-text {
+
   text-align: center;
+
   max-width: 850px;
+
   margin: 0 auto 32px auto;
+
   font-size: 16px;
+
   color: #374151;
+
 }
 
-/* =========================
+
+/* =====================================================
    LAYOUT GRID
-========================= */
+===================================================== */
 
 .layout {
+
   display: grid;
+
   grid-template-columns: 60% 40%;
+
   gap: 24px;
+
 }
 
-/* =========================
+
+/* =====================================================
    CARD DESIGN
-========================= */
+===================================================== */
 
 .card {
+
   background: var(--card);
+
   border-radius: var(--radius);
+
   padding: 28px;
+
   box-shadow: var(--shadow);
+
   transition: var(--transition);
+
 }
 
 .card + .card {
+
   margin-top: 20px;
+
 }
 
 #semesterSection .card {
+
   margin-bottom: 12px;
+
 }
 
-/* =========================
+
+/* =====================================================
    FORM ELEMENTS
-========================= */
+===================================================== */
 
 input,
 select {
+
   height: 42px;
+
   padding: 0 12px;
+
   border: 1px solid var(--border);
+
   border-radius: 8px;
+
   font-size: 14px;
+
   width: 100%;
+
   transition: var(--transition);
+
 }
 
 input:focus,
 select:focus {
+
   outline: none;
+
   border-color: var(--primary);
+
 }
 
-/* =========================
+
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 button {
+
   height: 42px;
+
   padding: 0 16px;
+
   border-radius: 8px;
+
   border: none;
+
   font-weight: 600;
+
   cursor: pointer;
+
   transition: var(--transition);
+
 }
 
 .btn-primary {
+
   background: var(--primary);
   color: white;
+
 }
 
 .btn-accent {
+
   background: var(--accent);
   color: white;
+
 }
 
 .btn-danger {
+
   background: var(--danger);
   color: white;
+
 }
 
 button:hover {
+
   transform: translateY(-2px);
+
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
 }
 
 .btn-full {
+
   width: 100%;
+
 }
 
-/* =========================
+
+/* =====================================================
    TABLE STYLING
-========================= */
+===================================================== */
 
 table {
+
   width: 100%;
+
   border-collapse: collapse;
+
   margin-top: 12px;
+
 }
 
 th,
 td {
+
   text-align: left;
+
   padding: 8px;
+
   font-size: 14px;
+
 }
 
 th {
+
   font-weight: 600;
+
   color: #374151;
+
 }
 
 tr + tr {
+
   border-top: 1px solid var(--border);
+
 }
 
 tbody tr:hover {
+
   background: #f9fafb;
+
 }
 
-/* =========================
+
+/* =====================================================
    RESULT SECTION
-========================= */
+===================================================== */
 
 .result-value {
+
   font-size: 22px;
+
   font-weight: 700;
+
   margin: 8px 0;
+
 }
 
 .status {
+
   font-weight: 600;
+
   padding: 6px 12px;
+
   border-radius: 6px;
+
   display: inline-block;
+
   margin-top: 8px;
+
 }
 
 .status.excellent {
+
   background: #dcfce7;
+
   color: var(--accent);
+
 }
 
 .status.good {
+
   background: #dbeafe;
+
   color: var(--primary);
+
 }
 
 .status.risk {
+
   background: #fef3c7;
+
   color: var(--warning);
+
 }
 
 .status.critical {
+
   background: #fee2e2;
+
   color: var(--danger);
+
 }
 
-/* =========================
+
+/* =====================================================
    STICKY SIDEBAR
-========================= */
+===================================================== */
 
 .sticky {
+
   position: sticky;
+
   top: 24px;
+
 }
 
-/* =========================
+
+/* =====================================================
    HOW TO USE SECTION
-========================= */
+===================================================== */
 
 .how-to-use {
+
   margin-top: 40px;
+
   padding: 30px;
+
   border-left: 6px solid var(--primary);
+
   width: 100%;
+
 }
 
 .how-to-use h2 {
+
   font-size: 22px;
+
   margin-bottom: 20px;
+
   color: var(--primary);
+
 }
 
 .steps-list {
+
   list-style: none;
+
   counter-reset: step;
+
   padding: 0;
+
   margin: 0;
+
 }
 
 .steps-list li {
+
   position: relative;
+
   padding-left: 48px;
+
   margin-bottom: 18px;
+
   font-size: 15px;
+
   color: #374151;
+
 }
 
 .steps-list li:last-child {
+
   margin-bottom: 0;
+
 }
 
 .steps-list li::before {
+
   counter-increment: step;
+
   content: counter(step);
+
   position: absolute;
+
   left: 0;
   top: 2px;
+
   width: 32px;
   height: 32px;
+
   border-radius: 50%;
+
   background: var(--primary);
   color: white;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   font-weight: 600;
   font-size: 14px;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
   transition: var(--transition);
+
 }
 
 .steps-list li:hover::before {
+
   background: var(--accent);
+
   transform: scale(1.05);
+
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
 
-.fade-in {
-  animation: fadeIn 0.3s ease forwards;
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+  margin-top: 60px;
+
+  background: var(--primary);
+
+  color: white;
+
+  padding: 30px 24px;
+
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.footer-content {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
 }
 
-.highlight {
-  animation: highlight 0.4s ease;
+.footer-left,
+.footer-right {
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
 }
 
-@keyframes highlight {
-  0% { background-color: #e0e7ff; }
-  100% { background-color: transparent; }
+.footer a {
+
+  color: #93c5fd;
+
+  text-decoration: none;
+
+  font-weight: 500;
+
 }
 
-/* =========================
+.footer a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+/* =====================================================
    MOBILE RESPONSIVE
-========================= */
+===================================================== */
 
 @media (max-width: 992px) {
+
   .layout {
     grid-template-columns: 1fr;
   }
@@ -329,6 +519,7 @@ tbody tr:hover {
   .sticky {
     position: static;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -368,4 +559,43 @@ tbody tr:hover {
     height: 26px;
     font-size: 13px;
   }
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+.fade-in {
+
+  animation: fadeIn 0.3s ease forwards;
+
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.highlight {
+
+  animation: highlight 0.4s ease;
+
+}
+
+@keyframes highlight {
+
+  0% { background-color: #e0e7ff; }
+  100% { background-color: transparent; }
+
 }

@@ -1,3 +1,7 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
 :root {
   --bg: #f4f6f9;
   --card: #ffffff;
@@ -6,19 +10,31 @@
   --danger: #dc2626;
   --warning: #f59e0b;
   --border: #e5e7eb;
+
   --radius: 12px;
   --shadow: 0 10px 25px rgba(0,0,0,0.05);
   --transition: all 0.2s ease;
 }
 
-* { box-sizing: border-box; }
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: "Inter", "Poppins", sans-serif;
   background: var(--bg);
   color: #111827;
+  line-height: 1.6;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
   max-width: 1200px;
@@ -26,97 +42,62 @@ body {
   padding: 24px;
 }
 
+/* =========================
+   TYPOGRAPHY
+========================= */
+
 h1 {
   font-size: 28px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   font-weight: 700;
   color: var(--primary);
   text-align: center;
 }
+
 .intro-text {
   text-align: center;
-  max-width: 900px; /* keeps it readable */
-  margin: 0 auto 32px auto; /* top 0, auto horizontal, bottom 32px */
+  max-width: 850px;
+  margin: 0 auto 32px auto;
   font-size: 16px;
-  line-height: 1.7;
-  color: #374151; /* dark gray, easy on eyes */
+  color: #374151;
 }
+
+/* =========================
+   LAYOUT GRID
+========================= */
+
 .layout {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 24px;
 }
-.how-to-use {
-  margin-top: 24px;
-  padding: 30px;
-  width: 1178px;
-  border-left: 6px solid var(--primary);
-  background: var(--card);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-}
 
-.how-to-use h2 {
-  font-size: 20px;
-  color: var(--primary);
-  margin-bottom: 16px;
-}
-
-.steps-list {
-  list-style: none;
-  counter-reset: step;
-  padding-left: 0;
-}
-
-.steps-list li {
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 14px;
-  font-size: 14px;
-  color: #374151;
-}
-
-.steps-list li::before {
-  counter-increment: step;
-  content: counter(step);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.steps-list li strong {
-  display: inline-block;
-}
-
-@media (max-width: 768px) {
-  .layout { grid-template-columns: 1fr; }
-}
-#semesterSection .card {
-  margin-bottom: 5px;
-}
+/* =========================
+   CARD DESIGN
+========================= */
 
 .card {
   background: var(--card);
   border-radius: var(--radius);
-  padding: 30px;
+  padding: 28px;
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
-.card + .card { margin-top: 20px; }
+.card + .card {
+  margin-top: 20px;
+}
 
-input, select {
+#semesterSection .card {
+  margin-bottom: 12px;
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+input,
+select {
   height: 42px;
   padding: 0 12px;
   border: 1px solid var(--border);
@@ -126,10 +107,15 @@ input, select {
   transition: var(--transition);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border-color: var(--primary);
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 button {
   height: 42px;
@@ -141,14 +127,33 @@ button {
   transition: var(--transition);
 }
 
-.btn-primary { background: var(--primary); color: white; }
-.btn-accent { background: var(--accent); color: white; }
-.btn-danger { background: var(--danger); color: white; }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
 
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================
+   TABLE STYLING
+========================= */
 
 table {
   width: 100%;
@@ -156,7 +161,8 @@ table {
   margin-top: 12px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
   font-size: 14px;
@@ -167,20 +173,20 @@ th {
   color: #374151;
 }
 
-tr + tr { border-top: 1px solid var(--border); }
-
-.sticky {
-  position: sticky;
-  top: 24px;
+tr + tr {
+  border-top: 1px solid var(--border);
 }
 
-@media (max-width: 768px) {
-  .sticky { position: static; }
-  .btn-full { width: 100%; }
+tbody tr:hover {
+  background: #f9fafb;
 }
+
+/* =========================
+   RESULT SECTION
+========================= */
 
 .result-value {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin: 8px 0;
 }
@@ -193,31 +199,173 @@ tr + tr { border-top: 1px solid var(--border); }
   margin-top: 8px;
 }
 
-.status.excellent { background: #dcfce7; color: var(--accent); }
-.status.good { background: #dbeafe; color: var(--primary); }
-.status.risk { background: #fef3c7; color: var(--warning); }
-.status.critical { background: #fee2e2; color: var(--danger); }
-
-.fade-in { animation: fadeIn 0.3s ease forwards; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px);}
-  to { opacity: 1; transform: translateY(0);}
+.status.excellent {
+  background: #dcfce7;
+  color: var(--accent);
 }
 
-.highlight { animation: highlight 0.4s ease; }
+.status.good {
+  background: #dbeafe;
+  color: var(--primary);
+}
+
+.status.risk {
+  background: #fef3c7;
+  color: var(--warning);
+}
+
+.status.critical {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+/* =========================
+   STICKY SIDEBAR
+========================= */
+
+.sticky {
+  position: sticky;
+  top: 24px;
+}
+
+/* =========================
+   HOW TO USE SECTION
+========================= */
+
+.how-to-use {
+  margin-top: 40px;
+  padding: 30px;
+  border-left: 6px solid var(--primary);
+  width: 100%;
+}
+
+.how-to-use h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list li {
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.steps-list li:last-child {
+  margin-bottom: 0;
+}
+
+.steps-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: var(--transition);
+}
+
+.steps-list li:hover::before {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.highlight {
+  animation: highlight 0.4s ease;
+}
 
 @keyframes highlight {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
-
 }
 
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
 
+  .sticky {
+    position: static;
+  }
+}
 
+@media (max-width: 768px) {
 
+  .container {
+    padding: 18px;
+  }
 
+  h1 {
+    font-size: 22px;
+  }
 
+  .card {
+    padding: 20px;
+  }
 
+  .result-value {
+    font-size: 20px;
+  }
 
+  .how-to-use {
+    padding: 22px;
+    margin-top: 28px;
+  }
+
+  .how-to-use h2 {
+    font-size: 18px;
+  }
+
+  .steps-list li {
+    padding-left: 42px;
+    font-size: 14px;
+  }
+
+  .steps-list li::before {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+}

@@ -32,12 +32,9 @@
 body {
 
   margin: 0;
-
   font-family: "Inter", "Poppins", sans-serif;
-
   background: var(--bg);
   color: #111827;
-
   line-height: 1.6;
 
 }
@@ -51,10 +48,10 @@ body {
 
   max-width: 1200px;
   margin: 0 auto;
-
   padding: 24px;
 
 }
+
 .section-title {
   font-size: 22px;
   font-weight: 600;
@@ -71,11 +68,8 @@ h1 {
 
   font-size: 28px;
   font-weight: 700;
-
   margin-bottom: 16px;
-
   color: var(--primary);
-
   text-align: center;
 
 }
@@ -83,13 +77,9 @@ h1 {
 .intro-text {
 
   text-align: center;
-
   max-width: 850px;
-
   margin: 0 auto 32px auto;
-
   font-size: 16px;
-
   color: #374151;
 
 }
@@ -102,9 +92,7 @@ h1 {
 .layout {
 
   display: grid;
-
   grid-template-columns: 60% 40%;
-
   gap: 24px;
 
 }
@@ -117,27 +105,19 @@ h1 {
 .card {
 
   background: var(--card);
-
   border-radius: var(--radius);
-
   padding: 28px;
-
   box-shadow: var(--shadow);
-
   transition: var(--transition);
 
 }
 
 .card + .card {
-
   margin-top: 20px;
-
 }
 
 #semesterSection .card {
-
   margin-bottom: 12px;
-
 }
 
 
@@ -149,17 +129,11 @@ input,
 select {
 
   height: 42px;
-
   padding: 0 12px;
-
   border: 1px solid var(--border);
-
   border-radius: 8px;
-
   font-size: 14px;
-
   width: 100%;
-
   transition: var(--transition);
 
 }
@@ -168,7 +142,6 @@ input:focus,
 select:focus {
 
   outline: none;
-
   border-color: var(--primary);
 
 }
@@ -181,54 +154,37 @@ select:focus {
 button {
 
   height: 42px;
-
   padding: 0 16px;
-
   border-radius: 8px;
-
   border: none;
-
   font-weight: 600;
-
   cursor: pointer;
-
   transition: var(--transition);
 
 }
 
 .btn-primary {
-
   background: var(--primary);
   color: white;
-
 }
 
 .btn-accent {
-
   background: var(--accent);
   color: white;
-
 }
 
 .btn-danger {
-
   background: var(--danger);
   color: white;
-
 }
 
 button:hover {
-
   transform: translateY(-2px);
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-
 }
 
 .btn-full {
-
   width: 100%;
-
 }
 
 
@@ -239,9 +195,7 @@ button:hover {
 table {
 
   width: 100%;
-
   border-collapse: collapse;
-
   margin-top: 12px;
 
 }
@@ -250,9 +204,7 @@ th,
 td {
 
   text-align: left;
-
   padding: 8px;
-
   font-size: 14px;
 
 }
@@ -260,21 +212,16 @@ td {
 th {
 
   font-weight: 600;
-
   color: #374151;
 
 }
 
 tr + tr {
-
   border-top: 1px solid var(--border);
-
 }
 
 tbody tr:hover {
-
   background: #f9fafb;
-
 }
 
 
@@ -285,9 +232,7 @@ tbody tr:hover {
 .result-value {
 
   font-size: 22px;
-
   font-weight: 700;
-
   margin: 8px 0;
 
 }
@@ -295,47 +240,31 @@ tbody tr:hover {
 .status {
 
   font-weight: 600;
-
   padding: 6px 12px;
-
   border-radius: 6px;
-
   display: inline-block;
-
   margin-top: 8px;
 
 }
 
 .status.excellent {
-
   background: #dcfce7;
-
   color: var(--accent);
-
 }
 
 .status.good {
-
   background: #dbeafe;
-
   color: var(--primary);
-
 }
 
 .status.risk {
-
   background: #fef3c7;
-
   color: var(--warning);
-
 }
 
 .status.critical {
-
   background: #fee2e2;
-
   color: var(--danger);
-
 }
 
 
@@ -344,11 +273,8 @@ tbody tr:hover {
 ===================================================== */
 
 .sticky {
-
   position: sticky;
-
   top: 24px;
-
 }
 
 
@@ -359,11 +285,8 @@ tbody tr:hover {
 .how-to-use {
 
   margin-top: 40px;
-
   padding: 30px;
-
   border-left: 6px solid var(--primary);
-
   width: 100%;
 
 }
@@ -371,9 +294,7 @@ tbody tr:hover {
 .how-to-use h2 {
 
   font-size: 22px;
-
   margin-bottom: 20px;
-
   color: var(--primary);
 
 }
@@ -381,11 +302,8 @@ tbody tr:hover {
 .steps-list {
 
   list-style: none;
-
   counter-reset: step;
-
   padding: 0;
-
   margin: 0;
 
 }
@@ -393,44 +311,33 @@ tbody tr:hover {
 .steps-list li {
 
   position: relative;
-
   padding-left: 48px;
-
   margin-bottom: 18px;
-
   font-size: 15px;
-
   color: #374151;
 
 }
 
 .steps-list li:last-child {
-
   margin-bottom: 0;
-
 }
 
 .steps-list li::before {
 
   counter-increment: step;
-
   content: counter(step);
-
   position: absolute;
-
   left: 0;
   top: 2px;
 
   width: 32px;
   height: 32px;
-
   border-radius: 50%;
 
   background: var(--primary);
   color: white;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -438,16 +345,61 @@ tbody tr:hover {
   font-size: 14px;
 
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-
   transition: var(--transition);
 
 }
 
 .steps-list li:hover::before {
-
   background: var(--accent);
-
   transform: scale(1.05);
+}
+
+
+/* =====================================================
+   CGPA FORMULA SECTION
+===================================================== */
+
+.formula-section {
+
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.formula-description {
+
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+
+}
+
+.formula-image-wrapper {
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.formula-image {
+
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+
+}
+
+.formula-text {
+
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
 
 }
 
@@ -459,11 +411,8 @@ tbody tr:hover {
 .footer {
 
   margin-top: 60px;
-
   background: var(--primary);
-
   color: white;
-
   padding: 30px 24px;
 
 }
@@ -471,17 +420,11 @@ tbody tr:hover {
 .footer-content {
 
   max-width: 1200px;
-
   margin: 0 auto;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 20px;
-
   flex-wrap: wrap;
 
 }
@@ -490,7 +433,6 @@ tbody tr:hover {
 .footer-right {
 
   font-size: 14px;
-
   line-height: 1.6;
 
 }
@@ -498,17 +440,13 @@ tbody tr:hover {
 .footer a {
 
   color: #93c5fd;
-
   text-decoration: none;
-
   font-weight: 500;
 
 }
 
 .footer a:hover {
-
   text-decoration: underline;
-
 }
 
 
@@ -526,6 +464,10 @@ tbody tr:hover {
     position: static;
   }
 
+  .formula-image {
+    width: 400px;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -533,7 +475,8 @@ tbody tr:hover {
   .container {
     padding: 18px;
   }
-   .section-title {
+
+  .section-title {
     font-size: 18px;
   }
 
@@ -569,6 +512,19 @@ tbody tr:hover {
     font-size: 13px;
   }
 
+  .formula-section {
+    padding: 15px;
+  }
+
+  .formula-image {
+    width: 100%;
+  }
+
+  .formula-description,
+  .formula-text {
+    font-size: 14px;
+  }
+
 }
 
 
@@ -577,9 +533,7 @@ tbody tr:hover {
 ===================================================== */
 
 .fade-in {
-
   animation: fadeIn 0.3s ease forwards;
-
 }
 
 @keyframes fadeIn {
@@ -597,9 +551,7 @@ tbody tr:hover {
 }
 
 .highlight {
-
   animation: highlight 0.4s ease;
-
 }
 
 @keyframes highlight {
@@ -608,4 +560,3 @@ tbody tr:hover {
   100% { background-color: transparent; }
 
 }
-

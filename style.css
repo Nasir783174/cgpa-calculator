@@ -55,6 +55,12 @@ body {
   padding: 24px;
 
 }
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
 
 
 /* =====================================================
@@ -527,6 +533,9 @@ tbody tr:hover {
   .container {
     padding: 18px;
   }
+   .section-title {
+    font-size: 18px;
+  }
 
   h1 {
     font-size: 22px;
@@ -599,3 +608,4 @@ tbody tr:hover {
   100% { background-color: transparent; }
 
 }
+

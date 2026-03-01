@@ -58,15 +58,16 @@ function addCourse(sem) {
     <td>
       <select class="grade">
         <option value="">Select</option>
-        <option value="4">A (4.0)</option>
-        <option value="3.7">A- (3.7)</option>
-        <option value="3.3">B+ (3.3)</option>
-        <option value="3">B (3.0)</option>
-        <option value="2.7">B- (2.7)</option>
-        <option value="2.3">C+ (2.3)</option>
-        <option value="2">C (2.0)</option>
-        <option value="1">D (1.0)</option>
-        <option value="0">F (0.0)</option>
+        <option value="4.00">A+ (4.00)</option>
+        <option value="3.75">A (3.75)</option>
+        <option value="3.50">A- (3.50)</option>
+        <option value="3.25">B+ (3.25)</option>
+        <option value="3.00">B (3.00)</option>
+        <option value="2.75">B- (2.75)</option>
+        <option value="2.50">C+ (2.50)</option>
+        <option value="2.25">C (2.25)</option>
+        <option value="2.00">D (2.00)</option>
+        <option value="0.00">F (0.00)</option>
       </select>
     </td>
     <td><button class="btn-danger" onclick="removeRow(this)">X</button></td>
@@ -239,4 +240,5 @@ document.getElementById("downloadPdf").addEventListener("click", function () {
 // Auto create first semester when page loads
 window.addEventListener("DOMContentLoaded", function () {
   addSemester();
+
 });

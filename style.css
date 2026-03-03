@@ -94,9 +94,6 @@ h1 {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 24px;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
 
 }
 
@@ -563,4 +560,5 @@ tbody tr:hover {
   100% { background-color: transparent; }
 
 }
+
 

@@ -378,7 +378,8 @@ tbody tr:hover {
 }
 
 .formula-image-wrapper {
-
+   
+aspect-ratio: 5 / 4;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -388,10 +389,11 @@ tbody tr:hover {
 .formula-image {
 
   max-width: 100%;
-  width: 500px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   box-shadow: var(--shadow);
+   object-fit: contain;
 
 }
 
@@ -560,5 +562,6 @@ tbody tr:hover {
   100% { background-color: transparent; }
 
 }
+
 
 

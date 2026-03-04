@@ -89,7 +89,9 @@ h1 {
 /* =====================================================
    LAYOUT GRID
 ===================================================== */
-
+.tool-section {
+  margin-top: 20px;
+}
 .layout {
 
   display: grid;
@@ -563,6 +565,7 @@ aspect-ratio: 5 / 4;
   100% { background-color: transparent; }
 
 }
+
 
 
 

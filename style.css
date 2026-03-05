@@ -38,7 +38,7 @@ body {
   background: var(--bg);
   color: #111827;
   line-height: 1.6;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 /* =====================================================
@@ -84,7 +84,7 @@ h1 {
 ===================================================== */
 
 .tool-section {
-   width: 100%;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -95,7 +95,7 @@ h1 {
 
 .layout {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 2fr 1fr;
   gap: 24px;
 }
 
@@ -192,7 +192,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 12px;
-  min-width: 500px; /* prevents crush on mobile */
+  min-width: 500px;
 }
 
 th,
@@ -305,21 +305,16 @@ tbody tr:hover {
   position: absolute;
   left: 0;
   top: 2px;
-
   width: 32px;
   height: 32px;
   border-radius: 50%;
-
   background: var(--primary);
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 600;
   font-size: 14px;
-
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: var(--transition);
 }
@@ -410,7 +405,7 @@ tbody tr:hover {
    RESPONSIVE BREAKPOINTS
 ===================================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;
   }
@@ -423,6 +418,10 @@ tbody tr:hover {
 @media (max-width: 768px) {
   .container {
     padding: 18px;
+  }
+
+  .tool-section {
+    padding: 0;
   }
 
   h1 {
@@ -503,4 +502,3 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
-

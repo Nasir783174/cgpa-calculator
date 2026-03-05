@@ -192,7 +192,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 12px;
-  min-width: 500px;
+  
 }
 
 th,
@@ -502,3 +502,4 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+

@@ -1,18 +1,14 @@
 /* =====================================================
    ROOT VARIABLES
 ===================================================== */
-
 :root {
   --bg: #f4f6f9;
   --card: #ffffff;
-
   --primary: #1e3a8a;
   --accent: #16a34a;
   --danger: #dc2626;
   --warning: #f59e0b;
-
   --border: #e5e7eb;
-
   --radius: 12px;
   --shadow: 0 10px 25px rgba(0,0,0,0.05);
   --transition: all 0.2s ease;
@@ -21,7 +17,6 @@
 /* =====================================================
    GLOBAL RESET
 ===================================================== */
-
 *,
 *::before,
 *::after {
@@ -42,9 +37,131 @@ body {
 }
 
 /* =====================================================
+   HEADER
+===================================================== */
+.site-header {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 36px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #374151;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 24px;
+    width: 220px;
+    flex-direction: column;
+    background: var(--card);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-link {
+    padding: 10px 0;
+  }
+}
+
+/* =====================================================
+   BLOG SECTION
+===================================================== */
+.blog-section {
+  margin-top: 40px;
+}
+
+.blog-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.blog-card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+}
+
+.blog-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* =====================================================
    CONTAINER
 ===================================================== */
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -61,7 +178,6 @@ body {
 /* =====================================================
    TYPOGRAPHY
 ===================================================== */
-
 h1 {
   font-size: 28px;
   font-weight: 700;
@@ -82,7 +198,6 @@ h1 {
 /* =====================================================
    TOOL SECTION WRAPPER
 ===================================================== */
-
 .tool-section {
   width: 100%;
   max-width: 1100px;
@@ -92,7 +207,6 @@ h1 {
 /* =====================================================
    LAYOUT GRID
 ===================================================== */
-
 .layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -102,7 +216,6 @@ h1 {
 /* =====================================================
    CARD DESIGN
 ===================================================== */
-
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -122,7 +235,6 @@ h1 {
 /* =====================================================
    FORM ELEMENTS
 ===================================================== */
-
 input,
 select {
   height: 42px;
@@ -144,7 +256,6 @@ select:focus {
 /* =====================================================
    BUTTONS
 ===================================================== */
-
 button {
   height: 42px;
   padding: 0 16px;
@@ -182,7 +293,6 @@ button:hover {
 /* =====================================================
    TABLE STYLING
 ===================================================== */
-
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -192,7 +302,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 12px;
-  
 }
 
 th,
@@ -219,7 +328,6 @@ tbody tr:hover {
 /* =====================================================
    RESULT SECTION
 ===================================================== */
-
 .result-value {
   font-size: 22px;
   font-weight: 700;
@@ -257,7 +365,6 @@ tbody tr:hover {
 /* =====================================================
    STICKY SIDEBAR
 ===================================================== */
-
 .sticky {
   position: sticky;
   top: 24px;
@@ -266,7 +373,6 @@ tbody tr:hover {
 /* =====================================================
    HOW TO USE SECTION
 ===================================================== */
-
 .how-to-use {
   margin-top: 40px;
   padding: 30px;
@@ -327,7 +433,6 @@ tbody tr:hover {
 /* =====================================================
    CGPA FORMULA SECTION
 ===================================================== */
-
 .formula-section {
   margin-top: 40px;
   text-align: center;
@@ -367,7 +472,6 @@ tbody tr:hover {
 /* =====================================================
    FOOTER
 ===================================================== */
-
 .footer {
   margin-top: 60px;
   background: var(--primary);
@@ -405,16 +509,30 @@ tbody tr:hover {
    RESPONSIVE BREAKPOINTS
 ===================================================== */
 
+/* Tool / CGPA layout */
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;
   }
-
   .sticky {
     position: static;
   }
 }
 
+/* Blog grid responsive */
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Container / typography / cards for small screens */
 @media (max-width: 768px) {
   .container {
     padding: 18px;
@@ -464,8 +582,11 @@ tbody tr:hover {
   .formula-text {
     font-size: 14px;
   }
+
+  /* Mobile menu toggle already covered */
 }
 
+/* Extra small devices */
 @media (max-width: 480px) {
   input,
   select,
@@ -478,7 +599,6 @@ tbody tr:hover {
 /* =====================================================
    ANIMATIONS
 ===================================================== */
-
 .fade-in {
   animation: fadeIn 0.3s ease forwards;
 }
@@ -502,4 +622,3 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
-

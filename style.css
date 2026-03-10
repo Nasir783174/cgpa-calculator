@@ -1042,43 +1042,32 @@ tbody tr:hover {
 }
 
 /* =====================================================
-   ADJUST CREDIT & GRADE BOX WIDTH
+   COMPACT TABLE INPUTS
 ===================================================== */
-
-/* Desktop / Normal screens */
-#semesterSection table td input.credit {
-  width: 60%;       /* credit input ছোট */
+#semesterSection table td {
+  padding: 4px 6px;        /* gap between columns কমাচ্ছে */
 }
 
-#semesterSection table td select.grade {
-  width: 90%;       /* grade dropdown বড় */
+#semesterSection table input,
+#semesterSection table select {
+  width: 100%;
+  box-sizing: border-box;  /* input properly fit করবে td এর ভিতরে */
 }
 
-/* Mobile view adjustments (≤768px) */
+/* MOBILE VIEW ADJUSTMENT */
 @media (max-width: 768px) {
-  #semesterSection table td input[type="text"],
-  #semesterSection table td input[type="number"],
-  #semesterSection table td select {
-    font-size: 13px;     /* ছোট text */
-    height: 36px;        /* compact height */
-    padding: 4px 8px;    /* compact padding */
+  #semesterSection table input[type="text"],
+  #semesterSection table input[type="number"],
+  #semesterSection table select {
+    font-size: 13px;       /* smaller text */
+    height: 36px;          /* compact height */
+    padding: 4px 8px;      /* smaller padding */
   }
 
-  /* Credit & Grade specific widths */
-  #semesterSection table td input.credit {
-    width: 55%;          /* আরও compact credit input */
-  }
-
-  #semesterSection table td select.grade {
-    width: 95%;          /* বড় dropdown */
-  }
-
-  /* Table cells compact spacing */
   #semesterSection table td {
-    padding: 3px 4px;
+    padding: 3px 4px;      /* compact spacing on mobile */
   }
 
-  /* Buttons inside table rows */
   #semesterSection table button {
     font-size: 12px;
     padding: 4px 8px;

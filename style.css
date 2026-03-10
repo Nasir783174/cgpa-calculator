@@ -983,16 +983,20 @@ tbody tr:hover {
     font-size:14px;
     padding:6px;
   }
-    /* Table inputs width */
+     /* Table columns width control */
+  #semesterSection table td:nth-child(1) input[type="text"] {
+    width: 60%;       /* course name wide */
+  }
+
   #semesterSection table td:nth-child(2) input.credit {
-    width: 50px;        /* credit chhoto */
+    width: 40px;      /* credit chhoto */
   }
 
   #semesterSection table td:nth-child(3) select.grade {
-    width: calc(100% - 10px); /* grade aro wide */
+    width: calc(100% - 10px); /* grade wide */
   }
 
-  /* General input & select height/font */
+  /* General inputs height/font */
   #semesterSection input[type="text"],
   #semesterSection input[type="number"],
   #semesterSection select {
@@ -1011,6 +1015,14 @@ tbody tr:hover {
     height: 32px;
     font-size: 12px;
     padding: 4px 8px;
+  }
+
+  /* SGPA & Semester title smaller */
+  #semesterSection .semester-gpa {
+    font-size: 12px;
+  }
+  #semesterSection h3 {
+    font-size: 15px;
   }
 
   /* Mobile menu toggle already covered */
@@ -1069,6 +1081,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

@@ -466,7 +466,344 @@ tbody tr:hover {
   line-height: 1.6;
   color: #374151;
 }
+/* =========================
+   CGPA GRADING SYSTEM
+========================= */
 
+.grading-system {
+  margin-top: 40px;
+}
+
+.grading-system h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.grading-system p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 14px;
+}
+/* =========================
+   CGPA SYSTEM EXPLANATION
+========================= */
+
+.cgpa-system {
+  margin-top: 40px;
+}
+
+.cgpa-system h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-system p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+.cgpa-steps {
+  margin: 10px 0 18px 20px;
+  padding-left: 10px;
+}
+
+.cgpa-steps li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.cgpa-formula {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+/* =========================
+   CGPA SCALES TABLE
+========================= */
+.cgpa-scales {
+  margin-top: 40px;
+}
+
+.cgpa-scales h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-scales h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.cgpa-scales p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.cgpa-scales .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.cgpa-scales table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px; /* ensures horizontal scroll on small devices */
+}
+
+.cgpa-scales th,
+.cgpa-scales td {
+  text-align: left;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+
+.cgpa-scales th {
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.cgpa-scales tbody tr:hover {
+  background: #f9fafb;
+}
+/* =========================
+   CGPA CONVERSION EXAMPLE
+========================= */
+.cgpa-conversion {
+  margin-top: 40px;
+}
+
+.cgpa-conversion h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-conversion p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.cgpa-conversion .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.cgpa-conversion table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.cgpa-conversion th,
+.cgpa-conversion td {
+  text-align: left;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+
+.cgpa-conversion th {
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.cgpa-conversion tbody tr:hover {
+  background: #f9fafb;
+}
+/* =========================
+   CGPA ADVANTAGES / WHY UNIVERSITIES
+========================= */
+.cgpa-advantages {
+  margin-top: 40px;
+}
+
+.cgpa-advantages h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-advantages p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.cgpa-advantages ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.cgpa-advantages li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.cgpa-advantages li strong {
+  color: var(--primary);
+}
+/* =========================
+   CGPA VS GPA SECTION
+========================= */
+.cgpa-vs-gpa {
+  margin-top: 40px;
+}
+
+.cgpa-vs-gpa h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-vs-gpa p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.cgpa-vs-gpa ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style-type: disc;
+}
+
+.cgpa-vs-gpa li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.cgpa-vs-gpa li strong {
+  color: var(--primary);
+}
+/* =========================
+   CGPA TO PERCENTAGE SECTION
+========================= */
+.cgpa-percentage {
+  margin-top: 40px;
+}
+
+.cgpa-percentage h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.cgpa-percentage p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.cgpa-percentage .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.cgpa-percentage table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.cgpa-percentage th,
+.cgpa-percentage td {
+  text-align: left;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+
+.cgpa-percentage th {
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.cgpa-percentage tbody tr:hover {
+  background: #f9fafb;
+}
+/* FAQ Section */
+.faq-section {
+  margin-top: 40px;
+}
+
+.faq-section h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.faq-question {
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  color: var(--primary);
+  padding-right: 24px;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding-top: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* Enough to show content */
+  padding-top: 8px;
+}
 /* =====================================================
    FOOTER
 ===================================================== */
@@ -580,6 +917,72 @@ tbody tr:hover {
   .formula-text {
     font-size: 14px;
   }
+   .grading-system h2{
+  font-size:18px;
+}
+
+.grading-system p{
+  font-size:14px;
+}
+   .cgpa-system h2{
+  font-size:18px;
+}
+
+.cgpa-system p{
+  font-size:14px;
+}
+
+.cgpa-steps li{
+  font-size:14px;
+}
+    .cgpa-scales h2{
+    font-size:18px;
+  }
+  .cgpa-scales h3{
+    font-size:16px;
+  }
+  .cgpa-scales p{
+    font-size:14px;
+  }
+  .cgpa-scales th,
+  .cgpa-scales td{
+    font-size:13px;
+    padding:6px;
+  }
+    .cgpa-conversion h2{
+    font-size:18px;
+  }
+  .cgpa-conversion p{
+    font-size:14px;
+  }
+  .cgpa-conversion th,
+  .cgpa-conversion td{
+    font-size:13px;
+    padding:6px;
+  }
+   .cgpa-advantages h2{
+    font-size:18px;
+  }
+  .cgpa-advantages p,
+  .cgpa-advantages li{
+    font-size:14px;
+  }
+   .cgpa-vs-gpa h2{
+    font-size:18px;
+  }
+  .cgpa-vs-gpa p,
+  .cgpa-vs-gpa li{
+    font-size:14px;
+  }
+   .cgpa-percentage h2{
+    font-size:18px;
+  }
+  .cgpa-percentage p,
+  .cgpa-percentage th,
+  .cgpa-percentage td{
+    font-size:14px;
+    padding:6px;
+  }
 
   /* Mobile menu toggle already covered */
 }
@@ -620,4 +1023,6 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
+
 

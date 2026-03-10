@@ -1008,6 +1008,7 @@ tbody tr:hover {
   #semesterSection table th,
   #semesterSection table td {
     font-size: 12px;
+     padding: 2px 4px;
     
   }
 
@@ -1081,6 +1082,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

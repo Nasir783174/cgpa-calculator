@@ -986,21 +986,29 @@ tbody tr:hover {
    #semesterSection input[type="text"],
   #semesterSection input[type="number"],
   #semesterSection select {
-    height: 36px;
-    font-size: 13px;
-    padding: 4px 8px;
+    height: 32px;       /* smaller height */
+    font-size: 12px;    /* smaller text */
+    padding: 2px 6px;   /* tighter padding */
   }
 
   #semesterSection table th,
   #semesterSection table td {
-    font-size: 13px;
-    padding: 6px 6px;
+    font-size: 12px;    /* smaller table font */
+    padding: 4px 4px;   /* compact spacing */
   }
 
   #semesterSection button {
-    height: 36px;
-    font-size: 13px;
-    padding: 6px 10px;
+    height: 32px;       /* smaller button */
+    font-size: 12px;
+    padding: 4px 8px;   /* tighter padding */
+  }
+
+  #semesterSection .semester-gpa {
+    font-size: 12px;    /* smaller SGPA display */
+  }
+
+  #semesterSection h3 {
+    font-size: 15px;    /* smaller semester title */
   }
 
   /* Mobile menu toggle already covered */
@@ -1059,6 +1067,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

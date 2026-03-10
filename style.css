@@ -1016,9 +1016,9 @@ tbody tr:hover {
     #semesterSection input[type="text"],
   #semesterSection input[type="number"],
   #semesterSection select {
-    height: 36px;       /* chhoto height */
-    font-size: 14px;    /* smaller text */
-    padding: 4px 8px;   /* tighter padding */
+    height: 32px;       /* chhoto height */
+    font-size: 12px;    /* smaller text */
+    padding: 2px 6px;   /* tighter padding */
   }
 
   #semesterSection table th,
@@ -1027,8 +1027,8 @@ tbody tr:hover {
   }
 
   #semesterSection button {
-    font-size: 13px;
-    padding: 6px 10px;
+    font-size: 12px;
+    padding: 4px 6px;
   }
 }
 
@@ -1040,6 +1040,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

@@ -983,6 +983,25 @@ tbody tr:hover {
     font-size:14px;
     padding:6px;
   }
+   #semesterSection input[type="text"],
+  #semesterSection input[type="number"],
+  #semesterSection select {
+    height: 36px;
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  #semesterSection table th,
+  #semesterSection table td {
+    font-size: 13px;
+    padding: 6px 6px;
+  }
+
+  #semesterSection button {
+    height: 36px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 
   /* Mobile menu toggle already covered */
 }
@@ -1040,6 +1059,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

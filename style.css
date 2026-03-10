@@ -983,27 +983,6 @@ tbody tr:hover {
     font-size:14px;
     padding:6px;
   }
-    /* Table input fields in CGPA tool */
-  #semesterSection table input[type="text"],
-  #semesterSection table input[type="number"],
-  #semesterSection table select {
-    font-size: 13px;       /* Smaller text */
-    height: 36px;           /* Slightly shorter height */
-    padding: 4px 8px;       /* Smaller padding */
-  }
-
-  /* Make table cells fit content better */
-  #semesterSection table th,
-  #semesterSection table td {
-    padding: 6px 4px;
-    font-size: 13px;
-  }
-
-  /* Buttons inside table rows */
-  #semesterSection table button {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
 
   /* Mobile menu toggle already covered */
 }
@@ -1062,6 +1041,38 @@ tbody tr:hover {
   100% { background-color: transparent; }
 }
 
+/* =====================================================
+   COMPACT TABLE INPUTS
+===================================================== */
+#semesterSection table td {
+  padding: 4px 6px;        /* gap between columns কমাচ্ছে */
+}
+
+#semesterSection table input,
+#semesterSection table select {
+  width: 100%;
+  box-sizing: border-box;  /* input properly fit করবে td এর ভিতরে */
+}
+
+/* MOBILE VIEW ADJUSTMENT */
+@media (max-width: 768px) {
+  #semesterSection table input[type="text"],
+  #semesterSection table input[type="number"],
+  #semesterSection table select {
+    font-size: 13px;       /* smaller text */
+    height: 36px;          /* compact height */
+    padding: 4px 8px;      /* smaller padding */
+  }
+
+  #semesterSection table td {
+    padding: 3px 4px;      /* compact spacing on mobile */
+  }
+
+  #semesterSection table button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
 
 
 

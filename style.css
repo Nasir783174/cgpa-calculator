@@ -983,47 +983,26 @@ tbody tr:hover {
     font-size:14px;
     padding:6px;
   }
-     /* Table columns width control */
-  #semesterSection table td:nth-child(1) input[type="text"] {
-    width: 60%;       /* course name wide */
+    /* Table input fields in CGPA tool */
+  #semesterSection table input[type="text"],
+  #semesterSection table input[type="number"],
+  #semesterSection table select {
+    font-size: 13px;       /* Smaller text */
+    height: 36px;           /* Slightly shorter height */
+    padding: 4px 8px;       /* Smaller padding */
   }
 
-  #semesterSection table td:nth-child(2) input.credit {
-    width: 40px;      /* credit chhoto */
-  }
-
-  #semesterSection table td:nth-child(3) select.grade {
-    width: calc(100% - 10px); /* grade wide */
-  }
-
-  /* General inputs height/font */
-  #semesterSection input[type="text"],
-  #semesterSection input[type="number"],
-  #semesterSection select {
-    height: 32px;
-    font-size: 12px;
-    padding: 2px 6px;
-  }
-
+  /* Make table cells fit content better */
   #semesterSection table th,
   #semesterSection table td {
-    font-size: 12px;
-     padding: 2px 4px;
-    
+    padding: 6px 4px;
+    font-size: 13px;
   }
 
-  #semesterSection button {
-    height: 32px;
+  /* Buttons inside table rows */
+  #semesterSection table button {
     font-size: 12px;
     padding: 4px 8px;
-  }
-
-  /* SGPA & Semester title smaller */
-  #semesterSection .semester-gpa {
-    font-size: 12px;
-  }
-  #semesterSection h3 {
-    font-size: 15px;
   }
 
   /* Mobile menu toggle already covered */
@@ -1082,6 +1061,7 @@ tbody tr:hover {
   0% { background-color: #e0e7ff; }
   100% { background-color: transparent; }
 }
+
 
 
 

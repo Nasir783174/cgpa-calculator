@@ -6,6 +6,14 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "www.cgpacalculator.dev" }
+      ],
+      "destination": "https://cgpacalculator.dev/:1",
+      "permanent": true
     }
   ]
 }

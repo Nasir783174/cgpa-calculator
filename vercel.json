@@ -10,9 +10,12 @@
     {
       "source": "/(.*)",
       "has": [
-        { "type": "host", "value": "www.cgpacalculator.dev" }
+        {
+          "type": "host",
+          "value": "www.cgpacalculator.dev"
+        }
       ],
-      "destination": "https://cgpacalculator.dev/:1",
+      "destination": "https://cgpacalculator.dev/$1",
       "permanent": true
     }
   ]

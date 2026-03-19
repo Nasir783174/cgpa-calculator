@@ -5,7 +5,7 @@
     {
       "source": "/index.html",
       "destination": "/",
-      "permanent": true
+      "statusCode": 308
     },
     {
       "source": "/(.*)",
@@ -16,7 +16,7 @@
         }
       ],
       "destination": "https://cgpacalculator.dev/$1",
-      "permanent": true
+      "statusCode": 308
     }
   ]
 }

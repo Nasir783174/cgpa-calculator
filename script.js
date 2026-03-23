@@ -508,26 +508,6 @@ function init() {
     document.getElementById("mobileMenu").classList.toggle("open");
   });
 
-  // Subscribe
-  document.getElementById("subscribeBtn").addEventListener("click", function () {
-    const email = document.getElementById("footerEmail").value.trim();
-    const msg   = document.getElementById("subscribeMsg");
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      msg.textContent = "Please enter a valid email.";
-      msg.className = "subscribe-msg error";
-      return;
-    }
-    this.textContent = "Sending…";
-    this.disabled = true;
-    setTimeout(() => {
-      msg.textContent = `✓ Subscribed! Updates will be sent to ${email}`;
-      msg.className = "subscribe-msg success";
-      document.getElementById("footerEmail").value = "";
-      this.textContent = "Subscribe";
-      this.disabled = false;
-    }, 1200);
-  });
-
   // Sticky bar — show when calculator section enters view
   const stickyBar = document.getElementById("stickyBar");
   const observer  = new IntersectionObserver(

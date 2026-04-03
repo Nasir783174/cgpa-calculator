@@ -1,5 +1,5 @@
 /* ============================================================
-   GRADECALC — Complete Stylesheet
+   CGPA Calculator — Complete Stylesheet
    Covers: index, cgpa-information, all blog pages
    ============================================================ */
 
@@ -260,21 +260,13 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text-p
 .footer-logo   { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 12px; }
 .footer-author { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
 .footer-bio    { font-size: 13px; color: rgba(255,255,255,0.4); }
-.footer-right  { flex: 1; max-width: 360px; }
-.footer-subscribe-text { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 12px; line-height: 1.5; }
-.footer-form   { display: flex; gap: 8px; }
-.footer-email-input { flex: 1; padding: 10px 14px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 13px; color: #fff; outline: none; transition: border-color var(--transition); }
-.footer-email-input::placeholder { color: rgba(255,255,255,0.3); }
-.footer-email-input:focus { border-color: var(--accent); }
-.btn-subscribe { padding: 10px 18px; background: var(--accent); color: #fff; border: none; border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background var(--transition), transform var(--transition); }
-.btn-subscribe:hover    { background: var(--accent-light); transform: translateY(-1px); }
-.btn-subscribe:disabled { opacity: 0.6; cursor: not-allowed; }
-.subscribe-msg { margin-top: 10px; font-size: 13px; min-height: 18px; }
-.subscribe-msg.success { color: #6aad8a; }
-.subscribe-msg.error   { color: #cc7070; }
-.footer-contact-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-.footer-email-link { color: var(--accent-light); text-decoration: none; font-size: 14px; font-weight: 500; transition: color var(--transition); }
-.footer-email-link:hover { color: #fff; }
+.footer-right  { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
+.footer-links  { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.footer-link   { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.55); text-decoration: none; transition: color var(--transition); }
+.footer-link:hover { color: var(--accent-light); }
+.footer-social { display: flex; align-items: center; gap: 12px; }
+.footer-social-link { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition), border-color var(--transition), background var(--transition); }
+.footer-social-link:hover { color: var(--accent-light); border-color: var(--accent); background: rgba(196,133,74,0.1); }
 .footer-bottom { max-width: 1280px; margin: 0 auto; padding: 16px 0; font-size: 12px; color: rgba(255,255,255,0.3); }
 
 /* TOAST */
@@ -379,8 +371,8 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text-p
   .quick-ref { padding: 22px 18px; }
   .table-scroll-hint { display: flex; }
   .footer-inner { flex-direction: column; gap: 32px; }
-  .footer-right { max-width: 100%; }
-  .footer-form  { flex-direction: column; }
+  .footer-right { align-items: flex-start; }
+  .footer-links { align-items: flex-start; }
   .sticky-bar-inner { padding: 0 16px; }
   .sticky-item      { padding: 0 10px; }
   .sticky-label     { display: none; }

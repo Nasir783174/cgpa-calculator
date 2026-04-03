@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Mohammad Nasir | CGPA Calculator</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/about" />
+  <meta name="description" content="Learn about Mohammad Nasir, the developer behind CGPA Calculator. A web developer and SEO expert from Bangladesh with 15+ years of experience building free student tools." />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── About page specific styles ── */
+    .about-hero {
+      background: var(--dark);
+      padding: 60px 24px 70px;
+      border-bottom: 1px solid var(--dark-2);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 30% 50%, rgba(196,133,74,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .about-avatar {
+      flex-shrink: 0;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      border: 3px solid rgba(196,133,74,0.4);
+      box-shadow: 0 0 0 6px rgba(196,133,74,0.1);
+    }
+    .about-hero-text { flex: 1; }
+    .about-hero-text .hero-eyebrow { text-align: left; }
+    .about-hero-text .hero-title { text-align: left; font-size: clamp(28px, 4vw, 44px); }
+    .about-hero-text .hero-sub { text-align: left; margin: 0; }
+
+    .about-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Info cards row */
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .about-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition);
+    }
+    .about-stat-card:hover { box-shadow: var(--shadow); }
+    .about-stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .about-stat-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Content sections */
+    .about-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .about-section-eyebrow {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .about-section-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .about-section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .about-section p:last-child { margin-bottom: 0; }
+
+    /* Skills list */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .skill-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .skill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .skill-item span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* Trust points */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .trust-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .trust-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .trust-icon {
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .trust-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* CTA block */
+    .about-cta {
+      background: var(--dark);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      text-align: center;
+    }
+    .about-cta h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .about-cta p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-cta:active { transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-hero-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .about-section { padding: 24px 20px; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .about-wrap { padding: 36px 16px 56px; gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .about-stats { grid-template-columns: 1fr; }
+      .about-cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">CGPA Calculator</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link">CGPA Calculator</a>
+        <a href="cgpa-information.html" class="nav-link">CGPA Information</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Calculator</a>
+      <a href="cgpa-information.html" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+      <a href="about.html" class="mobile-nav-link" onclick="closeMobileMenu()">About</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-avatar">MN</div>
+      <div class="about-hero-text">
+        <p class="hero-eyebrow">About the Developer</p>
+        <h1 class="hero-title">Mohammad Nasir</h1>
+        <p class="hero-sub">Web Developer &amp; SEO Expert · Bangladesh</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" style="max-width:860px; margin:0 auto; padding:18px 24px 0;">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>About</span>
+    </nav>
+
+    <div class="about-wrap">
+
+      <!-- Stats row -->
+      <div class="about-stats">
+        <div class="about-stat-card">
+          <div class="about-stat-num">15+</div>
+          <div class="about-stat-label">Years of Experience</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">🇧🇩</div>
+          <div class="about-stat-label">Based in Bangladesh</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-num">100%</div>
+          <div class="about-stat-label">Free Tools for Students</div>
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <div class="about-section">
+        <span class="about-section-eyebrow">Introduction</span>
+        <h2 class="about-section-title">About Me</h2>
+        <p>My name is Mohammad Nasir. I am a web developer and SEO expert based in Bangladesh. I have been working in this field for over 15 years.</p>
+        <p>I build simple and useful online tools that help students solve real problems. My focus is always on accuracy, speed, and ease of use. I believe a good tool should be easy to understand and should give correct results without confusion.</p>
+      </div>
+
+      <!-- My Work -->
+      <div class="about-section">
+        <span class="about-section-eyebrow">What I Do</span>
+        <h2 class="about-section-title">My Work</h2>
+        <p>I create educational tools like this CGPA calculator to help students track their academic performance. Every feature on this website is built and tested by me.</p>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <span>HTML, CSS, and JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <span>SEO and Google ranking systems</span>
+          </div>
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <span>Website speed and performance optimization</span>
+          </div>
+        </div>
+        <p style="margin-top:16px;">I also make sure that all tools are mobile-friendly and work smoothly on all devices.</p>
+      </div>
+
+      <!-- My Goal -->
+      <div class="about-section">
+        <span class="about-section-eyebrow">Mission</span>
+        <h2 class="about-section-title">My Goal</h2>
+        <p>My goal is simple: to provide free, reliable, and easy-to-use tools for students.</p>
+        <p>I want students to save time and get accurate results without doing complex calculations manually.</p>
+      </div>
+
+      <!-- Trust -->
+      <div class="about-section">
+        <span class="about-section-eyebrow">Transparency</span>
+        <h2 class="about-section-title">Why You Can Trust This Website</h2>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon">🔧</div>
+            <p>I personally build and test every part of this tool.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">📐</div>
+            <p>The calculation methods are based on standard academic formulas.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">⚡</div>
+            <p>The website is designed to be fast, secure, and easy to use.</p>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">💡</div>
+            <p>I clearly explain how the results are calculated — no hidden logic.</p>
+          </div>
+        </div>
+        <p style="margin-top:20px;">I do not use misleading information or hidden logic in my tools. Everything is transparent and straightforward.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="about-cta">
+        <h3>Ready to Calculate Your CGPA?</h3>
+        <p>Use the free CGPA calculator — instant results, no sign-up required.</p>
+        <a href="index.html" class="btn-cta">
+          ◈ Open CGPA Calculator
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">◈ CGPA Calculator</div>
+        <div class="footer-author">Mohammad Nasir</div>
+        <div class="footer-bio">Professional tools builder & SEO expert</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CGPA Calculator. Built with precision.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

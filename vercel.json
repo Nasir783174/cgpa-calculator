@@ -18,5 +18,16 @@
       "destination": "https://cgpacalculator.dev/$1",
       "statusCode": 308
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
   ]
 }

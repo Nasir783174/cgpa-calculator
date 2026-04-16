@@ -21,62 +21,13 @@
   <meta property="og:url" content="https://cgpacalculator.dev/" />
   <meta property="og:image" content="https://cgpacalculator.dev/cgpa-calculator.webp" />
   <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "CGPA Calculator",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "All",
-  "url": "https://cgpacalculator.dev/",
-  "description": "Free online CGPA calculator for students to calculate GPA, SGPA and CGPA instantly.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0"
-  }
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CGPA Calculator","applicationCategory":"EducationalApplication","operatingSystem":"All","url":"https://cgpacalculator.dev/","description":"Free online CGPA calculator for students to calculate GPA, SGPA and CGPA instantly.","offers":{"@type":"Offer","price":"0"}}
 </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How to calculate CGPA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "To calculate CGPA, multiply each course's grade point by its credit hours, sum all weighted grade points, and divide by the total credits attempted across all semesters."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good CGPA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A CGPA of 3.5 or above on a 4.0 scale is generally considered excellent. A CGPA between 3.0 and 3.49 is considered good, while below 2.5 may limit some academic and career opportunities."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is CGPA the same as GPA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, GPA usually refers to the grade point average for a single semester, while CGPA is the cumulative average across all semesters in an academic program."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How to convert CGPA to percentage?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A commonly used formula is Percentage = CGPA × 9.5. However, different universities may use different conversion methods, so it is best to check your institution's official guidelines."
-      }
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to calculate CGPA?","acceptedAnswer":{"@type":"Answer","text":"To calculate CGPA, multiply each course's grade point by its credit hours, sum all weighted grade points, and divide by the total credits attempted across all semesters."}},{"@type":"Question","name":"What is a good CGPA?","acceptedAnswer":{"@type":"Answer","text":"A CGPA of 3.5 or above on a 4.0 scale is generally considered excellent. A CGPA between 3.0 and 3.49 is considered good, while below 2.5 may limit some academic and career opportunities."}},{"@type":"Question","name":"Is CGPA the same as GPA?","acceptedAnswer":{"@type":"Answer","text":"No, GPA usually refers to the grade point average for a single semester, while CGPA is the cumulative average across all semesters in an academic program."}},{"@type":"Question","name":"How to convert CGPA to percentage?","acceptedAnswer":{"@type":"Answer","text":"A commonly used formula is Percentage = CGPA × 9.5. However, different universities may use different conversion methods, so it is best to check your institution's official guidelines."}}]}
 </script>
 </head>
 <body>
@@ -102,7 +53,7 @@
     </div>
   </header>
 
-  <!-- STICKY CGPA BAR -->
+  <!-- STICKY BAR -->
   <div class="sticky-bar" id="stickyBar">
     <div class="sticky-bar-inner">
       <div class="sticky-item">
@@ -127,97 +78,111 @@
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="main-content" id="calculator">
-<h1>CGPA Calculator</h1>
-    <!-- TOP GRID: SCALE + RESULT -->
-    <section class="top-grid">
-      <div class="top-card" id="scaleCard">
-        <div class="card-label">Grading Scale</div>
-        <h2 class="card-title">Select Scale</h2>
-        <div class="scale-options">
-          <label class="scale-option" id="scaleStandardLabel">
-            <input type="radio" name="scale" value="standard" checked id="scaleStandard" />
-            <div class="scale-option-content">
-              <span class="scale-name">Standard Scale</span>
-              <span class="scale-desc">A+ → 4.00, A → 3.75…</span>
-            </div>
-          </label>
-          <label class="scale-option" id="scaleNALabel">
-            <input type="radio" name="scale" value="na" id="scaleNA" />
-            <div class="scale-option-content">
-              <span class="scale-name">North American</span>
-              <span class="scale-desc">A → 4.00, A− → 3.70…</span>
-            </div>
-          </label>
+    <h1>CGPA Calculator</h1>
+
+    <!-- TWO-COLUMN LAYOUT -->
+    <div class="calc-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="calc-sidebar">
+
+        <!-- GRADING SCALE -->
+        <div class="card">
+          <div class="card-label">Grading Scale</div>
+          <h2 class="card-title">Select Scale</h2>
+          <div class="scale-options">
+            <label class="scale-option scale-active" id="scaleStandardLabel">
+              <input type="radio" name="scale" value="standard" checked id="scaleStandard" />
+              <div class="scale-option-content">
+                <span class="scale-name">Standard Scale</span>
+                <span class="scale-desc">A+ → 4.00, A → 3.75…</span>
+              </div>
+            </label>
+            <label class="scale-option" id="scaleNALabel">
+              <input type="radio" name="scale" value="na" id="scaleNA" />
+              <div class="scale-option-content">
+                <span class="scale-name">North American</span>
+                <span class="scale-desc">A → 4.00, A− → 3.70…</span>
+              </div>
+            </label>
+          </div>
+          <div class="scale-preview" id="scalePreview"></div>
         </div>
-        <div class="scale-preview" id="scalePreview"></div>
+
+        <!-- LIVE RESULT -->
+        <div class="card result-card">
+          <div class="card-label">Live Result</div>
+          <h2 class="card-title">Overall CGPA</h2>
+          <div class="cgpa-display">
+            <div class="cgpa-big" id="cgpaDisplay">0.00</div>
+            <div class="cgpa-bar-wrap">
+              <div class="cgpa-bar" id="cgpaBar"></div>
+            </div>
+            <div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box">
+              <span class="stat-label">Total Credits</span>
+              <span class="stat-val" id="totalCredits">0</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Semesters</span>
+              <span class="stat-val" id="totalSemesters">1</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- CALCULATOR MAIN PANEL -->
+      <div class="calc-main-panel">
+        <div class="calculator-section">
+          <div class="section-header">
+            <div>
+              <span class="section-eyebrow">Semester-wise</span>
+              <h2 class="section-title">CGPA Calculator</h2>
+            </div>
+          </div>
+          <div id="semestersContainer"></div>
+          <button class="btn-add-semester" id="addSemesterBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Semester
+          </button>
+        </div>
       </div>
 
-      <div class="top-card result-card" id="resultCard">
-        <div class="card-label">Live Result</div>
-        <h2 class="card-title">Overall CGPA</h2>
-        <div class="cgpa-display">
-          <div class="cgpa-big" id="cgpaDisplay">0.00</div>
-          <div class="cgpa-bar-wrap">
-            <div class="cgpa-bar" id="cgpaBar"></div>
-          </div>
-          <div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
-        </div>
-        <div class="total-credits-row">
-          <div class="stat-box">
-            <span class="stat-label">Total Credits</span>
-            <span class="stat-val" id="totalCredits">0</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-label">Semesters</span>
-            <span class="stat-val" id="totalSemesters">1</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CGPA CALCULATOR -->
-    <section class="calculator-section">
-      <div class="section-header">
-        <div>
-          <span class="section-eyebrow">Semester-wise</span>
-          <h2 class="section-title">CGPA Calculator</h2>
-        </div>
-      </div>
-      <div id="semestersContainer"></div>
-      <button class="btn-add-semester" id="addSemesterBtn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        Add Semester
-      </button>
-    </section>
+    </div>
 
     <!-- TARGET CGPA -->
-    <div class="top-card target-card-standalone" id="targetCard">
+    <div class="card target-card-standalone" id="targetCard">
       <div class="card-label">Goal Planning</div>
       <h2 class="card-title">Target CGPA</h2>
       <div class="target-form">
-        <div class="target-field">
-          <label>Current CGPA</label>
-          <input type="number" id="currentCGPA" min="0" max="4" step="0.01" placeholder="Auto-filled" />
-        </div>
-        <div class="target-field">
-          <label>Target CGPA</label>
-          <input type="number" id="targetCGPA" min="0" max="4" step="0.01" placeholder="e.g. 3.75" />
-        </div>
-        <div class="target-field">
-          <label>Remaining Credits</label>
-          <input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" />
+        <div class="target-grid">
+          <div class="target-field">
+            <label>Current CGPA</label>
+            <input type="number" id="currentCGPA" min="0" max="4" step="0.01" placeholder="Auto-filled" />
+          </div>
+          <div class="target-field">
+            <label>Target CGPA</label>
+            <input type="number" id="targetCGPA" min="0" max="4" step="0.01" placeholder="e.g. 3.75" />
+          </div>
+          <div class="target-field">
+            <label>Remaining Credits</label>
+            <input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" />
+          </div>
         </div>
         <div class="target-result" id="targetResult">
           <span class="target-label">Required GPA</span>
           <span class="target-val" id="requiredGPA">–</span>
         </div>
+        <button class="btn-pdf" id="downloadPDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF Report
+        </button>
       </div>
-      <button class="btn-pdf" id="downloadPDF">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download PDF Report
-      </button>
     </div>
 
     <!-- SGPA → CGPA -->
@@ -241,12 +206,12 @@
         <div id="sgpaRowsContainer"></div>
       </div>
       <button class="btn-add-row" id="addSGPARow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         Add Row
       </button>
     </section>
 
-    <!-- SEO SECTION 1: What is CGPA -->
+    <!-- SEO: What is CGPA -->
     <section class="seo-section" id="what-is-cgpa">
       <div class="section-header">
         <div>
@@ -260,7 +225,7 @@
       </div>
     </section>
 
-    <!-- SEO SECTION 2: CGPA Formula -->
+    <!-- SEO: Formula -->
     <section class="seo-section" id="cgpa-formula">
       <div class="section-header">
         <div>
@@ -274,7 +239,7 @@
           <div class="formula-inner">
             <strong class="formula-label">CGPA =</strong>
             <div class="formula-fraction">
-              <span class="formula-top">∑ (Total Grade Points in a Semester × Credits)</span>
+              <span class="formula-top">∑ (Grade Points × Credits) across all Semesters</span>
               <span class="formula-bottom">Total Credits Attempted across all Semesters</span>
             </div>
           </div>
@@ -283,7 +248,7 @@
       </div>
     </section>
 
-    <!-- SEO SECTION 3: CGPA Grading Chart -->
+    <!-- SEO: Grading Chart -->
     <section class="seo-section" id="cgpa-grading-chart">
       <div class="section-header">
         <div>
@@ -317,11 +282,11 @@
             </tbody>
           </table>
         </div>
-        <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">Note: Grading scales vary by institution. Always verify with your university's official grading policy.</p>
+        <p style="margin-top:12px;font-size:13px;color:var(--text-3);">Note: Grading scales vary by institution. Always verify with your university's official grading policy.</p>
       </div>
     </section>
 
-    <!-- SEO SECTION 4: How to Use This Calculator -->
+    <!-- SEO: How to Use -->
     <section class="seo-section" id="how-to-use">
       <div class="section-header">
         <div>
@@ -357,14 +322,14 @@
             <div class="step-num">4</div>
             <div class="step-body">
               <h3>View Your Live CGPA</h3>
-              <p>Your overall CGPA is automatically calculated and displayed at the top with a visual progress bar, letter grade, and total credits. The sticky bar at the top keeps your CGPA visible as you scroll.</p>
+              <p>Your overall CGPA is automatically calculated and displayed on the left panel with a visual progress bar, letter grade, and total credits. The sticky bar at the top keeps your CGPA visible as you scroll.</p>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">5</div>
             <div class="step-body">
               <h3>Plan Your Target CGPA</h3>
-              <p>Use the <strong>Target CGPA</strong> section to find out exactly what GPA you need in your remaining credits to hit your desired CGPA. The result updates automatically as you type.</p>
+              <p>Use the <strong>Target CGPA</strong> section to find out exactly what GPA you need in your remaining credits to hit your desired CGPA.</p>
             </div>
           </div>
           <div class="how-step">
@@ -378,7 +343,7 @@
       </div>
     </section>
 
-    <!-- SEO SECTION 5: CGPA vs GPA -->
+    <!-- SEO: CGPA vs GPA -->
     <section class="seo-section" id="cgpa-vs-gpa">
       <div class="section-header">
         <div>
@@ -388,7 +353,7 @@
       </div>
       <div class="seo-content-card">
         <p>Students often confuse CGPA and GPA — while they are closely related, they measure different things. Here's a clear breakdown of the key differences:</p>
-        <div class="table-wrap" style="margin-top:20px;">
+        <div class="table-wrap" style="margin-top:16px;">
           <table>
             <thead>
               <tr>
@@ -408,11 +373,11 @@
             </tbody>
           </table>
         </div>
-        <p style="margin-top:16px;">In simple terms: <strong>GPA tells you how you did this semester</strong>, while <strong>CGPA tells you how you've done throughout your entire degree</strong>. Both matter — a strong CGPA requires consistent performance across all semesters, not just a few good ones.</p>
+        <p style="margin-top:16px;"><strong>GPA tells you how you did this semester</strong>, while <strong>CGPA tells you how you've done throughout your entire degree</strong>. Both matter — a strong CGPA requires consistent performance across all semesters, not just a few good ones.</p>
       </div>
     </section>
 
-    <!-- SEO SECTION 6: Why Use Our Calculator -->
+    <!-- SEO: Why Use -->
     <section class="seo-section" id="why-use-us">
       <div class="section-header">
         <div>
@@ -454,7 +419,7 @@
       </div>
     </section>
 
-    <!-- SEO SECTION 7: FAQs -->
+    <!-- SEO: FAQ -->
     <section class="seo-section faq-section" id="faq">
       <div class="section-header">
         <div>
@@ -466,7 +431,7 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How to calculate CGPA?</span>
-            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
             <p>To calculate CGPA, multiply each course's grade point by its credit hours to get "weighted grade points." Sum all weighted grade points across every semester, then divide by the total number of credit hours attempted. Our calculator does this automatically — simply enter your courses, credits, and grades for each semester.</p>
@@ -475,28 +440,28 @@
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>What is a good CGPA?</span>
-            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Generally, a CGPA of 3.5 or above (on a 4.0 scale) is considered excellent and makes you a competitive candidate for graduate programs and top employers. A CGPA between 3.0–3.49 is good and respected by most institutions. Anything below 2.5 may limit your academic and professional opportunities, though context always matters — field of study, university difficulty, and work experience all play a role.</p>
+            <p>Generally, a CGPA of 3.5 or above (on a 4.0 scale) is considered excellent and makes you a competitive candidate for graduate programs and top employers. A CGPA between 3.0–3.49 is good and respected by most institutions. Anything below 2.5 may limit your academic and professional opportunities, though context always matters.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>Is CGPA the same as GPA?</span>
-            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Not exactly. GPA (or SGPA) refers to your grade point average for a single semester, while CGPA is the cumulative average across all semesters of your degree. In the US, "GPA" often already refers to the cumulative figure, but in many countries (especially South Asia), GPA and CGPA are explicitly differentiated. Our calculator computes both your per-semester SGPA and your overall CGPA simultaneously.</p>
+            <p>Not exactly. GPA (or SGPA) refers to your grade point average for a single semester, while CGPA is the cumulative average across all semesters of your degree. Our calculator computes both your per-semester SGPA and your overall CGPA simultaneously.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How to convert CGPA to percentage?</span>
-            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>CGPA to percentage conversion in universities is not based on a single universal formula, as each institution follows its own approved method or scale. Therefore, the percentage should be calculated using the official conversion formula or guideline provided by the respective university.</p>
+            <p>CGPA to percentage conversion is not universal — each institution follows its own method. The most common formula used in India (CBSE) is: Percentage = CGPA × 9.5. For US 4.0 scale: Percentage = (CGPA ÷ 4.0) × 100. Always verify with your institution's official guidelines.</p>
           </div>
         </div>
       </div>
@@ -507,44 +472,35 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-
-      <!-- Left: Logo + Author -->
       <div class="footer-left">
-        <div class="footer-logo">◈ CGPA Calculator</div>
+        <div class="footer-logo">
+          <span class="logo-icon" style="width:26px;height:26px;font-size:11px;">◈</span>
+          CGPA Calculator
+        </div>
         <div class="footer-author">Mohammad Nasir</div>
         <div class="footer-bio">Professional tools builder & SEO expert</div>
       </div>
-
-      <!-- Right: Links + Social -->
       <div class="footer-right">
         <div class="footer-links">
           <a href="about-me" class="footer-link">About</a>
           <a href="privacy-policy" class="footer-link">Privacy Policy</a>
         </div>
         <div class="footer-social">
-          <!-- Facebook -->
           <a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <!-- Instagram -->
           <a href="https://www.instagram.com/cgpacalculatorbynasir/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="4"/>
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
             </svg>
           </a>
-          <!-- Twitter / X -->
           <a href="https://x.com/cgpacalculator2" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
         </div>
       </div>
-
     </div>
     <div class="footer-bottom">
       <span>© 2026 CGPA Calculator. Built with precision.</span>

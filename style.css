@@ -6,52 +6,55 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Backgrounds */
-  --bg:           #F9FAFB;
-  --bg-2:         #EFF6FF;
+  /* Background System */
+  --bg:           #F6F7FB;
+  --bg-2:         #EEF2FF;
   --bg-card:      #FFFFFF;
   --surface:      #FFFFFF;
 
   /* Borders */
-  --border:       #E5E7EB;
-  --border-light: #F3F4F6;
+  --border:       #E2E8F0;
+  --border-light: #F1F5F9;
 
-  /* Typography */
-  --text-primary:   #111827;
-  --text-secondary: #374151;
-  --text-muted:     #6B7280;
+  /* Text */
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
 
-  /* Accent — Calm Blue */
-  --accent:       #2563EB;
-  --accent-light: #3B82F6;
-  --accent-dim:   rgba(37,99,235,0.10);
-  --accent-glow:  rgba(37,99,235,0.20);
+  /* Primary Accent (Indigo System) */
+  --accent:        #4F46E5;
+  --accent-light:  #6366F1;
+  --accent-dim:    rgba(79, 70, 229, 0.08);
+  --accent-glow:   rgba(79, 70, 229, 0.18);
 
-  /* Dark surfaces */
-  --dark:   #1E3A8A;
-  --dark-2: #1E40AF;
-  --dark-3: #2563EB;
+  /* Secondary Accent (Optional highlight) */
+  --accent-2:      #06B6D4;
 
-  /* Semantic */
+  /* Dark (for contrast elements only) */
+  --dark:   #0F172A;
+  --dark-2: #1E293B;
+  --dark-3: #334155;
+
+  /* Status Colors (Improved UX feedback) */
   --green: #16A34A;
   --red:   #DC2626;
 
-  /* Radius */
-  --radius-sm: 8px;
+  /* Radius (slightly refined for modern UI) */
+  --radius-sm: 10px;
   --radius:    12px;
   --radius-lg: 16px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(37,99,235,0.06);
-  --shadow:    0 4px 14px rgba(37,99,235,0.10);
-  --shadow-lg: 0 8px 28px rgba(37,99,235,0.14);
+  /* Shadows (more premium, less muddy) */
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.05);
+  --shadow:    0 8px 20px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
 
-  /* Fonts */
+  /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', -apple-system, sans-serif;
 
-  /* Transition */
-  --transition:   0.22s ease;
+  /* Motion */
+  --transition:   0.2s ease;
 }
 
 html { scroll-behavior: smooth; }

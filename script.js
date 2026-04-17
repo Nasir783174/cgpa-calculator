@@ -69,6 +69,7 @@ function getCGPAGrade(cgpa) {
 function renderScalePreview() {
   const scale = getScale();
   const preview = document.getElementById("scalePreview");
+  if (!preview) return;
   const items = scale.slice(0, 5).map(g =>
     `<span class="preview-item"><span class="pi-letter">${g.letter}</span><span class="pi-val">${g.value.toFixed(2)}</span></span>`
   ).join("");
@@ -140,10 +141,10 @@ function createSemester() {
     </div>
     <div class="courses-container" id="courses-${semId}"></div>
     <button class="btn-add-course" data-sem-id="${semId}">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
       </svg>
-      Add Course
+      + Add Course
     </button>
   `;
 
@@ -458,26 +459,12 @@ function closeMobileMenu() {
 // INIT
 // ============================================================
 function init() {
-  // Scale toggle (collapsible)
-  const scaleToggleBtn   = document.getElementById("scaleToggleBtn");
-  const scaleBody        = document.getElementById("scaleBody");
-  const scaleToggleArrow = document.getElementById("scaleToggleArrow");
-  const scaleToggleVal   = document.getElementById("scaleToggleVal");
-  if (scaleToggleBtn) {
-    scaleToggleBtn.addEventListener("click", function () {
-      const isOpen = scaleBody.classList.toggle("open");
-      scaleToggleArrow.classList.toggle("open", isOpen);
-      this.setAttribute("aria-expanded", isOpen);
-    });
-  }
-
-  // Scale radio
+  // Scale radio — always visible, no collapsible toggle needed
   document.querySelectorAll('input[name="scale"]').forEach(radio => {
     radio.addEventListener("change", function () {
       currentScale = this.value;
       document.getElementById("scaleStandardLabel").classList.toggle("scale-active", currentScale === "standard");
       document.getElementById("scaleNALabel").classList.toggle("scale-active", currentScale === "na");
-      if (scaleToggleVal) scaleToggleVal.textContent = currentScale === "standard" ? "Standard Scale" : "North American";
       updateAllDropdowns();
     });
   });
@@ -522,7 +509,7 @@ function init() {
     document.getElementById("mobileMenu").classList.toggle("open");
   });
 
-  // Sticky bar — show when calculator section enters view
+  // Sticky bar
   const stickyBar = document.getElementById("stickyBar");
   const observer  = new IntersectionObserver(
     ([entry]) => {
@@ -538,6 +525,7 @@ function init() {
   if (calcSection) observer.observe(calcSection);
 
   recalcAll();
+
   // FAQ accordion
   document.querySelectorAll(".faq-question").forEach(btn => {
     btn.addEventListener("click", function () {
@@ -558,13 +546,11 @@ document.addEventListener("DOMContentLoaded", init);
 
 // ============================================================
 // CGPA INFORMATION PAGE — Hamburger menu
-// (runs only if on cgpa-information page)
 // ============================================================
 (function () {
   const hamburger  = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
   if (!hamburger || !mobileMenu) return;
-  // skip if already handled by main init (index.html)
   if (document.getElementById("semestersContainer")) return;
 
   hamburger.addEventListener("click", function () {

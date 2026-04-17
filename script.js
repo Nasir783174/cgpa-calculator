@@ -458,12 +458,26 @@ function closeMobileMenu() {
 // INIT
 // ============================================================
 function init() {
-  // Scale
+  // Scale toggle (collapsible)
+  const scaleToggleBtn   = document.getElementById("scaleToggleBtn");
+  const scaleBody        = document.getElementById("scaleBody");
+  const scaleToggleArrow = document.getElementById("scaleToggleArrow");
+  const scaleToggleVal   = document.getElementById("scaleToggleVal");
+  if (scaleToggleBtn) {
+    scaleToggleBtn.addEventListener("click", function () {
+      const isOpen = scaleBody.classList.toggle("open");
+      scaleToggleArrow.classList.toggle("open", isOpen);
+      this.setAttribute("aria-expanded", isOpen);
+    });
+  }
+
+  // Scale radio
   document.querySelectorAll('input[name="scale"]').forEach(radio => {
     radio.addEventListener("change", function () {
       currentScale = this.value;
       document.getElementById("scaleStandardLabel").classList.toggle("scale-active", currentScale === "standard");
       document.getElementById("scaleNALabel").classList.toggle("scale-active", currentScale === "na");
+      if (scaleToggleVal) scaleToggleVal.textContent = currentScale === "standard" ? "Standard Scale" : "North American";
       updateAllDropdowns();
     });
   });

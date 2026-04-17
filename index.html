@@ -88,27 +88,36 @@
       <!-- SIDEBAR -->
       <aside class="calc-sidebar">
 
-        <!-- GRADING SCALE -->
-        <div class="card">
-          <div class="card-label">Grading Scale</div>
-          <h2 class="card-title">Select Scale</h2>
-          <div class="scale-options">
-            <label class="scale-option scale-active" id="scaleStandardLabel">
-              <input type="radio" name="scale" value="standard" checked id="scaleStandard" />
-              <div class="scale-option-content">
-                <span class="scale-name">Standard Scale</span>
-                <span class="scale-desc">A+ → 4.00, A → 3.75…</span>
+        <!-- GRADING SCALE — Collapsible -->
+        <div class="card scale-card">
+          <button class="scale-toggle-btn" id="scaleToggleBtn" aria-expanded="false">
+            <div class="scale-toggle-left">
+              <span class="scale-toggle-label">Grading Scale</span>
+              <span class="scale-toggle-val" id="scaleToggleVal">Standard Scale</span>
+            </div>
+            <svg class="scale-toggle-arrow" id="scaleToggleArrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="scale-body" id="scaleBody">
+            <div class="scale-body-inner">
+              <div class="scale-options">
+                <label class="scale-option scale-active" id="scaleStandardLabel">
+                  <input type="radio" name="scale" value="standard" checked id="scaleStandard" />
+                  <div class="scale-option-content">
+                    <span class="scale-name">Standard Scale</span>
+                    <span class="scale-desc">A+ → 4.00, A → 3.75…</span>
+                  </div>
+                </label>
+                <label class="scale-option" id="scaleNALabel">
+                  <input type="radio" name="scale" value="na" id="scaleNA" />
+                  <div class="scale-option-content">
+                    <span class="scale-name">North American</span>
+                    <span class="scale-desc">A → 4.00, A− → 3.70…</span>
+                  </div>
+                </label>
               </div>
-            </label>
-            <label class="scale-option" id="scaleNALabel">
-              <input type="radio" name="scale" value="na" id="scaleNA" />
-              <div class="scale-option-content">
-                <span class="scale-name">North American</span>
-                <span class="scale-desc">A → 4.00, A− → 3.70…</span>
-              </div>
-            </label>
+              <div class="scale-preview" id="scalePreview"></div>
+            </div>
           </div>
-          <div class="scale-preview" id="scalePreview"></div>
         </div>
 
         <!-- LIVE RESULT -->

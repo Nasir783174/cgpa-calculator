@@ -482,7 +482,7 @@ tbody tr:hover { background: #f8faff; }
 }
 
 /* Mobile: সব 1×1, course row stacked */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .main-content { padding: 16px 12px 52px; }
 
   .course-row {

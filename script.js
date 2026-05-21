@@ -1,6 +1,3 @@
-// ============================================================
-// GRADING SCALES
-// ============================================================
 const SCALES = {
   standard: [
     { label: "A+ (4.00)", value: 4.00, letter: "A+" },
@@ -27,8 +24,21 @@ const SCALES = {
     { label: "D+ (1.30)", value: 1.30, letter: "D+" },
     { label: "D  (1.00)", value: 1.00, letter: "D" },
     { label: "F  (0.00)", value: 0.00, letter: "F" },
+  ],
+  india10: [
+    { label: "O  (10)", value: 10, letter: "O" },
+    { label: "A+ (9)",  value: 9,  letter: "A+" },
+    { label: "A  (8)",  value: 8,  letter: "A" },
+    { label: "B+ (7)",  value: 7,  letter: "B+" },
+    { label: "B  (6)",  value: 6,  letter: "B" },
+    { label: "C  (5)",  value: 5,  letter: "C" },
+    { label: "D  (4)",  value: 4,  letter: "D" },
+    { label: "F  (0)",  value: 0,  letter: "F" },
   ]
 };
+
+// Scale max values (for bar %)
+const SCALE_MAX = { standard: 4, na: 4, india10: 10 };
 
 // ============================================================
 // STATE
@@ -55,11 +65,13 @@ function buildDropdown(selectedValue = null) {
 }
 
 function getCGPAGrade(cgpa) {
-  if (cgpa >= 3.75) return "Excellent";
-  if (cgpa >= 3.50) return "Very Good";
-  if (cgpa >= 3.00) return "Good";
-  if (cgpa >= 2.50) return "Average";
-  if (cgpa >= 2.00) return "Below Average";
+  const max = SCALE_MAX[currentScale] || 4;
+  const pct = cgpa / max;
+  if (pct >= 0.90) return "Excellent";
+  if (pct >= 0.80) return "Very Good";
+  if (pct >= 0.70) return "Good";
+  if (pct >= 0.60) return "Average";
+  if (pct >= 0.50) return "Below Average";
   return "Poor";
 }
 
@@ -237,7 +249,7 @@ function recalcAll() {
   document.getElementById("totalCredits").textContent    = totalCredits.toFixed(1);
   document.getElementById("totalSemesters").textContent  = semBoxes.length;
   document.getElementById("cgpaGradeLabel").textContent  = cgpa > 0 ? getCGPAGrade(cgpa) : "–";
-  document.getElementById("cgpaBar").style.width         = ((cgpa / 4) * 100) + "%";
+  document.getElementById("cgpaBar").style.width         = ((cgpa / (SCALE_MAX[currentScale] || 4)) * 100) + "%";
 
   document.getElementById("stickyCGPA").textContent      = cgpa.toFixed(2);
   document.getElementById("stickyCredits").textContent   = totalCredits.toFixed(1);
@@ -262,7 +274,7 @@ function calcTarget() {
 
   const required = ((target * (totalCredits + remaining)) - (current * totalCredits)) / remaining;
 
-  if (required > 4.00) {
+  if (required > (SCALE_MAX[currentScale] || 4)) {
     el.textContent = "Not Possible";
     container.classList.add("target-impossible");
   } else if (required < 0) {
@@ -315,117 +327,7 @@ function updateAllDropdowns() {
 // ============================================================
 // PDF DOWNLOAD
 // ============================================================
-function generatePDF() {
-  const cgpa       = document.getElementById("cgpaDisplay").textContent;
-  const totalCred  = document.getElementById("totalCredits").textContent;
-  const totalSem   = document.getElementById("totalSemesters").textContent;
-  const gradeLabel = getCGPAGrade(parseFloat(cgpa));
-  const scaleLabel = currentScale === "standard" ? "Standard Scale" : "North American Scale";
-  const dateStr    = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-  const targetCGPA    = document.getElementById("targetCGPA").value;
-  const remainingCred = document.getElementById("remainingCredits").value;
-  const requiredGPA   = document.getElementById("requiredGPA").textContent;
 
-  let semestersHTML = "";
-  document.querySelectorAll(".semester-box").forEach(box => {
-    const semId   = parseInt(box.dataset.semId);
-    const semName = box.querySelector(".semester-name-input").value.trim() || `Semester ${semId}`;
-    const sgpa    = document.getElementById(`sgpa-sem-${semId}`)?.textContent || "0.00";
-    let courseRows = "", semCredits = 0;
-
-    box.querySelectorAll(".course-row").forEach((row, i) => {
-      const name    = row.querySelector(".course-name").value.trim() || "Unnamed Course";
-      const credit  = row.querySelector(".course-credit").value || "–";
-      const gradeEl = row.querySelector(".course-grade");
-      const gradeTxt = gradeEl.selectedIndex > 0 ? gradeEl.options[gradeEl.selectedIndex].text : "–";
-      const gp      = parseFloat(gradeEl.value) || 0;
-      if (parseFloat(credit)) semCredits += parseFloat(credit);
-      const bg = i % 2 === 0 ? "#fff8f4" : "#ffffff";
-      courseRows += `<tr style="background:${bg}">
-        <td style="padding:8px 12px;border-bottom:1px solid #f0e0d0;">${name}</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0e0d0;text-align:center;">${credit}</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0e0d0;text-align:center;">${gradeTxt}</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f0e0d0;text-align:center;font-weight:700;color:#e87722;">${gp > 0 ? gp.toFixed(2) : "–"}</td>
-      </tr>`;
-    });
-
-    semestersHTML += `
-      <div style="margin-bottom:28px;break-inside:avoid;">
-        <div style="background:#e87722;border-radius:6px 6px 0 0;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;">
-          <span style="color:#fff;font-weight:700;font-size:14px;">${semName}</span>
-          <span style="color:#fff;font-weight:700;font-size:15px;">SGPA: ${sgpa}</span>
-        </div>
-        <table style="width:100%;border-collapse:collapse;border:1px solid #f0e0d0;border-top:none;">
-          <thead><tr style="background:#fff4ed;">
-            <th style="padding:8px 12px;text-align:left;font-size:11px;letter-spacing:.08em;color:#e87722;font-weight:700;text-transform:uppercase;border-bottom:1px solid #f5c99e;">Course</th>
-            <th style="padding:8px 12px;text-align:center;font-size:11px;letter-spacing:.08em;color:#e87722;font-weight:700;text-transform:uppercase;border-bottom:1px solid #f5c99e;">Credits</th>
-            <th style="padding:8px 12px;text-align:center;font-size:11px;letter-spacing:.08em;color:#e87722;font-weight:700;text-transform:uppercase;border-bottom:1px solid #f5c99e;">Grade</th>
-            <th style="padding:8px 12px;text-align:center;font-size:11px;letter-spacing:.08em;color:#e87722;font-weight:700;text-transform:uppercase;border-bottom:1px solid #f5c99e;">GP</th>
-          </tr></thead>
-          <tbody>${courseRows}</tbody>
-        </table>
-        <div style="text-align:right;font-size:12px;color:#999;margin-top:6px;">Credits: ${semCredits.toFixed(1)}</div>
-      </div>`;
-  });
-
-  let targetHTML = "";
-  if (targetCGPA && remainingCred) {
-    const color = requiredGPA === "Not Possible" ? "#c62828" : requiredGPA === "Already Achieved!" ? "#e87722" : "#2e7d32";
-    targetHTML = `
-      <div style="background:#fff4ed;border:1px solid #f5c99e;border-radius:8px;padding:18px 20px;margin-bottom:28px;break-inside:avoid;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e87722;margin-bottom:10px;">Target CGPA Plan</div>
-        <div style="display:flex;gap:32px;flex-wrap:wrap;">
-          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Current CGPA</div><div style="font-size:18px;font-weight:700;">${cgpa}</div></div>
-          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Target CGPA</div><div style="font-size:18px;font-weight:700;">${targetCGPA}</div></div>
-          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Remaining Credits</div><div style="font-size:18px;font-weight:700;">${remainingCred}</div></div>
-          <div><div style="font-size:11px;color:#999;margin-bottom:2px;">Required GPA</div><div style="font-size:22px;font-weight:700;color:${color};">${requiredGPA}</div></div>
-        </div>
-      </div>`;
-  }
-
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/>
-  <title>CGPA Report</title>
-  <style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:Georgia,serif;background:#fff;color:#222;}
-  @media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}@page{margin:18mm 16mm;size:A4;}}</style>
-  </head><body>
-  <div style="background:#e87722;padding:28px 32px 24px;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-      <div><div style="font-size:22px;font-weight:700;color:#fff;">◈ CGPA Calculator</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;">Academic CGPA Report</div></div>
-      <div style="text-align:right;"><div style="font-size:12px;color:rgba(255,255,255,.6);">Generated: ${dateStr}</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;">Scale: ${scaleLabel}</div></div>
-    </div>
-  </div>
-  <div style="background:#fff4ed;padding:20px 32px;display:flex;gap:40px;align-items:center;margin-bottom:32px;border-bottom:2px solid #f5c99e;">
-    <div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Overall CGPA</div>
-    <div style="font-size:42px;font-weight:700;color:#e87722;line-height:1.1;">${cgpa}</div>
-    <div style="font-size:13px;color:#e87722;font-weight:700;margin-top:2px;">${gradeLabel}</div></div>
-    <div style="width:1px;height:60px;background:#f5c99e;"></div>
-    <div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Total Credits</div>
-    <div style="font-size:28px;font-weight:700;color:#222;">${totalCred}</div></div>
-    <div style="width:1px;height:60px;background:#f5c99e;"></div>
-    <div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Semesters</div>
-    <div style="font-size:28px;font-weight:700;color:#222;">${totalSem}</div></div>
-  </div>
-  <div style="padding:0 32px 32px;">
-    ${targetHTML}${semestersHTML}
-    <div style="margin-top:40px;padding-top:16px;border-top:1px solid #f0e0d0;display:flex;justify-content:space-between;font-size:11px;color:#999;">
-      <span>Generated by CGPA Calculator – cgpacalculator.dev</span><span>${dateStr}</span>
-    </div>
-  </div>
-  </body></html>`;
-
-  const blob = new Blob([html], { type: "text/html;charset=utf-8" });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement("a");
-  a.href = url;
-  a.download = `CGPA-Report-${new Date().toISOString().slice(0, 10)}.html`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast("Report downloaded successfully!");
-}
 
 // ============================================================
 // TOAST
@@ -447,10 +349,6 @@ function showToast(msg) {
 // ============================================================
 // MOBILE MENU
 // ============================================================
-function closeMobileMenu() {
-  document.getElementById("mobileMenu").classList.remove("open");
-  document.getElementById("hamburger").classList.remove("active");
-}
 
 // ============================================================
 // INIT
@@ -473,11 +371,12 @@ function init() {
   document.querySelectorAll('input[name="scale"]').forEach(radio => {
     radio.addEventListener("change", function () {
       currentScale = this.value;
-      if (scaleToggleVal) {
-        scaleToggleVal.textContent = currentScale === "standard" ? "Standard Scale" : "North American";
-      }
+      const labels = { standard: "Standard Scale", na: "North American", india10: "India 10-Point" };
+      if (scaleToggleVal) scaleToggleVal.textContent = labels[currentScale] || "Standard Scale";
       document.getElementById("scaleStandardLabel").classList.toggle("scale-active", currentScale === "standard");
       document.getElementById("scaleNALabel").classList.toggle("scale-active", currentScale === "na");
+      const india10Label = document.getElementById("scaleIndia10Label");
+      if (india10Label) india10Label.classList.toggle("scale-active", currentScale === "india10");
       updateAllDropdowns();
     });
   });

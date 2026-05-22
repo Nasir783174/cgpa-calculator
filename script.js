@@ -527,6 +527,11 @@ function init() {
         if (el) el.classList.toggle("scale-active", key === currentScale);
       });
       updateAllDropdowns();
+      // Auto-close the scale dropdown after selection
+      if (scaleBody) {
+        scaleBody.classList.remove("open");
+        if (scaleToggleArrow) scaleToggleArrow.style.transform = "";
+      }
     });
   });
 

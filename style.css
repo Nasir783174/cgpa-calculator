@@ -100,7 +100,7 @@ input, select, textarea { font-family: inherit; }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .mobile-menu { display: none; flex-direction: column; background: #fff; border-bottom: 1px solid var(--border); max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
-.mobile-menu.open { max-height: 180px; }
+.mobile-menu.open { max-height: 300px; }
 .mobile-nav-link { display: block; padding: 14px 24px; font-size: 15px; font-weight: 700; color: var(--text-2); border-bottom: 1px solid var(--border-2); transition: color var(--transition), background var(--transition); }
 .mobile-nav-link:hover { color: var(--accent); background: var(--accent-dim); }
 

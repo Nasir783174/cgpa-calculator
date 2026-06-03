@@ -27,8 +27,19 @@
   <link rel="preload" href="style.css" as="style" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-31G4QMCRXB',{send_page_view:false});window.addEventListener('load',function(){gtag('event','page_view');});</script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    window.addEventListener('load',function(){
+      var s=document.createElement('script');
+      s.src='https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB';
+      s.async=true;
+      document.head.appendChild(s);
+      gtag('config','G-31G4QMCRXB',{send_page_view:false});
+      gtag('event','page_view');
+    });
+  </script>
   <script defer>window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlnn53n6p8");});</script>
   <meta name="google-site-verification" content="euvaC8yQmQ0gEXwuGFXI_nS4S3VFbsI_gxWL7Fpsbpg" />
   <meta name="msvalidate.01" content="71C0921EC3367979D0DF5595EA15F657" />

@@ -21,15 +21,30 @@ function closeMobileMenu() {
         });
       });
     }
-    // Nav dropdown hover
+
+    // Nav dropdown hover — with delay so mouse can travel into menu
     const navDropTrigger = document.getElementById("navDropTrigger");
     const navDropMenu    = document.getElementById("navDropMenu");
     if (navDropTrigger && navDropMenu) {
-      navDropTrigger.addEventListener("mouseenter", () => navDropMenu.classList.add("open"));
-      navDropTrigger.addEventListener("mouseleave", () => navDropMenu.classList.remove("open"));
-      navDropMenu.addEventListener("mouseenter",   () => navDropMenu.classList.add("open"));
-      navDropMenu.addEventListener("mouseleave",   () => navDropMenu.classList.remove("open"));
+      let closeTimer = null;
+
+      function openMenu() {
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+        navDropMenu.classList.add("open");
+      }
+
+      function scheduleClose() {
+        closeTimer = setTimeout(function() {
+          navDropMenu.classList.remove("open");
+        }, 120);
+      }
+
+      navDropTrigger.addEventListener("mouseenter", openMenu);
+      navDropTrigger.addEventListener("mouseleave", scheduleClose);
+      navDropMenu.addEventListener("mouseenter",   openMenu);
+      navDropMenu.addEventListener("mouseleave",   scheduleClose);
     }
+
     // FAQ accordion (blog/info pages)
     document.querySelectorAll(".faq-question").forEach((question) => {
       question.addEventListener("click", function () {

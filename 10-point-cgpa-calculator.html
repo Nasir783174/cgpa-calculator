@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10-Point CGPA Calculator – IIT, NIT, VTU & Indian Universities</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/10-point-cgpa-calculator" />
+  <meta name="description" content="Free 10-point CGPA calculator for IIT, NIT, VTU, Anna University and Indian universities. O=10, A+=9, A=8. Multi-semester, instant results, PDF export." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="10-Point CGPA Calculator – IIT, NIT, VTU & Indian Universities" />
+  <meta property="og:description" content="Free 10-point CGPA calculator for IIT, NIT, VTU, Anna University and Indian universities. O=10, A+=9, A=8. Multi-semester, instant results, PDF export." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgpacalculator.dev/10-point-cgpa-calculator" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator-core.js"></script>
+  <script defer src="scale-ten.js"></script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "10-Point CGPA Calculator",
+          "item": "https://cgpacalculator.dev/10-point-cgpa-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "10-Point CGPA Calculator",
+      "url": "https://cgpacalculator.dev/10-point-cgpa-calculator",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free 10-point CGPA calculator for IIT, NIT, VTU, Anna University and Indian universities. O=10, A+=9, A=8. Multi-semester, instant results, PDF export.",
+      "usedBy": [
+        "IIT Bombay",
+        "IIT Delhi",
+        "IIT Madras",
+        "NIT Trichy",
+        "VTU",
+        "Anna University",
+        "BITS Pilani"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to convert 10-point CGPA to percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most widely used formula, recommended by UGC, is: Percentage = CGPA x 9.5. For example, a CGPA of 8.2 gives 8.2 x 9.5 = 77.9%. Some universities like VTU use slightly different multipliers, so always check your institution's official conversion method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 8.5 CGPA good on a 10-point scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 8.5 CGPA is considered excellent on the 10-point scale. It corresponds to approximately 80.75% using the UGC formula, and qualifies you for the A+ grade band. It is competitive for GATE, top PSU jobs, and foreign university applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do IITs use the 10-point CGPA scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all IITs use the 10-point grading scale. The specific grade-point mappings may vary slightly between institutions, but the scale runs from 0 to 10 with O (Outstanding) being the highest grade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to convert 10-point CGPA to 4-point GPA for US applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A commonly used approximation is: GPA (4.0) = CGPA x (4.0 / 10.0). So an 8.5 CGPA equals approximately 3.4 GPA. Many US universities also use the WES evaluation which may apply different conversion standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the minimum CGPA required for placements at IITs and NITs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most top companies recruiting at IITs and NITs set a minimum CGPA cutoff of 7.0 on the 10-point scale. Some top-tier firms like Goldman Sachs, Google, and McKinsey may set higher bars around 8.0 or above."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+<a href="https://cgpacalculator.dev/" class="logo"><span class="logo-icon">◈</span><span class="logo-text">CGPA Calculator</span></a>
+<nav class="nav-desktop">
+<div class="nav-dropdown" id="navDropTrigger">
+<div class="nav-dropdown-trigger active-parent">CGPA Calculator <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="nav-drop-menu" id="navDropMenu"><a href="https://cgpacalculator.dev/" class="nav-drop-item"><span class="nav-drop-name">Standard 4.0 Calculator</span><span class="nav-drop-desc">Standard grading: A+ → 4.00</span></a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">North American GPA Calculator</span><span class="nav-drop-desc">US & Canada: A → 4.00, A− → 3.70</span></a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">10-Point CGPA Calculator</span><span class="nav-drop-desc">IIT, NIT, VTU scale: O → 10.00</span></a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Nigerian CGPA Calculator</span><span class="nav-drop-desc">Nigerian 5.0 scale: A → 5.00</span></a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Australian GPA Calculator</span><span class="nav-drop-desc">Australian 7.0: HD → 7.00</span></a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Canadian GPA Calculator</span><span class="nav-drop-desc">Canadian 4.33: A+ → 4.33</span></a></div>
+</div>
+<a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="nav-link ">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="nav-link ">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="nav-link ">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="nav-link ">CGPA Information</a>
+</nav>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="https://cgpacalculator.dev/" class="mobile-nav-link" onclick="closeMobileMenu()">Standard 4.0 Calculator</a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">North American GPA Calculator</a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">10-Point CGPA Calculator</a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Nigerian CGPA Calculator</a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Australian GPA Calculator</a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Canadian GPA Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+</div>
+</header>
+
+<div class="sticky-bar" id="stickyBar">
+<div class="sticky-bar-inner">
+<div class="sticky-item"><span class="sticky-label">CGPA</span><span class="sticky-val" id="stickyCGPA">0.00</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Credits</span><span class="sticky-val" id="stickyCredits">0</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Grade</span><span class="sticky-val sticky-grade" id="stickyGrade">–</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Semesters</span><span class="sticky-val" id="stickySemesters">1</span></div>
+</div>
+</div>
+
+<main class="main-content" id="calculator">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://cgpacalculator.dev/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>10-Point CGPA Calculator</span>
+  </nav>
+
+  <h1>10-Point CGPA Calculator</h1>
+
+  <div class="calc-layout">
+    <aside class="calc-sidebar">
+<div class="card result-card">
+<div class="card-label">Live Result</div>
+<h2 class="card-title">Overall CGPA</h2>
+<div class="scale-badge">📊 10-Point Scale</div>
+<div class="cgpa-display">
+<div class="cgpa-big" id="cgpaDisplay">0.00</div>
+<div class="cgpa-bar-wrap"><div class="cgpa-bar" id="cgpaBar"></div></div>
+<div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
+</div>
+<div class="stat-row">
+<div class="stat-box"><span class="stat-label">Total Credits</span><span class="stat-val" id="totalCredits">0</span></div>
+<div class="stat-box"><span class="stat-label">Semesters</span><span class="stat-val" id="totalSemesters">1</span></div>
+</div>
+</div>
+<div class="card" style="margin-top:14px;padding:16px 18px;">
+<div class="card-label">Grade Scale</div>
+<div style="font-size:12px;color:var(--text-2);line-height:1.8;margin-top:6px;">O → 10.00 | A+ → 9.00 | A → 8.00 | B+ → 7.00 | B → 6.00 | C → 5.00 | P → 4.00 | F → 0.00</div>
+<a href="https://cgpacalculator.dev/" style="font-size:12px;color:var(--text-3);display:inline-block;margin-top:10px;">← All grading scales</a>
+</div>
+</aside>
+    <div class="calc-main-panel">
+<div class="calculator-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Semester-wise</span><h2 class="section-title">CGPA Calculator</h2></div>
+</div>
+<div id="semestersContainer"></div>
+<button class="btn-add-semester" id="addSemesterBtn">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Semester
+</button>
+</div>
+</div>
+  </div>
+
+  <div class="card target-card-standalone" id="targetCard">
+<div class="card-label">Goal Planning</div>
+<h2 class="card-title">Target CGPA</h2>
+<div class="target-form">
+<div class="target-grid">
+<div class="target-field"><label for="currentCGPA">Current CGPA</label><input type="number" id="currentCGPA" min="0" max="10" step="0.01" placeholder="Auto-filled" /></div>
+<div class="target-field"><label for="targetCGPA">Target CGPA</label><input type="number" id="targetCGPA" min="0" max="10" step="0.01" placeholder="e.g. 8.5" /></div>
+<div class="target-field"><label for="remainingCredits">Remaining Credits</label><input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" /></div>
+</div>
+<div class="target-result" id="targetResult"><span class="target-label">Required GPA</span><span class="target-val" id="requiredGPA">–</span></div>
+<button class="btn-pdf" id="downloadPDF">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download PDF Report
+</button>
+</div>
+</div>
+
+  <section class="sgpa-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Quick Conversion</span><h2 class="section-title">SGPA → CGPA</h2></div>
+<div class="sgpa-cgpa-result"><span class="sgpa-label">CGPA</span><span class="sgpa-val" id="sgpaCGPA">0.00</span></div>
+</div>
+<div class="sgpa-table-wrap">
+<div class="sgpa-table-header"><span>Semester</span><span>SGPA</span><span></span></div>
+<div id="sgpaRowsContainer"></div>
+</div>
+<button class="btn-add-row" id="addSGPARow">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Row
+</button>
+</section>
+
+  <!-- Universities Section -->
+  <section class="seo-section" id="universities">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Indian Universities</span>
+      <h2 class="section-title">Universities Using This Scale</h2>
+    </div></div>
+    <p style="font-size:15px;color:var(--text-2);margin-bottom:16px;line-height:1.7;">The following universities use the <strong>10-Point Scale</strong> for calculating cumulative grade point averages.</p>
+    <div class="uni-list"><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Bombay</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Delhi</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Madras</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Kharagpur</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Kanpur</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">IIT Roorkee</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">NIT Trichy</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">VTU (Visvesvaraya)</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">Anna University</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">JNTU Hyderabad</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">Osmania University</div><div class="uni-country">India</div></div></div><div class="uni-item"><span class="uni-flag">🇮🇳</span><div><div class="uni-name">BITS Pilani</div><div class="uni-country">India</div></div></div></div>
+  </section>
+
+  <!-- What is section -->
+  <section class="seo-section" id="what-is">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Scale Overview</span>
+      <h2 class="section-title">What is the 10-Point CGPA Scale?</h2>
+    </div></div>
+    <div class="seo-content-card"><p>The 10-point CGPA scale is the grading system mandated by India's University Grants Commission (UGC) and adopted by premier institutions including the IITs, NITs, BITS Pilani, VTU, and Anna University. Grades range from O (Outstanding, 10.00) at the top to F (Fail, 0.00). The UGC recommends converting this CGPA to a percentage using the formula: Percentage = CGPA × 9.5. So a CGPA of 8.5 would equal approximately 80.75%.</p></div>
+  </section>
+
+  <!-- Good GPA section -->
+  <section class="seo-section" id="good-gpa">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Benchmarks</span>
+      <h2 class="section-title">What is a Good CGPA on the 10-Point Scale?</h2>
+    </div></div>
+    <div class="seo-content-card"><p>On the 10-point scale, a CGPA of 9.0 or above is considered outstanding and qualifies you for the 'O' (Outstanding) grade band. A CGPA of 8.0–8.99 (A grade) is excellent and is competitive for top PSU recruitments, GATE admissions, and foreign university applications. A CGPA of 7.0–7.99 (B+ grade) is considered good and meets the minimum bar for most on-campus placements. Below 6.0, you may face restrictions for certain campus recruitment drives.</p></div>
+  </section>
+
+  <!-- Why Use Us -->
+  <section class="seo-section" id="why-use-us">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Features</span>
+      <h2 class="section-title">Why Use This Calculator?</h2>
+    </div></div>
+    <div class="why-use-grid">
+<div class="why-card"><div class="why-icon">⚡</div><h3>Real-Time Calculation</h3><p>Every grade and credit you enter instantly updates your GPA and progress bar — no "Calculate" button needed.</p></div>
+<div class="why-card"><div class="why-icon">🎯</div><h3>Target GPA Planner</h3><p>Set a target GPA and see exactly what grades you need in remaining credits to hit your goal.</p></div>
+<div class="why-card"><div class="why-icon">📊</div><h3>Multi-Semester Support</h3><p>Add unlimited semesters and courses. Each semester shows its own SGPA, and the overall CGPA reflects your complete academic record.</p></div>
+<div class="why-card"><div class="why-icon">📥</div><h3>PDF Report Export</h3><p>Download a professional academic report with all semesters, courses, and GPA breakdown — ideal for applications.</p></div>
+<div class="why-card"><div class="why-icon">🏫</div><h3>Built for Indian Universities</h3><p>Pre-configured for the exact grading scale used by IIT Bombay, IIT Delhi, and similar institutions.</p></div>
+<div class="why-card"><div class="why-icon">📱</div><h3>Mobile Friendly</h3><p>Fully responsive and optimised for all screen sizes. Use it on your phone, tablet, or desktop — no app needed.</p></div>
+</div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="seo-section faq-section" id="faq">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div></div>
+    <div class="faq-list"><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>How to convert 10-point CGPA to percentage?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>The most widely used formula, recommended by UGC, is: Percentage = CGPA × 9.5. For example, a CGPA of 8.2 gives 8.2 × 9.5 = 77.9%. Some universities like VTU use slightly different multipliers, so always check your institution's official conversion method.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Is 8.5 CGPA good on a 10-point scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Yes, 8.5 CGPA is considered excellent on the 10-point scale. It corresponds to approximately 80.75% using the UGC formula, and qualifies you for the A+ grade band. It is competitive for GATE, top PSU jobs, and foreign university applications.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Do IITs use the 10-point CGPA scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Yes, all IITs (Indian Institutes of Technology) use the 10-point grading scale. The specific grade-point mappings may vary slightly between institutions, but the scale runs from 0 to 10 with O (Outstanding) being the highest grade.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>How to convert 10-point CGPA to 4-point GPA for US applications?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>A commonly used approximation is: GPA (4.0) = CGPA × (4.0 / 10.0). So an 8.5 CGPA ≈ 3.4 GPA. Many US universities also use the WES (World Education Services) evaluation which may apply different conversion standards.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>What is the minimum CGPA required for placements at IITs and NITs?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Most top companies recruiting at IITs and NITs set a minimum CGPA cutoff of 7.0 on the 10-point scale. Some top-tier firms like Goldman Sachs, Google, and McKinsey may set higher bars around 8.0 or above.</p></div>
+</div></div>
+  </section>
+
+  <section class="seo-section" id="related-tools" style="margin-top:48px;">
+<div class="section-header"><div><span class="section-eyebrow">More Tools</span><h2 class="section-title">Related Calculators</h2></div></div>
+<div class="why-use-grid">
+<a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">%</div><h3>CGPA to Percentage</h3><p>Convert your CGPA to percentage using CBSE, AICTE, or VTU formulas.</p></a>
+<a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">↔</div><h3>GPA ↔ CGPA Converter</h3><p>Convert between 4.0 GPA and 10.0 CGPA scales instantly.</p></a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">📝</div><h3>Grade Calculator</h3><p>Enter marks per subject to calculate your semester GPA and percentage.</p></a>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-left">
+<div class="footer-logo">◈ CGPA Calculator</div>
+<div class="footer-author">Mohammad Nasir</div>
+<div class="footer-bio">Professional tools builder &amp; SEO expert</div>
+</div>
+<div class="footer-right">
+<div class="footer-links">
+<a href="https://cgpacalculator.dev/cgpa-information" class="footer-link">CGPA Info</a>
+<a href="https://cgpacalculator.dev/about-me" class="footer-link">About</a>
+<a href="https://cgpacalculator.dev/privacy-policy" class="footer-link">Privacy</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">© 2025 cgpacalculator.dev · Free academic tools for students worldwide</div>
+</footer>
+
+</body>
+</html>

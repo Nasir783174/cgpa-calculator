@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGPA Formula Explained: Calculation & Worked Examples</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/cgpa-formula" />
+  <meta name="description" content="CGPA = Σ(Grade Point × Credits) ÷ Σ Credits. Learn why weighted average matters, what quality points are, and what happens when you fail or withdraw a subject." />
+  <meta name="google-site-verification" content="euvaC8yQmQ0gEXwuGFXI_nS4S3VFbsI_gxWL7Fpsbpg" />
+  <meta name="msvalidate.01" content="71C0921EC3367979D0DF5595EA15F657" />
+  <script defer>
+    window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","wlnn53n6p8");});
+  </script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31G4QMCRXB');
+  </script>
+  <meta property="og:title" content="CGPA Formula Explained: Calculation & Worked Examples" />
+  <meta property="og:description" content="CGPA = Σ(Grade Point × Credits) ÷ Σ Credits. Learn why weighted average matters, what quality points are, and what happens when you fail or withdraw a subject." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cgpacalculator.dev/cgpa-formula" />
+  <meta property="og:image" content="https://cgpacalculator.dev/cgpa-formula-quality-points-calculation-breakdown.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CGPA Formula Explained: Calculation & Worked Examples" />
+  <meta name="twitter:description" content="CGPA = Σ(Grade Point × Credits) ÷ Σ Credits. Learn why weighted average matters, what quality points are, and what happens when you fail or withdraw a subject." />
+  <meta name="twitter:image" content="https://cgpacalculator.dev/cgpa-formula-quality-points-calculation-breakdown.webp" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+<link rel="preload" href="style.css" as="style" />
+<link rel="stylesheet" href="style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgpacalculator.dev/"},
+        {"@type": "ListItem", "position": 2, "name": "CGPA Information", "item": "https://cgpacalculator.dev/cgpa-information"},
+        {"@type": "ListItem", "position": 3, "name": "CGPA Formula", "item": "https://cgpacalculator.dev/cgpa-formula"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cgpacalculator.dev/cgpa-formula"},
+      "headline": "The CGPA Formula Explained: Σ(Grade Point × Credits) ÷ Total Credits",
+      "description": "Learn the CGPA formula step by step. Understand weighted averages, quality points, credit hours, and what happens when you fail or withdraw a subject.",
+      "image": "https://cgpacalculator.dev/cgpa-formula-quality-points-calculation-breakdown.webp",
+      "author": {"@type": "Person", "name": "Mohammad Nasir"},
+      "publisher": {
+        "@type": "Organization",
+        "name": "CGPA Calculator",
+        "logo": {"@type": "ImageObject", "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"}
+      },
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-05-26",
+      "articleSection": "CGPA Formula Guide",
+      "keywords": ["CGPA formula", "how CGPA is calculated", "weighted average CGPA", "quality points formula", "credit hours calculation", "CGPA examples"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the formula for CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The CGPA formula is: Sum of (Grade Point × Credit Hours) ÷ Total Credit Hours. It is a weighted average system used to calculate overall academic performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is CGPA calculated using credits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credits reflect the importance and workload of a subject. Higher credit subjects have more impact on CGPA than lower credit subjects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are quality points in CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quality points are calculated by multiplying the grade point by the credit hours of a subject. These are summed to compute CGPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if you fail a subject in CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you fail a subject, the grade point is zero but the credit hours are still counted. This lowers your overall CGPA."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+    <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://cgpacalculator.dev/" class="logo"><span class="logo-icon">◈</span><span class="logo-text">CGPA Calculator</span></a>
+      <nav class="nav-desktop">
+        <div class="nav-dropdown" id="navDropTrigger">
+          <div class="nav-dropdown-trigger ">CGPA Calculator <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="nav-drop-menu" id="navDropMenu"><a href="https://cgpacalculator.dev/" class="nav-drop-item"><span class="nav-drop-name">Standard 4.0 Calculator</span><span class="nav-drop-desc">Standard grading: A+ → 4.00</span></a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">North American GPA Calculator</span><span class="nav-drop-desc">US & Canada: A → 4.00, A− → 3.70</span></a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">10-Point CGPA Calculator</span><span class="nav-drop-desc">IIT, NIT, VTU scale: O → 10.00</span></a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Nigerian CGPA Calculator</span><span class="nav-drop-desc">Nigerian 5.0 scale: A → 5.00</span></a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Australian GPA Calculator</span><span class="nav-drop-desc">Australian 7.0: HD → 7.00</span></a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Canadian GPA Calculator</span><span class="nav-drop-desc">Canadian 4.33: A+ → 4.33</span></a></div>
+        </div>
+        <a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="nav-link ">Percentage Converter</a>
+        <a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="nav-link ">GPA ↔ CGPA</a>
+        <a href="https://cgpacalculator.dev/grade-calculator" class="nav-link ">Grade Calculator</a>
+        <a href="https://cgpacalculator.dev/cgpa-information" class="nav-link ">CGPA Information</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://cgpacalculator.dev/" class="mobile-nav-link" onclick="closeMobileMenu()">Standard 4.0 Calculator</a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">North American GPA Calculator</a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">10-Point CGPA Calculator</a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Nigerian CGPA Calculator</a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Australian GPA Calculator</a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Canadian GPA Calculator</a>
+      <a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Percentage Converter</a>
+      <a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">GPA ↔ CGPA</a>
+      <a href="https://cgpacalculator.dev/grade-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Grade Calculator</a>
+      <a href="https://cgpacalculator.dev/cgpa-information" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+    </div>
+  </header>
+
+  <main class="blog-page-wrap">
+
+    <nav class="breadcrumb">
+      <a href="https://cgpacalculator.dev/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="cgpa-information">CGPA Information</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>The CGPA Formula Explained</span>
+    </nav>
+
+    <article class="blog-article">
+
+<h1>The CGPA Formula: Σ(Grade Point × Credits) ÷ Total Credits</h1><span class="pub-date">Published on: 15/03/2026</span>
+
+<h2>Why Is There a Formula for CGPA?</h2>
+<p>You might be thinking — why do we even need a formula? Can't we just add up all our grades and divide by the number of subjects?</p>
+<p>Actually, that method has a big flaw. It treats every subject as if it is equally important — but that is not how university works. A subject worth 4 credits takes up much more of your time than a 1-credit subject. This is why <a href="https://cgpacalculator.dev/" title="CGPA Calculator">CGPA</a> uses a weighted average. The formula makes sure that heavier subjects count for more in your final score.</p>
+
+<h2>The CGPA Formula - Written Simply</h2>
+<p><strong>CGPA = Sum of (Grade Point × Credits) ÷ Sum of All Credits</strong></p>
+<p>At its heart, the formula has just two parts — a top half and a bottom half. You divide the top by the bottom and you get your CGPA.</p>
+
+
+<figure style="margin:28px 0;text-align:center;">
+  <img src="https://cgpacalculator.dev/cgpa-formula-quality-points-calculation-breakdown.webp" alt="CGPA formula breakdown showing grade point multiplied by credits divided by total credit hours" width="800" height="450" loading="eager" fetchpriority="high" style="max-width:100%;height:auto;border-radius:10px;" />
+</figure>
+<h2>Understanding Each Part of the Formula</h2>
+<div class="table-responsive"><table>
+<tr><th>Symbol</th><th>Name</th><th>What It Means in Plain English</th></tr>
+<tr><td>GP_i</td><td>Grade Point</td><td>The number value of your letter grade in one subject (e.g. A = 4.0)</td></tr>
+<tr><td>C_i</td><td>Credit Hours</td><td>How many credits that subject is worth (e.g. 3 credits, 4 credits)</td></tr>
+<tr><td>GP_i × C_i</td><td>Quality Points</td><td>Grade Point multiplied by Credits — the 'weighted score' for one subject</td></tr>
+<tr><td>Sum (top)</td><td>Total Quality Points</td><td>Add up all the quality points from every subject you have studied</td></tr>
+<tr><td>Sum (bottom)</td><td>Total Credit Hours</td><td>Add up all the credits from every subject you have studied</td></tr>
+</table></div>
+<p>💡 Think of it this way: Quality Points are like 'weighted scores'. A great grade in a big subject earns you more quality points than the same grade in a tiny subject.</p>
+
+<h2>Part 1 - The Top Half (Total Quality Points)</h2>
+<p>For each subject, calculate: <strong>Quality Points = Grade Point × Credit Hours</strong></p>
+<ul>
+<li>A scored A (4.0) in a 4-credit Maths class → 4.0 × 4 = 16.0 quality points</li>
+<li>A scored B (3.0) in a 3-credit History class → 3.0 × 3 = 9.0 quality points</li>
+<li>A scored A- (3.7) in a 2-credit English class → 3.7 × 2 = 7.4 quality points</li>
+</ul>
+<p>📌 Key Insight: A 4-credit core subject impacts your CGPA twice as much as a 2-credit elective — even if you get the same grade.</p>
+
+<h2>Part 2 - The Bottom Half (Total Credit Hours)</h2>
+<p>Add all credit hours from every subject. Example: 4 + 3 + 3 + 2 + 3 = 15 Total Credit Hours</p>
+
+<h2>What Happens If You Fail a Subject?</h2>
+<p>If you get an F grade, grade point = 0. Credit hours still count in denominator. ⚠️ Failing a 4-credit subject adds 0 to the top but 4 to the bottom — <a href="improve-cgpa">CGPA drops.</a></p>
+
+<h2>What Happens If You Withdraw From a Subject?</h2>
+<p><a href="how-to-calculate-cgpa">Withdrawn courses</a> marked 'W' usually are excluded from both top and bottom — not counted in CGPA.</p>
+
+<h2>A Full Step-by-Step Example</h2>
+<div class="table-responsive"><table>
+<tr><th>Subject</th><th>Credits</th><th>Grade</th><th>Grade Point</th><th>Quality Points (GP × C)</th></tr>
+<tr><td>Advanced Calculus</td><td>4</td><td>A</td><td>4.0</td><td>16.0</td></tr>
+<tr><td>Physics Lab</td><td>1</td><td>B</td><td>3.0</td><td>3.0</td></tr>
+<tr><td>English Composition</td><td>3</td><td>A-</td><td>3.7</td><td>11.1</td></tr>
+<tr><td><strong>TOTAL</strong></td><td>8</td><td></td><td></td><td>30.1</td></tr>
+</table></div>
+<p>Now apply formula: <strong>CGPA = 30.1 ÷ 8 = 3.7625 → Rounded: 3.76</strong></p>
+
+<h2>Does the Formula Change Across Different Grading Systems?</h2>
+<div class="table-responsive"><table>
+<tr><th>Scale</th><th>Max Value</th><th>Where It Is Used</th></tr>
+<tr><td>4.0 Scale</td><td>4.0</td><td>USA, Canada, UK, Europe</td></tr>
+<tr><td><a href="how-to-convert-cgpa-to-percentage">10.0 Scale</a></td><td>10.0</td><td>India (IITs, NITs, most universities)</td></tr>
+<tr><td>5.0 Scale</td><td>5.0</td><td>Parts of Europe and Africa</td></tr>
+</table></div>
+
+<h2>Special Cases to Watch Out For</h2>
+<ul>
+<li><strong>Transfer Credits:</strong> May or may not be included in CGPA depending on institution.</li>
+<li><strong>Repeated Courses:</strong> Grade replacement policies vary.</li>
+<li><strong>Incomplete Grades:</strong> Temporary grades ('I') are excluded until finalized.</li>
+</ul>
+
+<h2>Quick Recap</h2>
+<p><strong>CGPA = Sum of (Grade Point × Credits) ÷ Sum of All Credits</strong></p>
+<ul>
+<li>Top = all grade points × credits, summed</li>
+<li>Bottom = all credit hours summed</li>
+<li>Failing subject adds 0 top, credits to bottom</li>
+<li>Withdrawn subject excluded from both</li>
+<li>Works on any grading scale — 4.0, 10.0, 5.0</li>
+</ul>
+<p>💡 Final Thought: The CGPA formula is not complicated — it is just fair. It rewards consistent performance and gives one honest number representing your entire academic journey. Once you know your CGPA, you can use the <a href="gpa-cgpa-calculator">GPA ↔ CGPA converter</a> to switch between grading scales instantly.</p>
+
+    </article>
+
+    
+    <!-- TRY THE TOOL CTA -->
+    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:36px;text-align:center;">
+      <p style="font-weight:700;font-size:16px;margin-bottom:8px;">Let the calculator do the formula work for you.</p>
+      <p style="color:var(--text-3);font-size:14px;margin-bottom:16px;">Enter your semesters and courses — your CGPA is calculated instantly using the exact formula above.</p>
+      <a href="https://cgpacalculator.dev/" style="display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;margin:4px;">Calculate My CGPA →</a>
+      <a href="grade-calculator" style="display:inline-block;padding:12px 28px;background:var(--surface-3,#e8e8e8);color:var(--text-1);border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;margin:4px;">Calculate Semester Grade →</a>
+    </div>
+
+    <!-- RELATED GUIDES -->
+    <section style="margin-top:36px;">
+      <h2 class="section-heading">Read Next</h2>
+      <div class="blog-grid">
+        <a href="how-to-calculate-cgpa" class="blog-card">
+          <span class="blog-card-num">→</span>
+          <h3>How to Calculate CGPA — Step by Step</h3>
+          <p>Apply the formula you just learned with a full worked example — courses, credits, grades, and final calculation.</p>
+          <span class="blog-card-arrow">Read guide →</span>
+        </a>
+        <a href="improve-cgpa" class="blog-card">
+          <span class="blog-card-num">→</span>
+          <h3>How to Improve Your CGPA</h3>
+          <p>Understanding the formula reveals exactly how to improve your score — credit weighting and anchor subjects explained.</p>
+          <span class="blog-card-arrow">Read guide →</span>
+        </a>
+        <a href="cgpa-vs-gpa" class="blog-card">
+          <span class="blog-card-num">→</span>
+          <h3>CGPA vs GPA</h3>
+          <p>See how the CGPA formula differs from a simple semester GPA — and why the cumulative version is harder to move.</p>
+          <span class="blog-card-arrow">Read guide →</span>
+        </a>
+      </div>
+    </section>
+
+    <a href="https://cgpacalculator.dev/" class="back-link">← Back to Calculator</a>
+
+  </main>
+
+    <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">◈ CGPA Calculator</div>
+        <div class="footer-author">Mohammad Nasir</div>
+        <div class="footer-bio">Professional tools builder &amp; SEO expert</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="about-me" class="footer-link">About</a>
+          <a href="privacy-policy" class="footer-link">Privacy Policy</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/cgpacalculatorbynasir/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://x.com/cgpacalculator2" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CGPA Calculator. Built with precision.</span>
+    </div>
+  </footer>
+
+  <script defer src="nav.js"></script>
+</body>
+</html>

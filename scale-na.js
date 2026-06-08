@@ -1,0 +1,3 @@
+const SCALES = { na: { max:4, grades:[{label:"A  (4.00)",value:4,letter:"A"},{label:"A− (3.70)",value:3.7,letter:"A−"},{label:"B+ (3.30)",value:3.3,letter:"B+"},{label:"B  (3.00)",value:3,letter:"B"},{label:"B− (2.70)",value:2.7,letter:"B−"},{label:"C+ (2.30)",value:2.3,letter:"C+"},{label:"C  (2.00)",value:2,letter:"C"},{label:"C− (1.70)",value:1.7,letter:"C−"},{label:"D+ (1.30)",value:1.3,letter:"D+"},{label:"D  (1.00)",value:1,letter:"D"},{label:"F  (0.00)",value:0,letter:"F"}] } };
+let currentScale="na", semesterCount=0, sgpaRowCount=0;
+document.addEventListener("DOMContentLoaded", initCalculator);

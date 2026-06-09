@@ -64,8 +64,10 @@ input,select,textarea{font-family:inherit}
 .tool-page-wrap,.grade-calc-wrap,.blog-page-wrap{max-width:1160px;margin:0 auto;padding:32px 24px 80px}
 
 /* ── CALC LAYOUT ── */
-.calc-layout{display:grid;grid-template-columns:38% 1fr;gap:18px;align-items:start}
-.calc-sidebar{position:sticky;top:calc(var(--header-h) + 54px)}
+.calc-layout{display:grid;grid-template-columns:38% 1fr;gap:18px;align-items:start;width:100%;min-width:0}
+.calc-sidebar{position:sticky;top:calc(var(--header-h) + 54px);min-width:0}
+.calc-main{min-width:0;width:100%}
+.calc-main-panel{min-width:0;width:100%;overflow:hidden}
 
 /* ── CARDS ── */
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
@@ -110,7 +112,7 @@ input,select,textarea{font-family:inherit}
 .stat-val{font-size:19px;font-weight:800;color:var(--text-1)}
 
 /* ── CALCULATOR SECTION ── */
-.calculator-section{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.calculator-section{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-sm);position:relative;overflow:visible;width:100%;box-sizing:border-box}
 .section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
 .section-eyebrow{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
 .section-title{font-size:18px;font-weight:800;color:var(--text-1);letter-spacing:-.02em}
@@ -501,8 +503,9 @@ tbody tr:hover{background:var(--accent-dim)}
   .scale-ref-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:860px){
-  .calc-layout{grid-template-columns:1fr}
-  .calc-sidebar{position:static}
+  .calc-layout{grid-template-columns:1fr;width:100%}
+  .calc-sidebar{position:static;width:100%}
+  .calc-main{width:100%}
   .gpa-converter-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
@@ -519,38 +522,68 @@ tbody tr:hover{background:var(--accent-dim)}
   .grade-result-grid{grid-template-columns:repeat(2,1fr)}
   .info-grid{grid-template-columns:1fr}
   .scale-ref-grid{grid-template-columns:1fr}
+  /* Semester header wrap on tablets */
+  .semester-header{flex-wrap:wrap;gap:6px}
+  .semester-title-wrap{min-width:0;flex:1 1 auto}
+  /* Course rows stack on tablets */
+  .course-row{display:flex;flex-direction:column;gap:6px;padding:10px;background:var(--bg-input);border:1.5px solid var(--border-2);border-radius:var(--radius)}
+  .course-name,.course-credit,.course-grade{width:100%}
+  .btn-delete-course{width:100%;height:36px;justify-content:center;border:1.5px solid #b3d4e3;border-radius:var(--radius-sm);color:var(--red);background:#f0f7fa;font-size:12px;gap:5px}
+  .btn-delete-course::after{content:'Remove';font-size:12px;font-weight:700}
+  /* SGPA section table rows */
+  .sgpa-table-header{display:none}
+  .sgpa-row{grid-template-columns:1fr minmax(0,85px) minmax(0,75px) 34px}
 }
 @media(max-width:600px){
   :root{--header-h:54px}
-  .main-content,.tool-page-wrap,.grade-calc-wrap,.blog-page-wrap{padding:16px 14px 60px}
-  .main-content>h1{font-size:21px;margin-bottom:18px}
-  .calculator-section,.grade-panel,.converter-card{padding:14px 12px}
-  .card,.gpa-panel,.grade-ref-wrap,.grade-result-panel,.grade-prediction-panel{padding:16px 14px}
-  .sgpa-section{padding:14px 12px}
-  .seo-section{padding:18px 14px}
-  .semester-header{padding:10px 12px;flex-wrap:wrap;gap:6px}
-  .course-row{display:flex;flex-direction:column;gap:6px;padding:11px;background:var(--bg-input);border:1.5px solid var(--border-2);border-radius:var(--radius)}
-  .course-name,.course-credit,.course-grade{width:100%;font-size:14px;padding:9px 11px}
+  /* Prevent any horizontal overflow */
+  html,body{overflow-x:hidden;width:100%}
+  .main-content,.tool-page-wrap,.grade-calc-wrap,.blog-page-wrap{padding:14px 12px 60px;width:100%;box-sizing:border-box}
+  .main-content>h1{font-size:20px;margin-bottom:16px}
+  /* Cards and sections */
+  .calculator-section,.grade-panel,.converter-card{padding:13px 11px}
+  .card,.gpa-panel,.grade-ref-wrap,.grade-result-panel,.grade-prediction-panel{padding:14px 12px}
+  .sgpa-section{padding:13px 11px}
+  .seo-section{padding:16px 12px}
+  /* Semester header */
+  .semester-header{padding:9px 11px;flex-wrap:wrap;gap:5px}
+  .semester-title-wrap{flex:1 1 100%;min-width:0}
+  .semester-right-wrap{flex:1 1 auto;justify-content:space-between}
+  .semester-sgpa-wrap{flex-shrink:0}
+  /* Course rows stacked */
+  .course-row{display:flex;flex-direction:column;gap:6px;padding:10px 11px;background:var(--bg-input);border:1.5px solid var(--border-2);border-radius:var(--radius)}
+  .course-name,.course-credit,.course-grade{width:100%;font-size:14px;padding:9px 11px;box-sizing:border-box}
   .btn-delete-course{width:100%;height:36px;justify-content:center;border:1.5px solid #b3d4e3;border-radius:var(--radius-sm);color:var(--red);background:#f0f7fa;font-size:12px;gap:5px}
   .btn-delete-course::after{content:'Remove';font-size:12px;font-weight:700}
-  .courses-container{padding:9px 12px;gap:9px}
-  .btn-add-course{margin:4px 0 9px;width:100%;font-size:13px;padding:11px}
-  .btn-add-semester{font-size:13px;padding:13px}
+  .courses-container{padding:9px 11px;gap:8px}
+  .btn-add-course{margin:4px 0 9px;width:100%;font-size:13px;padding:10px}
+  .btn-add-semester{font-size:13px;padding:12px}
+  /* Target CGPA section */
   .target-grid{grid-template-columns:1fr;gap:8px}
+  .target-card-standalone{margin-top:14px}
+  /* SGPA section */
   .sgpa-table-header{display:none}
-  .sgpa-row{grid-template-columns:1fr minmax(0,90px) minmax(0,80px) 34px}
-  .cgpa-big{font-size:50px}
-  .stat-val{font-size:17px}
-  .sticky-bar-inner{overflow-x:auto;flex-wrap:nowrap;height:40px;min-height:40px;white-space:nowrap}
+  .sgpa-row{grid-template-columns:1fr minmax(0,80px) minmax(0,70px) 32px;gap:5px}
+  .sgpa-sem-name,.sgpa-val-input,.sgpa-credit-input{font-size:13px;padding:7px 8px}
+  /* CGPA display */
+  .cgpa-big{font-size:48px}
+  .stat-val{font-size:16px}
+  .stat-row{gap:7px}
+  /* Sticky bar */
+  .sticky-bar-inner{overflow-x:auto;flex-wrap:nowrap;height:40px;min-height:40px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .sticky-bar-inner::-webkit-scrollbar{display:none}
   .sticky-bar{height:40px}
   .sticky-item{padding:0 10px;flex-shrink:0}
   .sticky-item:first-child{padding-left:0}
   .sticky-label{font-size:9px;letter-spacing:.08em}
   .sticky-val{font-size:12px}
   .sticky-divider{flex-shrink:0}
+  /* Other */
   .about-stats{grid-template-columns:1fr}
-  .section-title{font-size:17px}
-  .grade-row{display:flex;flex-direction:column;gap:6px;padding:12px;margin-bottom:10px;background:var(--bg-input);border:1.5px solid var(--border-2);border-radius:var(--radius);position:relative}
+  .section-title{font-size:16px}
+  .section-header{margin-bottom:14px}
+  /* Grade calculator */
+  .grade-row{display:flex;flex-direction:column;gap:6px;padding:11px;margin-bottom:10px;background:var(--bg-input);border:1.5px solid var(--border-2);border-radius:var(--radius);position:relative}
   .gr-subject,.gr-marks,.gr-credit{width:100%}
   .gr-grade-cell{width:100%;height:38px}
   .btn-del-gr{position:absolute;top:10px;right:10px;background:#f0f7fa;color:var(--red);border:1px solid #b3d4e3;border-radius:var(--radius-sm)}
@@ -559,13 +592,37 @@ tbody tr:hover{background:var(--accent-dim)}
   .pred-form{flex-direction:column}
   .pred-field{width:100%}
   .btn-predict{width:100%}
-  .hero,.tool-hero{padding:36px 16px 44px}
+  .hero,.tool-hero{padding:32px 14px 40px}
+  /* Scale card selector */
+  .scale-card{padding:12px 14px}
+  .scale-option{padding:9px 11px}
+  /* PDF/print button */
+  .btn-pdf{padding:12px 16px;font-size:13px}
 }
-@media(max-width:360px){
+@media(max-width:420px){
   .main-content,.tool-page-wrap,.grade-calc-wrap{padding:10px 10px 52px}
   .calculator-section{padding:10px 9px}
   .card{padding:12px 10px}
-  .cgpa-big{font-size:44px}
+  .cgpa-big{font-size:42px}
+  /* Semester header even tighter */
+  .semester-header{padding:8px 10px}
+  .semester-num{font-size:9px}
+  .semester-name-input{font-size:13px}
+  .sgpa-tag-label{font-size:9px}
+  .sgpa-tag-val{font-size:12px}
+  /* SGPA table rows tighter */
+  .sgpa-row{grid-template-columns:1fr minmax(0,72px) minmax(0,64px) 30px;gap:4px}
+  .sgpa-sem-name,.sgpa-val-input,.sgpa-credit-input{font-size:12px;padding:6px 7px}
+  /* Courses tighter */
+  .courses-container{padding:8px 9px;gap:7px}
+  .course-name,.course-credit,.course-grade{font-size:13px;padding:8px 9px}
+  .btn-add-course{font-size:12px;padding:9px}
+  .btn-add-semester{font-size:12px;padding:11px}
+  /* Target section */
+  .target-field input{font-size:14px;padding:8px 10px}
+  .target-val{font-size:18px}
+  .stat-val{font-size:15px}
+  .cgpa-big{font-size:40px}
 }
 
 /* ── NAV DROPDOWN ── */

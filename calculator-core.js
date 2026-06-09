@@ -396,4 +396,22 @@ function initCalculator() {
       if (!isOpen) { this.setAttribute("aria-expanded","true"); this.nextElementSibling.classList.add("open"); }
     });
   });
+
+  // Nav dropdown click toggle
+  const navDropTrigger = document.getElementById("navDropTrigger");
+  const navDropMenu    = document.getElementById("navDropMenu");
+  if (navDropTrigger && navDropMenu) {
+    navDropTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navDropMenu.classList.toggle("open");
+    });
+    document.addEventListener("click", function () {
+      navDropMenu.classList.remove("open");
+    });
+    navDropMenu.querySelectorAll(".nav-drop-item").forEach((item) => {
+      item.addEventListener("click", function () {
+        navDropMenu.classList.remove("open");
+      });
+    });
+  }
 }

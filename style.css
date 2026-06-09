@@ -202,6 +202,7 @@ input,select,textarea{font-family:inherit}
 
 /* ── TABLES ── */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius);border:1px solid var(--border);width:100%;display:block}
+.table-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:24px}
 table{width:100%;min-width:400px;border-collapse:collapse;font-size:14px}
 thead tr{background:var(--accent-dim);border-bottom:1px solid var(--accent-border)}
 th{padding:11px 14px;text-align:left;font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}

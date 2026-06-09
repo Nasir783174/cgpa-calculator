@@ -22,27 +22,24 @@ function closeMobileMenu() {
       });
     }
 
-    // Nav dropdown hover — with delay so mouse can travel into menu
+    // Nav dropdown click toggle
     const navDropTrigger = document.getElementById("navDropTrigger");
     const navDropMenu    = document.getElementById("navDropMenu");
     if (navDropTrigger && navDropMenu) {
-      let closeTimer = null;
+      navDropTrigger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        navDropMenu.classList.toggle("open");
+      });
 
-      function openMenu() {
-        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
-        navDropMenu.classList.add("open");
-      }
+      // Close when clicking outside
+      document.addEventListener("click", function () {
+        navDropMenu.classList.remove("open");
+      });
 
-      function scheduleClose() {
-        closeTimer = setTimeout(function() {
-          navDropMenu.classList.remove("open");
-        }, 120);
-      }
-
-      navDropTrigger.addEventListener("mouseenter", openMenu);
-      navDropTrigger.addEventListener("mouseleave", scheduleClose);
-      navDropMenu.addEventListener("mouseenter",   openMenu);
-      navDropMenu.addEventListener("mouseleave",   scheduleClose);
+      // Prevent clicks inside the menu from closing it
+      navDropMenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
     }
 
     // FAQ accordion (blog/info pages)

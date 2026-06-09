@@ -396,13 +396,4 @@ function initCalculator() {
       if (!isOpen) { this.setAttribute("aria-expanded","true"); this.nextElementSibling.classList.add("open"); }
     });
   });
-  // Nav dropdown
-  const navDropTrigger = document.getElementById("navDropTrigger");
-  const navDropMenu    = document.getElementById("navDropMenu");
-  if (navDropTrigger && navDropMenu) {
-    navDropTrigger.addEventListener("mouseenter", () => navDropMenu.classList.add("open"));
-    navDropTrigger.addEventListener("mouseleave", () => navDropMenu.classList.remove("open"));
-    navDropMenu.addEventListener("mouseenter", () => navDropMenu.classList.add("open"));
-    navDropMenu.addEventListener("mouseleave", () => navDropMenu.classList.remove("open"));
-  }
 }

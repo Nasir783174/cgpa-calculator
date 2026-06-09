@@ -223,6 +223,7 @@ function calcTarget() {
   const resultEl   = document.getElementById("targetResult");
   resultEl.className = "target-result";
   if (!targetCGPA || !remainCredits) { requiredEl.textContent = "–"; return; }
+  if (targetCGPA > max) { requiredEl.textContent = "Exceeds scale max"; resultEl.classList.add("target-impossible"); return; }
   const required = (targetCGPA * (earnedCredits + remainCredits) - currentCGPA * earnedCredits) / remainCredits;
   if (required > max)  { requiredEl.textContent = "Not Possible";      resultEl.classList.add("target-impossible"); }
   else if (required < 0) { requiredEl.textContent = "Already Achieved!"; resultEl.classList.add("target-achieved"); }
@@ -274,6 +275,11 @@ function updateAllDropdowns() {
     select.innerHTML = buildDropdown(match ? match.value : null);
   });
   document.querySelectorAll(".sgpa-val-input").forEach((input) => { input.max = getScaleMax(); });
+  const scaleMax = getScaleMax();
+  const currentCGPAEl = document.getElementById("currentCGPA");
+  const targetCGPAEl  = document.getElementById("targetCGPA");
+  if (currentCGPAEl) currentCGPAEl.max = scaleMax;
+  if (targetCGPAEl)  targetCGPAEl.max  = scaleMax;
   renderScalePreview();
   recalcAll();
 }

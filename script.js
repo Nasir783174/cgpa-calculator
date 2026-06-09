@@ -335,6 +335,7 @@ function createSGPARow() {
   row.innerHTML = `
     <input type="text"   class="sgpa-sem-name"  placeholder="Semester ${id}" value="Semester ${id}" />
     <input type="number" class="sgpa-val-input"  placeholder="0.00" min="0" max="${getScaleMax()}" step="0.01" />
+    <input type="number" class="sgpa-credit-input" placeholder="—" min="0.5" step="0.5" />
     <button class="btn-delete-sgpa" title="Remove row">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="18" y1="6" x2="6" y2="18"/>
@@ -343,6 +344,7 @@ function createSGPARow() {
     </button>`;
 
   row.querySelector(".sgpa-val-input").addEventListener("input", calcSGPAtoCGPA);
+  row.querySelector(".sgpa-credit-input").addEventListener("input", calcSGPAtoCGPA);
 
   row.querySelector(".btn-delete-sgpa").addEventListener("click", function () {
     if (document.querySelectorAll(".sgpa-row").length <= 1) {
@@ -428,6 +430,12 @@ function calcTarget() {
     return;
   }
 
+  if (targetCGPA > max) {
+    requiredEl.textContent = "Exceeds scale max";
+    resultEl.classList.add("target-impossible");
+    return;
+  }
+
   const required = (targetCGPA * (earnedCredits + remainCredits) - currentCGPA * earnedCredits) / remainCredits;
 
   if (required > max) {
@@ -443,15 +451,31 @@ function calcTarget() {
 }
 
 function calcSGPAtoCGPA() {
-  let total = 0;
-  let count = 0;
+  let weightedSum  = 0;
+  let totalCredits = 0;
+  let unweighted   = 0;
+  let count        = 0;
 
-  document.querySelectorAll(".sgpa-val-input").forEach((input) => {
-    const val = parseFloat(input.value);
-    if (!isNaN(val)) { total += val; count++; }
+  document.querySelectorAll(".sgpa-row").forEach((row) => {
+    const sgpa   = parseFloat(row.querySelector(".sgpa-val-input").value);
+    const credit = parseFloat(row.querySelector(".sgpa-credit-input").value);
+    if (isNaN(sgpa)) return;
+    unweighted += sgpa;
+    count++;
+    if (!isNaN(credit) && credit > 0) {
+      weightedSum  += sgpa * credit;
+      totalCredits += credit;
+    }
   });
 
-  document.getElementById("sgpaCGPA").textContent = (count > 0 ? total / count : 0).toFixed(2);
+  const result = totalCredits > 0
+    ? weightedSum / totalCredits          // credit-weighted
+    : count > 0 ? unweighted / count : 0; // plain average fallback when no credits entered
+
+  const noteEl = document.getElementById("sgpaWeightedNote");
+  if (noteEl) noteEl.style.display = totalCredits > 0 ? "inline" : "none";
+
+  document.getElementById("sgpaCGPA").textContent = result.toFixed(2);
 }
 
 // ─── UI HELPERS ─────────────────────────────────────────────
@@ -700,6 +724,13 @@ function init() {
 
       updateAllDropdowns();
 
+      // Update target input max values to match new scale
+      const scaleMax = getScaleMax();
+      const currentCGPAEl  = document.getElementById("currentCGPA");
+      const targetCGPAEl   = document.getElementById("targetCGPA");
+      if (currentCGPAEl) currentCGPAEl.max = scaleMax;
+      if (targetCGPAEl)  targetCGPAEl.max  = scaleMax;
+
       if (scaleBody) {
         scaleBody.classList.remove("open");
         if (toggleArrow) toggleArrow.style.transform = "";
@@ -786,26 +817,7 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", init);
 
-// ─── MOBILE NAV (guard: only if not inside calculator page) ──
 
-(function () {
-  const hamburger  = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (hamburger && mobileMenu && !document.getElementById("semestersContainer")) {
-    hamburger.addEventListener("click", function () {
-      this.classList.toggle("active");
-      mobileMenu.classList.toggle("open");
-    });
-
-    document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        mobileMenu.classList.remove("open");
-      });
-    });
-  }
-})();
 
 // ─── CGPA ↔ PERCENTAGE CONVERTER ────────────────────────────
 

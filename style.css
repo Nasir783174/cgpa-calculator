@@ -576,7 +576,6 @@ tbody tr:hover{background:var(--accent-dim)}
 .nav-dropdown-trigger:hover svg{color:var(--accent)}
 /* Invisible bridge fills the gap between trigger and dropdown so mouse can travel across */
 .nav-drop-menu{position:absolute;top:100%;left:0;min-width:220px;background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);box-shadow:0 8px 32px rgba(40,112,148,.14),0 2px 8px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(0);transition:opacity .18s,transform .18s;z-index:200;padding-top:8px}
-.nav-drop-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent}
 .nav-drop-menu.open{opacity:1;pointer-events:auto}
 .nav-drop-item{display:flex;flex-direction:column;padding:10px 16px;border-bottom:1px solid var(--border-2);transition:background var(--transition),color var(--transition)}
 .nav-drop-item:last-child{border-bottom:none}

@@ -36,9 +36,11 @@ function closeMobileMenu() {
         navDropMenu.classList.remove("open");
       });
 
-      // Prevent clicks inside the menu from closing it
-      navDropMenu.addEventListener("click", function (e) {
-        e.stopPropagation();
+      // Close when clicking a link inside the menu
+      navDropMenu.querySelectorAll(".nav-drop-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          navDropMenu.classList.remove("open");
+        });
       });
     }
 

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nigerian CGPA Calculator – Free 5.0 Scale Tool</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/nigerian-cgpa-calculator" />
+  <meta name="description" content="Free Nigerian CGPA calculator on the 5-point grading scale. Supports UNILAG, UI, OAU and UNIPORT. A=5.00, B=4.00. First Class needs 4.50+. Instant results." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Nigerian CGPA Calculator – Free 5.0 Scale Tool" />
+  <meta property="og:description" content="Free Nigerian CGPA calculator on the 5-point grading scale. Supports UNILAG, UI, OAU and UNIPORT. A=5.00, B=4.00. First Class needs 4.50+. Instant results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgpacalculator.dev/nigerian-cgpa-calculator" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator-core.js"></script>
+  <script defer src="scale-nigerian.js"></script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+      {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+            "@id": "https://cgpacalculator.dev/#organization"
+      }
+},
+      {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+            "@type": "ImageObject",
+            "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+            "width": 512,
+            "height": 512
+      },
+      "sameAs": [
+            "https://www.facebook.com/cgpacalculatorbynasir",
+            "https://www.instagram.com/cgpacalculatorbynasir/",
+            "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+            "@type": "Person",
+            "name": "Mohammad Nasir"
+      }
+},
+      {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/nigerian-cgpa-calculator#webpage",
+      "url": "https://cgpacalculator.dev/nigerian-cgpa-calculator",
+      "name": "Nigerian CGPA Calculator – Free 5.0 Scale Tool",
+      "description": "Free Nigerian CGPA calculator on the 5-point grading scale. Supports UNILAG, UI, OAU and UNIPORT. A=5.00, B=4.00. First Class needs 4.50+. Instant results.",
+      "isPartOf": {
+            "@id": "https://cgpacalculator.dev/#website"
+      },
+      "about": {
+            "@id": "https://cgpacalculator.dev/nigerian-cgpa-calculator#softwareapplication"
+      },
+      "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+            "width": 1200,
+            "height": 630
+      },
+      "breadcrumb": {
+            "@id": "https://cgpacalculator.dev/nigerian-cgpa-calculator#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-06-01",
+      "dateModified": "2026-06-28"
+},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgpacalculator.dev/nigerian-cgpa-calculator#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Nigerian CGPA Calculator",
+          "item": "https://cgpacalculator.dev/nigerian-cgpa-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://cgpacalculator.dev/nigerian-cgpa-calculator#softwareapplication",
+      "name": "Nigerian CGPA Calculator",
+      "url": "https://cgpacalculator.dev/nigerian-cgpa-calculator",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free Nigerian CGPA calculator using the 5-point grading scale. Supports UNILAG, UI, OAU, UNIPORT. A=5.00, B=4.00. First Class needs 4.50+. Instant results.",
+      "usedBy": [
+        "University of Lagos",
+        "University of Ibadan",
+        "Obafemi Awolowo University",
+        "University of Nigeria Nsukka",
+        "University of Port Harcourt",
+        "ABU Zaria"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the highest CGPA in Nigeria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The highest CGPA under the standard Nigerian grading system is 5.00. Students achieve this score by earning the highest grade points across all completed courses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good CGPA in Nigeria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CGPA above 4.50 is generally considered excellent because it usually falls within the First Class degree classification. Many employers and postgraduate institutions also view a CGPA above 3.50 as competitive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is CGPA calculated in Nigeria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Universities calculate CGPA by dividing your total quality points by your total credit units. Quality Points = Grade Point × Credit Unit. Then CGPA = Total Quality Points ÷ Total Credit Units."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do failed courses affect my CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Failed courses carry zero grade points but still count toward your credit units in many university grading systems. As a result, failed courses usually reduce your cumulative grade point average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every Nigerian university use a 5.0 grading scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many federal, state, and private universities use a 5.0 grading system. However, grading boundaries and degree classifications may differ slightly between institutions. Always check your university's academic handbook before calculating your final CGPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a CGPA vs GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GPA (Grade Point Average) reflects your performance during a single semester. A CGPA (Cumulative Grade Point Average) combines the results from every completed semester into one overall score. Because universities award degrees based on cumulative performance, your CGPA is usually more important than any single semester GPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this calculator estimate my degree classification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Once your CGPA is calculated, you can compare the result with your university's official degree classification guidelines. Remember that universities may apply slightly different classification ranges, so always refer to your institution's handbook."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Nigerian CGPA Calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can calculate your CGPA as many times as needed without paying any fee or creating an account. The calculator is free for all students."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+  <meta name="google-site-verification" content="euvaC8yQmQ0gEXwuGFXI_nS4S3VFbsI_gxWL7Fpsbpg" />
+  <meta name="msvalidate.01" content="71C0921EC3367979D0DF5595EA15F657" />
+  <script defer>
+    window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","wlnn53n6p8");});
+  </script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31G4QMCRXB');
+  </script>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+<a href="https://cgpacalculator.dev/" class="logo"><span class="logo-icon">◈</span><span class="logo-text">CGPA Calculator</span></a>
+<nav class="nav-desktop">
+<div class="nav-dropdown">
+<div class="nav-dropdown-trigger active-parent" id="navDropTrigger">CGPA Calculator <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="nav-drop-menu" id="navDropMenu"><a href="https://cgpacalculator.dev/" class="nav-drop-item"><span class="nav-drop-name">Standard 4.0 Calculator</span><span class="nav-drop-desc">Standard grading: A+ → 4.00</span></a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">North American GPA Calculator</span><span class="nav-drop-desc">US & Canada: A → 4.00, A− → 3.70</span></a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">10-Point CGPA Calculator</span><span class="nav-drop-desc">IIT, NIT, VTU scale: O → 10.00</span></a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Nigerian CGPA Calculator</span><span class="nav-drop-desc">Nigerian 5.0 scale: A → 5.00</span></a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Australian GPA Calculator</span><span class="nav-drop-desc">Australian 7.0: HD → 7.00</span></a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Canadian GPA Calculator</span><span class="nav-drop-desc">Canadian 4.33: A+ → 4.33</span></a></div>
+</div>
+<a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="nav-link ">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="nav-link ">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="nav-link ">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="nav-link ">CGPA Information</a>
+</nav>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-nav-group-header">CGPA Calculator</div>
+<a href="https://cgpacalculator.dev/" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Standard 4.0 Calculator</a><a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">North American GPA Calculator</a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">10-Point CGPA Calculator</a><a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Nigerian CGPA Calculator</a><a href="https://cgpacalculator.dev/australian-gpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Australian GPA Calculator</a><a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Canadian GPA Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+</div>
+</header>
+
+<div class="sticky-bar" id="stickyBar">
+<div class="sticky-bar-inner">
+<div class="sticky-item"><span class="sticky-label">CGPA</span><span class="sticky-val" id="stickyCGPA">0.00</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Credits</span><span class="sticky-val" id="stickyCredits">0</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Grade</span><span class="sticky-val sticky-grade" id="stickyGrade">–</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Semesters</span><span class="sticky-val" id="stickySemesters">1</span></div>
+</div>
+</div>
+
+<main class="main-content" id="calculator">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://cgpacalculator.dev/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Nigerian CGPA Calculator</span>
+  </nav>
+
+  <h1>Nigerian CGPA Calculator (5.0 Scale)</h1>
+  <div class="calc-layout">
+    <aside class="calc-sidebar">
+<div class="card result-card">
+<div class="card-label">Live Result</div>
+<h2 class="card-title">Overall CGPA</h2>
+<div class="scale-badge">📊 Nigerian 5.0 Scale</div>
+<div class="cgpa-display">
+<div class="cgpa-big" id="cgpaDisplay">0.00</div>
+<div class="cgpa-bar-wrap"><div class="cgpa-bar" id="cgpaBar"></div></div>
+<div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
+</div>
+<div class="stat-row">
+<div class="stat-box"><span class="stat-label">Total Credits</span><span class="stat-val" id="totalCredits">0</span></div>
+<div class="stat-box"><span class="stat-label">Semesters</span><span class="stat-val" id="totalSemesters">1</span></div>
+</div>
+</div>
+<div class="card" style="margin-top:14px;padding:16px 18px;">
+<div class="card-label">Grade Scale</div>
+<div style="font-size:12px;color:var(--text-2);line-height:1.8;margin-top:6px;">A → 5.00 | B → 4.00 | C → 3.00 | D → 2.00 | E → 1.00 | F → 0.00</div>
+<a href="https://cgpacalculator.dev/" style="font-size:12px;color:var(--text-3);display:inline-block;margin-top:10px;">← All grading scales</a>
+</div>
+</aside>
+    <div class="calc-main-panel">
+<div class="calculator-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Semester-wise</span><h2 class="section-title">CGPA Calculator</h2></div>
+</div>
+<div id="semestersContainer"></div>
+<button class="btn-add-semester" id="addSemesterBtn">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Semester
+</button>
+</div>
+</div>
+  </div>
+
+  <div class="card target-card-standalone" id="targetCard">
+<div class="card-label">Goal Planning</div>
+<h2 class="card-title">Target CGPA</h2>
+<div class="target-form">
+<div class="target-grid">
+<div class="target-field"><label for="currentCGPA">Current CGPA</label><input type="number" id="currentCGPA" min="0" max="5" step="0.01" placeholder="Auto-filled" /></div>
+<div class="target-field"><label for="targetCGPA">Target CGPA</label><input type="number" id="targetCGPA" min="0" max="5" step="0.01" placeholder="e.g. 4.0" /></div>
+<div class="target-field"><label for="remainingCredits">Remaining Credits</label><input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" /></div>
+</div>
+<div class="target-result" id="targetResult"><span class="target-label">Required GPA</span><span class="target-val" id="requiredGPA">–</span></div>
+<button class="btn-pdf" id="downloadPDF">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download PDF Report
+</button>
+</div>
+</div>
+
+  <section class="sgpa-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Quick Conversion</span><h2 class="section-title">SGPA → CGPA</h2></div>
+<div class="sgpa-cgpa-result"><span class="sgpa-label">CGPA</span><span class="sgpa-val" id="sgpaCGPA">0.00</span></div>
+</div>
+<div class="sgpa-table-wrap">
+<div class="sgpa-table-header"><span>Semester</span><span>SGPA</span><span></span></div>
+<div id="sgpaRowsContainer"></div>
+</div>
+<button class="btn-add-row" id="addSGPARow">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Row
+</button>
+</section>
+
+  <!-- Universities Section -->
+  <!-- What Is Section -->
+  <section class="seo-section" id="what-is">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Overview</span>
+      <h2 class="section-title">What Is a Nigerian CGPA Calculator?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>A Nigerian CGPA Calculator is an online academic tool that calculates your Cumulative Grade Point Average using the Nigerian 5.0 grading system. It combines your course grades, credit units, and grade points to produce an accurate CGPA. Students can use the calculator after every semester to monitor academic performance and estimate their final graduation classification.</p>
+    </div>
+  </section>
+
+  <!-- What Is CGPA Section -->
+  <section class="seo-section" id="what-is-cgpa">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Definition</span>
+      <h2 class="section-title">What Is CGPA in Nigeria?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>CGPA stands for Cumulative Grade Point Average. It measures your overall academic performance across every completed semester. Instead of showing how well you performed in one term, it combines your results throughout your academic program.</p>
+      <p>Your CGPA changes whenever new semester results become available. Strong grades increase your overall average, while poor grades reduce it. This makes CGPA one of the most important academic indicators throughout your university journey.</p>
+      <p>Many students confuse CGPA with GPA because both measure academic performance. However, they represent different calculations and serve different purposes. A GPA, or Grade Point Average, usually measures your performance during a single semester. A CGPA combines every semester GPA into one cumulative score. Universities often use CGPA when determining graduation eligibility, academic standing, scholarships, and degree classifications.</p>
+    </div>
+  </section>
+
+  <!-- Nigerian 5.0 Grading System -->
+  <section class="seo-section" id="grading-system">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Scale Overview</span>
+      <h2 class="section-title">Understanding the Nigerian 5.0 Grading System</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Most Nigerian universities calculate academic performance using a 5.0 grading scale. Under this system, every letter grade corresponds to a specific grade point. Your final CGPA depends on both the grade points you earn and the credit units assigned to each course.</p>
+      <div class="content-table-wrap" style="overflow-x:auto;margin-top:18px;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Letter Grade</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Score (%)</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Grade Point</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">A</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">70–100</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">5.00</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">B</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">60–69</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4.00</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">C</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">50–59</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3.00</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">D</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">45–49</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">2.00</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">E</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">40–44</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">1.00</td></tr>
+            <tr><td style="padding:9px 14px;">F</td><td style="padding:9px 14px;">Below 40</td><td style="padding:9px 14px;">0.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">Always check your university handbook because individual grading boundaries may differ slightly. However, the 5-point grading structure remains widely adopted across many Nigerian institutions.</p>
+    </div>
+  </section>
+
+  <!-- Formula Section -->
+  <section class="seo-section" id="formula">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Calculation</span>
+      <h2 class="section-title">Nigerian CGPA Formula</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>The standard formula for calculating CGPA is:</p>
+      <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin:16px 0;font-size:15px;font-weight:600;color:var(--accent);text-align:center;">CGPA = Total Quality Points ÷ Total Credit Units</div>
+      <p>Each course carries a specific number of credit units. Courses with higher credit units contribute more toward your final CGPA. Every completed course generates Quality Points using this formula:</p>
+      <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:14px 22px;margin:14px 0;font-size:14px;font-weight:600;color:var(--text-1);text-align:center;">Quality Points = Grade Point × Credit Unit</div>
+      <p>For example: a course with 3 credit units where you earn an A (Grade Point: 5) gives you 15 quality points. The university adds quality points across all courses and divides by total credit units to arrive at your CGPA.</p>
+    </div>
+  </section>
+
+  <!-- Manual Example Section -->
+  <section class="seo-section" id="example">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Worked Example</span>
+      <h2 class="section-title">Manual CGPA Calculation Example</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <div class="content-table-wrap" style="overflow-x:auto;margin-bottom:16px;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Course</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Credit Unit</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Grade</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Grade Point</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Quality Point</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">GST 111</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">2</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">A</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">5</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">10</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">MTH 111</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">B</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">12</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">CSC 111</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">A</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">5</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">15</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">PHY 111</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">2</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">C</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">CHM 111</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">B</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">12</td></tr>
+            <tr style="font-weight:600;background:var(--surface-2);"><td style="padding:9px 14px;">Total</td><td style="padding:9px 14px;">13</td><td style="padding:9px 14px;">—</td><td style="padding:9px 14px;">—</td><td style="padding:9px 14px;">55</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CGPA = 55 ÷ 13 = 4.23</strong></p>
+      <p>The same process applies regardless of your department or university. The only difference comes from the grades and credit units entered into the calculator.</p>
+    </div>
+  </section>
+
+  <!-- Degree Classification Section -->
+  <section class="seo-section" id="degree-classification">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Benchmarks</span>
+      <h2 class="section-title">Nigerian Degree Classification Based on CGPA</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Many Nigerian universities classify undergraduate degrees according to a student's final CGPA. Although exact classifications may differ slightly between institutions, the following ranges are widely recognized.</p>
+      <div class="content-table-wrap" style="overflow-x:auto;margin-top:18px;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Degree Classification</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Typical CGPA Range</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">First Class</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4.50 – 5.00</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Second Class Upper</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">3.50 – 4.49</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Second Class Lower</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">2.40 – 3.49</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Third Class</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">1.50 – 2.39</td></tr>
+            <tr><td style="padding:9px 14px;">Pass</td><td style="padding:9px 14px;">1.00 – 1.49</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">Always refer to your university's academic handbook because classification policies may vary slightly. A high CGPA can improve your chances of securing scholarships, graduate jobs, postgraduate admissions, and competitive internship opportunities.</p>
+    </div>
+  </section>
+
+  <!-- Universities Section -->
+  <section class="seo-section" id="universities">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Nigerian Universities</span>
+      <h2 class="section-title">Nigerian Universities That Commonly Use the 5.0 CGPA Scale</h2>
+    </div></div>
+    <p style="font-size:15px;color:var(--text-2);margin-bottom:16px;line-height:1.7;">The 5.0 grading system is widely adopted across federal, state, and private universities in Nigeria. Students from the following universities can generally use this calculator with confidence.</p>
+    <div class="uni-list">
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">University of Lagos (UNILAG)</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">University of Ibadan (UI)</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Ahmadu Bello University</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Obafemi Awolowo University (OAU)</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">University of Nigeria (UNN)</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">University of Benin</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Federal University of Technology Akure</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Bayero University</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Nnamdi Azikiwe University</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Covenant University</div><div class="uni-country">Nigeria</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇳🇬</span><div><div class="uni-name">Lagos State University (LASU)</div><div class="uni-country">Nigeria</div></div></div>
+    </div>
+  </section>
+
+  <!-- Why Use Us -->
+  <section class="seo-section" id="why-use-us">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Features</span>
+      <h2 class="section-title">Benefits of Using This Nigerian CGPA Calculator</h2>
+    </div></div>
+    <div class="why-use-grid">
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Instant Accurate Results</h3><p>Calculates your CGPA within seconds using the Nigerian 5.0 grading system. No manual computation needed.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h3>Target CGPA Planner</h3><p>Set a target GPA and see exactly what grades you need in remaining credits to hit your academic goal.</p></div>
+      <div class="why-card"><div class="why-icon">📊</div><h3>Multi-Semester Support</h3><p>Add unlimited semesters and courses. Each semester shows its own SGPA, and your overall CGPA reflects your complete academic record.</p></div>
+      <div class="why-card"><div class="why-icon">📥</div><h3>PDF Report Export</h3><p>Download a professional academic report with all semesters, courses, and GPA breakdown — ideal for applications and admissions.</p></div>
+      <div class="why-card"><div class="why-icon">🏫</div><h3>Built for Nigerian Universities</h3><p>Pre-configured for the exact grading scale used across federal, state, and private universities in Nigeria.</p></div>
+      <div class="why-card"><div class="why-icon">📱</div><h3>Free and Mobile Friendly</h3><p>Fully responsive and optimised for all screen sizes. No account or registration required. Use it on any device anytime.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="seo-section faq-section" id="faq">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is the highest CGPA in Nigeria?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>The highest CGPA under the standard Nigerian grading system is 5.00. Students achieve this score by earning the highest grade points across all completed courses.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is a good CGPA in Nigeria?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>A CGPA above 4.50 is generally considered excellent because it usually falls within the First Class degree classification. Many employers and postgraduate institutions also view a CGPA above 3.50 as competitive.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>How is CGPA calculated in Nigeria?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Universities calculate CGPA by dividing your total quality points by your total credit units. Quality Points = Grade Point × Credit Unit. Then CGPA = Total Quality Points ÷ Total Credit Units.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Do failed courses affect my CGPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes. Failed courses carry zero grade points but still count toward your credit units in many university grading systems. As a result, failed courses usually reduce your cumulative grade point average.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Does every Nigerian university use a 5.0 grading scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Many federal, state, and private universities use a 5.0 grading system. However, grading boundaries and degree classifications may differ slightly between institutions. Always check your university's academic handbook before calculating your final CGPA.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is a CGPA vs GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>A GPA (Grade Point Average) reflects your performance during a single semester. A CGPA (Cumulative Grade Point Average) combines the results from every completed semester into one overall score. Because universities award degrees based on cumulative performance, your CGPA is usually more important than any single semester GPA.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can this calculator estimate my degree classification?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes. Once your CGPA is calculated, you can compare the result with your university's official degree classification guidelines. Remember that universities may apply slightly different classification ranges, so always refer to your institution's handbook.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Is this Nigerian CGPA Calculator free?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes. You can calculate your CGPA as many times as needed without paying any fee or creating an account. The calculator is free for all students.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Calculators -->
+  
+  <!-- Related CGPA Guides -->
+  <section class="seo-section" id="cgpa-guides" style="margin-top:48px;">
+    <div class="section-header"><div><span class="section-eyebrow">Learn More</span><h2 class="section-title">CGPA Guides &amp; Resources</h2></div></div>
+    <div class="blog-grid">
+      <a href="https://cgpacalculator.dev/what-is-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is CGPA?</h3><p>Understand what CGPA means, how it differs from GPA, and why universities worldwide use it to measure academic performance.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/cgpa-formula" class="blog-card"><span class="blog-card-num">→</span><h3>CGPA Formula Explained</h3><p>Break down the weighted average formula with step-by-step examples using quality points and credit hours.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/good-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is a Good CGPA?</h3><p>Find out what your CGPA means for jobs, graduate school, and scholarships — with realistic benchmarks by field.</p><span class="blog-card-arrow">Read guide →</span></a>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="https://cgpacalculator.dev/cgpa-information" style="display:inline-block;padding:11px 26px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Browse All CGPA Guides →</a>
+    </div>
+  </section>
+
+  <section class="seo-section" id="related-tools" style="margin-top:48px;">
+    <div class="section-header"><div><span class="section-eyebrow">More Tools</span><h2 class="section-title">Related Calculators</h2></div></div>
+    <div class="why-use-grid">
+      <a href="https://cgpacalculator.dev/" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">4.0</div><h3>Standard 4.0 CGPA Calculator</h3><p>Calculate your CGPA using the standard 4-point grading scale.</p></a>
+      <a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🇺🇸</div><h3>North American 4.0 GPA Calculator</h3><p>US and Canada grading: A → 4.00, A− → 3.70 scale.</p></a>
+      <a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🇨🇦</div><h3>Canadian 4.33 GPA Calculator</h3><p>Calculate GPA using the Canadian 4.33 grading system.</p></a>
+      <a href="https://cgpacalculator.dev/australian-gpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🇦🇺</div><h3>Australian 7.0 GPA Calculator</h3><p>Australian scale: HD → 7.00. Fast and accurate results.</p></a>
+      <a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">%</div><h3>GPA to Percentage Calculator</h3><p>Convert your CGPA to percentage using multiple formulas.</p></a>
+      <a href="https://cgpacalculator.dev/grade-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">📝</div><h3>Grade Calculator</h3><p>Enter marks per subject to calculate your semester GPA and percentage.</p></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">◈ CGPA Calculator</div>
+      <div class="footer-author">Mohammad Nasir</div>
+      <div class="footer-bio">Professional tools builder &amp; SEO expert</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://cgpacalculator.dev/about-me" class="footer-link">About</a>
+        <a href="https://cgpacalculator.dev/privacy-policy" class="footer-link">Privacy Policy</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/cgpacalculatorbynasir/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://x.com/cgpacalculator2" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CGPA Calculator. Built with precision.</span>
+  </div>
+</footer>
+
+</body>
+</html>

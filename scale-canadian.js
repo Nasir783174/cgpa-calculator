@@ -1,3 +1,0 @@
-const SCALES = { canadian: { max:4.33, grades:[{label:"A+ (4.33)",value:4.33,letter:"A+"},{label:"A  (4.00)",value:4,letter:"A"},{label:"A− (3.67)",value:3.67,letter:"A−"},{label:"B+ (3.33)",value:3.33,letter:"B+"},{label:"B  (3.00)",value:3,letter:"B"},{label:"B− (2.67)",value:2.67,letter:"B−"},{label:"C+ (2.33)",value:2.33,letter:"C+"},{label:"C  (2.00)",value:2,letter:"C"},{label:"C− (1.67)",value:1.67,letter:"C−"},{label:"D+ (1.33)",value:1.33,letter:"D+"},{label:"D  (1.00)",value:1,letter:"D"},{label:"F  (0.00)",value:0,letter:"F"}] } };
-let currentScale="canadian", semesterCount=0, sgpaRowCount=0;
-document.addEventListener("DOMContentLoaded", initCalculator);

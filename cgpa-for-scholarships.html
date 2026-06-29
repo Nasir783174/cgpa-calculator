@@ -51,16 +51,78 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+        "@id": "https://cgpacalculator.dev/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/cgpacalculatorbynasir",
+        "https://www.instagram.com/cgpacalculatorbynasir/",
+        "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/cgpa-for-scholarships#webpage",
+      "url": "https://cgpacalculator.dev/cgpa-for-scholarships",
+      "name": "CGPA for Scholarships: Minimum Requirements by Program",
+      "description": "DAAD needs 8.5+, Fulbright 3.5+, Canadian Tier 1 needs 3.9+. See exact CGPA thresholds by scholarship programme and what offsets a slightly lower score.",
+      "isPartOf": {
+        "@id": "https://cgpacalculator.dev/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-for-scholarships-minimum-requirements-table.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://cgpacalculator.dev/cgpa-for-scholarships#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-28"
+    },
+    {
       "@type": "Article",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cgpacalculator.dev/cgpa-for-scholarships"},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cgpacalculator.dev/cgpa-for-scholarships"
+      },
       "headline": "CGPA for Scholarships: What You Need by Program & Scale",
       "description": "Elite scholarships require 3.7+ (4.0). Learn the exact CGPA thresholds for DAAD, Fulbright, Commonwealth and Canadian scholarships with programme-by-programme breakdown.",
       "image": "https://cgpacalculator.dev/cgpa-for-scholarships-minimum-requirements-table.webp",
-      "author": {"@type": "Person", "name": "Mohammad Nasir"},
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "CGPA Calculator",
-        "logo": {"@type": "ImageObject", "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"}
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"
+        }
       },
       "datePublished": "2026-03-26",
       "dateModified": "2026-05-26"
@@ -68,9 +130,24 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgpacalculator.dev/"},
-        {"@type": "ListItem", "position": 2, "name": "CGPA Information", "item": "https://cgpacalculator.dev/cgpa-information"},
-        {"@type": "ListItem", "position": 3, "name": "CGPA for Scholarships", "item": "https://cgpacalculator.dev/cgpa-for-scholarships"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA Information",
+          "item": "https://cgpacalculator.dev/cgpa-information"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CGPA for Scholarships",
+          "item": "https://cgpacalculator.dev/cgpa-for-scholarships"
+        }
       ]
     },
     {
@@ -247,9 +324,9 @@
           <p>If you are close to a scholarship threshold but not there yet, this guide gives you the targeted strategy to close the gap.</p>
           <span class="blog-card-arrow">Read guide →</span>
         </a>
-        <a href="how-to-convert-cgpa-to-percentage" class="blog-card">
+        <a href="cgpa-percentage-calculator" class="blog-card">
           <span class="blog-card-num">→</span>
-          <h3>CGPA to Percentage Guide</h3>
+          <h3>CGPA to Percentage Calculator</h3>
           <p>Scholarship forms often ask for percentage. Learn which formula to use so your conversion is accepted officially.</p>
           <span class="blog-card-arrow">Read guide →</span>
         </a>

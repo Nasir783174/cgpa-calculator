@@ -47,29 +47,113 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+        "@id": "https://cgpacalculator.dev/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/cgpacalculatorbynasir",
+        "https://www.instagram.com/cgpacalculatorbynasir/",
+        "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/what-is-cgpa#webpage",
+      "url": "https://cgpacalculator.dev/what-is-cgpa",
+      "name": "What Is CGPA? Meaning, Calculation & Why It Matters",
+      "description": "CGPA is your credit-weighted academic average across all semesters. Learn the formula, grading scales (4.0, 10.0, 5.0, 7.0) and why early grades hit hardest.",
+      "isPartOf": {
+        "@id": "https://cgpacalculator.dev/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/what-is-cgpa-meaning-formula-grading-scales.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://cgpacalculator.dev/what-is-cgpa#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-28"
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgpacalculator.dev/"},
-        {"@type": "ListItem", "position": 2, "name": "CGPA Information", "item": "https://cgpacalculator.dev/cgpa-information"},
-        {"@type": "ListItem", "position": 3, "name": "What Is CGPA", "item": "https://cgpacalculator.dev/what-is-cgpa"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA Information",
+          "item": "https://cgpacalculator.dev/cgpa-information"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What Is CGPA",
+          "item": "https://cgpacalculator.dev/what-is-cgpa"
+        }
       ]
     },
     {
       "@type": "Article",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cgpacalculator.dev/what-is-cgpa"},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cgpacalculator.dev/what-is-cgpa"
+      },
       "headline": "What Is CGPA? Meaning, Formula & How It Works",
       "description": "CGPA stands for Cumulative Grade Point Average. Learn what CGPA means, how it is calculated, and why it matters for jobs and scholarships.",
       "image": "https://cgpacalculator.dev/what-is-cgpa-meaning-formula-grading-scales.webp",
-      "author": {"@type": "Person", "name": "Mohammad Nasir"},
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "CGPA Calculator",
-        "logo": {"@type": "ImageObject", "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"}
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"
+        }
       },
       "datePublished": "2026-03-18",
       "dateModified": "2026-05-26",
       "articleSection": "CGPA Education",
-      "keywords": ["what is CGPA", "CGPA meaning", "CGPA formula", "how CGPA is calculated", "CGPA vs GPA", "grading scale CGPA"]
+      "keywords": [
+        "what is CGPA",
+        "CGPA meaning",
+        "CGPA formula",
+        "how CGPA is calculated",
+        "CGPA vs GPA",
+        "grading scale CGPA"
+      ]
     },
     {
       "@type": "FAQPage",
@@ -224,7 +308,7 @@
 <h2>The Most Common Misconception - CGPA Is Not a Percentage</h2>
 <p>Different universities use different grading curves. Shortcuts like 'multiply by 9.5' are not always accurate. Always check your institution's official conversion formula.</p>
 <ul>
-<li>CBSE (India): <a href="how-to-convert-cgpa-to-percentage">CGPA × 9.5 = approximate percentage</a></li>
+<li>CBSE (India): <a href="cgpa-percentage-calculator">CGPA × 9.5 = approximate percentage</a></li>
 <li>General 10-point scale: CGPA × 10 = approximate percentage</li>
 <li>US 4.0 scale: check institution-specific chart</li>
 </ul>

@@ -51,17 +51,79 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+        "@id": "https://cgpacalculator.dev/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/cgpacalculatorbynasir",
+        "https://www.instagram.com/cgpacalculatorbynasir/",
+        "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/cgpa-vs-gpa#webpage",
+      "url": "https://cgpacalculator.dev/cgpa-vs-gpa",
+      "name": "CGPA vs GPA: Key Differences, Formula & Real Examples",
+      "description": "GPA resets each semester; CGPA keeps building across your entire degree. See how one bad semester impacts each, with a 4-semester real worked example.",
+      "isPartOf": {
+        "@id": "https://cgpacalculator.dev/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-vs-gpa-difference-semester-vs-cumulative.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://cgpacalculator.dev/cgpa-vs-gpa#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-28"
+    },
+    {
       "@type": "Article",
       "@id": "https://cgpacalculator.dev/cgpa-vs-gpa#article",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cgpacalculator.dev/cgpa-vs-gpa"},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cgpacalculator.dev/cgpa-vs-gpa"
+      },
       "headline": "CGPA vs GPA Explained: Meaning, Formula, Real Examples",
       "description": "CGPA covers your entire degree while GPA covers one semester. Learn the key differences between CGPA and GPA and which one matters more.",
       "image": "https://cgpacalculator.dev/cgpa-vs-gpa-difference-semester-vs-cumulative.webp",
-      "author": {"@type": "Person", "name": "Mohammad Nasir"},
+      "author": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "CGPA Calculator",
-        "logo": {"@type": "ImageObject", "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"}
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp"
+        }
       },
       "datePublished": "2026-03-12",
       "dateModified": "2026-05-26"
@@ -70,9 +132,24 @@
       "@type": "BreadcrumbList",
       "@id": "https://cgpacalculator.dev/cgpa-vs-gpa#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgpacalculator.dev/"},
-        {"@type": "ListItem", "position": 2, "name": "CGPA Information", "item": "https://cgpacalculator.dev/cgpa-information"},
-        {"@type": "ListItem", "position": 3, "name": "CGPA vs GPA", "item": "https://cgpacalculator.dev/cgpa-vs-gpa"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA Information",
+          "item": "https://cgpacalculator.dev/cgpa-information"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CGPA vs GPA",
+          "item": "https://cgpacalculator.dev/cgpa-vs-gpa"
+        }
       ]
     },
     {

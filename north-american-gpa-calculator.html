@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>North American GPA Calculator – US & Canada 4.0 Scale</title>
+  <title>North American 4.0 GPA Calculator – Free Tool</title>
   <link rel="canonical" href="https://cgpacalculator.dev/north-american-gpa-calculator" />
-  <meta name="description" content="Free North American GPA calculator for US and Canadian universities. Supports A to F with +/- grades (A=4.00, A−=3.70). Multi-semester, instant results." />
+  <meta name="description" content="Calculate your GPA on the standard North American system. A=4.0, A-=3.7, B+=3.3. Grades weighted by credit hours. Multi-semester support, instant results." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="North American GPA Calculator – US & Canada 4.0 Scale" />
-  <meta property="og:description" content="Free North American GPA calculator for US and Canadian universities. Supports A to F with +/- grades (A=4.00, A−=3.70). Multi-semester, instant results." />
+  <meta property="og:title" content="North American 4.0 GPA Calculator – Free Tool" />
+  <meta property="og:description" content="Calculate your GPA on the standard North American system. A=4.0, A-=3.7, B+=3.3. Grades weighted by credit hours. Multi-semester support, instant results." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cgpacalculator.dev/north-american-gpa-calculator" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -20,11 +20,69 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="calculator-core.js"></script>
   <script defer src="scale-na.js"></script>
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+        "@id": "https://cgpacalculator.dev/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/cgpacalculatorbynasir",
+        "https://www.instagram.com/cgpacalculatorbynasir/",
+        "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/north-american-gpa-calculator#webpage",
+      "url": "https://cgpacalculator.dev/north-american-gpa-calculator",
+      "name": "North American 4.0 GPA Calculator – Free Tool",
+      "description": "Calculate your GPA using the standard North American system. A=4.0, A-=3.7, B+=3.3. Grades are weighted by credit hours. Multi-semester support, instant results.",
+      "isPartOf": {
+        "@id": "https://cgpacalculator.dev/#website"
+      },
+      "about": {
+        "@id": "https://cgpacalculator.dev/north-american-gpa-calculator#softwareapplication"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://cgpacalculator.dev/north-american-gpa-calculator#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-06-01",
+      "dateModified": "2026-06-28"
+    },
+    {
       "@type": "BreadcrumbList",
+      "@id": "https://cgpacalculator.dev/north-american-gpa-calculator#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -35,23 +93,33 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "North American GPA Calculator",
+          "name": "North American 4.0 GPA Calculator (A = 4.0 Scale)",
           "item": "https://cgpacalculator.dev/north-american-gpa-calculator"
         }
       ]
     },
     {
       "@type": "SoftwareApplication",
-      "name": "North American GPA Calculator",
-      "url": "https://cgpacalculator.dev/north-american-gpa-calculator",
+      "@id": "https://cgpacalculator.dev/north-american-gpa-calculator#softwareapplication",
+      "name": "North American 4.0 GPA Calculator (A = 4.0 Scale)",
       "applicationCategory": "EducationalApplication",
+      "applicationSubCategory": "GPA Calculator",
       "operatingSystem": "Web",
+      "url": "https://cgpacalculator.dev/north-american-gpa-calculator",
+      "description": "Calculate your GPA using the North American 4.0 grading scale where A equals 4.0 grade points. Enter letter grades and credit hours to calculate semester GPA and cumulative GPA instantly.",
+      "image": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+      "featureList": [
+        "GPA Calculation",
+        "Letter Grade Conversion",
+        "Credit Hour Support",
+        "Semester GPA Calculation",
+        "Cumulative GPA Calculation"
+      ],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
       },
-      "description": "Free North American GPA calculator for US and Canadian universities. Supports A to F with +/- grades (A=4.00, A−=3.70). Multi-semester, instant results.",
       "usedBy": [
         "MIT",
         "Harvard University",
@@ -67,48 +135,113 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is a 3.7 GPA on the North American scale?",
+          "name": "What Is a 4.0 GPA Scale?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A 3.7 GPA corresponds to an A− grade on the North American scale. It is considered excellent and is competitive for top graduate programs and scholarships. Many prestigious programs set their average admitted GPA around 3.5–3.8."
+            "text": "A 4.0 GPA scale is the most widely used academic grading system in the United States and many Canadian universities. Under this system, letter grades are converted into grade points, with A = 4.0, A− = 3.7, B+ = 3.3, and so on. GPA is calculated by multiplying grade points by credit hours and dividing total quality points by total credit hours."
           }
         },
         {
           "@type": "Question",
-          "name": "Does every US university use the same GPA scale?",
+          "name": "Is A Equal to 4.0 GPA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most US universities use the 4.0 North American scale, but grading policies can vary. Some use weighted GPAs (above 4.0) for AP/honors courses. Always check your specific institution's grading policy for exact grade-point equivalents."
+            "text": "Yes. In the standard North American 4.0 grading system, an A grade is typically worth 4.0 grade points. Some institutions may use different scales, but this calculator follows the common A equals 4.0 GPA model."
           }
         },
         {
           "@type": "Question",
-          "name": "How is North American GPA different from the Canadian 4.33 scale?",
+          "name": "Is A+ Equal to 4.0 or 4.3?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On the North American 4.0 scale, an A+ is worth 4.00 — same as an A. On the Canadian 4.33 scale used by schools like UBC and University of Alberta, an A+ is worth 4.33, allowing students who excel to score above a 4.00 average."
+            "text": "The value of an A+ depends on the institution. Many universities treat A+ and A as 4.0 GPA points, while others use a 4.3 scale and assign 4.3 points to an A+."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I convert my North American GPA to a percentage?",
+          "name": "How Do I Calculate GPA Using Credit Hours?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. A common formula is: Percentage = (GPA / 4.0) x 100. So a 3.5 GPA equals 87.5%. However, individual universities may use their own conversion methods for international applications."
+            "text": "To calculate GPA, multiply the grade points earned in each course by its credit hours, add the quality points together, and divide by the total credit hours completed. GPA = Total Quality Points ÷ Total Credit Hours."
           }
         },
         {
           "@type": "Question",
-          "name": "What GPA do I need for graduate school in the US?",
+          "name": "What GPA Is Considered Good?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most US graduate programs require a minimum GPA of 3.0, though competitive programs at top universities often expect 3.5 or higher. STEM PhD programs, law schools, and medical schools typically require a GPA of 3.5 to 3.8."
+            "text": "A GPA of 3.0 or higher is generally considered good. GPAs between 3.5 and 4.0 are often viewed as very strong and competitive for scholarships, admissions, and graduate programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is GPA the Same as CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. GPA usually represents academic performance during a specific semester or term, while CGPA represents cumulative academic performance across all completed semesters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Canadian Universities Use a 4.0 Scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many Canadian universities use a GPA system similar to the North American 4.0 scale. However, some institutions use a 4.3 scale or institution-specific grading systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How Does an A− Affect GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An A− is commonly worth 3.7 grade points on a 4.0 GPA scale. It contributes slightly fewer grade points than a full A, which is worth 4.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I Convert Percentage to GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, percentages can often be converted to GPA, but conversion methods vary by institution and country. Always use the grading scale that applies to your academic system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Is a Weighted GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A weighted GPA gives additional value to advanced courses such as AP, Honors, or IB classes, often allowing GPAs above 4.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Is an Unweighted GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An unweighted GPA uses a standard 4.0 scale and does not account for course difficulty. The highest possible unweighted GPA is typically 4.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does North South University (NSU) Use the 4.0 GPA Scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. North South University's official grading policy follows the North American 4.0 scale, with A = 4.0, A− = 3.7, B+ = 3.3, and plus/minus modifiers worth 0.3 grade points. This calculator uses the same scale, so NSU students can use it to calculate their semester GPA and cumulative CGPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Universities Use the North American GPA System?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The North American GPA system is widely used by universities throughout the United States and Canada, including institutions such as Harvard University, Stanford University, MIT, the University of Toronto, and the University of British Columbia."
           }
         }
       ]
     }
   ]
-}</script>
+}
+</script>
 </head>
 <body>
 
@@ -153,10 +286,10 @@
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="https://cgpacalculator.dev/">Home</a>
     <span class="breadcrumb-sep">›</span>
-    <span>North American GPA Calculator</span>
+    <span>North American 4.0 GPA Calculator</span>
   </nav>
 
-  <h1>North American GPA Calculator</h1>
+  <h1>North American 4.0 GPA Calculator (A = 4.0 Scale)</h1>
 
   <div class="calc-layout">
     <aside class="calc-sidebar">
@@ -226,32 +359,270 @@ Add Row
 </button>
 </section>
 
+  <!-- What is section -->
+  <section class="seo-section" id="what-is">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Scale Overview</span>
+      <h2 class="section-title">What Is the North American 4.0 GPA Scale?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>The North American 4.0 GPA scale is one of the most widely used academic grading systems in the world. It is the standard method for measuring academic performance at many colleges, universities, and educational institutions across the United States and Canada. Instead of calculating results directly from percentages, this system uses letter grades that are converted into numerical grade points and then weighted by credit hours to determine a student's Grade Point Average (GPA).</p>
+      <p>Under the standard 4.0 scale, each letter grade corresponds to a specific grade-point value. For example, an A typically equals 4.0 grade points, an A− equals 3.7, a B+ equals 3.3, and lower grades receive progressively lower values. Once grade points are assigned, each course grade is multiplied by its credit hours to calculate quality points, which are then used to determine the cumulative GPA.</p>
+      <p>Unlike many international CGPA systems that assign grade points directly from percentage ranges or predefined grading scales, the North American GPA system follows a credit-weighted approach. This means that courses carrying more credit hours have a greater impact on the final GPA than courses with fewer credits. As a result, the GPA provides a more accurate representation of overall academic achievement across multiple semesters and subjects.</p>
+
+      <h3 style="margin:22px 0 10px;font-size:16px;font-weight:700;color:var(--text-1);">Standard North American Grade Scale</h3>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>Letter Grade</th><th>Grade Points</th></tr></thead>
+          <tbody>
+            <tr><td><span class="grade-badge grade-a">A</span></td><td><strong>4.0</strong></td></tr>
+            <tr><td><span class="grade-badge grade-a-minus">A−</span></td><td><strong>3.7</strong></td></tr>
+            <tr><td><span class="grade-badge grade-b-plus">B+</span></td><td><strong>3.3</strong></td></tr>
+            <tr><td><span class="grade-badge grade-b">B</span></td><td><strong>3.0</strong></td></tr>
+            <tr><td><span class="grade-badge grade-b-minus">B−</span></td><td><strong>2.7</strong></td></tr>
+            <tr><td><span class="grade-badge grade-c-plus">C+</span></td><td><strong>2.3</strong></td></tr>
+            <tr><td><span class="grade-badge grade-c">C</span></td><td><strong>2.0</strong></td></tr>
+            <tr><td><span class="grade-badge grade-c">C−</span></td><td><strong>1.7</strong></td></tr>
+            <tr><td><span class="grade-badge grade-d">D+</span></td><td><strong>1.3</strong></td></tr>
+            <tr><td><span class="grade-badge grade-d">D</span></td><td><strong>1.0</strong></td></tr>
+            <tr><td><span class="grade-badge grade-f">F</span></td><td><strong>0.0</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">This grading structure is commonly used for calculating both semester GPA and cumulative GPA, helping students monitor their academic progress throughout a degree program.</p>
+    </div>
+  </section>
+
+  <!-- How it works section -->
+  <section class="seo-section" id="how-it-works">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Calculation Method</span>
+      <h2 class="section-title">How the North American GPA System Works</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>The calculation process is based on three key components:</p>
+      <ul>
+        <li><strong>Letter Grades</strong> – The final grades earned in each course (A, A−, B+, B, etc.)</li>
+        <li><strong>Grade Points</strong> – The numerical value assigned to each letter grade</li>
+        <li><strong>Credit Hours</strong> – The academic weight of a course, which determines how much it influences the final GPA</li>
+      </ul>
+      <p>For example, earning an A (4.0) in a 4-credit course contributes more to your GPA than earning the same grade in a 2-credit course because the course carries greater academic weight.</p>
+
+      <h3 style="margin:22px 0 10px;font-size:16px;font-weight:700;color:var(--text-1);">GPA Formula</h3>
+      <div class="formula-display">
+        <div class="formula-inner">
+          <strong class="formula-label">GPA =</strong>
+          <div class="formula-fraction">
+            <span class="formula-top">Total Quality Points</span>
+            <span class="formula-bottom">Total Credit Hours</span>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:10px;">Expanded:</p>
+      <div class="formula-display" style="margin-top:8px;">
+        <div class="formula-inner">
+          <strong class="formula-label">GPA =</strong>
+          <div class="formula-fraction">
+            <span class="formula-top">Σ(Grade Points × Credit Hours)</span>
+            <span class="formula-bottom">Σ(Credit Hours)</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin:24px 0 10px;font-size:16px;font-weight:700;color:var(--text-1);">GPA Calculation Example</h3>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>Course</th><th>Grade</th><th>Credits</th></tr></thead>
+          <tbody>
+            <tr><td>Math</td><td><span class="grade-badge grade-a">A</span></td><td>3</td></tr>
+            <tr><td>Physics</td><td><span class="grade-badge grade-b-plus">B+</span></td><td>4</td></tr>
+            <tr><td>English</td><td><span class="grade-badge grade-a-minus">A−</span></td><td>3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;"><strong>Step 1: Convert each grade to quality points</strong></p>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>Course</th><th>Grade Point</th><th>Credits</th><th>Quality Points</th></tr></thead>
+          <tbody>
+            <tr><td>Math</td><td>4.0</td><td>3</td><td>12.0</td></tr>
+            <tr><td>Physics</td><td>3.3</td><td>4</td><td>13.2</td></tr>
+            <tr><td>English</td><td>3.7</td><td>3</td><td>11.1</td></tr>
+            <tr style="font-weight:700;background:var(--surface-2,rgba(0,0,0,.04));"><td colspan="2">Total</td><td>10</td><td>36.3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;"><strong>Step 2: Divide total quality points by total credit hours</strong></p>
+      <div class="formula-display" style="margin-top:8px;">
+        <div class="formula-inner">
+          <strong class="formula-label">GPA =</strong>
+          <div class="formula-fraction">
+            <span class="formula-top">36.3</span>
+            <span class="formula-bottom">10</span>
+          </div>
+          <strong class="formula-label" style="margin-left:12px;">= 3.63</strong>
+        </div>
+      </div>
+      <p style="margin-top:12px;">With an A in Math, a B+ in Physics, and an A− in English, the resulting GPA is <strong>3.63</strong> on the North American 4.0 scale.</p>
+    </div>
+  </section>
+
+  <!-- Who uses section -->
+  <section class="seo-section" id="who-uses">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Audience</span>
+      <h2 class="section-title">Who Uses the North American 4.0 Scale?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>This grading system is commonly used by:</p>
+      <ul>
+        <li>Undergraduate students</li>
+        <li>Graduate students</li>
+        <li>Community college students</li>
+        <li>International students studying in North America</li>
+        <li>Transfer students evaluating academic equivalency</li>
+        <li>Scholarship and admissions applicants</li>
+      </ul>
+      <p>Many universities, colleges, and academic institutions use a variation of the 4.0 GPA scale when evaluating academic standing, graduation eligibility, honors distinctions, scholarship requirements, and admission applications.</p>
+    </div>
+  </section>
+
+  <!-- North American GPA vs Traditional CGPA -->
+  <section class="seo-section" id="gpa-vs-cgpa-systems">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Comparison</span>
+      <h2 class="section-title">North American GPA vs Traditional CGPA Systems</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>A common source of confusion is the difference between a North American GPA and a traditional CGPA system used in many Asian, Middle Eastern, and international institutions.</p>
+      <p>In many CGPA systems, grade points are assigned directly from predefined grading scales, such as A+ = 4.0, A = 3.75, B+ = 3.5, and so on. The North American model, however, is based on letter grades and credit-weighted calculations, where GPA is determined by the total quality points earned across all completed courses.</p>
+      <div class="table-wrap" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>Feature</th><th>North American GPA System</th><th>Traditional CGPA System</th></tr></thead>
+          <tbody>
+            <tr><td>Grade Input</td><td>Letter grades (A, A−, B+, B, etc.)</td><td>Direct grade points or percentages</td></tr>
+            <tr><td>A Grade Value</td><td>A = 4.0</td><td>Often varies by institution</td></tr>
+            <tr><td>Credit Hours</td><td>Usually required for calculation</td><td>May or may not be required</td></tr>
+            <tr><td>Calculation Method</td><td>Quality points divided by total credit hours</td><td>Average grade points across courses</td></tr>
+            <tr><td>Common Scale</td><td>4.0 GPA Scale</td><td>4.0, 5.0, 10.0, or custom scales</td></tr>
+            <tr><td>Most Common Regions</td><td>United States and Canada</td><td>Asia, Middle East, Africa</td></tr>
+            <tr><td>Input Format</td><td>Letter grades and credits</td><td>Grade points, marks, or percentages</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">Because of these differences, students should always use a calculator that matches their institution's grading policy. If your school follows the North American grading system where A equals 4.0 grade points, this calculator provides the most accurate GPA calculation based on letter grades, credit hours, and cumulative academic performance.</p>
+    </div>
+  </section>
+
   <!-- Universities Section -->
   <section class="seo-section" id="universities">
     <div class="section-header"><div>
       <span class="section-eyebrow">US & Canada</span>
       <h2 class="section-title">Universities Using This Scale</h2>
     </div></div>
-    <p style="font-size:15px;color:var(--text-2);margin-bottom:16px;line-height:1.7;">The following universities use the <strong>North American 4.0</strong> for calculating cumulative grade point averages.</p>
-    <div class="uni-list"><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">MIT</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Harvard University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Stanford University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">UC Berkeley</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Yale University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Princeton University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">University of Toronto</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">UBC</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">McGill University</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">University of Waterloo</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Columbia University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Cornell University</div><div class="uni-country">USA</div></div></div></div>
+    <div class="seo-content-card">
+      <p>The North American 4.0 GPA scale is the standard grading framework across most universities and colleges in the United States and Canada, where letter grades such as A, A−, B+, B, and C are converted into grade points and weighted according to credit hours to calculate a student's cumulative GPA. This grading model is used by many globally recognized institutions, including the following.</p>
+    </div>
+    <div class="uni-list"><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Harvard University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">Stanford University</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">MIT</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">UC Berkeley</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">University of Michigan</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">UT Austin</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇺🇸</span><div><div class="uni-name">New York University (NYU)</div><div class="uni-country">USA</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">University of Toronto</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">McGill University</div><div class="uni-country">Canada</div></div></div><div class="uni-item"><span class="uni-flag">🇨🇦</span><div><div class="uni-name">University of Alberta</div><div class="uni-country">Canada</div></div></div></div>
+    <div class="seo-content-card" style="margin-top:16px;">
+      <p>While individual grading policies may vary slightly between institutions, the underlying 4.0 GPA methodology remains largely consistent. In Bangladesh, the North American-style 4.0 grading system is also widely adopted by leading private universities, including North South University (NSU), BRAC University, Independent University Bangladesh (IUB), United International University (UIU), East West University (EWU), and American International University-Bangladesh (AIUB), among others.</p>
+      <p>As a result, this calculator is particularly useful for:</p>
+      <ul>
+        <li>NSU, BRAC University, IUB, UIU, EWU, and AIUB students</li>
+        <li>Students studying in U.S. and Canadian universities</li>
+        <li>International students applying to North American institutions</li>
+        <li>Transfer and exchange program applicants</li>
+        <li>Scholarship and graduate school applicants</li>
+      </ul>
+      <p>If your institution calculates grades using letter grades such as A, A−, B+, B, C+, and assigns grade points on a 4.0 scale, this calculator is designed for your academic system.</p>
+    </div>
   </section>
 
-  <!-- What is section -->
-  <section class="seo-section" id="what-is">
+  <!-- NSU Section -->
+  <section class="seo-section" id="nsu-cgpa-calculator">
     <div class="section-header"><div>
-      <span class="section-eyebrow">Scale Overview</span>
-      <h2 class="section-title">What is the North American GPA Scale?</h2>
+      <span class="section-eyebrow">North South University</span>
+      <h2 class="section-title">Using This for NSU?</h2>
     </div></div>
-    <div class="seo-content-card"><p>The North American GPA scale is the standard grading system used across universities in the United States and Canada. It runs from 0.00 to 4.00, with letter grades ranging from A (excellent) to F (fail). The distinguishing feature of this scale compared to the Standard 4.0 scale is the use of plus (+) and minus (−) modifiers — for example, A− (3.70) and B+ (3.30) — which allow for more precise grade differentiation. Most US institutions treat an A as 4.00, while the A+ grade may also be capped at 4.00 (unlike the Canadian 4.33 scale where A+ can exceed 4.00).</p></div>
+    <div class="seo-content-card">
+      <p>If you study at <strong>North South University (NSU)</strong>, you're in the right place. NSU's official grading policy follows the North American 4.0 scale — the exact system this calculator uses — with letter grades from A to F and plus/minus modifiers worth 0.3 grade points each.</p>
+      <div class="table-wrap" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>Numerical Score</th><th>Letter Grade</th><th>Grade Point</th></tr></thead>
+          <tbody>
+            <tr><td>93 and above</td><td><span class="grade-badge grade-a">A</span></td><td><strong>4.0</strong></td></tr>
+            <tr><td>90 – 92</td><td><span class="grade-badge grade-a-minus">A−</span></td><td><strong>3.7</strong></td></tr>
+            <tr><td>87 – 89</td><td><span class="grade-badge grade-b-plus">B+</span></td><td><strong>3.3</strong></td></tr>
+            <tr><td>83 – 86</td><td><span class="grade-badge grade-b">B</span></td><td><strong>3.0</strong></td></tr>
+            <tr><td>80 – 82</td><td><span class="grade-badge grade-b-minus">B−</span></td><td><strong>2.7</strong></td></tr>
+            <tr><td>77 – 79</td><td><span class="grade-badge grade-c-plus">C+</span></td><td><strong>2.3</strong></td></tr>
+            <tr><td>73 – 76</td><td><span class="grade-badge grade-c">C</span></td><td><strong>2.0</strong></td></tr>
+            <tr><td>70 – 72</td><td><span class="grade-badge grade-c">C−</span></td><td><strong>1.7</strong></td></tr>
+            <tr><td>67 – 69</td><td><span class="grade-badge grade-d">D+</span></td><td><strong>1.3</strong></td></tr>
+            <tr><td>60 – 66</td><td><span class="grade-badge grade-d">D</span></td><td><strong>1.0</strong></td></tr>
+            <tr><td>Below 60</td><td><span class="grade-badge grade-f">F</span></td><td><strong>0.0</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">To use this calculator for your <strong>NSU CGPA</strong>, simply enter each course's letter grade and credit hours per semester — the tool automatically applies the same A=4.0, A−=3.7, B+=3.3 grading logic NSU uses on your official transcript. NSU requires a minimum CGPA of 2.00 to qualify for a degree, and final CGPA also determines Latin honors at graduation (Summa Cum Laude, Magna Cum Laude, and Cum Laude).</p>
+      <p style="margin-top:10px;">Note: individual instructors at NSU have some discretion over exact grade cut-off points, so always confirm your final result against your official RDS transcript or the <a href="https://www.northsouth.edu/academic/grading-policy.html" target="_blank" rel="nofollow noopener noreferrer">NSU Grading Policy page</a>.</p>
+    </div>
   </section>
 
   <!-- Good GPA section -->
   <section class="seo-section" id="good-gpa">
     <div class="section-header"><div>
       <span class="section-eyebrow">Benchmarks</span>
-      <h2 class="section-title">What is a Good GPA on the North American Scale?</h2>
+      <h2 class="section-title">Understanding Common GPA Ranges</h2>
     </div></div>
-    <div class="seo-content-card"><p>A GPA of 3.5 or above is generally considered excellent and makes you competitive for graduate admissions and top employers. A GPA between 3.0–3.49 is considered good and meets the minimum requirement for most graduate programs. A GPA below 2.0 typically puts you on academic probation at most US and Canadian universities.</p></div>
+    <div class="seo-content-card">
+      <p>A GPA is more than just a number — it is one of the most widely used indicators of academic performance in North American colleges and universities. Your GPA can influence scholarship opportunities, academic standing, internship eligibility, transfer applications, graduate school admissions, and even certain job opportunities after graduation.</p>
+      <p>While GPA expectations vary between institutions and programs, the following ranges provide a general benchmark for interpreting academic performance on the North American 4.0 scale.</p>
+      <div class="table-wrap" style="margin-top:12px;">
+        <table>
+          <thead><tr><th>GPA Range</th><th>Academic Performance</th></tr></thead>
+          <tbody>
+            <tr><td>3.8 – 4.0</td><td>Excellent</td></tr>
+            <tr><td>3.5 – 3.79</td><td>Very Good</td></tr>
+            <tr><td>3.0 – 3.49</td><td>Good</td></tr>
+            <tr><td>2.0 – 2.99</td><td>Satisfactory / Average</td></tr>
+            <tr><td>Below 2.0</td><td>Academic Risk</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common mistakes section -->
+  <section class="seo-section" id="common-mistakes">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Avoid These</span>
+      <h2 class="section-title">Common GPA Calculation Mistakes to Avoid</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Calculating GPA may seem straightforward, but small mistakes can lead to inaccurate results and a misunderstanding of your actual academic standing. Understanding these common errors can help ensure that your GPA accurately reflects your academic performance.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Ignoring Credit Hours</h3>
+      <p>One of the most common mistakes is treating every course equally, regardless of credit hours. In the North American system, GPA is a weighted average — courses with more credit hours have a greater impact on your final GPA. Always multiply the grade points earned by the credit hours before calculating the overall average, or the result may not match your official transcript.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Using Percentages Instead of Letter Grades</h3>
+      <p>Many students try to calculate GPA by directly converting percentages into grade points. This often leads to inaccurate results because the North American system is based primarily on letter grades. An 85% may be an A at one institution and a B+ at another, so always determine the official letter grade first.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Confusing the 4.0 and 4.3 Scales</h3>
+      <p>Not all universities use the same GPA scale. While most US and Canadian schools use a standard 4.0 scale, some use a 4.3 scale where an A+ receives 4.3 grade points instead of 4.0. Using the wrong scale can significantly inflate or underestimate your GPA, so always verify your institution's grading policy first.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Treating A+ Grades Incorrectly</h3>
+      <p>Many students assume an A+ is always worth more than an A. In many North American institutions both are valued at 4.0, while others award 4.3 for an A+. Always check your school's grading guidelines before assuming extra credit for a plus grade.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Mixing International and North American Grading Systems</h3>
+      <p>International students sometimes combine grades from different educational systems within a single GPA calculation. A grade point value valid in one country may not carry the same meaning in another — for example, a 10-point CGPA scale cannot be directly combined with a North American 4.0 GPA without proper conversion.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Relying on Unofficial Conversion Charts</h3>
+      <p>Different universities apply unique grade boundaries and credit-weighting rules, so two students with identical percentage scores may receive different GPA values depending on their institution. Whenever possible, refer to official university grading policies rather than random online charts.</p>
+
+      <h3 style="margin:20px 0 8px;font-size:16px;font-weight:700;color:var(--text-1);">Entering Incorrect or Missing Courses</h3>
+      <p>Even small data-entry errors can affect GPA calculations. Students sometimes forget repeated courses, electives, or transferred credits. Before calculating your GPA, review your transcript carefully and confirm that all courses, grades, and credit hours have been entered correctly.</p>
+    </div>
   </section>
 
   <!-- Why Use Us -->
@@ -277,21 +648,59 @@ Add Row
       <h2 class="section-title">Frequently Asked Questions</h2>
     </div></div>
     <div class="faq-list"><div class="faq-item">
-<button class="faq-question" aria-expanded="false"><span>What is a 3.7 GPA on the North American scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="faq-answer"><p>A 3.7 GPA corresponds to an A− grade on the North American scale. It is considered excellent and is competitive for top graduate programs and scholarships. Many prestigious programs set their average admitted GPA around 3.5–3.8.</p></div>
+<button class="faq-question" aria-expanded="false"><span>What Is a 4.0 GPA Scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>A 4.0 GPA scale is the most widely used academic grading system in the United States and many Canadian universities. Under this system, letter grades are converted into grade points, with A = 4.0, A− = 3.7, B+ = 3.3, and so on. Your GPA is calculated by multiplying each course's grade points by its credit hours, then dividing the total quality points by the total number of credit hours.</p></div>
 </div><div class="faq-item">
-<button class="faq-question" aria-expanded="false"><span>Does every US university use the same GPA scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="faq-answer"><p>Most US universities use the 4.0 North American scale, but grading policies can vary. Some use weighted GPAs (above 4.0) for AP/honors courses. Always check your specific institution's grading policy for exact grade-point equivalents.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Is A Equal to 4.0 GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Yes, in the standard North American 4.0 grading system, an A grade is typically worth 4.0 grade points. However, grading policies can vary by institution — some schools award 4.0 for both A and A+, while others use a 4.3 scale. Always check your university's grading policy if you're unsure.</p></div>
 </div><div class="faq-item">
-<button class="faq-question" aria-expanded="false"><span>How is North American GPA different from the Canadian 4.33 scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="faq-answer"><p>On the North American 4.0 scale, an A+ is worth 4.00 — same as an A. On the Canadian 4.33 scale used by schools like UBC and University of Alberta, an A+ is worth 4.33, allowing students who excel to score above a 4.00 average.</p></div>
+<button class="faq-question" aria-expanded="false"><span>Is A+ Equal to 4.0 or 4.3?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>The value of an A+ depends on your institution's grading system. Many universities in the United States treat A+ and A as 4.0 GPA points, while some colleges and universities use a 4.3 scale and award 4.3 points for an A+. This calculator uses the standard North American 4.0 scale unless otherwise specified.</p></div>
 </div><div class="faq-item">
-<button class="faq-question" aria-expanded="false"><span>Can I convert my North American GPA to a percentage?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="faq-answer"><p>Yes. A common formula is: Percentage = (GPA ÷ 4.0) × 100. So a 3.5 GPA equals 87.5%. However, individual universities may use their own conversion methods for international applications.</p></div>
+<button class="faq-question" aria-expanded="false"><span>How Do I Calculate GPA Using Credit Hours?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Multiply the grade points earned in each course by the course's credit hours, add the quality points together, then divide by the total number of credit hours completed. GPA = Total Quality Points ÷ Total Credit Hours. This ensures courses with more credit hours have a greater impact on your final GPA.</p></div>
 </div><div class="faq-item">
-<button class="faq-question" aria-expanded="false"><span>What GPA do I need for graduate school in the US?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-<div class="faq-answer"><p>Most US graduate programs require a minimum GPA of 3.0, though competitive programs at top universities often expect 3.5 or higher. STEM PhD programs, law schools, and medical schools typically require a GPA of 3.5–3.8.</p></div>
+<button class="faq-question" aria-expanded="false"><span>What GPA Is Considered Good?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>A "good" GPA depends on your academic goals and institution, but a GPA of 3.0 or higher is generally considered a strong academic achievement. GPAs between 3.5 and 4.0 are often viewed as excellent and competitive for scholarships, admissions, and graduate programs, which often prefer GPAs above 3.5.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Is GPA the Same as CGPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>No. GPA usually represents your performance during a single semester, term, or academic period, while CGPA represents your overall academic performance across all completed semesters or years of study. Many universities use CGPA as the primary measure of long-term academic performance.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Do Canadian Universities Use a 4.0 Scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Many Canadian universities use a GPA system similar to the North American 4.0 scale, but grading policies vary by institution. Some follow a standard 4.0 scale, while others use a 4.3 scale or institution-specific grading methods. Always consult your university's official grading policy when calculating GPA.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>How Does an A− Affect GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>An A− generally carries a value of 3.7 grade points on a standard 4.0 GPA scale. While still an excellent grade, it contributes slightly fewer grade points than a full A, which is worth 4.0. The exact impact on your overall GPA depends on the credit hours assigned to that course.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Can I Convert Percentage to GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Yes, percentages can often be converted to GPA, but there is no universal conversion formula — different universities, countries, and credential evaluation services use different methods. To get the most accurate result, use the conversion method specified by your own institution.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>What Is a Weighted GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>A weighted GPA assigns additional value to more challenging courses, such as Advanced Placement (AP), Honors, or International Baccalaureate (IB) classes. For example, an A in a standard course may be worth 4.0 points, while an A in an advanced course may be worth 4.5 or 5.0. Weighted GPAs are commonly used by high schools to recognize students taking more rigorous coursework.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>What Is an Unweighted GPA?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>An unweighted GPA uses the standard grading scale without considering course difficulty — every course is treated equally regardless of whether it is standard, honors, or advanced. On a traditional 4.0 scale, the highest possible unweighted GPA is 4.0.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Does North South University (NSU) Use the 4.0 GPA Scale?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>Yes. North South University's official grading policy follows the North American 4.0 scale, with A = 4.0, A− = 3.7, B+ = 3.3, and plus/minus modifiers worth 0.3 grade points. This calculator uses the same scale, so NSU students can use it to calculate their semester GPA and cumulative CGPA.</p></div>
+</div><div class="faq-item">
+<button class="faq-question" aria-expanded="false"><span>Which Universities Use the North American GPA System?</span><svg class="faq-chevron" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+<div class="faq-answer"><p>The North American GPA system is widely used by colleges and universities throughout the United States and Canada, including institutions such as Harvard University, Stanford University, MIT, the University of Toronto, and the University of British Columbia. Grading scales can still vary between institutions, so always refer to your school's official policy for the most accurate calculation.</p></div>
 </div></div>
+  </section>
+
+  
+  <!-- Related CGPA Guides -->
+  <section class="seo-section" id="cgpa-guides" style="margin-top:48px;">
+    <div class="section-header"><div><span class="section-eyebrow">Learn More</span><h2 class="section-title">CGPA Guides &amp; Resources</h2></div></div>
+    <div class="blog-grid">
+      <a href="https://cgpacalculator.dev/what-is-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is CGPA?</h3><p>Understand what CGPA means, how it differs from GPA, and why universities worldwide use it to measure academic performance.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/cgpa-formula" class="blog-card"><span class="blog-card-num">→</span><h3>CGPA Formula Explained</h3><p>Break down the weighted average formula with step-by-step examples using quality points and credit hours.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/good-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is a Good CGPA?</h3><p>Find out what your CGPA means for jobs, graduate school, and scholarships — with realistic benchmarks by field.</p><span class="blog-card-arrow">Read guide →</span></a>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="https://cgpacalculator.dev/cgpa-information" style="display:inline-block;padding:11px 26px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Browse All CGPA Guides →</a>
+    </div>
   </section>
 
   <section class="seo-section" id="related-tools" style="margin-top:48px;">
@@ -314,13 +723,19 @@ Add Row
 </div>
 <div class="footer-right">
 <div class="footer-links">
-<a href="https://cgpacalculator.dev/cgpa-information" class="footer-link">CGPA Info</a>
 <a href="https://cgpacalculator.dev/about-me" class="footer-link">About</a>
-<a href="https://cgpacalculator.dev/privacy-policy" class="footer-link">Privacy</a>
+<a href="https://cgpacalculator.dev/privacy-policy" class="footer-link">Privacy Policy</a>
+</div>
+<div class="footer-social">
+<a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+<a href="https://www.instagram.com/cgpacalculatorbynasir/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a href="https://x.com/cgpacalculator2" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
 </div>
 </div>
 </div>
-<div class="footer-bottom">© 2025 cgpacalculator.dev · Free academic tools for students worldwide</div>
+<div class="footer-bottom">
+<span>© 2026 CGPA Calculator. Built with precision.</span>
+</div>
 </footer>
 
 </body>

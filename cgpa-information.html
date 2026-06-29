@@ -51,6 +51,59 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+        "@id": "https://cgpacalculator.dev/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://www.facebook.com/cgpacalculatorbynasir",
+        "https://www.instagram.com/cgpacalculatorbynasir/",
+        "https://x.com/cgpacalculator2"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mohammad Nasir"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/cgpa-information#webpage",
+      "url": "https://cgpacalculator.dev/cgpa-information",
+      "name": "CGPA Guide: Everything Students Need to Know (2026)",
+      "description": "10 expert CGPA guides: what CGPA is, how to calculate it, convert to percentage, CGPA vs GPA, good CGPA benchmarks, scholarships, jobs and how to improve.",
+      "isPartOf": {
+        "@id": "https://cgpacalculator.dev/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cgpacalculator.dev/cgpa-information-guides-overview.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "breadcrumb": {
+        "@id": "https://cgpacalculator.dev/cgpa-information#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-28"
+    },
+    {
       "@type": "Article",
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -72,7 +125,15 @@
         }
       },
       "articleSection": "CGPA Guides",
-      "keywords": ["CGPA guide", "what is CGPA", "CGPA vs GPA", "how to calculate CGPA", "CGPA to percentage", "CGPA improvement", "student GPA system"]
+      "keywords": [
+        "CGPA guide",
+        "what is CGPA",
+        "CGPA vs GPA",
+        "how to calculate CGPA",
+        "CGPA to percentage",
+        "CGPA improvement",
+        "student GPA system"
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -161,9 +222,9 @@
         <p>A step-by-step walkthrough of calculating your CGPA manually — with worked examples and common mistakes to avoid.</p>
         <span class="blog-card-arrow">Read guide →</span>
       </a>
-      <a href="how-to-convert-cgpa-to-percentage" class="blog-card">
+      <a href="cgpa-percentage-calculator" class="blog-card">
         <span class="blog-card-num">05</span>
-        <h3>CGPA to Percentage</h3>
+        <h3>CGPA to Percentage Calculator</h3>
         <p>Whether you use a calculator or work it out by hand, understanding the conversion from CGPA to percentage is essential.</p>
         <span class="blog-card-arrow">Read guide →</span>
       </a>

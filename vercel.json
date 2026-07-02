@@ -13,6 +13,11 @@
       "statusCode": 301
     },
     {
+      "source": "/how-to-convert-cgpa-to-percentage",
+      "destination": "/cgpa-percentage-calculator",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" rx="16" fill="#e8f3f8"/>
+  <rect x="40" y="40" width="720" height="370" rx="12" fill="#ffffff" stroke="#dde6ea" stroke-width="2"/>
+
+  <text x="70" y="90" font-family="Poppins, sans-serif" font-size="22" font-weight="700" fill="#023246">Grade Breakdown</text>
+  <text x="70" y="114" font-family="Poppins, sans-serif" font-size="13" fill="#5a7a8a">Assignments · Quizzes · Midterm · Final</text>
+
+  <!-- horizontal weighted bars -->
+  <g font-family="Poppins, sans-serif" font-size="13" fill="#2a4a5a">
+    <text x="70" y="165">Assignments (20%)</text>
+    <rect x="260" y="150" width="470" height="18" rx="9" fill="#e8eef1"/>
+    <rect x="260" y="150" width="390" height="18" rx="9" fill="#5ba3bd"/>
+
+    <text x="70" y="205">Quizzes (15%)</text>
+    <rect x="260" y="190" width="470" height="18" rx="9" fill="#e8eef1"/>
+    <rect x="260" y="190" width="330" height="18" rx="9" fill="#287094"/>
+
+    <text x="70" y="245">Midterm (25%)</text>
+    <rect x="260" y="230" width="470" height="18" rx="9" fill="#e8eef1"/>
+    <rect x="260" y="230" width="410" height="18" rx="9" fill="#287094"/>
+
+    <text x="70" y="285">Final Exam (40%)</text>
+    <rect x="260" y="270" width="470" height="18" rx="9" fill="#e8eef1"/>
+    <rect x="260" y="270" width="360" height="18" rx="9" fill="#023246"/>
+  </g>
+
+  <!-- divider -->
+  <line x1="70" y1="315" x2="730" y2="315" stroke="#dde6ea" stroke-width="2"/>
+
+  <!-- result badge -->
+  <g>
+    <rect x="70" y="335" width="230" height="55" rx="10" fill="#023246"/>
+    <text x="90" y="358" font-family="Poppins, sans-serif" font-size="12" fill="#b3d4e3">Final Grade</text>
+    <text x="90" y="380" font-family="Poppins, sans-serif" font-size="20" font-weight="800" fill="#ffffff">A  ·  91.4%</text>
+  </g>
+
+  <g>
+    <circle cx="640" cy="362" r="32" fill="none" stroke="#e8eef1" stroke-width="8"/>
+    <circle cx="640" cy="362" r="32" fill="none" stroke="#287094" stroke-width="8" stroke-linecap="round"
+      stroke-dasharray="180 201" transform="rotate(-90 640 362)"/>
+    <text x="640" y="368" text-anchor="middle" font-family="Poppins, sans-serif" font-size="15" font-weight="700" fill="#023246">91%</text>
+  </g>
+</svg>

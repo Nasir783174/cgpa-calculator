@@ -1,0 +1,33 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" rx="16" fill="#e8f3f8"/>
+  <rect x="40" y="40" width="720" height="370" rx="12" fill="#ffffff" stroke="#dde6ea" stroke-width="2"/>
+
+  <text x="70" y="90" font-family="Poppins, sans-serif" font-size="22" font-weight="700" fill="#023246">Scholarship Shortlist</text>
+  <text x="70" y="114" font-family="Poppins, sans-serif" font-size="13" fill="#5a7a8a">Minimum CGPA thresholds reviewers check first</text>
+
+  <!-- funnel -->
+  <polygon points="120,150 400,150 340,220 180,220" fill="#5ba3bd" opacity="0.35"/>
+  <polygon points="180,220 340,220 300,270 220,270" fill="#5ba3bd" opacity="0.55"/>
+  <polygon points="220,270 300,270 280,320 240,320" fill="#287094"/>
+  <text x="260" y="345" text-anchor="middle" font-family="Poppins, sans-serif" font-size="12" fill="#023246" font-weight="700">Shortlisted</text>
+
+  <text x="120" y="140" font-family="Poppins, sans-serif" font-size="12" fill="#5a7a8a">All Applicants</text>
+
+  <!-- score cards -->
+  <g font-family="Poppins, sans-serif">
+    <rect x="470" y="150" width="260" height="60" rx="10" fill="#f6f6f6" stroke="#dde6ea"/>
+    <text x="488" y="174" font-size="13" font-weight="700" fill="#023246">Elite / Full-Funded</text>
+    <text x="488" y="196" font-size="12" fill="#5a7a8a">3.5 – 4.0 CGPA</text>
+
+    <rect x="470" y="222" width="260" height="60" rx="10" fill="#f6f6f6" stroke="#dde6ea"/>
+    <text x="488" y="246" font-size="13" font-weight="700" fill="#023246">Merit-Based Partial</text>
+    <text x="488" y="268" font-size="12" fill="#5a7a8a">3.2 – 3.4 CGPA</text>
+
+    <rect x="470" y="294" width="260" height="60" rx="10" fill="#f6f6f6" stroke="#dde6ea"/>
+    <text x="488" y="318" font-size="13" font-weight="700" fill="#023246">General Eligibility</text>
+    <text x="488" y="340" font-size="12" fill="#5a7a8a">2.5 – 3.0 CGPA</text>
+  </g>
+
+  <line x1="70" y1="380" x2="730" y2="380" stroke="#dde6ea" stroke-width="2"/>
+  <text x="70" y="400" font-family="Poppins, sans-serif" font-size="12" fill="#5a7a8a">Reviewers sort by CGPA before reading essays or references.</text>
+</svg>

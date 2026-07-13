@@ -267,7 +267,7 @@ tbody tr:hover{background:var(--accent-dim)}
 .footer-links{display:flex;gap:20px}
 .footer-link{font-size:14px;color:rgba(255,255,255,.75);transition:color var(--transition)}
 .footer-link:hover{color:var(--accent-soft)}
-.footer-social{display:flex;gap:7px}
+.footer-social{display:flex;flex-wrap:wrap;gap:7px;max-width:320px}
 .footer-social-link{width:36px;height:36px;border-radius:8px;border:1.5px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);transition:all var(--transition)}
 .footer-social-link:hover{color:#fff;border-color:var(--accent-soft);background:rgba(40,112,148,.25)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:14px 24px;font-size:13px;color:rgba(255,255,255,.6)}

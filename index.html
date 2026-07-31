@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CGPA Calculator Bangladesh | All Universities (UGC 4.0)</title>
   <link rel="canonical" href="https://cgpacalculator.dev/" />
-  <meta name="description" content="Free CGPA Calculator for Bangladesh students. Instantly calculate CGPA & SGPA using the official UGC 4.0 scale for all public and private universities." />
+  <meta name="description" content="Free CGPA Calculator for Bangladesh students. Instantly calculate CGPA & SGPA using the common UGC-style 4.0 scale used by most public and private universities." />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="CGPA Calculator Bangladesh (UGC 4.0 Scale) – Free & Instant Results" />
-  <meta property="og:description" content="Free CGPA Calculator for Bangladesh built on the official UGC 4.0 grading scale. Calculate your Cumulative Grade Point Average by entering course grades and credit hours across multiple semesters." />
+  <meta property="og:description" content="Free CGPA Calculator for Bangladesh built on the common UGC-style 4.0 grading scale. Calculate your Cumulative Grade Point Average by entering course grades and credit hours across multiple semesters." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cgpacalculator.dev/" />
   <meta property="og:locale" content="en_US" />
@@ -108,7 +108,7 @@
         "@id": "https://cgpacalculator.dev/#webpage",
         "url": "https://cgpacalculator.dev/",
         "name": "CGPA Calculator Bangladesh (UGC 4.0 Scale) – NU, DU, NSU, BRAC",
-        "description": "Free CGPA Calculator for Bangladesh university students using the official UGC 4.0 grading scale. Supports NU, DU, BUET, NSU, BRAC, AIUB and all public & private universities.",
+        "description": "Free CGPA Calculator for Bangladesh university students using the common UGC-style 4.0 grading scale. Supports NU, DU, BUET, NSU, BRAC, AIUB and all public & private universities.",
         "isPartOf": { "@id": "https://cgpacalculator.dev/#website" },
         "about": { "@id": "https://cgpacalculator.dev/#softwareapplication" },
         "breadcrumb": { "@id": "https://cgpacalculator.dev/#breadcrumb" },
@@ -139,7 +139,7 @@
         "applicationSubCategory": "CalculatorApplication",
         "operatingSystem": "Web",
         "browserRequirements": "Requires JavaScript and HTML5 support",
-        "description": "A free CGPA Calculator using Bangladesh's official UGC standard 4.0 grading scale, used by NU, DU, BUET and most public and private universities. Supports multi-semester input, credit-weighted calculation, SGPA conversion, target CGPA planning, and PDF export.",
+        "description": "A free CGPA Calculator using a common UGC-style 4.0 grading scale, used by NU, DU, BUET and most public and private universities. Supports multi-semester input, credit-weighted calculation, SGPA conversion, target CGPA planning, and PDF export.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -422,6 +422,7 @@
         💡 Enter credits per semester for a <strong>credit-weighted CGPA</strong>. Leave credits blank for a simple average.
         <span id="sgpaWeightedNote" style="display:none;color:var(--accent);font-weight:700;margin-left:4px;">✓ Weighted</span>
       </p>
+      <p id="sgpaMissingCreditWarning" role="alert" style="display:none;font-size:12.5px;color:#b45309;background:#fff7ed;border:1px solid #fde2b8;border-radius:8px;padding:8px 12px;margin:0 0 10px;line-height:1.6;font-weight:600;"></p>
       <button class="btn-add-row" id="addSGPARow">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         Add Row
@@ -454,7 +455,7 @@
         <h2 class="section-title">Public vs Private University CGPA Scale in Bangladesh</h2>
       </div></div>
       <div class="seo-content-card">
-        <p>Bangladesh does not use a single CGPA scale for every university. Public universities and National University (NU) follow the <strong>UGC Standard 4.0 scale</strong> — the same scale this calculator uses by default — while most private universities follow a stricter, US-style scale. Knowing which one applies to you matters, because entering the wrong scale will give you an incorrect CGPA.</p>
+        <p>Bangladesh does not use a single CGPA scale for every university. Public universities and National University (NU) generally follow a <strong>UGC-style 4.0 scale</strong> — the same scale this calculator uses by default — while most private universities follow a stricter, US-style scale. Knowing which one applies to you matters, because entering the wrong scale will give you an incorrect CGPA.</p>
         <div class="table-wrap" style="margin-top:16px;">
           <table>
             <thead><tr><th>University Type</th><th>Grading Pattern</th><th>Examples</th></tr></thead>
@@ -464,7 +465,7 @@
             </tbody>
           </table>
         </div>
-        <p style="margin-top:16px;">If you study at a <strong>public university, a National University-affiliated college, or on the Honours/Degree/Masters programme under NU</strong>, this Standard 4.0 Calculator on this page is the correct tool for you — it already matches the official UGC grading scale.</p>
+        <p style="margin-top:16px;">If you study at a <strong>public university, a National University-affiliated college, or on the Honours/Degree/Masters programme under NU</strong>, this Standard 4.0 Calculator follows the common UGC-style 4.0 grading scale used by most institutions — but grading tables vary by university, so double-check your grade points against your own institution’s official transcript or grading policy before relying on the result for anything official.</p>
         <p style="margin-top:10px;">If you study at <strong>NSU, BRAC University, IUB, UIU, EWU, or AIUB</strong>, your university's official grading policy is closer to the North American system (A = 4.00, A− = 3.70, B+ = 3.30). Use our dedicated <a href="https://cgpacalculator.dev/north-american-gpa-calculator">North American GPA Calculator</a> built specifically for these grading cut-offs to get an accurate CGPA.</p>
         <p style="margin-top:10px;font-size:13px;color:var(--text-3);">Note: National University Honours results are calculated year-wise (1st to 4th year), not strictly semester-wise. You can still use this calculator by treating each academic year as one "semester" entry and summing the credits completed that year.</p>
       </div>

@@ -7,22 +7,18 @@
   const GRADE_SYSTEMS = {
     4: {
       label: "4.0 Scale",
-      // Matches scale-standard.js exactly (11 bands) so the Grade Calculator
-      // and the main CGPA Calculator never disagree on the same marks/letter.
       getGrade: (marks) => {
-        if (marks >= 80) return { letter: "A+", point: 4    };
+        if (marks >= 80) return { letter: "A+", point: 4   };
         if (marks >= 75) return { letter: "A",  point: 3.75 };
         if (marks >= 70) return { letter: "A−", point: 3.5  };
         if (marks >= 65) return { letter: "B+", point: 3.25 };
         if (marks >= 60) return { letter: "B",  point: 3    };
         if (marks >= 55) return { letter: "B−", point: 2.75 };
-        if (marks >= 50) return { letter: "C+", point: 2.5  };
-        if (marks >= 45) return { letter: "C",  point: 2.25 };
-        if (marks >= 40) return { letter: "C−", point: 2    };
-        if (marks >= 35) return { letter: "D",  point: 1.75 };
+        if (marks >= 50) return { letter: "C",  point: 2.5  };
+        if (marks >= 40) return { letter: "D",  point: 2    };
         return { letter: "F", point: 0 };
       },
-      passMin: 35,
+      passMin: 40,
     },
     5: {
       label: "5.0 Scale",
@@ -151,8 +147,8 @@
     const system      = getSystem();
 
     const thresholds = {
-      4:  { "A+": 80, "A": 75, "A−": 70, "B+": 65, "B": 60, "B−": 55, "C+": 50, "C": 45, "C−": 40, "D": 35 },
-      5:  { "A+": 80, "A": 75, "A−": 70, "B+": 65, "B": 60, "B−": 55, "C": 50, "D": 40 },
+      4:  { "A+": 80, "A": 75, "A−": 70, "B+": 65, "B": 60, "C": 50, "D": 40 },
+      5:  { "A+": 80, "A": 75, "A−": 70, "B+": 65, "B": 60, "C": 50, "D": 40 },
       10: { "O": 90, "A+": 80, "A": 70, "B+": 60, "B": 55, "C": 50, "P": 40  },
     };
 
@@ -213,16 +209,6 @@
         <option value="B">B (55%+)</option>
         <option value="C">C (50%+)</option>
         <option value="P">P (40%+)</option>`;
-    } else if (activeSystem === "5") {
-      sel.innerHTML = `
-        <option value="A+">A+ (80%+)</option>
-        <option value="A">A (75%+)</option>
-        <option value="A−">A− (70%+)</option>
-        <option value="B+" selected>B+ (65%+)</option>
-        <option value="B">B (60%+)</option>
-        <option value="B−">B− (55%+)</option>
-        <option value="C">C (50%+)</option>
-        <option value="D">D (40%+)</option>`;
     } else {
       sel.innerHTML = `
         <option value="A+">A+ (80%+)</option>
@@ -230,11 +216,8 @@
         <option value="A−">A− (70%+)</option>
         <option value="B+" selected>B+ (65%+)</option>
         <option value="B">B (60%+)</option>
-        <option value="B−">B− (55%+)</option>
-        <option value="C+">C+ (50%+)</option>
-        <option value="C">C (45%+)</option>
-        <option value="C−">C− (40%+)</option>
-        <option value="D">D (35%+)</option>`;
+        <option value="C">C (50%+)</option>
+        <option value="D">D (40%+)</option>`;
     }
   }
 

@@ -1,6 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
 :root{
   --bg:#F6F6F6;--bg-card:#fff;--bg-input:#f0f4f6;
   --border:#dde6ea;--border-2:#e8eef1;
@@ -182,6 +179,7 @@ input,select,textarea{font-family:inherit}
 .sgpa-table-header{display:grid;grid-template-columns:1fr 120px 100px 36px;gap:7px;padding:7px 10px;font-size:10px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em}
 .sgpa-row{display:grid;grid-template-columns:1fr 120px 100px 36px;gap:7px;align-items:center;padding:3px 0}
 .sgpa-sem-name,.sgpa-val-input,.sgpa-credit-input{background:var(--bg-input);border:1.5px solid var(--border);border-radius:var(--radius-sm);color:var(--text-1);font-size:14px;padding:8px 9px;width:100%;outline:none;transition:border-color var(--transition);-webkit-appearance:none}
+.sgpa-credit-input.sgpa-credit-missing{border-color:#f59e0b;background:#fffbeb;box-shadow:0 0 0 1px #f59e0b}
 .sgpa-sem-name:focus,.sgpa-val-input:focus{border-color:var(--accent-soft)}
 .sgpa-sem-name::placeholder{color:var(--text-3)}
 .btn-delete-sgpa{width:30px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--text-3);transition:color var(--transition),background var(--transition)}

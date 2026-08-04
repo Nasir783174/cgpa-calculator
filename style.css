@@ -387,7 +387,7 @@ tbody tr:hover{background:var(--accent-dim)}
    ============================================================ */
 
 /* ── CONVERTER CARD ── */
-.converter-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-calc);padding:var(--sp-xl);box-shadow:var(--shadow);margin:var(--sp-xl) auto 0;max-width:var(--container-calc);position:relative;overflow:visible}
+.converter-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-calc);padding:var(--sp-xl);box-shadow:var(--shadow);margin-top:var(--sp-xl);position:relative;overflow:visible}
 .converter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
 
 /* ── CONVERTER TABS ── */

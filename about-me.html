@@ -77,12 +77,14 @@
       "@id": "https://cgpacalculator.dev/#person",
       "name": "Mohammad Nasir",
       "url": "https://cgpacalculator.dev/about-me",
+      "image": "https://cgpacalculator.dev/mohammad-nasir.jpg",
+      "email": "mailto:mail2mn3@gmail.com",
       "description": "I build simple and useful online tools that help students solve real problems. My focus is always on accuracy, speed, and ease of use.",
       "sameAs": [
+          "https://www.linkedin.com/in/muhammadnasir-faiyaz/",
           "https://www.facebook.com/cgpacalculatorbynasir",
           "https://www.instagram.com/cgpacalculator4/",
           "https://x.com/cgpacalculator3",
-          "https://www.linkedin.com/company/cgpa-calculator/",
           "https://medium.com/@cgpacalculator",
           "https://www.pinterest.com/cgpacalculator3/",
           "https://www.tumblr.com/cgpacalculator3",
@@ -161,16 +163,24 @@
 <style>
 .about-hero-standalone{background:var(--dark);padding:52px 0 60px;border-bottom:1px solid var(--dark-2);margin:-22px -24px 28px;}
 .about-hero-inner-standalone{max-width:812px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px;}
-.about-avatar{flex-shrink:0;width:72px;height:72px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;box-shadow:0 0 0 5px rgba(40,112,148,0.30);}
+.about-avatar{flex-shrink:0;width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;box-shadow:0 0 0 5px rgba(40,112,148,0.30);}
+.about-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-linkedin-badge{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:20px;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;transition:background 0.2s;}
+.about-linkedin-badge:hover{background:rgba(255,255,255,0.16);}
+.about-linkedin-badge svg{flex-shrink:0;}
 </style>
 
 <div class="about-hero-standalone">
   <div class="about-hero-inner-standalone">
-    <div class="about-avatar">MN</div>
+    <div class="about-avatar"><img src="https://cgpacalculator.dev/mohammad-nasir.jpg" alt="Mohammad Nasir, developer of CGPA Calculator" width="72" height="72" loading="eager" /></div>
     <div>
       <p class="hero-eyebrow" style="text-align:left;color:#ffffff;">About the Developer</p>
       <h1 class="hero-title" style="text-align:left;font-size:clamp(22px,4vw,36px);margin-bottom:6px;color:#ffffff;">Mohammad Nasir</h1>
       <p class="hero-sub" style="text-align:left;margin:0;color:#ffffff;">Web Developer · Building Free Educational Tools · Bangladesh</p>
+      <a href="https://www.linkedin.com/in/muhammadnasir-faiyaz/" class="about-linkedin-badge" target="_blank" rel="noopener noreferrer" aria-label="Mohammad Nasir on LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3zM6.5 7.5A1.75 1.75 0 1 1 6.5 4a1.75 1.75 0 0 1 0 3.5zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6-1.6 0-1.9 1.3-1.9 2.5V19h-3V9h2.9v1.3h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7z"/></svg>
+        Connect on LinkedIn
+      </a>
     </div>
   </div>
 </div>
@@ -242,6 +252,8 @@
         <div class="footer-links">
           <a href="about-me" class="footer-link">About</a>
           <a href="privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="contact-us" class="footer-link">Contact</a>
+          <a href="terms-of-use" class="footer-link">Terms of Use</a>
         </div>
         <div class="footer-social">
           <a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>

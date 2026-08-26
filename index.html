@@ -254,18 +254,78 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Free Academic Tools</p>
-      <h1 class="hero-title">CGPA &amp; GPA Calculators<br /><em>for Every Grading Scale</em></h1>
-      <p class="hero-sub">Pick the calculator that matches your university's grading system and get instant, credit-weighted results — with multi-semester support, SGPA conversion, target planning, and PDF export.</p>
-      <div class="home-hero-badges">
-        <span class="home-hero-badge">🌍 6 Grading Scales</span>
-        <span class="home-hero-badge">⚡ Instant Results</span>
-        <span class="home-hero-badge">🆓 100% Free</span>
-        <span class="home-hero-badge">📱 Mobile Friendly</span>
+    <div class="hero-inner home-hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Free Academic Tools</p>
+        <h1 class="hero-title">CGPA &amp; GPA Calculators<br /><em>for Every Grading Scale</em></h1>
+        <p class="hero-sub">Pick the calculator that matches your university's grading system and get instant, credit-weighted results — with multi-semester support, SGPA conversion, target planning, and PDF export.</p>
+        <div class="home-hero-badges">
+          <span class="home-hero-badge">🌍 6 Grading Scales</span>
+          <span class="home-hero-badge">⚡ Instant Results</span>
+          <span class="home-hero-badge">🆓 100% Free</span>
+          <span class="home-hero-badge">📱 Mobile Friendly</span>
+        </div>
+      </div>
+
+      <div class="quickpick-card">
+        <div class="quickpick-head">
+          <span>Quick start</span>
+          <span>9 tools total</span>
+        </div>
+        <label class="row-label" for="scale-pick" style="font-family:var(--font-mono);font-size:11px;color:var(--text-3);display:block;margin-bottom:6px;">Which scale does your university use?</label>
+        <select id="scale-pick" class="quickpick-select">
+          <option value="0">Standard 4.0 — NU, DU, BUET, RU</option>
+          <option value="1">North American 4.0 — NSU, BRAC, IUB</option>
+          <option value="2">Indian 10-point — IIT, NIT, VTU</option>
+          <option value="3">Nigerian 5-point — UNILAG, UI, OAU</option>
+          <option value="4">Australian 7-point — Melbourne, ANU</option>
+          <option value="5">Canadian 4.33 — UBC, Toronto, McGill</option>
+          <option value="6">CGPA ↔ Percentage converter</option>
+          <option value="7">GPA ↔ CGPA converter</option>
+          <option value="8">Grade / marks calculator</option>
+        </select>
+        <p class="quickpick-desc" id="picker-desc">The standard scale where A+ tops out at 4.00 — used by NU, DU, BUET and most Bangladeshi public universities.</p>
+        <div class="quickpick-result">
+          <div class="quickpick-num" id="picker-num">4.00</div>
+          <div>
+            <div class="quickpick-tag" id="picker-tag">Standard scale</div>
+            <div style="font-size:13px;color:var(--text-2);">Sample top grade point</div>
+          </div>
+        </div>
+        <a href="https://cgpacalculator.dev/cgpa-calculator" class="quickpick-cta" id="picker-cta">Open this calculator →</a>
       </div>
     </div>
   </section>
+
+  <script>
+    (function(){
+      var tools = [
+        {url:"https://cgpacalculator.dev/cgpa-calculator", desc:"The standard scale where A+ tops out at 4.00 — used by NU, DU, BUET and most Bangladeshi public universities.", num:"4.00", tag:"Standard scale", cta:"Open the Standard 4.0 calculator →"},
+        {url:"https://cgpacalculator.dev/north-american-gpa-calculator", desc:"Used by NSU, BRAC, IUB, UIU, EWU, AIUB and most North American universities.", num:"4.00", tag:"North American scale", cta:"Open the North American calculator →"},
+        {url:"https://cgpacalculator.dev/10-point-cgpa-calculator", desc:"The 10-point scale used across Indian universities including IIT, NIT and VTU.", num:"10.00", tag:"10-point scale", cta:"Open the Indian CGPA calculator →"},
+        {url:"https://cgpacalculator.dev/nigerian-cgpa-calculator", desc:"Built for the 5-point scale used at UNILAG, University of Ibadan, OAU and UNN.", num:"5.00", tag:"5-point scale", cta:"Open the Nigerian GPA calculator →"},
+        {url:"https://cgpacalculator.dev/australian-gpa-calculator", desc:"Matches the 7-point scale used by University of Melbourne, ANU, UNSW and Monash.", num:"7.00", tag:"7-point scale", cta:"Open the Australian GPA calculator →"},
+        {url:"https://cgpacalculator.dev/canadian-gpa-calculator", desc:"Used by most Canadian colleges and universities, topping out at 4.33.", num:"4.33", tag:"Canadian scale", cta:"Open the Canadian GPA calculator →"},
+        {url:"https://cgpacalculator.dev/cgpa-percentage-calculator", desc:"Convert a board exam or transcript percentage into the scale your university needs, or back again.", num:"%", tag:"Conversion", cta:"Open the percentage converter →"},
+        {url:"https://cgpacalculator.dev/gpa-cgpa-calculator", desc:"Convert between 4.0 GPA and 10.0 CGPA scales — useful for US applications and transfers.", num:"↔", tag:"Conversion", cta:"Open the GPA ↔ CGPA converter →"},
+        {url:"https://cgpacalculator.dev/grade-calculator", desc:"Enter marks per subject to calculate semester GPA, percentage average, and target grade.", num:"#", tag:"Grade calculator", cta:"Open the grade calculator →"}
+      ];
+      var pick = document.getElementById('scale-pick');
+      var descEl = document.getElementById('picker-desc');
+      var numEl = document.getElementById('picker-num');
+      var tagEl = document.getElementById('picker-tag');
+      var ctaEl = document.getElementById('picker-cta');
+      function render(i){
+        var t = tools[i];
+        descEl.textContent = t.desc;
+        numEl.textContent = t.num;
+        tagEl.textContent = t.tag;
+        ctaEl.textContent = t.cta;
+        ctaEl.href = t.url;
+      }
+      if(pick){ pick.addEventListener('change', function(){ render(this.value); }); render(0); }
+    })();
+  </script>
 
   <!-- MAIN -->
   <main class="main-content">
@@ -282,47 +342,73 @@
 
       <div class="tool-cards-grid">
         <a href="https://cgpacalculator.dev/cgpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇧🇩</span><span class="tool-card-pill">4.00 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">01</span><span class="tool-card-pill">4.00 Scale</span></div>
           <h3>Standard 4.0 Calculator</h3>
           <div class="tool-card-range">A+ → 4.00, A → 3.75, A− → 3.50</div>
           <div class="tool-card-unis">NU, DU, BUET, RU, CU, JU &amp; most public universities</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
         <a href="https://cgpacalculator.dev/north-american-gpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇺🇸🇨🇦</span><span class="tool-card-pill">4.00 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">02</span><span class="tool-card-pill">4.00 Scale</span></div>
           <h3>North American GPA</h3>
           <div class="tool-card-range">A → 4.00, A− → 3.70, B+ → 3.30</div>
           <div class="tool-card-unis">NSU, BRAC, IUB, UIU, EWU, AIUB, MIT, Harvard</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
         <a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇮🇳</span><span class="tool-card-pill">10.00 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">03</span><span class="tool-card-pill">10.00 Scale</span></div>
           <h3>10-Point CGPA</h3>
           <div class="tool-card-range">O → 10.00, A+ → 9.00, A → 8.00</div>
           <div class="tool-card-unis">IIT Bombay, IIT Delhi, NIT Trichy, VTU, Anna University</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
         <a href="https://cgpacalculator.dev/nigerian-cgpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇳🇬</span><span class="tool-card-pill">5.00 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">04</span><span class="tool-card-pill">5.00 Scale</span></div>
           <h3>Nigerian CGPA</h3>
           <div class="tool-card-range">A → 5.00, B → 4.00, C → 3.00</div>
           <div class="tool-card-unis">UNILAG, University of Ibadan, OAU, UNN</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
         <a href="https://cgpacalculator.dev/australian-gpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇦🇺</span><span class="tool-card-pill">7.00 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">05</span><span class="tool-card-pill">7.00 Scale</span></div>
           <h3>Australian GPA</h3>
           <div class="tool-card-range">HD → 7.00, D → 6.00, C → 5.00</div>
           <div class="tool-card-unis">University of Melbourne, ANU, UNSW, Monash, Sydney</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
         <a href="https://cgpacalculator.dev/canadian-gpa-calculator" class="tool-card">
-          <div class="tool-card-top"><span class="tool-card-flag">🇨🇦</span><span class="tool-card-pill">4.33 Scale</span></div>
+          <div class="tool-card-top"><span class="ledger-num">06</span><span class="tool-card-pill">4.33 Scale</span></div>
           <h3>Canadian GPA</h3>
           <div class="tool-card-range">A+ → 4.33, A → 4.00, A− → 3.67</div>
           <div class="tool-card-unis">UBC, University of Toronto, McGill, Queen's, Dalhousie</div>
           <span class="tool-card-cta">Calculate Now →</span>
         </a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         HOW IT WORKS
+    ══════════════════════════════════════════════════ -->
+    <section style="margin-top:48px;">
+      <div class="board">
+        <h2>How every calculator works</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="sk">Step 01</span>
+            <h3>Enter your grades</h3>
+            <p>Course names, credit hours, and letter grades — or paste them straight from your transcript.</p>
+          </div>
+          <div class="step">
+            <span class="sk">Step 02</span>
+            <h3>We do the weighting</h3>
+            <p>Every result is credit-weighted, not simply averaged — the same way your registrar calculates it.</p>
+          </div>
+          <div class="step">
+            <span class="sk">Step 03</span>
+            <h3>Export or plan ahead</h3>
+            <p>Download a PDF report, or use the target CGPA planner to see what you need next semester.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -335,9 +421,9 @@
         <h2 class="section-title">Other Calculators</h2>
       </div></div>
       <div class="why-use-grid" style="grid-template-columns:repeat(3,1fr);">
-        <a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">%</div><h3>CGPA to Percentage Calculator</h3><p>Convert your CGPA to percentage using CBSE (×9.5), AICTE, VTU, or the Bangladesh proportional formula.</p></a>
-        <a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">↔</div><h3>GPA ↔ CGPA Converter</h3><p>Convert between 4.0 GPA and 10.0 CGPA scales. Essential for US university applications and international transfers.</p></a>
-        <a href="https://cgpacalculator.dev/grade-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">📝</div><h3>Grade Calculator</h3><p>Enter marks per subject to calculate your semester GPA, percentage average, and predict your target grade.</p></a>
+        <a href="https://cgpacalculator.dev/cgpa-percentage-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="tool-card-top" style="margin-bottom:10px;"><span class="ledger-num">07</span></div><h3>CGPA to Percentage Calculator</h3><p>Convert your CGPA to percentage using CBSE (×9.5), AICTE, VTU, or the Bangladesh proportional formula.</p></a>
+        <a href="https://cgpacalculator.dev/gpa-cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="tool-card-top" style="margin-bottom:10px;"><span class="ledger-num">08</span></div><h3>GPA ↔ CGPA Converter</h3><p>Convert between 4.0 GPA and 10.0 CGPA scales. Essential for US university applications and international transfers.</p></a>
+        <a href="https://cgpacalculator.dev/grade-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="tool-card-top" style="margin-bottom:10px;"><span class="ledger-num">09</span></div><h3>Grade Calculator</h3><p>Enter marks per subject to calculate your semester GPA, percentage average, and predict your target grade.</p></a>
       </div>
     </section>
 

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGPA Calculator Australia – Free 7-Point Scale Tool</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/cgpa-calculator-australia" />
+  <meta name="description" content="Free Australian GPA calculator on the 7-point grading scale. HD=7, D=6, C=5, P=4. Supports ANU, Melbourne, Sydney and Monash. Multi-semester support." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="CGPA Calculator Australia – Free 7-Point Scale Tool" />
+  <meta property="og:description" content="Free Australian GPA calculator on the 7-point grading scale. HD=7, D=6, C=5, P=4. Supports ANU, Melbourne, Sydney and Monash. Multi-semester support." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgpacalculator.dev/cgpa-calculator-australia" />
+  <meta property="og:image" content="https://cgpacalculator.dev/cgpa-calculator-australia.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CGPA Calculator Australia – Free 7-Point Scale Tool" />
+  <meta name="twitter:description" content="Free Australian GPA calculator on the 7-point grading scale. HD=7, D=6, C=5, P=4. Supports ANU, Melbourne, Sydney and Monash. Multi-semester support." />
+  <meta name="twitter:image" content="https://cgpacalculator.dev/cgpa-calculator-australia.webp" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator-core.js"></script>
+  <script defer src="scale-australian.js"></script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+      {
+      "@type": "WebSite",
+      "@id": "https://cgpacalculator.dev/#website",
+      "url": "https://cgpacalculator.dev/",
+      "name": "CGPA Calculator",
+      "description": "Free CGPA and GPA calculators supporting Standard 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+      "publisher": {
+            "@id": "https://cgpacalculator.dev/#organization"
+      }
+},
+      {
+      "@type": "Organization",
+      "@id": "https://cgpacalculator.dev/#organization",
+      "name": "CGPA Calculator",
+      "url": "https://cgpacalculator.dev/",
+      "logo": {
+            "@type": "ImageObject",
+            "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+            "width": 512,
+            "height": 512
+      },
+      "sameAs": [
+          "https://www.facebook.com/cgpacalculatorbynasir",
+          "https://www.instagram.com/cgpacalculator4/",
+          "https://x.com/cgpacalculator3",
+          "https://www.linkedin.com/company/cgpa-calculator/",
+          "https://medium.com/@cgpacalculator",
+          "https://www.pinterest.com/cgpacalculator3/",
+          "https://www.tumblr.com/cgpacalculator3",
+          "https://cgpacalculatorbynb.blogspot.com/",
+          "https://mastodon.social/@cgpacalculator3",
+          "https://cgpa-calculatore.quora.com/"
+        ],
+      "founder": {
+            "@type": "Person",
+            "name": "Mohammad Nasir"
+      }
+},
+      {
+      "@type": "WebPage",
+      "@id": "https://cgpacalculator.dev/cgpa-calculator-australia#webpage",
+      "url": "https://cgpacalculator.dev/cgpa-calculator-australia",
+      "name": "CGPA Calculator Australia – Free 7-Point Scale Tool",
+      "description": "Free Australian GPA calculator on the 7-point grading scale. HD=7, D=6, C=5, P=4. Supports ANU, Melbourne, Sydney and Monash. Multi-semester support.",
+      "isPartOf": {
+            "@id": "https://cgpacalculator.dev/#website"
+      },
+      "about": {
+            "@id": "https://cgpacalculator.dev/cgpa-calculator-australia#softwareapplication"
+      },
+      "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+            "width": 1200,
+            "height": 630
+      },
+      "breadcrumb": {
+            "@id": "https://cgpacalculator.dev/cgpa-calculator-australia#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-06-01",
+      "dateModified": "2026-06-28"
+},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgpacalculator.dev/cgpa-calculator-australia#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgpacalculator.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA Calculator Australia",
+          "item": "https://cgpacalculator.dev/cgpa-calculator-australia"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://cgpacalculator.dev/cgpa-calculator-australia#softwareapplication",
+      "name": "CGPA Calculator Australia",
+      "url": "https://cgpacalculator.dev/cgpa-calculator-australia",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free Australian GPA calculator using the 7-point grading scale. HD=7, D=6, C=5, P=4. Supports ANU, University of Melbourne, Sydney, Monash. Instant results.",
+      "usedBy": [
+        "University of Melbourne",
+        "Australian National University",
+        "University of Sydney",
+        "UNSW Sydney",
+        "Monash University",
+        "University of Queensland"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the GPA in Australia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GPA, or Grade Point Average, measures your academic performance using grade values assigned to completed subjects. Many Australian universities calculate GPA on a 7-point grading scale where HD = 7, D = 6, CR = 5, P = 4, and F = 0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 7.0 the highest GPA in Australia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Under the standard Australian 7-point grading system, 7.0 is the highest possible GPA. Students usually achieve this result by earning High Distinction grades across all completed subjects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good GPA in Australia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GPA above 6.0 is generally considered excellent because it reflects consistent Distinction and High Distinction results. A GPA above 5.0 also represents strong academic performance at many universities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is GPA calculated in Australia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Universities calculate GPA by dividing the total weighted grade points by the total credit points completed. GPA = Total Weighted Grade Points ÷ Total Credit Points. Each subject's weighted grade points equal the grade value multiplied by the credit points for that subject."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every Australian university use a 7-point GPA scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Many universities use a 7-point GPA system, while others primarily report a Weighted Average Mark (WAM). Some institutions publish both academic measurements. Always check your university's grading policy before calculating your GPA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between GPA and WAM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPA uses grade values assigned to letter grades, while WAM uses your actual numerical marks and subject weighting. Although both measure academic performance, they are calculated differently and may produce different values."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can international students use this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. International students studying at Australian universities that use the 7-point GPA system can use this calculator to estimate their academic performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do failed subjects affect GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most universities assign 0 grade points to failed subjects, which usually lowers your overall GPA. Failed subjects still count toward your total credit points in the calculation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can repeated subjects improve my GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many universities have specific policies regarding repeated subjects. Some replace previous grades with the new result, while others include both attempts in academic records. Always review your university's official academic regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate my semester GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Simply enter the subjects completed during one teaching period to calculate your semester GPA. You can also include multiple semesters to estimate your cumulative GPA if your university uses that approach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What credit points should I enter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the official credit point value listed for each subject in your university handbook, transcript, or enrolment record. Entering incorrect credit points will produce an inaccurate GPA result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Australian GPA Calculator free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can calculate your GPA as many times as needed without creating an account or paying any fee. The calculator is completely free for all students."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can postgraduate students use this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The calculator is suitable for postgraduate coursework students whose university calculates GPA using the Australian 7-point grading system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my GPA different from my WAM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These academic measures use different calculation methods. Your GPA reflects grade values, while your WAM uses percentage marks weighted by credit value. Because the formulas differ, the final results will also differ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert GPA into WAM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no universal formula for converting GPA into WAM. Universities follow different academic policies, so any conversion should come from your institution's official guidance."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+  <meta name="google-site-verification" content="euvaC8yQmQ0gEXwuGFXI_nS4S3VFbsI_gxWL7Fpsbpg" />
+  <meta name="msvalidate.01" content="71C0921EC3367979D0DF5595EA15F657" />
+  <script defer>
+    window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","wlnn53n6p8");});
+  </script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31G4QMCRXB');
+  </script>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+<a href="https://cgpacalculator.dev/" class="logo"><span class="logo-icon">◈</span><span class="logo-text">CGPA Calculator</span></a>
+<nav class="nav-desktop">
+<div class="nav-dropdown">
+<div class="nav-dropdown-trigger active-parent" id="navDropTrigger">CGPA Calculator <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="nav-drop-menu" id="navDropMenu"><a href="https://cgpacalculator.dev/cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">Standard 4.0 Calculator</span><span class="nav-drop-desc">Standard grading: A+ → 4.00</span></a><a href="https://cgpacalculator.dev/nsu-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">North American GPA Calculator</span><span class="nav-drop-desc">US & Canada: A → 4.00, A− → 3.70</span></a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="nav-drop-item"><span class="nav-drop-name">10-Point CGPA Calculator</span><span class="nav-drop-desc">IIT, NIT, VTU scale: O → 10.00</span></a><a href="https://cgpacalculator.dev/cgpa-calculator-nigeria" class="nav-drop-item"><span class="nav-drop-name">Nigerian CGPA Calculator</span><span class="nav-drop-desc">Nigerian 5.0 scale: A → 5.00</span></a><a href="https://cgpacalculator.dev/cgpa-calculator-australia" class="nav-drop-item"><span class="nav-drop-name">Australian GPA Calculator</span><span class="nav-drop-desc">Australian 7.0: HD → 7.00</span></a><a href="https://cgpacalculator.dev/cgpa-calculator-canada" class="nav-drop-item"><span class="nav-drop-name">Canadian GPA Calculator</span><span class="nav-drop-desc">Canadian 4.33: A+ → 4.33</span></a></div>
+</div>
+<a href="https://cgpacalculator.dev/cgpa-to-percentage" class="nav-link ">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/cgpa-to-gpa" class="nav-link ">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="nav-link ">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="nav-link ">CGPA Information</a>
+</nav>
+<button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-nav-group-header">CGPA Calculator</div>
+<a href="https://cgpacalculator.dev/cgpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Standard 4.0 Calculator</a><a href="https://cgpacalculator.dev/nsu-cgpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">North American GPA Calculator</a><a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">10-Point CGPA Calculator</a><a href="https://cgpacalculator.dev/cgpa-calculator-nigeria" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Nigerian CGPA Calculator</a><a href="https://cgpacalculator.dev/cgpa-calculator-australia" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Australian GPA Calculator</a><a href="https://cgpacalculator.dev/cgpa-calculator-canada" class="mobile-nav-link mobile-nav-sub" onclick="closeMobileMenu()">Canadian GPA Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-to-percentage" class="mobile-nav-link" onclick="closeMobileMenu()">Percentage Converter</a>
+<a href="https://cgpacalculator.dev/cgpa-to-gpa" class="mobile-nav-link" onclick="closeMobileMenu()">GPA ↔ CGPA</a>
+<a href="https://cgpacalculator.dev/grade-calculator" class="mobile-nav-link" onclick="closeMobileMenu()">Grade Calculator</a>
+<a href="https://cgpacalculator.dev/cgpa-information" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+</div>
+</header>
+
+<div class="sticky-bar" id="stickyBar">
+<div class="sticky-bar-inner">
+<div class="sticky-item"><span class="sticky-label">CGPA</span><span class="sticky-val" id="stickyCGPA">0.00</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Credits</span><span class="sticky-val" id="stickyCredits">0</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Grade</span><span class="sticky-val sticky-grade" id="stickyGrade">–</span></div>
+<div class="sticky-divider"></div>
+<div class="sticky-item"><span class="sticky-label">Semesters</span><span class="sticky-val" id="stickySemesters">1</span></div>
+</div>
+</div>
+
+<main class="main-content" id="calculator">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="https://cgpacalculator.dev/">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Australian GPA Calculator</span>
+  </nav>
+
+  <h1>CGPA Calculator Australia (7-Point Scale)</h1>
+  <div class="calc-layout">
+    <aside class="calc-sidebar">
+<div class="card result-card">
+<div class="card-label">Live Result</div>
+<h2 class="card-title">Overall CGPA</h2>
+<div class="scale-badge">📊 Australian 7.0 Scale</div>
+<div class="cgpa-display">
+<div class="cgpa-big" id="cgpaDisplay">0.00</div>
+<div class="cgpa-bar-wrap"><div class="cgpa-bar" id="cgpaBar"></div></div>
+<div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
+</div>
+<div class="stat-row">
+<div class="stat-box"><span class="stat-label">Total Credits</span><span class="stat-val" id="totalCredits">0</span></div>
+<div class="stat-box"><span class="stat-label">Semesters</span><span class="stat-val" id="totalSemesters">1</span></div>
+</div>
+</div>
+<div class="card" style="margin-top:14px;padding:16px 18px;">
+<div class="card-label">Grade Scale</div>
+<div style="font-size:12px;color:var(--text-2);line-height:1.8;margin-top:6px;">HD → 7.00 | D → 6.00 | C → 5.00 | P → 4.00 | F → 0.00</div>
+<a href="https://cgpacalculator.dev/" style="font-size:12px;color:var(--text-3);display:inline-block;margin-top:10px;">← All grading scales</a>
+</div>
+</aside>
+    <div class="calc-main-panel">
+<div class="calculator-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Semester-wise</span><h2 class="section-title">CGPA Calculator</h2></div>
+</div>
+<div id="semestersContainer"></div>
+<button class="btn-add-semester" id="addSemesterBtn">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Semester
+</button>
+</div>
+</div>
+  </div>
+
+  <div class="card target-card-standalone" id="targetCard">
+<div class="card-label">Goal Planning</div>
+<h2 class="card-title">Target CGPA</h2>
+<div class="target-form">
+<div class="target-grid">
+<div class="target-field"><label for="currentCGPA">Current CGPA</label><input type="number" id="currentCGPA" min="0" max="7" step="0.01" placeholder="Auto-filled" /></div>
+<div class="target-field"><label for="targetCGPA">Target CGPA</label><input type="number" id="targetCGPA" min="0" max="7" step="0.01" placeholder="e.g. 5.5" /></div>
+<div class="target-field"><label for="remainingCredits">Remaining Credits</label><input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" /></div>
+</div>
+<div class="target-result" id="targetResult"><span class="target-label">Required GPA</span><span class="target-val" id="requiredGPA">–</span></div>
+<button class="btn-pdf" id="downloadPDF">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download PDF Report
+</button>
+</div>
+</div>
+
+  <section class="sgpa-section">
+<div class="section-header">
+<div><span class="section-eyebrow">Quick Conversion</span><h2 class="section-title">SGPA → CGPA</h2></div>
+<div class="sgpa-cgpa-result"><span class="sgpa-label">CGPA</span><span class="sgpa-val" id="sgpaCGPA">0.00</span></div>
+</div>
+<div class="sgpa-table-wrap">
+<div class="sgpa-table-header"><span>Semester</span><span>SGPA</span><span></span></div>
+<div id="sgpaRowsContainer"></div>
+</div>
+<p id="sgpaMissingCreditWarning" role="alert" style="display:none;font-size:12.5px;color:#b45309;background:#fff7ed;border:1px solid #fde2b8;border-radius:8px;padding:8px 12px;margin:0 0 10px;line-height:1.6;font-weight:600;"></p>
+<button class="btn-add-row" id="addSGPARow">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+Add Row
+</button>
+</section>
+
+  <!-- Universities Section -->
+  <section class="seo-section" id="universities">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Australian Universities</span>
+      <h2 class="section-title">Australian Universities That Commonly Use a 7-Point GPA Scale</h2>
+    </div></div>
+    <p style="font-size:15px;color:var(--text-2);margin-bottom:16px;line-height:1.7;">Many Australian universities use a 7-point GPA framework or publish GPA equivalents for students. Students from the following universities can generally use this calculator with confidence.</p>
+    <div class="uni-list">
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">The University of Queensland</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Griffith University</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Queensland University of Technology</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Curtin University</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Deakin University</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">RMIT University</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Macquarie University</div><div class="uni-country">Australia</div></div></div>
+      <div class="uni-item"><span class="uni-flag">🇦🇺</span><div><div class="uni-name">Monash University</div><div class="uni-country">Australia</div></div></div>
+    </div>
+    <p style="font-size:13px;color:var(--text-3);margin-top:14px;line-height:1.7;"><strong>Important note:</strong> Some Australian universities primarily report WAM (Weighted Average Mark) instead of GPA. Others publish both GPA and WAM. Students should always check their university's official grading policy before interpreting results.</p>
+  </section>
+
+  <!-- What Is Section -->
+  <section class="seo-section" id="what-is">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Overview</span>
+      <h2 class="section-title">What Is an Australian GPA Calculator?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>An Australian GPA Calculator works out your Grade Point Average using the country's 7-point grading system. It takes your subject grades and credit points and turns them into a weighted GPA, so you can keep an eye on how you're doing each semester and across your whole degree.</p>
+    </div>
+  </section>
+
+  <!-- What Is GPA Section -->
+  <section class="seo-section" id="what-is-gpa">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Definition</span>
+      <h2 class="section-title">What Is GPA in Australia?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>GPA stands for Grade Point Average — a number that sums up how you've done across your subjects by turning grades into points.</p>
+      <p>It's not just a straight average of your marks, though. GPA weighs in credit points too, so a subject worth more credits pulls more weight on your final number than a smaller one.</p>
+      <p>Most Australian universities recalculate your GPA at the end of every teaching period, which makes it a handy way to track your progress. Some put GPA right on your transcript; others mostly report a Weighted Average Mark (WAM) instead, and only calculate GPA when it's needed — for an exchange program or scholarship, say.</p>
+      <p>Since grading policies differ from one university to the next, always check your own institution's rules. This calculator is built around the standard Australian 7-point scale.</p>
+    </div>
+  </section>
+
+  <!-- Why GPA Is Important -->
+  <section class="seo-section" id="why-gpa">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Importance</span>
+      <h2 class="section-title">Why Is GPA Important?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Your GPA is more than just a summary of exam results — it's the full picture of how you've performed throughout your studies.</p>
+      <p>Universities lean on GPA when reviewing applications for honours, postgraduate study, exchange programs, and academic awards. Employers look at it too, especially for competitive graduate programs.</p>
+      <p>A solid GPA can open doors — scholarships, exchange spots, research opportunities, internships, postgraduate admissions, and awards all factor it in. Even if your university mostly reports WAM, it's still worth knowing your GPA for these kinds of applications.</p>
+    </div>
+  </section>
+
+  <!-- Grading System Section -->
+  <section class="seo-section" id="grading-system">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Scale Overview</span>
+      <h2 class="section-title">Understanding the Australian 7-Point GPA Scale</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Most Australian universities run on a 7-point scale, where each grade maps to a number. Your final GPA comes down to two things: the grade you earned and how many credit points that subject was worth.</p>
+      <div class="content-table-wrap" style="overflow-x:auto;margin-top:18px;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Grade</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Meaning</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">GPA Value</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">HD</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">High Distinction</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">7</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">D</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Distinction</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">CR</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Credit</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">5</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">P</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Pass</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4</td></tr>
+            <tr><td style="padding:9px 14px;">F</td><td style="padding:9px 14px;">Fail</td><td style="padding:9px 14px;">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">Some universities also use extra grades like PC (Pass Conceded), CN (Continuing), WD (Withdrawn), or NS (Not Submitted). How these affect your GPA depends on the institution — check your university's own policy for the definitive answer.</p>
+
+      <h3 style="font-size:15px;font-weight:600;margin-top:22px;margin-bottom:10px;color:var(--text-1);">What Do the Grades Mean?</h3>
+
+      <p><strong>High Distinction (HD)</strong> — the top grade, worth 7 points. It signals genuinely outstanding work and a deep grasp of the material.</p>
+      <p><strong>Distinction (D)</strong> — worth 6 points. This reflects strong performance: solid knowledge, sharp critical thinking, and well-developed analysis.</p>
+      <p><strong>Credit (CR)</strong> — worth 5 points, for above-average work that clearly meets the learning outcomes with good quality throughout.</p>
+      <p><strong>Pass (P)</strong> — worth 4 points. You've met the minimum requirements and completed the subject.</p>
+      <p><strong>Fail (F)</strong> — worth 0 points. The required outcomes weren't met, and this will pull your GPA down.</p>
+    </div>
+  </section>
+
+  <!-- Formula Section -->
+  <section class="seo-section" id="formula">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Calculation</span>
+      <h2 class="section-title">Australian GPA Formula</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <figure style="margin:0 0 24px;text-align:center;">
+        <img src="cgpa-calculator-australia.webp" alt="Diagram showing the Australian GPA formula on a 7 point scale" width="800" height="450" loading="lazy" style="max-width:100%;height:auto;border-radius:10px;" />
+      </figure>
+      <p>Most Australian universities on the 7-point scale calculate GPA with this formula:</p>
+      <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin:16px 0;font-size:15px;font-weight:600;color:var(--accent);text-align:center;">GPA = Total Weighted Grade Points ÷ Total Credit Points</div>
+      <p>Simple enough in theory — but doing this by hand across several semesters gets tedious fast. That's where a calculator saves you time and keeps the arithmetic error-free.</p>
+
+      <h3 style="font-size:15px;font-weight:600;margin-top:22px;margin-bottom:10px;color:var(--text-1);">Understanding the Formula</h3>
+      <p><strong>Credit Points</strong> — the weight assigned to each subject. Most undergrad subjects carry the same value, though placements, projects, and practical courses can differ.</p>
+      <p><strong>Grade Value</strong> — the number behind each letter grade: HD = 7, D = 6, CR = 5, P = 4, F = 0. Everything else is built on these.</p>
+      <p><strong>Weighted Grade Points</strong> — grade value × credit points, for each subject. A Distinction (6) in a 6-credit subject gives you 6 × 6 = 36. Add these up across all your subjects to get your final GPA.</p>
+    </div>
+  </section>
+
+  <!-- Manual Example Section -->
+  <section class="seo-section" id="example">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Worked Example</span>
+      <h2 class="section-title">Manual GPA Calculation Example</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Here's what that formula looks like with real numbers.</p>
+      <div class="content-table-wrap" style="overflow-x:auto;margin:16px 0;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Subject</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Credit Points</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Grade</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">GPA Value</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Weighted Points</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Accounting</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">HD</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">7</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">42</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Finance</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">D</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">36</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Marketing</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">CR</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">5</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">30</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Management</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">P</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">4</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">24</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Economics</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">6</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">HD</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">7</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">42</td></tr>
+            <tr style="font-weight:600;background:var(--surface-2);"><td style="padding:9px 14px;">Total</td><td style="padding:9px 14px;">30</td><td style="padding:9px 14px;">—</td><td style="padding:9px 14px;">—</td><td style="padding:9px 14px;">174</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>GPA = 174 ÷ 30 = 5.80</strong></p>
+      <p>That's a GPA of 5.80 — sitting right between Credit and Distinction average. Add more semesters, and your university folds those subjects and credits into an updated cumulative GPA.</p>
+    </div>
+  </section>
+
+  <!-- GPA vs WAM Section -->
+  <section class="seo-section" id="gpa-vs-wam">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Comparison</span>
+      <h2 class="section-title">GPA vs WAM: What Is the Difference?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>A lot of students assume GPA and WAM are the same thing. They're not — each one measures your performance a different way.</p>
+      <p>GPA turns your grades into numbers on a scale, and on the Australian 7-point system that's 0 to 7. WAM, on the other hand, works directly with your percentage marks, averaged and weighted by each subject's credit value — no grade points involved.</p>
+      <p>Some universities show both on your record. Others mainly report WAM and only calculate GPA when it's needed, like for an exchange program or international application. Knowing the difference helps you read your own results correctly.</p>
+      <div class="content-table-wrap" style="overflow-x:auto;margin-top:18px;">
+        <table class="content-table" style="width:100%;border-collapse:collapse;font-size:14px;">
+          <thead><tr style="background:var(--surface-2);">
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">Feature</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">GPA</th>
+            <th style="padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);">WAM</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Full Meaning</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Grade Point Average</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Weighted Average Mark</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Based On</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Grade values</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Percentage marks</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Typical Scale</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">0–7</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">0–100</td></tr>
+            <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Measures</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Overall grade performance</td><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Average numerical marks</td></tr>
+            <tr><td style="padding:9px 14px;">Common Uses</td><td style="padding:9px 14px;">Scholarships, exchange programs, international applications</td><td style="padding:9px 14px;">Academic transcripts, graduation requirements</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;">If your university reports both, don't expect them to match up perfectly — they're calculated differently and serve different purposes.</p>
+    </div>
+  </section>
+
+  <!-- GPA vs Percentage -->
+  <section class="seo-section" id="gpa-vs-percentage">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Conversion</span>
+      <h2 class="section-title">Can You Convert Australian GPA to a Percentage?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>A lot of students go looking for a simple GPA-to-percentage formula. There isn't one that works across every Australian university.</p>
+      <p>Each institution sets its own grading framework. Some publish official conversion guidelines; others don't offer any direct conversion at all. Either way, it's best to steer clear of unofficial conversion charts floating around online.</p>
+      <p>If an employer or university asks for a percentage equivalent, go straight to your institution's academic office or official documentation. That's the only way to keep your records accurate and credible.</p>
+    </div>
+  </section>
+
+  <!-- Good GPA Section -->
+  <section class="seo-section" id="good-gpa">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Benchmarks</span>
+      <h2 class="section-title">What Is a Good GPA on the Australian 7-Point Scale?</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>A GPA above 6.0 is generally seen as excellent — that's consistent Distinction and High Distinction territory. Above 5.0 is still a strong result at most universities.</p>
+      <p>Most postgraduate coursework programs in Australia ask for a minimum GPA of 5.0 (Credit), while research degrees — Honours, Masters by Research, PhD — usually want 6.0 or higher. A 6.0+ GPA is also competitive when it comes to graduate employers and scholarships.</p>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="seo-section" id="tips">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Advice</span>
+      <h2 class="section-title">Tips to Improve Your GPA</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p>Raising your GPA is less about one big push and more about steady habits — small gains each semester add up.</p>
+      <p><strong>Attend Classes Regularly</strong> — showing up consistently means you catch key concepts before assignments and exams hit, instead of scrambling to fill gaps later.</p>
+      <p><strong>Prioritize High Credit Subjects</strong> — a strong result in a subject worth more credits moves your overall average further than the same effort in a smaller one.</p>
+      <p><strong>Submit Assessments on Time</strong> — assignments, projects, and quizzes carry real weight in your final grade, and turning in solid work before the deadline keeps your marks intact.</p>
+      <p><strong>Review Lecturer Feedback</strong> — it points straight at what to fix next time, so use it instead of letting it sit unread.</p>
+      <p><strong>Create a Weekly Study Schedule</strong> — spreading your study out across the semester beats cramming, and it sticks better too.</p>
+      <p><strong>Ask for Academic Support</strong> — talk to lecturers, tutors, or advisers as soon as something's not clicking. Catching it early is a lot easier than fixing it later.</p>
+      <p><strong>Track Your GPA Every Semester</strong> — don't wait until graduation to check in. Regular tracking makes it easy to see what's working and adjust course.</p>
+    </div>
+  </section>
+
+  <!-- Common Mistakes Section -->
+  <section class="seo-section" id="mistakes">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Watch Out</span>
+      <h2 class="section-title">Common GPA Calculation Mistakes</h2>
+    </div></div>
+    <div class="seo-content-card">
+      <p><strong>Entering wrong credit points</strong> — this throws off your final GPA, so always go with the credit values on your official enrolment or transcript.</p>
+      <p><strong>Selecting the wrong grade</strong> — a mismatched grade auto-changes the GPA value behind it, so stick to what's on your official result.</p>
+      <p><strong>Ignoring failed subjects</strong> — a fail usually means 0 grade points, and it still counts. Don't leave it out of the calculation.</p>
+      <p><strong>Mixing GPA and WAM</strong> — they're two different measures that can give different numbers. Keep them separate.</p>
+      <p><strong>Using another country's grading scale</strong> — a 4.0 or 10-point calculator won't give you a correct Australian GPA. Make sure you've picked the right system.</p>
+      <p><strong>Forgetting repeated subjects</strong> — universities handle repeats differently: some swap in the new grade, others keep both attempts on record. Check your institution's policy to be sure.</p>
+    </div>
+  </section>
+
+  <!-- Why Use Us -->
+  <section class="seo-section" id="why-use-us">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">Features</span>
+      <h2 class="section-title">Benefits of Using This Calculator</h2>
+    </div></div>
+    <div class="why-use-grid">
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Fast Calculations</h3><p>Every grade and credit you enter instantly updates your GPA and progress bar — no manual work needed.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h3>Accurate Weighted GPA</h3><p>Uses the correct Australian 7-point weighted formula so your result reflects exactly what your university calculates.</p></div>
+      <div class="why-card"><div class="why-icon">📊</div><h3>Multi-Semester Support</h3><p>Add unlimited semesters and subjects. Each semester shows its own GPA, and the overall result reflects your complete academic record.</p></div>
+      <div class="why-card"><div class="why-icon">📥</div><h3>PDF Report Export</h3><p>Download a professional academic report with all semesters, subjects, and GPA breakdown — ideal for scholarship and graduate applications.</p></div>
+      <div class="why-card"><div class="why-icon">🏫</div><h3>Built for Australian Universities</h3><p>Pre-configured for the exact grading scale used by University of Queensland, Griffith University, RMIT, and similar institutions.</p></div>
+      <div class="why-card"><div class="why-icon">📱</div><h3>Free and Mobile Friendly</h3><p>Fully responsive and works on all screen sizes. No registration required. Free for unlimited calculations.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="seo-section faq-section" id="faq">
+    <div class="section-header"><div>
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is the GPA in Australia?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>A GPA sums up your academic performance using grade values for each subject. Most Australian universities calculate it on a 7-point scale, where HD = 7, D = 6, CR = 5, P = 4, and F = 0.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Is 7.0 the highest GPA in Australia?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes — 7.0 is the ceiling on the standard Australian scale, and you'd need High Distinctions across every subject to hit it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is a good GPA in Australia?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Above 6.0 is generally seen as excellent, reflecting consistent Distinction and High Distinction results. Above 5.0 is still solid at most universities.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>How is GPA calculated in Australia?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Total weighted grade points divided by total credit points: GPA = Total Weighted Grade Points ÷ Total Credit Points. Each subject's weighted points come from its grade value times its credit points.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Does every Australian university use a 7-point GPA scale?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>No — plenty use the 7-point scale, but others mainly report a Weighted Average Mark (WAM) instead, and some publish both. Check your own university's policy to be sure.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What is the difference between GPA and WAM?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>GPA works from grade values assigned to letter grades. WAM works directly from your numerical marks and subject weighting. Both measure performance, but the math is different, so the results won't match exactly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can international students use this calculator?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes — if your Australian university uses the 7-point GPA system, this calculator works for you too.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Do failed subjects affect GPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes — a fail is usually 0 grade points, which drags your GPA down, and it still counts toward your total credit points.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can repeated subjects improve my GPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Depends on your university — some swap in the new grade, others keep both attempts on record. Check your institution's official policy for the specifics.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can I calculate my semester GPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes — just enter the subjects from one teaching period. You can also stack multiple semesters together if you want a cumulative GPA.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What credit points should I enter?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Whatever's listed for that subject in your university handbook, transcript, or enrolment record. Getting this wrong will skew your GPA.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Is this Australian GPA Calculator free?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes, completely — no account, no fee, use it as often as you like.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can postgraduate students use this calculator?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>Yes — it works for postgrad coursework students too, as long as your university uses the Australian 7-point scale.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Why is my GPA different from my WAM?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>They're calculated differently — GPA runs on grade values, WAM runs on percentage marks weighted by credit. Different formulas, different numbers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can I convert GPA into WAM?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-answer"><p>There's no standard formula for that. Universities follow their own policies, so check with your institution if you need an official conversion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Calculators -->
+  
+  <!-- Related CGPA Guides -->
+  <section class="seo-section" id="cgpa-guides" style="margin-top:48px;">
+    <div class="section-header"><div><span class="section-eyebrow">Learn More</span><h2 class="section-title">CGPA Guides &amp; Resources</h2></div></div>
+    <div class="blog-grid">
+      <a href="https://cgpacalculator.dev/what-is-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is CGPA?</h3><p>Understand what CGPA means, how it differs from GPA, and why universities worldwide use it to measure academic performance.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/cgpa-formula" class="blog-card"><span class="blog-card-num">→</span><h3>CGPA Formula Explained</h3><p>Break down the weighted average formula with step-by-step examples using quality points and credit hours.</p><span class="blog-card-arrow">Read guide →</span></a>
+      <a href="https://cgpacalculator.dev/good-cgpa" class="blog-card"><span class="blog-card-num">→</span><h3>What Is a Good CGPA?</h3><p>Find out what your CGPA means for jobs, graduate school, and scholarships — with realistic benchmarks by field.</p><span class="blog-card-arrow">Read guide →</span></a>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="https://cgpacalculator.dev/cgpa-information" style="display:inline-block;padding:11px 26px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Browse All CGPA Guides →</a>
+    </div>
+  </section>
+
+  <section class="seo-section" id="related-tools" style="margin-top:48px;">
+    <div class="section-header"><div><span class="section-eyebrow">More Tools</span><h2 class="section-title">Related GPA Calculators</h2></div></div>
+    <div class="why-use-grid">
+      <a href="https://cgpacalculator.dev/cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">4.0</div><h3>Standard 4.0 GPA Calculator</h3><p>Calculate your GPA using the standard 4-point grading scale.</p></a>
+      <a href="https://cgpacalculator.dev/cgpa-calculator-canada" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🇨🇦</div><h3>Canadian 4.33 GPA Calculator</h3><p>Calculate GPA using the Canadian 4.33 grading system.</p></a>
+      <a href="https://cgpacalculator.dev/cgpa-calculator-nigeria" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🇳🇬</div><h3>Nigerian 5.0 CGPA Calculator</h3><p>Nigerian 5-point scale: A → 5.00. For UNILAG, UI, OAU and more.</p></a>
+      <a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">10</div><h3>10-Point CGPA Calculator</h3><p>IIT, NIT, VTU scale: O → 10.00. Instant results.</p></a>
+      <a href="https://cgpacalculator.dev/cgpa-to-percentage" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">%</div><h3>GPA to Percentage Calculator</h3><p>Convert your GPA to percentage using multiple formulas.</p></a>
+      <a href="https://cgpacalculator.dev/grade-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">📝</div><h3>Grade Calculator</h3><p>Enter marks per subject to calculate your semester GPA and percentage.</p></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">◈ CGPA Calculator</div>
+      <div class="footer-author">Mohammad Nasir</div>
+      <div class="footer-bio">Building free, easy-to-use academic tools that help students calculate, understand, and improve their results.</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://cgpacalculator.dev/about-me" class="footer-link">About</a>
+        <a href="https://cgpacalculator.dev/privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="https://cgpacalculator.dev/contact-us" class="footer-link">Contact</a>
+          <a href="https://cgpacalculator.dev/terms-of-use" class="footer-link">Terms of Use</a>
+      </div>
+      <div class="footer-social">
+          <a href="https://www.facebook.com/cgpacalculatorbynasir" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://cgpa-calculatore.quora.com/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Quora"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 6.32 17.74c.4.66 1.06 1.26 2.18 1.26 1.1 0 1.9-.55 2.4-1.36l-1.1-.86c-.24.34-.5.52-.83.52-.5 0-.76-.36-.98-.86A10 10 0 0 0 12 2zm0 3a7 7 0 1 1 0 14 7 7 0 0 1 0-14z"/></svg></a>
+          <a href="https://medium.com/@cgpacalculator" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Medium"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.5" cy="12" r="4.5"/><ellipse cx="15" cy="12" rx="3" ry="4.5"/><ellipse cx="20.5" cy="12" rx="1.2" ry="4.5"/></svg></a>
+          <a href="https://www.linkedin.com/company/cgpa-calculator/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V9h3zM6.5 7.5A1.75 1.75 0 1 1 6.5 4a1.75 1.75 0 0 1 0 3.5zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6-1.6 0-1.9 1.3-1.9 2.5V19h-3V9h2.9v1.3h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7z"/></svg></a>
+          <a href="https://x.com/cgpacalculator3" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.tumblr.com/cgpacalculator3" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Tumblr"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14.5 21c-3 0-5-1.7-5-4.8V11h-2V8.3c2.1-.5 3-2.3 3.1-4.1H13v4h3.3v2.8H13v5.2c0 1.2.6 1.8 1.6 1.8.6 0 1.2-.2 1.7-.5l.9 2.6c-.8.6-2 1-2.7 1z"/></svg></a>
+          <a href="https://www.pinterest.com/cgpacalculator3/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.17-2.01.04-2.88.19-.8 1.23-5.09 1.23-5.09s-.31-.63-.31-1.55c0-1.45.84-2.53 1.89-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.89 1.54 1.89 1.85 0 3.28-1.95 3.28-4.77 0-2.49-1.79-4.24-4.34-4.24-2.96 0-4.69 2.22-4.69 4.51 0 .89.34 1.85.77 2.37.08.1.09.19.07.29-.08.31-.25 1.01-.29 1.15-.05.19-.15.23-.35.14-1.32-.62-2.14-2.55-2.14-4.1 0-3.34 2.43-6.41 7-6.41 3.67 0 6.53 2.62 6.53 6.11 0 3.65-2.3 6.58-5.49 6.58-1.07 0-2.08-.56-2.42-1.22l-.66 2.51c-.24.92-.89 2.08-1.32 2.78.99.31 2.05.47 3.14.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+          <a href="https://cgpacalculatorbynb.blogspot.com/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Blogger"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1 4h2c1.1 0 2 .9 2 2s-.9 2-2 2h-2V6zm0 6h3c1.4 0 2.5 1.1 2.5 2.5S15.4 17 14 17h-4v-5z"/></svg></a>
+          <a href="https://mastodon.social/@cgpacalculator3" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Mastodon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.9 0-5.6.5-7.6 1.9C2.6 5.1 2 7 2 9.6v3.6c0 5 3.5 7.9 7.5 8.9.9.2 1.9.3 3 .3.6 0 1.2 0 1.8-.1v-3.2c-.5.1-1.1.1-1.7.1-2.9 0-5.5-1-6.2-3.6-.2-.6-.2-1.3-.2-2v-4c0-2.9 1.9-3.8 4.5-3.8 1.1 0 2 .2 2.7.6v6.6h2.7V6.4c.7-.4 1.6-.6 2.7-.6 2.6 0 4.5.9 4.5 3.8v4c0 2.9-1.9 3.8-4.5 3.8-.5 0-1-.1-1.4-.2v3.3c1.6.3 3.4.2 5-.3 3.4-1.1 6.4-3.9 6.4-8.6V9.6c0-2.6-.6-4.5-2.4-5.7C17.6 2.5 14.9 2 12 2z"/></svg></a>
+          <a href="https://www.instagram.com/cgpacalculator4/" class="footer-social-link" target="_blank" rel="nofollow noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CGPA Calculator. Built with precision.</span>
+  </div>
+</footer>
+
+</body>
+</html>

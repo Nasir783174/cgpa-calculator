@@ -8,13 +8,38 @@
       "statusCode": 308
     },
     {
-      "source": "/cgpa-to-percentage",
-      "destination": "/cgpa-percentage-calculator",
+      "source": "/north-american-gpa-calculator",
+      "destination": "/nsu-cgpa-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/nigerian-cgpa-calculator",
+      "destination": "/cgpa-calculator-nigeria",
+      "statusCode": 301
+    },
+    {
+      "source": "/australian-gpa-calculator",
+      "destination": "/cgpa-calculator-australia",
+      "statusCode": 301
+    },
+    {
+      "source": "/canadian-gpa-calculator",
+      "destination": "/cgpa-calculator-canada",
+      "statusCode": 301
+    },
+    {
+      "source": "/cgpa-percentage-calculator",
+      "destination": "/cgpa-to-percentage",
+      "statusCode": 301
+    },
+    {
+      "source": "/gpa-cgpa-calculator",
+      "destination": "/cgpa-to-gpa",
       "statusCode": 301
     },
     {
       "source": "/how-to-convert-cgpa-to-percentage",
-      "destination": "/cgpa-percentage-calculator",
+      "destination": "/cgpa-to-percentage",
       "statusCode": 301
     },
     {

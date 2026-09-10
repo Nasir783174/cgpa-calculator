@@ -86,8 +86,8 @@
 .callout p{margin-bottom:0}
 .callout p+p{margin-top:8px}
 .callout-info{border-left-color:var(--accent);background:var(--accent-dim)}
-.callout-tip{border-left-color:var(--green);background:#F0FDF9}
-.callout-warning{border-left-color:#f59e0b;background:#FFFBEB}
+.callout-tip{border-left-color:var(--green);background:#F0FDF4}
+.callout-warning{border-left-color:var(--gold);background:#FFFBEB}
 .callout-final{border-left-color:var(--accent);background:var(--bg-card);border-width:1.5px;text-align:left}
 
 
@@ -112,7 +112,7 @@
 
 /* ── 7. INLINE CODE / CODE BLOCK ── (টেকনিক্যাল পোস্টের জন্য রেডি রাখা) */
 .blog-article code{background:var(--bg-input);border:1px solid var(--border);border-radius:5px;padding:2px 6px;font-size:0.9em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.blog-article pre{background:var(--dark);color:#EDEAE0;border-radius:var(--radius);padding:16px 18px;overflow-x:auto;margin:var(--sp-lg) 0}
+.blog-article pre{background:var(--dark);color:#F1F5F9;border-radius:var(--radius);padding:16px 18px;overflow-x:auto;margin:var(--sp-lg) 0}
 .blog-article pre code{background:none;border:none;padding:0;color:inherit}
 
 

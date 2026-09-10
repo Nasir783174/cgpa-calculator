@@ -39,12 +39,8 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" /></noscript>
 <link rel="preload" href="style.css" as="style" />
 <link rel="stylesheet" href="style.css" />
-<style>
-  /* Bengali glyphs need a Bengali-capable font; layout/spacing stays identical to the rest of the site */
-  .blog-article{font-family:'Noto Sans Bengali','Inter',sans-serif}
-  .blog-article h1,.blog-article h2,.blog-article h3{font-family:'Noto Sans Bengali','Inter',sans-serif}
-  .breadcrumb,.blog-card,.footer-bio,.pub-date{font-family:'Noto Sans Bengali','Inter',sans-serif}
-</style>
+<link rel="preload" href="blog.css" as="style" />
+<link rel="stylesheet" href="blog.css" />
  <link rel="alternate" hreflang="bn" href="https://cgpacalculator.dev/cgpa-ki">
 <link rel="alternate" hreflang="en" href="https://cgpacalculator.dev/what-is-cgpa">
 <link rel="alternate" hreflang="x-default" href="https://cgpacalculator.dev/what-is-cgpa">
@@ -261,9 +257,9 @@
 
 <h1>সিজিপিএ কী? সহজ ভাষায় সম্পূর্ণ গাইড (২০২৬ আপডেট)</h1><span class="pub-date">Published on: 14/07/2026</span>
 
-<nav class="toc-box" aria-label="Table of contents" style="background:var(--surface-2,#f7f9fa);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin:20px 0;">
-  <strong style="display:block;margin-bottom:10px;font-size:15px;">📑 এই গাইডে যা আছে</strong>
-  <ol style="margin:0;padding-left:20px;line-height:1.9;font-size:14.5px;">
+<nav class="blog-toc" aria-label="Table of contents">
+  <strong class="blog-toc-title">📑 এই গাইডে যা আছে</strong>
+  <ol class="blog-toc-list">
     <li><a href="#section-1">সিজিপিএ (CGPA) কী?</a></li>
     <li><a href="#section-2">সিজিপিএ কেন ব্যবহার করা হয়?</a></li>
     <li><a href="#section-3">সিজিপিএ কীভাবে কাজ করে?</a></li>
@@ -743,16 +739,16 @@ CGPA = 248.91 ÷ 66 = 3.77</p>
 
     
     <!-- TRY THE TOOL CTA -->
-    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:36px;text-align:center;font-family:'Noto Sans Bengali','Inter',sans-serif;">
-      <p style="font-weight:700;font-size:16px;margin-bottom:8px;">এখন যেহেতু আপনি সিজিপিএ সম্পর্কে বুঝে গেছেন, নিজের সিজিপিএ হিসাব করুন মুহূর্তেই।</p>
-      <p style="color:var(--text-3);font-size:14px;margin-bottom:16px;">বিষয়, ক্রেডিট আওয়ার ও গ্রেড দিন — কয়েক সেকেন্ডে সঠিক সিজিপিএ পেয়ে যান।</p>
-      <a href="https://cgpacalculator.dev/" style="display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;margin:4px;">সিজিপিএ ক্যালকুলেটর ব্যবহার করুন →</a>
-      <a href="cgpa-to-percentage" style="display:inline-block;padding:12px 28px;background:var(--surface-3,#e8e8e8);color:var(--text-1);border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;margin:4px;">শতাংশে রূপান্তর করুন →</a>
+    <div class="blog-cta">
+      <p class="blog-cta-title">এখন যেহেতু আপনি সিজিপিএ সম্পর্কে বুঝে গেছেন, নিজের সিজিপিএ হিসাব করুন মুহূর্তেই।</p>
+      <p class="blog-cta-sub">বিষয়, ক্রেডিট আওয়ার ও গ্রেড দিন — কয়েক সেকেন্ডে সঠিক সিজিপিএ পেয়ে যান।</p>
+      <a href="https://cgpacalculator.dev/" class="blog-cta-btn">সিজিপিএ ক্যালকুলেটর ব্যবহার করুন →</a>
+      <a href="cgpa-to-percentage" class="blog-cta-btn blog-cta-btn-secondary">শতাংশে রূপান্তর করুন →</a>
     </div>
 
     <!-- RELATED GUIDES -->
-    <section style="margin-top:36px;">
-      <h2 class="section-heading" style="font-family:'Noto Sans Bengali','Inter',sans-serif;">পরবর্তী পড়ুন</h2>
+    <section class="mt-section">
+      <h2 class="section-heading">পরবর্তী পড়ুন</h2>
       <div class="blog-grid">
         <a href="cgpa-formula" class="blog-card">
           <span class="blog-card-num">→</span>

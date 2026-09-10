@@ -86,6 +86,11 @@ ul,ol{line-height:var(--lh-list)}
 .small-text{font-size:var(--fs-small);line-height:var(--lh-small)}
 .caption{font-size:var(--fs-caption)}
 
+/* ── SMALL LAYOUT UTILITY — used site-wide (blog + tool pages) to avoid
+   repeating the same one-off inline style="margin-top:36px" on ad-hoc
+   wrapper sections (e.g. "Read Next" blocks before a .blog-grid). */
+.mt-section{margin-top:36px}
+
 /* ── HEADER ── */
 .header{position:sticky;top:0;z-index:100;height:var(--header-h);background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(196,62,28,.06)}
 .header-inner{max-width:var(--container-main);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -131,7 +136,7 @@ ul,ol{line-height:var(--lh-list)}
    a narrower, consistent width instead of stretching edge-to-edge —
    this is what makes every tool on the site feel the same size. */
 .tool-page-wrap,.grade-calc-wrap{max-width:var(--container-main);margin:0 auto;padding:var(--sp-2xl) var(--sp-xl) var(--sp-6xl);width:100%}
-.blog-page-wrap{max-width:var(--container-main);margin:0 auto;padding:var(--sp-2xl) var(--sp-xl) var(--sp-6xl)}
+/* .blog-page-wrap lives in blog.css now — only blog pages load that file */
 
 /* ── CALC LAYOUT ── */
 .calc-layout{display:grid;grid-template-columns:38% 1fr;gap:18px;align-items:start;width:100%;min-width:0}
@@ -352,23 +357,13 @@ tbody tr:hover{background:var(--accent-dim)}
 
 /* ── BREADCRUMB ── */
 .breadcrumb{font-size:13px;color:var(--text-3);display:flex;align-items:center;gap:5px;flex-wrap:wrap;padding:14px 0 0}
-.blog-page-wrap .breadcrumb{max-width:var(--container-main);margin:0;padding-left:0;padding-right:0}
 .breadcrumb a{color:var(--text-3);transition:color var(--transition)}
 .breadcrumb a:hover{color:var(--accent)}
 .breadcrumb-sep{opacity:.5}
 
-/* ── BLOG PAGES ── */
-.blog-article{margin:var(--sp-xl) 0 0;max-width:var(--container-main)}
-.blog-article h1{font-size:var(--fs-h1);font-weight:700;color:var(--text-1);letter-spacing:var(--ls-heading);line-height:var(--lh-h1);margin-bottom:var(--sp-sm)}
-.pub-date{display:block;font-size:13px;color:var(--text-3);margin-bottom:22px}
-.blog-article h2{font-size:var(--fs-h2);font-weight:700;color:var(--text-1);letter-spacing:var(--ls-heading);line-height:var(--lh-h2);margin:var(--sp-2xl) 0 var(--sp-md);border-left:3px solid var(--accent);padding-left:var(--sp-lg)}
-.blog-article h3{font-size:var(--fs-h3);font-weight:600;color:var(--text-1);letter-spacing:var(--ls-heading);line-height:var(--lh-h3);margin:var(--sp-xl) 0 var(--sp-sm)}
-.blog-article p{font-size:var(--fs-body);font-weight:400;color:var(--text-2);line-height:var(--lh-body);margin-bottom:var(--sp-md)}
-.blog-article ul,.blog-article ol{padding-left:18px;margin-bottom:12px;display:flex;flex-direction:column;gap:5px}
-.blog-article li{font-size:var(--fs-body);color:var(--text-2);line-height:var(--lh-list)}
-.blog-article a{color:var(--accent)}
-.blog-article a:hover{text-decoration:underline}
-.blog-article strong{color:var(--text-1);font-weight:700}
+/* Blog article typography, pub-date, and the blog-page-wrap breadcrumb
+   override all live in blog.css now — that file is only loaded on
+   blog pages, right after this one. */
 .back-link{display:inline-flex;align-items:center;gap:5px;margin-top:36px;padding:10px 18px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:14px;font-weight:600;color:var(--text-2);transition:all var(--transition)}
 .back-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
 
@@ -615,7 +610,7 @@ tbody tr:hover{background:var(--accent-dim)}
   /* Prevent any horizontal overflow */
   html{overflow-x:hidden;width:100%}
   body{width:100%}
-  .main-content,.tool-page-wrap,.grade-calc-wrap,.blog-page-wrap{padding:14px 12px 60px;width:100%;box-sizing:border-box}
+  .main-content,.tool-page-wrap,.grade-calc-wrap{padding:14px 12px 60px;width:100%;box-sizing:border-box}
   .main-content>h1,.tool-page-wrap>h1,.grade-calc-wrap>h1{margin-bottom:16px}
   .page-intro{font-size:var(--fs-body-lg);margin-bottom:20px}
   /* Cards and sections */

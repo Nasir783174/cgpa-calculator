@@ -66,6 +66,21 @@
     setTimeout(() => el.classList.remove("error-shake"), 400);
   }
 
+  // Bug fix: the input's max attribute must match the CGPA ceiling of the
+  // currently selected formula (4 for "4pt", 5 for "5pt", 10 for the rest),
+  // not a hardcoded 10 — otherwise the native number input allows values
+  // the formula doesn't support until the manual validation in calculate()
+  // catches it.
+  function getMaxCGPAForFormula() {
+    const formula = document.getElementById("formulaSelect").value;
+    return formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
+  }
+
+  function updateInputMax() {
+    const inputEl = document.getElementById("inputValue");
+    inputEl.max = mode === "cgpa" ? getMaxCGPAForFormula() : 100;
+  }
+
   window.switchTab = function (tab) {
     mode = tab;
     const inputEl  = document.getElementById("inputValue");
@@ -79,17 +94,16 @@
       tabPct.classList.remove("active");  tabPct.setAttribute("aria-selected", "false");
       labelEl.textContent    = "Enter CGPA";
       inputEl.placeholder    = "e.g. 8.5";
-      inputEl.max            = "10";
       resultLbl.textContent  = "Your Percentage";
     } else {
       tabPct.classList.add("active");      tabPct.setAttribute("aria-selected", "true");
       tabCgpa.classList.remove("active");  tabCgpa.setAttribute("aria-selected", "false");
       labelEl.textContent    = "Enter Percentage";
       inputEl.placeholder    = "e.g. 85";
-      inputEl.max            = "100";
       resultLbl.textContent  = "Your CGPA";
     }
 
+    updateInputMax();
     clearError();
     hideResult();
   };
@@ -174,6 +188,12 @@
   document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("inputValue");
     if (input) input.addEventListener("keydown", (e) => { if (e.key === "Enter") window.calculate(); });
+
+    const formulaSelect = document.getElementById("formulaSelect");
+    if (formulaSelect) formulaSelect.addEventListener("change", updateInputMax);
+
+    // Set the correct max on first load (was previously hardcoded to 10).
+    updateInputMax();
   });
 })();
 

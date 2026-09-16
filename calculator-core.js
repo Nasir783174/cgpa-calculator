@@ -223,6 +223,7 @@ function calcTarget() {
   const resultEl   = document.getElementById("targetResult");
   resultEl.className = "target-result";
   if (!targetCGPA || !remainCredits) { requiredEl.textContent = "–"; return; }
+  if (targetCGPA > max) { requiredEl.textContent = "Exceeds scale max"; resultEl.classList.add("target-impossible"); return; }
   const required = (targetCGPA * (earnedCredits + remainCredits) - currentCGPA * earnedCredits) / remainCredits;
   if (required > max)  { requiredEl.textContent = "Not Possible";      resultEl.classList.add("target-impossible"); }
   else if (required < 0) { requiredEl.textContent = "Already Achieved!"; resultEl.classList.add("target-achieved"); }
@@ -233,26 +234,64 @@ function calcSGPAtoCGPA() {
   // Bug fix: Use credit-weighted average instead of simple average
   let weightedTotal = 0, totalCredits = 0, hasAnyCredit = false;
   let simpleTotal = 0, simpleCount = 0;
+  let missingCreditRows = []; // rows that have an SGPA but no credit (Problem 5 fix)
+
   document.querySelectorAll(".sgpa-row").forEach((row) => {
     const sgpaVal   = parseFloat(row.querySelector(".sgpa-val-input").value);
     const creditEl  = row.querySelector(".sgpa-credit-input");
     const creditVal = creditEl ? parseFloat(creditEl.value) : NaN;
+    const hasCredit = !isNaN(creditVal) && creditVal > 0;
+
+    // Always clear any previous highlight first, then re-apply if still missing.
+    if (creditEl) creditEl.classList.remove("sgpa-credit-missing");
+
     if (!isNaN(sgpaVal)) {
       simpleTotal += sgpaVal; simpleCount++;
-      if (!isNaN(creditVal) && creditVal > 0) {
+      if (hasCredit) {
         weightedTotal += sgpaVal * creditVal;
         totalCredits  += creditVal;
         hasAnyCredit   = true;
+      } else {
+        missingCreditRows.push(row);
       }
     }
   });
+
+  // If at least one semester has a credit value, we're in weighted mode.
+  // Any semester with an SGPA but no credit would otherwise be silently
+  // dropped from the result — instead, warn the user and highlight it.
+  if (hasAnyCredit && missingCreditRows.length > 0) {
+    missingCreditRows.forEach((row) => {
+      const creditEl = row.querySelector(".sgpa-credit-input");
+      if (creditEl) creditEl.classList.add("sgpa-credit-missing");
+    });
+  }
+
   const result = hasAnyCredit
     ? (weightedTotal / totalCredits)
     : (simpleCount > 0 ? simpleTotal / simpleCount : 0);
   document.getElementById("sgpaCGPA").textContent = result.toFixed(2);
+
   // Show/hide the weighted indicator
   const noteEl = document.getElementById("sgpaWeightedNote");
   if (noteEl) noteEl.style.display = hasAnyCredit ? "inline" : "none";
+
+  // Show/hide the missing-credit warning (Problem 5 fix)
+  const warnEl = document.getElementById("sgpaMissingCreditWarning");
+  if (warnEl) {
+    if (hasAnyCredit && missingCreditRows.length > 0) {
+      const names = missingCreditRows
+        .map((row) => row.querySelector(".sgpa-sem-name").value || "This semester")
+        .join(", ");
+      warnEl.textContent = missingCreditRows.length === 1
+        ? `⚠ "${names}" has no credit entered, so it is NOT counted in the CGPA above. Add its credit to include it.`
+        : `⚠ These semesters have no credit entered, so they are NOT counted in the CGPA above: ${names}. Add their credits to include them.`;
+      warnEl.style.display = "block";
+    } else {
+      warnEl.style.display = "none";
+      warnEl.textContent = "";
+    }
+  }
 }
 
 // ─── UI HELPERS ───────────────────────────────────────────────
@@ -274,6 +313,11 @@ function updateAllDropdowns() {
     select.innerHTML = buildDropdown(match ? match.value : null);
   });
   document.querySelectorAll(".sgpa-val-input").forEach((input) => { input.max = getScaleMax(); });
+  const scaleMax = getScaleMax();
+  const currentCGPAEl = document.getElementById("currentCGPA");
+  const targetCGPAEl  = document.getElementById("targetCGPA");
+  if (currentCGPAEl) currentCGPAEl.max = scaleMax;
+  if (targetCGPAEl)  targetCGPAEl.max  = scaleMax;
   renderScalePreview();
   recalcAll();
 }
@@ -390,13 +434,22 @@ function initCalculator() {
       if (!isOpen) { this.setAttribute("aria-expanded","true"); this.nextElementSibling.classList.add("open"); }
     });
   });
-  // Nav dropdown
+
+  // Nav dropdown click toggle
   const navDropTrigger = document.getElementById("navDropTrigger");
   const navDropMenu    = document.getElementById("navDropMenu");
   if (navDropTrigger && navDropMenu) {
-    navDropTrigger.addEventListener("mouseenter", () => navDropMenu.classList.add("open"));
-    navDropTrigger.addEventListener("mouseleave", () => navDropMenu.classList.remove("open"));
-    navDropMenu.addEventListener("mouseenter", () => navDropMenu.classList.add("open"));
-    navDropMenu.addEventListener("mouseleave", () => navDropMenu.classList.remove("open"));
+    navDropTrigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navDropMenu.classList.toggle("open");
+    });
+    document.addEventListener("click", function () {
+      navDropMenu.classList.remove("open");
+    });
+    navDropMenu.querySelectorAll(".nav-drop-item").forEach((item) => {
+      item.addEventListener("click", function () {
+        navDropMenu.classList.remove("open");
+      });
+    });
   }
 }

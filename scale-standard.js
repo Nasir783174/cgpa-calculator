@@ -34,12 +34,8 @@ const SCALES = {
       value: 2.25,
       letter: "C"
     }, {
-      label: "C− (2.00)",
+      label: "D  (2.00)",
       value: 2,
-      letter: "C−"
-    }, {
-      label: "D  (1.75)",
-      value: 1.75,
       letter: "D"
     }, {
       label: "F  (0.00)",

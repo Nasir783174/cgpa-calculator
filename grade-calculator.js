@@ -7,7 +7,7 @@
   const GRADE_SYSTEMS = {
     4: {
       label: "4.0 Scale",
-      // Matches scale-standard.js exactly (11 bands) so the Grade Calculator
+      // Matches scale-standard.js exactly (10 bands) so the Grade Calculator
       // and the main CGPA Calculator never disagree on the same marks/letter.
       getGrade: (marks) => {
         if (marks >= 80) return {
@@ -43,19 +43,15 @@
           point: 2.25
         };
         if (marks >= 40) return {
-          letter: "C−",
-          point: 2
-        };
-        if (marks >= 35) return {
           letter: "D",
-          point: 1.75
+          point: 2
         };
         return {
           letter: "F",
           point: 0
         };
       },
-      passMin: 35,
+      passMin: 40,
     },
     5: {
       label: "5.0 Scale",
@@ -253,8 +249,7 @@
         "B−": 55,
         "C+": 50,
         "C": 45,
-        "C−": 40,
-        "D": 35
+        "D": 40
       },
       5: {
         "A+": 80,
@@ -354,8 +349,7 @@
         <option value="B−">B− (55%+)</option>
         <option value="C+">C+ (50%+)</option>
         <option value="C">C (45%+)</option>
-        <option value="C−">C− (40%+)</option>
-        <option value="D">D (35%+)</option>`;
+        <option value="D">D (40%+)</option>`;
     }
   }
 

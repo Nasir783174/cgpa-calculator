@@ -1,6 +1,11 @@
 // ─── SCALE HELPERS ───────────────────────────────────────────
-function getScale() { return SCALES[currentScale]; }
-function getScaleMax() { return SCALES[currentScale].max; }
+function getScale() {
+  return SCALES[currentScale];
+}
+
+function getScaleMax() {
+  return SCALES[currentScale].max;
+}
 
 function buildDropdown(selectedValue = null) {
   const scale = getScale();
@@ -26,39 +31,54 @@ function getCGPAGrade(cgpa) {
   if (max === 5) {
     if (cgpa >= 4.5) return "Excellent";
     if (cgpa >= 3.5) return "Very Good";
-    if (cgpa >= 3)   return "Good";
-    if (cgpa >= 2)   return "Average";
-    if (cgpa >= 1)   return "Pass";
+    if (cgpa >= 3) return "Good";
+    if (cgpa >= 2) return "Average";
+    if (cgpa >= 1) return "Pass";
     return "Fail";
   }
   if (max === 7) {
     if (cgpa >= 6.5) return "High Distinction";
     if (cgpa >= 5.5) return "Distinction";
     if (cgpa >= 4.5) return "Credit";
-    if (cgpa >= 4)   return "Pass";
+    if (cgpa >= 4) return "Pass";
     return "Fail";
   }
   if (max === 4.33) {
     if (cgpa >= 3.7) return "Excellent";
-    if (cgpa >= 3)   return "Good";
-    if (cgpa >= 2)   return "Satisfactory";
-    if (cgpa >= 1)   return "Pass";
+    if (cgpa >= 3) return "Good";
+    if (cgpa >= 2) return "Satisfactory";
+    if (cgpa >= 1) return "Pass";
     return "Fail";
   }
   if (cgpa >= 3.75) return "Excellent";
-  if (cgpa >= 3.5)  return "Very Good";
-  if (cgpa >= 3)    return "Good";
-  if (cgpa >= 2.5)  return "Average";
-  if (cgpa >= 2)    return "Below Average";
+  if (cgpa >= 3.5) return "Very Good";
+  if (cgpa >= 3) return "Good";
+  if (cgpa >= 2.5) return "Average";
+  if (cgpa >= 2) return "Below Average";
   return "Poor";
 }
 
 function getScaleLabel(scale) {
-  const labels = { standard:"Standard 4.0", na:"North American", ten:"10-Point Scale", nigerian:"Nigerian 5.0", australian:"Australian 7.0", canadian:"Canadian 4.33" };
+  const labels = {
+    standard: "Standard 4.0",
+    na: "North American",
+    ten: "10-Point Scale",
+    nigerian: "Nigerian 5.0",
+    australian: "Australian 7.0",
+    canadian: "Canadian 4.33"
+  };
   return labels[scale] || "Standard 4.0";
 }
+
 function getScaleLabelFull(scale) {
-  const labels = { standard:"Standard 4.0 Scale", na:"North American 4.0 Scale", ten:"10-Point Scale", nigerian:"Nigerian 5.0 Scale", australian:"Australian 7.0 Scale", canadian:"Canadian 4.33 Scale" };
+  const labels = {
+    standard: "Standard 4.0 Scale",
+    na: "North American 4.0 Scale",
+    ten: "10-Point Scale",
+    nigerian: "Nigerian 5.0 Scale",
+    australian: "Australian 7.0 Scale",
+    canadian: "Canadian 4.33 Scale"
+  };
   return labels[scale] || "Standard 4.0 Scale";
 }
 
@@ -89,11 +109,17 @@ function createCourseRow(semId, courseId) {
   row.querySelector(".course-grade").addEventListener("change", recalcAll);
   row.querySelector(".course-credit").addEventListener("input", recalcAll);
   row.querySelector(".course-name").addEventListener("input", recalcAll);
-  row.querySelector(".btn-delete-course").addEventListener("click", function () {
+  row.querySelector(".btn-delete-course").addEventListener("click", function() {
     const semBox = document.querySelector(`.semester-box[data-sem-id="${semId}"]`);
-    if (semBox.querySelectorAll(".course-row").length <= 1) { showToast("At least one course is required per semester."); return; }
+    if (semBox.querySelectorAll(".course-row").length <= 1) {
+      showToast("At least one course is required per semester.");
+      return;
+    }
     row.classList.add("removing");
-    setTimeout(() => { row.remove(); recalcAll(); }, 250);
+    setTimeout(() => {
+      row.remove();
+      recalcAll();
+    }, 250);
   });
   return row;
 }
@@ -126,19 +152,29 @@ function createSemester() {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       + Add Course
     </button>`;
-  box.querySelector(".btn-delete-semester").addEventListener("click", function () {
-    if (document.querySelectorAll(".semester-box").length <= 1) { showToast("At least one semester is required."); return; }
+  box.querySelector(".btn-delete-semester").addEventListener("click", function() {
+    if (document.querySelectorAll(".semester-box").length <= 1) {
+      showToast("At least one semester is required.");
+      return;
+    }
     box.style.transition = "opacity 0.25s, transform 0.25s";
-    box.style.opacity = "0"; box.style.transform = "translateY(-8px)";
-    setTimeout(() => { box.remove(); recalcAll(); }, 250);
+    box.style.opacity = "0";
+    box.style.transform = "translateY(-8px)";
+    setTimeout(() => {
+      box.remove();
+      recalcAll();
+    }, 250);
   });
-  box.querySelector(".btn-add-course").addEventListener("click", function () {
+  box.querySelector(".btn-add-course").addEventListener("click", function() {
     const semId = parseInt(this.dataset.semId);
     const container = document.getElementById(`courses-${semId}`);
     const newRow = createCourseRow(semId, container.querySelectorAll(".course-row").length + 1);
     newRow.style.opacity = "0";
     container.appendChild(newRow);
-    requestAnimationFrame(() => { newRow.style.transition = "opacity 0.2s"; newRow.style.opacity = "1"; });
+    requestAnimationFrame(() => {
+      newRow.style.transition = "opacity 0.2s";
+      newRow.style.opacity = "1";
+    });
     recalcAll();
   });
   box.querySelector(".semester-name-input").addEventListener("input", recalcAll);
@@ -162,34 +198,40 @@ function createSGPARow() {
     </button>`;
   row.querySelector(".sgpa-val-input").addEventListener("input", calcSGPAtoCGPA);
   row.querySelector(".sgpa-credit-input").addEventListener("input", calcSGPAtoCGPA);
-  row.querySelector(".btn-delete-sgpa").addEventListener("click", function () {
-    if (document.querySelectorAll(".sgpa-row").length <= 1) { showToast("At least one row required."); return; }
-    row.remove(); calcSGPAtoCGPA();
+  row.querySelector(".btn-delete-sgpa").addEventListener("click", function() {
+    if (document.querySelectorAll(".sgpa-row").length <= 1) {
+      showToast("At least one row required.");
+      return;
+    }
+    row.remove();
+    calcSGPAtoCGPA();
   });
   return row;
 }
 
 // ─── CALCULATIONS ─────────────────────────────────────────────
 function calcSGPA(semId) {
-  let totalPoints = 0, totalCredits = 0;
+  let totalPoints = 0,
+    totalCredits = 0;
   document.querySelectorAll(`.course-row[data-sem-id="${semId}"]`).forEach((row) => {
     const credit = parseFloat(row.querySelector(".course-credit").value) || 0;
-    const grade  = parseFloat(row.querySelector(".course-grade").value)  || 0;
-    totalPoints  += credit * grade;
+    const grade = parseFloat(row.querySelector(".course-grade").value) || 0;
+    totalPoints += credit * grade;
     totalCredits += credit;
   });
   return totalCredits > 0 ? totalPoints / totalCredits : 0;
 }
 
 function recalcAll() {
-  let weightedSum = 0, totalCredits = 0;
+  let weightedSum = 0,
+    totalCredits = 0;
   const max = getScaleMax();
   const semesters = document.querySelectorAll(".semester-box");
   semesters.forEach((semBox) => {
     const semId = parseInt(semBox.dataset.semId);
-    const sgpa  = calcSGPA(semId);
+    const sgpa = calcSGPA(semId);
     const credits = Array.from(semBox.querySelectorAll(".course-credit")).reduce((s, el) => s + (parseFloat(el.value) || 0), 0);
-    weightedSum  += sgpa * credits;
+    weightedSum += sgpa * credits;
     totalCredits += credits;
     const sgpaEl = document.getElementById(`sgpa-sem-${semId}`);
     if (sgpaEl) sgpaEl.textContent = sgpa.toFixed(2);
@@ -197,14 +239,14 @@ function recalcAll() {
   const cgpa = totalCredits > 0 ? weightedSum / totalCredits : 0;
   const gradeLabel = cgpa > 0 ? getCGPAGrade(cgpa) : "–";
   animateValue(document.getElementById("cgpaDisplay"), parseFloat(document.getElementById("cgpaDisplay").textContent) || 0, cgpa, 400);
-  document.getElementById("totalCredits").textContent    = totalCredits.toFixed(1);
-  document.getElementById("totalSemesters").textContent  = semesters.length;
-  document.getElementById("cgpaGradeLabel").textContent  = gradeLabel;
-  document.getElementById("cgpaBar").style.width         = (cgpa / max * 100) + "%";
-  document.getElementById("stickyCGPA").textContent      = cgpa.toFixed(2);
-  document.getElementById("stickyCredits").textContent   = totalCredits.toFixed(1);
+  document.getElementById("totalCredits").textContent = totalCredits.toFixed(1);
+  document.getElementById("totalSemesters").textContent = semesters.length;
+  document.getElementById("cgpaGradeLabel").textContent = gradeLabel;
+  document.getElementById("cgpaBar").style.width = (cgpa / max * 100) + "%";
+  document.getElementById("stickyCGPA").textContent = cgpa.toFixed(2);
+  document.getElementById("stickyCredits").textContent = totalCredits.toFixed(1);
   document.getElementById("stickySemesters").textContent = semesters.length;
-  document.getElementById("stickyGrade").textContent     = gradeLabel;
+  document.getElementById("stickyGrade").textContent = gradeLabel;
   // Bug fix: Only auto-fill currentCGPA if user is not actively editing it
   const _currentCGPAEl = document.getElementById("currentCGPA");
   if (document.activeElement !== _currentCGPAEl) {
@@ -216,29 +258,46 @@ function recalcAll() {
 function calcTarget() {
   const max = getScaleMax();
   const earnedCredits = parseFloat(document.getElementById("totalCredits").textContent) || 0;
-  const currentCGPA   = parseFloat(document.getElementById("currentCGPA").value)  || 0;
-  const targetCGPA    = parseFloat(document.getElementById("targetCGPA").value)   || 0;
+  const currentCGPA = parseFloat(document.getElementById("currentCGPA").value) || 0;
+  const targetCGPA = parseFloat(document.getElementById("targetCGPA").value) || 0;
   const remainCredits = parseFloat(document.getElementById("remainingCredits").value) || 0;
   const requiredEl = document.getElementById("requiredGPA");
-  const resultEl   = document.getElementById("targetResult");
+  const resultEl = document.getElementById("targetResult");
   resultEl.className = "target-result";
-  if (!targetCGPA || !remainCredits) { requiredEl.textContent = "–"; return; }
-  if (targetCGPA > max) { requiredEl.textContent = "Exceeds scale max"; resultEl.classList.add("target-impossible"); return; }
+  if (!targetCGPA || !remainCredits) {
+    requiredEl.textContent = "–";
+    return;
+  }
+  if (targetCGPA > max) {
+    requiredEl.textContent = "Exceeds scale max";
+    resultEl.classList.add("target-impossible");
+    return;
+  }
   const required = (targetCGPA * (earnedCredits + remainCredits) - currentCGPA * earnedCredits) / remainCredits;
-  if (required > max)  { requiredEl.textContent = "Not Possible";      resultEl.classList.add("target-impossible"); }
-  else if (required < 0) { requiredEl.textContent = "Already Achieved!"; resultEl.classList.add("target-achieved"); }
-  else { requiredEl.textContent = required.toFixed(2); resultEl.classList.add("target-possible"); }
+  if (required > max) {
+    requiredEl.textContent = "Not Possible";
+    resultEl.classList.add("target-impossible");
+  } else if (required < 0) {
+    requiredEl.textContent = "Already Achieved!";
+    resultEl.classList.add("target-achieved");
+  } else {
+    requiredEl.textContent = required.toFixed(2);
+    resultEl.classList.add("target-possible");
+  }
 }
 
 function calcSGPAtoCGPA() {
   // Bug fix: Use credit-weighted average instead of simple average
-  let weightedTotal = 0, totalCredits = 0, hasAnyCredit = false;
-  let simpleTotal = 0, simpleCount = 0;
+  let weightedTotal = 0,
+    totalCredits = 0,
+    hasAnyCredit = false;
+  let simpleTotal = 0,
+    simpleCount = 0;
   let missingCreditRows = []; // rows that have an SGPA but no credit (Problem 5 fix)
 
   document.querySelectorAll(".sgpa-row").forEach((row) => {
-    const sgpaVal   = parseFloat(row.querySelector(".sgpa-val-input").value);
-    const creditEl  = row.querySelector(".sgpa-credit-input");
+    const sgpaVal = parseFloat(row.querySelector(".sgpa-val-input").value);
+    const creditEl = row.querySelector(".sgpa-credit-input");
     const creditVal = creditEl ? parseFloat(creditEl.value) : NaN;
     const hasCredit = !isNaN(creditVal) && creditVal > 0;
 
@@ -246,11 +305,12 @@ function calcSGPAtoCGPA() {
     if (creditEl) creditEl.classList.remove("sgpa-credit-missing");
 
     if (!isNaN(sgpaVal)) {
-      simpleTotal += sgpaVal; simpleCount++;
+      simpleTotal += sgpaVal;
+      simpleCount++;
       if (hasCredit) {
         weightedTotal += sgpaVal * creditVal;
-        totalCredits  += creditVal;
-        hasAnyCredit   = true;
+        totalCredits += creditVal;
+        hasAnyCredit = true;
       } else {
         missingCreditRows.push(row);
       }
@@ -267,9 +327,9 @@ function calcSGPAtoCGPA() {
     });
   }
 
-  const result = hasAnyCredit
-    ? (weightedTotal / totalCredits)
-    : (simpleCount > 0 ? simpleTotal / simpleCount : 0);
+  const result = hasAnyCredit ?
+    (weightedTotal / totalCredits) :
+    (simpleCount > 0 ? simpleTotal / simpleCount : 0);
   document.getElementById("sgpaCGPA").textContent = result.toFixed(2);
 
   // Show/hide the weighted indicator
@@ -283,9 +343,9 @@ function calcSGPAtoCGPA() {
       const names = missingCreditRows
         .map((row) => row.querySelector(".sgpa-sem-name").value || "This semester")
         .join(", ");
-      warnEl.textContent = missingCreditRows.length === 1
-        ? `⚠ "${names}" has no credit entered, so it is NOT counted in the CGPA above. Add its credit to include it.`
-        : `⚠ These semesters have no credit entered, so they are NOT counted in the CGPA above: ${names}. Add their credits to include them.`;
+      warnEl.textContent = missingCreditRows.length === 1 ?
+        `⚠ "${names}" has no credit entered, so it is NOT counted in the CGPA above. Add its credit to include it.` :
+        `⚠ These semesters have no credit entered, so they are NOT counted in the CGPA above: ${names}. Add their credits to include them.`;
       warnEl.style.display = "block";
     } else {
       warnEl.style.display = "none";
@@ -308,16 +368,18 @@ function animateValue(el, from, to, duration) {
 function updateAllDropdowns() {
   document.querySelectorAll(".course-grade").forEach((select) => {
     const current = parseFloat(select.value);
-    const scale   = getScale();
-    const match   = scale.grades.find((g) => g.value === current);
+    const scale = getScale();
+    const match = scale.grades.find((g) => g.value === current);
     select.innerHTML = buildDropdown(match ? match.value : null);
   });
-  document.querySelectorAll(".sgpa-val-input").forEach((input) => { input.max = getScaleMax(); });
+  document.querySelectorAll(".sgpa-val-input").forEach((input) => {
+    input.max = getScaleMax();
+  });
   const scaleMax = getScaleMax();
   const currentCGPAEl = document.getElementById("currentCGPA");
-  const targetCGPAEl  = document.getElementById("targetCGPA");
+  const targetCGPAEl = document.getElementById("targetCGPA");
   if (currentCGPAEl) currentCGPAEl.max = scaleMax;
-  if (targetCGPAEl)  targetCGPAEl.max  = scaleMax;
+  if (targetCGPAEl) targetCGPAEl.max = scaleMax;
   renderScalePreview();
   recalcAll();
 }
@@ -330,7 +392,10 @@ function showToast(message) {
   toast.textContent = message;
   document.body.appendChild(toast);
   requestAnimationFrame(() => toast.classList.add("toast-visible"));
-  setTimeout(() => { toast.classList.remove("toast-visible"); setTimeout(() => toast.remove(), 300); }, 3000);
+  setTimeout(() => {
+    toast.classList.remove("toast-visible");
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
 }
 
 function closeMobileMenu() {
@@ -341,12 +406,13 @@ function closeMobileMenu() {
 // ─── PDF REPORT ───────────────────────────────────────────────
 function generatePDF() {
   // Bug fix: Calculate CGPA directly to avoid reading an in-progress animated value
-  let _weightedSum = 0, _totalCreditsCalc = 0;
+  let _weightedSum = 0,
+    _totalCreditsCalc = 0;
   document.querySelectorAll(".semester-box").forEach((semBox) => {
     const semId = parseInt(semBox.dataset.semId);
-    const sgpa  = calcSGPA(semId);
+    const sgpa = calcSGPA(semId);
     const credits = Array.from(semBox.querySelectorAll(".course-credit")).reduce((s, el) => s + (parseFloat(el.value) || 0), 0);
-    _weightedSum    += sgpa * credits;
+    _weightedSum += sgpa * credits;
     _totalCreditsCalc += credits;
   });
   const _cgpaExact = _totalCreditsCalc > 0 ? _weightedSum / _totalCreditsCalc : 0;
@@ -355,16 +421,21 @@ function generatePDF() {
   const semesters = document.getElementById("totalSemesters").textContent;
   const grade = getCGPAGrade(parseFloat(cgpa));
   const scaleName = getScaleLabelFull(currentScale);
-  const date = new Date().toLocaleDateString("en-US", { year:"numeric", month:"long", day:"numeric" });
-  const targetCGPA   = document.getElementById("targetCGPA").value;
+  const date = new Date().toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const targetCGPA = document.getElementById("targetCGPA").value;
   const remainCredit = document.getElementById("remainingCredits").value;
-  const requiredGPA  = document.getElementById("requiredGPA").textContent;
+  const requiredGPA = document.getElementById("requiredGPA").textContent;
   let semestersHTML = "";
   document.querySelectorAll(".semester-box").forEach((semBox) => {
-    const semId   = parseInt(semBox.dataset.semId);
+    const semId = parseInt(semBox.dataset.semId);
     const semName = semBox.querySelector(".semester-name-input").value.trim() || `Semester ${semId}`;
-    const sgpa    = document.getElementById(`sgpa-sem-${semId}`)?.textContent || "0.00";
-    let rowsHTML = "", semCredits = 0;
+    const sgpa = document.getElementById(`sgpa-sem-${semId}`)?.textContent || "0.00";
+    let rowsHTML = "",
+      semCredits = 0;
     semBox.querySelectorAll(".course-row").forEach((row, idx) => {
       const name = row.querySelector(".course-name").value.trim() || "Unnamed Course";
       const credit = row.querySelector(".course-credit").value || "–";
@@ -378,16 +449,21 @@ function generatePDF() {
   });
   let targetHTML = "";
   if (targetCGPA && remainCredit) {
-    const color = requiredGPA==="Not Possible"?"#c62828":requiredGPA==="Already Achieved!"?"#287094":"#2e7d32";
+    const color = requiredGPA === "Not Possible" ? "#c62828" : requiredGPA === "Already Achieved!" ? "#287094" : "#2e7d32";
     targetHTML = `<div style="background:#e8f3f8;border:1px solid #b3d4e3;border-radius:8px;padding:18px 20px;margin-bottom:28px;break-inside:avoid;"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#287094;margin-bottom:10px;">Target CGPA Plan</div><div style="display:flex;gap:32px;flex-wrap:wrap;"><div><div style="font-size:11px;color:#999;margin-bottom:2px;">Current CGPA</div><div style="font-size:18px;font-weight:700;">${cgpa}</div></div><div><div style="font-size:11px;color:#999;margin-bottom:2px;">Target CGPA</div><div style="font-size:18px;font-weight:700;">${targetCGPA}</div></div><div><div style="font-size:11px;color:#999;margin-bottom:2px;">Remaining Credits</div><div style="font-size:18px;font-weight:700;">${remainCredit}</div></div><div><div style="font-size:11px;color:#999;margin-bottom:2px;">Required GPA</div><div style="font-size:22px;font-weight:700;color:${color};">${requiredGPA}</div></div></div></div>`;
   }
   const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>CGPA Report</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Georgia,serif;background:#fff;color:#222}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{margin:18mm 16mm;size:A4}}</style></head><body><div style="background:#287094;padding:28px 32px 24px;"><div style="display:flex;justify-content:space-between;align-items:flex-start;"><div><div style="font-size:22px;font-weight:700;color:#fff;">◈ CGPA Calculator</div><div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;">Academic CGPA Report</div></div><div style="text-align:right;"><div style="font-size:12px;color:rgba(255,255,255,.6);">Generated: ${date}</div><div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;">Scale: ${scaleName}</div></div></div></div><div style="background:#e8f3f8;padding:20px 32px;display:flex;gap:40px;align-items:center;margin-bottom:32px;border-bottom:2px solid #b3d4e3;"><div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Overall CGPA</div><div style="font-size:42px;font-weight:700;color:#287094;line-height:1.1;">${cgpa}</div><div style="font-size:13px;color:#287094;font-weight:700;margin-top:2px;">${grade}</div></div><div style="width:1px;height:60px;background:#b3d4e3;"></div><div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Total Credits</div><div style="font-size:28px;font-weight:700;color:#222;">${credits}</div></div><div style="width:1px;height:60px;background:#b3d4e3;"></div><div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;">Semesters</div><div style="font-size:28px;font-weight:700;color:#222;">${semesters}</div></div></div><div style="padding:0 32px 32px;">${targetHTML}${semestersHTML}<div style="margin-top:40px;padding-top:16px;border-top:1px solid #dde6ea;display:flex;justify-content:space-between;font-size:11px;color:#999;"><span>Generated by CGPA Calculator – cgpacalculator.dev</span><span>${date}</span></div></div></body></html>`;
-  const blob = new Blob([html], { type:"text/html;charset=utf-8" });
+  const blob = new Blob([html], {
+    type: "text/html;charset=utf-8"
+  });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-  link.href = url; link.download = `CGPA-Report-${new Date().toISOString().slice(0,10)}.html`;
-  document.body.appendChild(link); link.click();
-  document.body.removeChild(link); URL.revokeObjectURL(url);
+  link.href = url;
+  link.download = `CGPA-Report-${new Date().toISOString().slice(0,10)}.html`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
   showToast("Report downloaded successfully!");
 }
 
@@ -395,23 +471,29 @@ function generatePDF() {
 function initCalculator() {
   const semContainer = document.getElementById("semestersContainer");
   semContainer.appendChild(createSemester());
-  document.getElementById("addSemesterBtn").addEventListener("click", function () {
+  document.getElementById("addSemesterBtn").addEventListener("click", function() {
     const sem = createSemester();
-    sem.style.opacity = "0"; sem.style.transform = "translateY(12px)";
+    sem.style.opacity = "0";
+    sem.style.transform = "translateY(12px)";
     semContainer.appendChild(sem);
-    requestAnimationFrame(() => { sem.style.transition = "opacity 0.3s ease, transform 0.3s ease"; sem.style.opacity = "1"; sem.style.transform = "translateY(0)"; });
+    requestAnimationFrame(() => {
+      sem.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+      sem.style.opacity = "1";
+      sem.style.transform = "translateY(0)";
+    });
     recalcAll();
   });
   const sgpaContainer = document.getElementById("sgpaRowsContainer");
   sgpaContainer.appendChild(createSGPARow());
-  document.getElementById("addSGPARow").addEventListener("click", function () {
-    sgpaContainer.appendChild(createSGPARow()); calcSGPAtoCGPA();
+  document.getElementById("addSGPARow").addEventListener("click", function() {
+    sgpaContainer.appendChild(createSGPARow());
+    calcSGPAtoCGPA();
   });
   document.getElementById("targetCGPA").addEventListener("input", calcTarget);
   document.getElementById("remainingCredits").addEventListener("input", calcTarget);
   document.getElementById("currentCGPA").addEventListener("input", calcTarget);
   document.getElementById("downloadPDF").addEventListener("click", generatePDF);
-  document.getElementById("hamburger").addEventListener("click", function () {
+  document.getElementById("hamburger").addEventListener("click", function() {
     this.classList.toggle("active");
     document.getElementById("mobileMenu").classList.toggle("open");
   });
@@ -424,30 +506,39 @@ function initCalculator() {
   const stickyObserver = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) stickyBar.classList.add("visible");
     else if (entry.boundingClientRect.top > 0) stickyBar.classList.remove("visible");
-  }, { threshold: 0, rootMargin: "-60px 0px 0px 0px" });
+  }, {
+    threshold: 0,
+    rootMargin: "-60px 0px 0px 0px"
+  });
   if (calcSection) stickyObserver.observe(calcSection);
   recalcAll();
   document.querySelectorAll(".faq-question").forEach((question) => {
-    question.addEventListener("click", function () {
+    question.addEventListener("click", function() {
       const isOpen = this.getAttribute("aria-expanded") === "true";
-      document.querySelectorAll(".faq-question").forEach((q) => { q.setAttribute("aria-expanded","false"); q.nextElementSibling.classList.remove("open"); });
-      if (!isOpen) { this.setAttribute("aria-expanded","true"); this.nextElementSibling.classList.add("open"); }
+      document.querySelectorAll(".faq-question").forEach((q) => {
+        q.setAttribute("aria-expanded", "false");
+        q.nextElementSibling.classList.remove("open");
+      });
+      if (!isOpen) {
+        this.setAttribute("aria-expanded", "true");
+        this.nextElementSibling.classList.add("open");
+      }
     });
   });
 
   // Nav dropdown click toggle
   const navDropTrigger = document.getElementById("navDropTrigger");
-  const navDropMenu    = document.getElementById("navDropMenu");
+  const navDropMenu = document.getElementById("navDropMenu");
   if (navDropTrigger && navDropMenu) {
-    navDropTrigger.addEventListener("click", function (e) {
+    navDropTrigger.addEventListener("click", function(e) {
       e.stopPropagation();
       navDropMenu.classList.toggle("open");
     });
-    document.addEventListener("click", function () {
+    document.addEventListener("click", function() {
       navDropMenu.classList.remove("open");
     });
     navDropMenu.querySelectorAll(".nav-drop-item").forEach((item) => {
-      item.addEventListener("click", function () {
+      item.addEventListener("click", function() {
         navDropMenu.classList.remove("open");
       });
     });

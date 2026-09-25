@@ -3152,7 +3152,8 @@ tbody tr:hover {
 
   .calc-sidebar {
     position: static;
-    width: 100%
+    width: 100%;
+    display: contents
   }
 
   .calc-main {
@@ -3161,6 +3162,24 @@ tbody tr:hover {
 
   .gpa-converter-grid {
     grid-template-columns: 1fr
+  }
+
+  /* Reorder mobile calculator sections:
+     1. Semester-wise CGPA Calculator
+     2. Live Result / Overall CGPA
+     3. (Goal Planning & SGPA->CGPA follow naturally after calc-layout in the DOM)
+     4. Grade Scale (kept at the very end, hidden by default on mobile) */
+  .calc-main-panel {
+    order: 1
+  }
+
+  .result-card {
+    order: 2
+  }
+
+  .grade-scale-card {
+    order: 3;
+    display: none
   }
 }
 

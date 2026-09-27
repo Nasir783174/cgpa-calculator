@@ -228,27 +228,14 @@ function courseRowMissingGrade(row) {
 }
 
 function updateMissingGradeUI() {
-  const missingRows = [];
   document.querySelectorAll(".course-row").forEach((row) => {
     const gradeSelect = row.querySelector(".course-grade");
     if (courseRowMissingGrade(row)) {
       gradeSelect.classList.add("course-grade-missing");
-      missingRows.push(row);
     } else {
       gradeSelect.classList.remove("course-grade-missing");
     }
   });
-  const warnEl = document.getElementById("courseMissingGradeWarning");
-  if (!warnEl) return;
-  if (missingRows.length > 0) {
-    warnEl.textContent = missingRows.length === 1 ?
-      `⚠ 1 course has credits entered but no Grade selected, so it is NOT counted in the CGPA above. Select its grade to include it.` :
-      `⚠ ${missingRows.length} courses have credits entered but no Grade selected, so they are NOT counted in the CGPA above. Select their grades to include them.`;
-    warnEl.style.display = "block";
-  } else {
-    warnEl.style.display = "none";
-    warnEl.textContent = "";
-  }
 }
 
 function recalcAll() {

@@ -1139,17 +1139,6 @@ ol {
   box-shadow: 0 0 0 1px var(--gold)
 }
 
-.course-missing-grade-warning {
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: #FFFBEB;
-  border: 1px solid var(--gold);
-  border-radius: var(--radius-input);
-  color: #92700A;
-  font-size: 13px;
-  line-height: 1.5
-}
-
 .sgpa-sem-name:focus,
 .sgpa-val-input:focus {
   border-color: var(--accent-soft)

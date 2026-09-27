@@ -238,26 +238,81 @@ function updateMissingGradeUI() {
   });
 }
 
-function recalcAll() {
+// Detects retakes: when two or more course rows (in any semester) share the
+// same non-empty Course Name, only the row with the best (highest) grade
+// point is counted toward the overall CGPA. The other attempt(s) are
+// visually muted (dimmed + struck through) and excluded from the totals.
+// Rows with no name entered are never grouped together — each is treated
+// as its own, unique course, since we cannot safely assume two unnamed
+// rows are the same subject.
+function computeOverallTotals() {
+  const allRows = Array.from(document.querySelectorAll(".course-row"));
+  allRows.forEach((row) => row.classList.remove("course-row-superseded"));
+
+  const validRows = allRows.filter((row) => {
+    if (courseRowMissingGrade(row)) return false;
+    const gradeRaw = row.querySelector(".course-grade").value;
+    if (gradeRaw === "" || gradeRaw === null) return false;
+    const credit = parseFloat(row.querySelector(".course-credit").value) || 0;
+    return credit > 0;
+  });
+
+  const groups = new Map();
+  const ungrouped = [];
+  validRows.forEach((row) => {
+    const name = row.querySelector(".course-name").value.trim().toLowerCase();
+    if (name === "") {
+      ungrouped.push(row);
+      return;
+    }
+    if (!groups.has(name)) groups.set(name, []);
+    groups.get(name).push(row);
+  });
+
   let weightedSum = 0,
     totalCredits = 0;
+  const countRow = (row) => {
+    const grade = parseFloat(row.querySelector(".course-grade").value);
+    const credit = parseFloat(row.querySelector(".course-credit").value) || 0;
+    weightedSum += grade * credit;
+    totalCredits += credit;
+  };
+
+  ungrouped.forEach(countRow);
+  groups.forEach((rows) => {
+    if (rows.length === 1) {
+      countRow(rows[0]);
+      return;
+    }
+    let best = rows[0];
+    rows.forEach((r) => {
+      const g = parseFloat(r.querySelector(".course-grade").value);
+      const bg = parseFloat(best.querySelector(".course-grade").value);
+      if (g > bg) best = r;
+    });
+    countRow(best);
+    rows.forEach((r) => {
+      if (r !== best) r.classList.add("course-row-superseded");
+    });
+  });
+
+  return { weightedSum, totalCredits };
+}
+
+function recalcAll() {
   const max = getScaleMax();
   const semesters = document.querySelectorAll(".semester-box");
   semesters.forEach((semBox) => {
     const semId = parseInt(semBox.dataset.semId);
+    // Each semester's own SGPA reflects exactly what was taken that
+    // semester — it is never affected by retake deduplication, since that
+    // only applies to the cumulative CGPA below.
     const sgpa = calcSGPA(semId);
-    // Only credits from graded courses count toward the CGPA, matching
-    // calcSGPA's exclusion of ungraded rows above.
-    const credits = Array.from(semBox.querySelectorAll(".course-row")).reduce((s, row) => {
-      if (courseRowMissingGrade(row)) return s;
-      return s + (parseFloat(row.querySelector(".course-credit").value) || 0);
-    }, 0);
-    weightedSum += sgpa * credits;
-    totalCredits += credits;
     const sgpaEl = document.getElementById(`sgpa-sem-${semId}`);
     if (sgpaEl) sgpaEl.textContent = sgpa.toFixed(2);
   });
   updateMissingGradeUI();
+  const { weightedSum, totalCredits } = computeOverallTotals();
   const cgpa = totalCredits > 0 ? weightedSum / totalCredits : 0;
   const gradeLabel = cgpa > 0 ? getCGPAGrade(cgpa) : "–";
   animateValue(document.getElementById("cgpaDisplay"), parseFloat(document.getElementById("cgpaDisplay").textContent) || 0, cgpa, 400);
@@ -451,21 +506,10 @@ function closeMobileMenu() {
 
 // ─── PDF REPORT ───────────────────────────────────────────────
 function generatePDF() {
-  // Bug fix: Calculate CGPA directly to avoid reading an in-progress animated value
-  let _weightedSum = 0,
-    _totalCreditsCalc = 0;
-  document.querySelectorAll(".semester-box").forEach((semBox) => {
-    const semId = parseInt(semBox.dataset.semId);
-    const sgpa = calcSGPA(semId);
-    // Bug fix: exclude courses with no grade selected, same as calcSGPA/recalcAll,
-    // so the PDF report's CGPA/credits match what's shown on screen.
-    const credits = Array.from(semBox.querySelectorAll(".course-row")).reduce((s, row) => {
-      if (courseRowMissingGrade(row)) return s;
-      return s + (parseFloat(row.querySelector(".course-credit").value) || 0);
-    }, 0);
-    _weightedSum += sgpa * credits;
-    _totalCreditsCalc += credits;
-  });
+  // Bug fix: Calculate CGPA directly to avoid reading an in-progress animated
+  // value, using the same retake-aware totals as the on-screen CGPA so the
+  // report always matches what the page displays.
+  const { weightedSum: _weightedSum, totalCredits: _totalCreditsCalc } = computeOverallTotals();
   const _cgpaExact = _totalCreditsCalc > 0 ? _weightedSum / _totalCreditsCalc : 0;
   const cgpa = _cgpaExact.toFixed(2);
   const credits = document.getElementById("totalCredits").textContent;

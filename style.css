@@ -813,6 +813,15 @@ ol {
   transition: opacity .2s
 }
 
+.course-row-superseded {
+  opacity: .45
+}
+
+.course-row-superseded .course-name,
+.course-row-superseded .course-grade {
+  text-decoration: line-through
+}
+
 .course-name,
 .course-credit,
 .course-grade {

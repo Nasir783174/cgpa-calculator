@@ -47,218 +47,217 @@
  <!-- ═══════════════════════════════════════════════
     SCHEMA MARKUP
  ══════════════════════════════════════════════════ -->
- <script type="application/ld+json">
- {
-  "@context": "https://schema.org",
-  "@graph": [
-
-   {
-    "@type": "WebSite",
-    "@id": "https://cgpacalculator.dev/#website",
-    "url": "https://cgpacalculator.dev/",
-    "name": "CGPA Calculator",
-    "description": "Free CGPA and GPA calculator supporting the 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
-    "publisher": {
-     "@id": "https://cgpacalculator.dev/#organization"
+ <script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://cgpacalculator.dev/#website",
+   "url": "https://cgpacalculator.dev/",
+   "name": "CGPA Calculator",
+   "description": "Free CGPA and GPA calculator supporting the 4.0, North American, 10-Point, Nigerian, Australian, and Canadian grading scales.",
+   "publisher": {
+    "@id": "https://cgpacalculator.dev/#organization"
+   },
+   "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+     "@type": "EntryPoint",
+     "urlTemplate": "https://cgpacalculator.dev/?q={search_term_string}"
     },
-    "potentialAction": {
-     "@type": "SearchAction",
-     "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://cgpacalculator.dev/?q={search_term_string}"
-     },
-     "query-input": "required name=search_term_string"
-    }
-   },
-
-   {
-    "@type": "Organization",
-    "@id": "https://cgpacalculator.dev/#organization",
-    "name": "CGPA Calculator",
-    "url": "https://cgpacalculator.dev/",
-    "logo": {
-     "@type": "ImageObject",
-     "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
-     "width": 512,
-     "height": 512
-    },
-    "sameAs": [
-     "https://www.facebook.com/cgpacalculatorbynasir",
-     "https://www.instagram.com/cgpacalculator4/",
-     "https://x.com/cgpacalculator3",
-     "https://www.linkedin.com/company/cgpa-calculator/",
-     "https://medium.com/@cgpacalculator",
-     "https://www.pinterest.com/cgpacalculator3/",
-     "https://www.tumblr.com/cgpacalculator3",
-     "https://cgpacalculatorbynb.blogspot.com/",
-     "https://mastodon.social/@cgpacalculator3",
-     "https://cgpa-calculatore.quora.com/"
-    ],
-    "founder": {
-     "@type": "Person",
-     "name": "Mohammad Nasir"
-    }
-   },
-
-   {
-    "@type": "WebPage",
-    "@id": "https://cgpacalculator.dev/cgpa-calculator#webpage",
-    "url": "https://cgpacalculator.dev/cgpa-calculator",
-    "name": "CGPA Calculator - Calculate CGPA and SGPA Instantly",
-    "description": "Free online CGPA calculator using the 4.0 grading scale. Add semesters, enter grades and credit hours, and get an accurate CGPA and SGPA instantly.",
-    "isPartOf": { "@id": "https://cgpacalculator.dev/#website" },
-    "about": { "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication" },
-    "breadcrumb": { "@id": "https://cgpacalculator.dev/cgpa-calculator#breadcrumb" },
-    "inLanguage": "en-US",
-    "datePublished": "2024-01-01",
-    "dateModified": "2026-09-26"
-   },
-
-   {
-    "@type": "BreadcrumbList",
-    "@id": "https://cgpacalculator.dev/cgpa-calculator#breadcrumb",
-    "itemListElement": [
-     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://cgpacalculator.dev/"
-     },
-     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "CGPA Calculator",
-      "item": "https://cgpacalculator.dev/cgpa-calculator"
-     }
-    ]
-   },
-
-   {
-    "@type": "SoftwareApplication",
-    "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication",
-    "name": "CGPA Calculator",
-    "url": "https://cgpacalculator.dev/cgpa-calculator",
-    "applicationCategory": "EducationalApplication",
-    "applicationSubCategory": "CalculatorApplication",
-    "operatingSystem": "Web",
-    "browserRequirements": "Requires JavaScript and HTML5 support",
-    "description": "A free CGPA Calculator using the widely used 4.0 grading scale. Supports multi-semester input, credit-weighted calculation, SGPA conversion, target CGPA planning, and downloadable report export.",
-    "offers": {
-     "@type": "Offer",
-     "price": "0",
-     "priceCurrency": "USD"
-    },
-    "featureList": [
-     "4.0 scale CGPA calculation",
-     "Multi-semester support",
-     "Instant live results",
-     "SGPA to CGPA conversion",
-     "Target CGPA planner",
-     "Downloadable report export",
-     "Credit-weighted average",
-     "Mobile responsive design"
-    ],
-    "publisher": { "@id": "https://cgpacalculator.dev/#organization" }
-   },
-
-   {
-    "@type": "FAQPage",
-    "@id": "https://cgpacalculator.dev/cgpa-calculator#faq",
-    "mainEntity": [
-     {
-      "@type": "Question",
-      "name": "What Is Considered a Good CGPA?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "A good CGPA varies depending on your academic objectives, field of study, and the requirements of your institution. On the 4.0 scale, a CGPA of 3.00 or above is generally considered good, while a CGPA of 3.50 or higher is often viewed as excellent. Students pursuing competitive scholarships, postgraduate programs, international admissions, or academic honors may benefit from maintaining a CGPA above 3.70."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "How Do You Calculate CGPA from GPA?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "CGPA is calculated by combining the results from all semesters and accounting for the credit hours completed in each term. Simply averaging semester GPAs may not always produce an accurate result. To calculate CGPA correctly, determine the total grade points earned across all semesters, add the total credit hours completed, then divide the total grade points by the total credit hours. Formula: CGPA = Total Grade Points Earned ÷ Total Credit Hours Completed."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "What is the Difference Between CGPA and GPA?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "GPA (Grade Point Average) reflects performance during a single semester, term, or academic period. CGPA (Cumulative Grade Point Average) represents the overall academic performance across all completed semesters within a degree program. GPA provides a short-term snapshot of academic achievement, while CGPA offers a long-term view of a student's overall academic record."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "Can CGPA Be Converted to a Percentage?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Yes, many educational institutions allow CGPA to be converted into a percentage. However, there is no universal conversion formula because universities and educational boards often follow different grading policies. Some institutions use: Percentage = CGPA × 9.5. Always follow your university's official conversion method for accuracy."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "Do All Universities Use a 4.0 CGPA Scale?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "No. Universities around the world use a variety of grading scales: 4.0 Scale (US and many others), 4.33 Scale (parts of Canada), 5.0 Scale (Nigeria), 7.0 Scale (Australia), and 10.0 Scale (India). Always use a CGPA calculator that matches your institution's official scale."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "What If My University Doesn't Use the 4.0 Scale?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "This calculator uses the widely applicable 4.0 scale. If your university follows a different system, use a dedicated calculator instead: the NSU CGPA Calculator for the North American-style 4.0 scale, the 10 Point CGPA Calculator for the Indian scale, or the CGPA Calculator Nigeria, CGPA Calculator Australia, and CGPA Calculator Canada pages for those regional scales."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "How Do You Convert CGPA to a Percentage?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "On a 4.0 scale, many institutions use a direct proportional formula: Percentage = (CGPA ÷ 4.00) × 100. For example, a CGPA of 3.50 equals 87.5%. This is different from India's CBSE formula (CGPA × 9.5), so always confirm which formula your institution uses before converting."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "How Many Semesters Are Included in CGPA?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "CGPA generally includes every completed semester within an academic program. Each semester contributes to the cumulative average based on the grades earned and the associated credit hours. As additional semesters are completed, the CGPA is recalculated to reflect updated performance. The total number depends on the degree program structure: diploma, bachelor's, master's, or doctoral."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "What is the Minimum Passing CGPA?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "The minimum passing CGPA varies by institution, academic program, and country. On the 4.0 scale, many universities require students to maintain at least a 2.00 CGPA to remain in good academic standing. Certain programs impose higher requirements for graduation eligibility, academic scholarships, honors recognition, professional accreditation, and graduate school admission."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "How Are Credit Hours Used in CGPA Calculation?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "Credit hours determine the weight of each course. Courses with higher credit values contribute more significantly to the final CGPA. To calculate CGPA using credit hours, multiply the grade point earned in each course by its credit hours, add all weighted grade points together, then divide by the total credit hours completed. Formula: CGPA = Total Weighted Grade Points ÷ Total Credit Hours."
-      }
-     },
-     {
-      "@type": "Question",
-      "name": "Can You Improve Your CGPA After Graduation?",
-      "acceptedAnswer": {
-       "@type": "Answer",
-       "text": "In most cases, a student's CGPA becomes permanent once the degree has been awarded. Before graduation, however, some institutions may permit course retakes, grade replacement policies, academic appeals, or supplemental examinations. If your CGPA is already finalized, you can still strengthen your profile through postgraduate education, professional certifications, industry training, research projects, and relevant work experience."
-      }
-     }
-    ]
+    "query-input": "required name=search_term_string"
    }
-
-  ]
- }
- </script>
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://cgpacalculator.dev/#organization",
+   "name": "CGPA Calculator",
+   "url": "https://cgpacalculator.dev/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://cgpacalculator.dev/cgpa-calculator-logo.webp",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://www.facebook.com/cgpacalculatorbynasir",
+    "https://www.instagram.com/cgpacalculator4/",
+    "https://x.com/cgpacalculator3",
+    "https://www.linkedin.com/company/cgpa-calculator/",
+    "https://medium.com/@cgpacalculator",
+    "https://www.pinterest.com/cgpacalculator3/",
+    "https://www.tumblr.com/cgpacalculator3",
+    "https://cgpacalculatorbynb.blogspot.com/",
+    "https://mastodon.social/@cgpacalculator3",
+    "https://cgpa-calculatore.quora.com/"
+   ],
+   "founder": {
+    "@type": "Person",
+    "name": "Mohammad Nasir"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://cgpacalculator.dev/cgpa-calculator#webpage",
+   "url": "https://cgpacalculator.dev/cgpa-calculator",
+   "name": "CGPA Calculator - Calculate CGPA and SGPA Instantly",
+   "description": "Free online CGPA calculator using the 4.0 grading scale. Add semesters, enter grades and credit hours, and get an accurate CGPA and SGPA instantly.",
+   "isPartOf": {
+    "@id": "https://cgpacalculator.dev/#website"
+   },
+   "about": {
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication"
+   },
+   "breadcrumb": {
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#breadcrumb"
+   },
+   "inLanguage": "en-US",
+   "datePublished": "2024-01-01",
+   "dateModified": "2026-09-26"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://cgpacalculator.dev/cgpa-calculator#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://cgpacalculator.dev/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "CGPA Calculator",
+     "item": "https://cgpacalculator.dev/cgpa-calculator"
+    }
+   ]
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication",
+   "name": "CGPA Calculator",
+   "url": "https://cgpacalculator.dev/cgpa-calculator",
+   "applicationCategory": "EducationalApplication",
+   "applicationSubCategory": "CalculatorApplication",
+   "operatingSystem": "Web",
+   "browserRequirements": "Requires JavaScript and HTML5 support",
+   "description": "A free CGPA Calculator using the widely used 4.0 grading scale. Supports multi-semester input, credit-weighted calculation, SGPA conversion, target CGPA planning, and downloadable report export.",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "featureList": [
+    "4.0 scale CGPA calculation",
+    "Multi-semester support",
+    "Instant live results",
+    "SGPA to CGPA conversion",
+    "Target CGPA planner",
+    "Downloadable report export",
+    "Credit-weighted average",
+    "Mobile responsive design"
+   ],
+   "publisher": {
+    "@id": "https://cgpacalculator.dev/#organization"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://cgpacalculator.dev/cgpa-calculator#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What Is Considered a Good CGPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A good CGPA varies depending on your academic objectives, field of study, and the requirements of your institution. On the 4.0 scale, a CGPA of 3.00 or above is generally considered good, while a CGPA of 3.50 or higher is often viewed as excellent. Students pursuing competitive scholarships, postgraduate programs, international admissions, or academic honors may benefit from maintaining a CGPA above 3.70. Read our full guide on what is a good CGPA with benchmarks by field and career path."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How Do You Calculate CGPA from GPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "CGPA is calculated by combining the results from all semesters and accounting for the credit hours completed in each term. Simply averaging semester GPAs may not always produce an accurate result. To calculate CGPA correctly: determine the total grade points earned across all semesters, add the total credit hours completed, then divide the total grade points by the total credit hours. CGPA = Total Grade Points Earned ÷ Total Credit Hours Completed. Use our step-by-step CGPA calculation guide for detailed examples."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the Difference Between CGPA and GPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GPA (Grade Point Average) reflects performance during a single semester, term, or academic period. CGPA (Cumulative Grade Point Average) represents the overall academic performance across all completed semesters within a degree program. GPA provides a short-term snapshot of academic achievement, while CGPA offers a long-term view of a student's overall academic record. You can use our GPA ↔ CGPA Converter to switch between scales."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can CGPA Be Converted to a Percentage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, many educational institutions allow CGPA to be converted into a percentage. However, there is no universal conversion formula because universities and educational boards often follow different grading policies. Some institutions use: Percentage = CGPA × 9.5. Always follow your university's official conversion method. Try our CGPA to Percentage Calculator with CBSE, AICTE, and VTU formulas or our guide on how to convert CGPA to percentage."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do All Universities Use a 4.0 CGPA Scale?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Universities around the world use a variety of grading scales: 4.0 Scale (US and many others), 4.33 Scale (parts of Canada), 5.0 Scale (Nigeria), 7.0 Scale (Australia), and 10.0 Scale (India). Always use a CGPA calculator that matches your institution's official scale. We offer dedicated calculators for each system: see the Other Grading Scales section below."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What If My University Doesn't Use the 4.0 Scale?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "This calculator uses the widely applicable 4.0 scale. If your university follows a different system, use a dedicated calculator instead: the NSU CGPA Calculator for the North American-style 4.0 scale, the 10 Point CGPA Calculator for the Indian scale, or the CGPA Calculator Nigeria, CGPA Calculator Australia, and CGPA Calculator Canada pages for those regional scales."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How Do You Convert CGPA to a Percentage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On a 4.0 scale, many institutions use a direct proportional formula: Percentage = (CGPA ÷ 4.00) × 100. For example, a CGPA of 3.50 equals 87.5%. This is different from India's CBSE formula (CGPA × 9.5), so always confirm which formula your institution uses before converting. Try our CGPA to Percentage Calculator for an instant conversion."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How Many Semesters Are Included in CGPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "CGPA generally includes every completed semester within an academic program. Each semester contributes to the cumulative average based on the grades earned and the associated credit hours. As additional semesters are completed, the CGPA is recalculated to reflect updated performance. The total number depends on the degree program structure: diploma, bachelor's, master's, or doctoral."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the Minimum Passing CGPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The minimum passing CGPA varies by institution, academic program, and country. On the 4.0 scale, many universities require students to maintain at least a 2.00 CGPA to remain in good academic standing. Certain programs impose higher requirements for graduation eligibility, academic scholarships, honors recognition, professional accreditation, and graduate school admission. Students should consult their university's academic policies for exact CGPA requirements."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How Are Credit Hours Used in CGPA Calculation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Credit hours determine the weight of each course. Courses with higher credit values contribute more significantly to the final CGPA. To calculate CGPA using credit hours: multiply the grade point earned in each course by its credit hours, add all weighted grade points together, then divide by the total credit hours completed. CGPA = Total Weighted Grade Points ÷ Total Credit Hours. This ensures academically significant courses have proportional impact on the final result."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can You Improve Your CGPA After Graduation?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In most cases, a student's CGPA becomes permanent once the degree has been awarded. Before graduation, however, some institutions may permit course retakes, grade replacement policies, academic appeals, or supplemental examinations. If your CGPA is already finalized, you can still strengthen your profile through postgraduate education, professional certifications, industry training, research projects, and relevant work experience. Read our guide on how to improve your CGPA before graduation."
+     }
+    }
+   ]
+  }
+ ]
+}</script>
 </head>
 <body>
 

@@ -231,25 +231,29 @@
 <a href="https://cgpacalculator.dev/cgpa-information" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
 </div>
  </header>
-
- <!-- MAIN CONTENT -->
- <main class="grade-calc-wrap">
-
+ <section class="page-hero">
+ <div class="page-hero-inner">
   <nav class="breadcrumb" aria-label="Breadcrumb">
    <a href="https://cgpacalculator.dev/">Home</a>
    <span class="breadcrumb-sep">›</span>
    <span>Grade Calculator</span>
   </nav>
-
+  <span class="page-hero-eyebrow">Calculator</span>
   <h1>Grade Calculator</h1>
-  <p class="page-intro">Calculate your assignment grades, weighted grades, quiz scores, test results, and semester GPA instantly. Enter your marks, apply weights, and see your estimated academic performance in seconds.</p>
+  <p class="page-hero-sub">Calculate your assignment grades, weighted grades, quiz scores, test results, and semester GPA instantly. Enter your marks, apply weights, and see your estimated academic performance in seconds.</p>
+ </div>
+</section>
+
+
+ <!-- MAIN CONTENT -->
+ <main class="grade-calc-wrap">
 
   <!-- RESULT PANEL -->
   <div class="grade-result-panel" style="margin-top:22px;">
    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
     <div>
      <span class="card-label">Live Result</span>
-     <div class="section-title" style="font-size:17px;font-weight:800;color:var(--text-1);">Your Grade Summary</div>
+     <div class="card-title">Your Grade Summary</div>
     </div>
     <button class="btn-grade-print" id="grPrintBtn" style="width:auto;padding:9px 20px;font-size:13px;" type="button">
      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
@@ -267,7 +271,7 @@
   <!-- SUBJECT TABLE -->
   <div class="grade-panel">
    <span class="card-label">Subject Marks</span>
-   <div class="section-title" style="font-size:17px;font-weight:800;color:var(--text-1);margin-bottom:16px;">Enter Your Grades</div>
+   <div class="card-title">Enter Your Grades</div>
 
    <div class="grade-system-tabs" role="tablist" aria-label="Grading scale">
     <button class="gsys-tab active" data-sys="4" role="tab" aria-selected="true">4.0 Scale</button>
@@ -290,7 +294,7 @@
   <!-- PREDICTION ENGINE -->
   <div class="grade-prediction-panel">
    <span class="card-label">Prediction Engine</span>
-   <div class="section-title" style="font-size:17px;font-weight:800;color:var(--text-1);">What Grade Can You Reach?</div>
+   <div class="card-title">What Grade Can You Reach?</div>
    <p style="font-size:14px;color:var(--text-3);margin-top:6px;line-height:1.6;">Select a target grade below to see if your current marks can get you there, and what average you need.</p>
    <div class="pred-form">
     <div class="pred-field">
@@ -323,7 +327,7 @@
   <!-- GRADE REFERENCE -->
   <div class="grade-ref-wrap">
    <span class="card-label">Reference</span>
-   <div class="section-title" style="font-size:17px;font-weight:800;color:var(--text-1);margin-bottom:16px;">Grading Scale Reference</div>
+   <div class="card-title">Grading Scale Reference</div>
    <div class="table-wrap">
     <table>
      <thead><tr><th>Marks Range</th><th>Letter Grade</th><th>4.0 Scale</th><th>5.0 Scale</th><th>10.0 Scale</th><th>Meaning</th></tr></thead>
@@ -345,22 +349,41 @@
   </div>
 
   <!-- SEO CONTENT -->
-  <div class="seo-section">
+  <section class="seo-section" id="what-is">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Overview</span>
+    <h2 class="section-title">What Is a Grade Calculator?</h2>
+   </div></div>
    <div class="seo-content-card">
 
-    <h2 class="section-heading">What Is a Grade Calculator?</h2>
         <p>A Grade Calculator is an online academic tool that estimates your current or final grade using the scores you enter. It combines assignment marks, quizzes, exams, projects, and other assessments to calculate your overall academic performance. Many calculators also support weighted grades, percentage grades, and letter grades depending on your grading system.</p>
     <p>Keeping track of your grades should be simple. Many students struggle when different assignments carry different weights. Others find it difficult to calculate grades after quizzes, tests, projects, or final exams. Instead of spending time solving formulas by hand, you can enter your scores and let the calculator estimate the result instantly.</p>
+   </div>
+  </section>
 
-    <h2 class="section-heading">How to Use This Grade Calculator</h2>
+  <section class="seo-section" id="how-to-use">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Step-by-Step</span>
+    <h2 class="section-title">How to Use This Grade Calculator</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <div class="how-to-steps">
      <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Choose Your Grading Scale</h3><p>Select the scale your institution uses: 4.0, 5.0, or 10.0, using the tabs at the top of the subject table. The grade points and letter grades will update automatically.</p></div></div>
      <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Enter Subject Marks &amp; Credits</h3><p>Type each subject name, your marks out of 100, and the credit hours. The letter grade column fills in instantly as you type. Add more subjects with the "Add Subject" button.</p></div></div>
      <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Check Your Live Summary</h3><p>The result panel at the top updates in real time showing your GPA, percentage average, pass/fail status, and total subject count.</p></div></div>
      <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Run the Prediction Engine</h3><p>Want to know what average you need for a target grade? Select a grade in the Prediction Engine section and click Predict for a personalised recommendation based on your current marks.</p></div></div>
     </div>
+   </div>
+  </section>
 
-    <h2 class="section-heading">What Does This Grade Calculator Do?</h2>
+  <section class="seo-section" id="what-it-does">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Features</span>
+    <h2 class="section-title">What Does This Grade Calculator Do?</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>This calculator helps you estimate different types of academic grades from one place. Depending on your course requirements, you can calculate assignment grades, homework grades, quiz grades, test grades, midterm grades, final exam grades, course grades, semester grades, overall grades, weighted grades, percentage grades, and letter grades.</p>
     <p>Instead of performing several manual calculations, you can organise your scores and calculate them much faster. The calculator also helps you understand how each assessment affects your overall academic performance.</p>
 
@@ -369,12 +392,28 @@
      <div class="why-card"><div class="why-icon">⚖️</div><h3>Credit-Weighted GPA</h3><p>Credits are factored in automatically, giving you the same GPA calculation your institution uses.</p></div>
      <div class="why-card"><div class="why-icon">🎯</div><h3>Prediction Engine</h3><p>Find out exactly what average you need to hit A, B+, or any target grade before your exams.</p></div>
     </div>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Who Can Use This Grade Calculator?</h2>
+  <section class="seo-section" id="who-can-use">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Who It's For</span>
+    <h2 class="section-title">Who Can Use This Grade Calculator?</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>This calculator is designed for anyone who wants to estimate academic performance quickly throughout the academic year, regardless of education level. Students commonly use it before exams, after receiving assignment scores, or while planning target grades.</p>
     <p>It is suitable for middle school students, high school students, college students, university students, online learners, teachers, tutors, and parents helping students monitor academic progress. Because different institutions use different grading systems, this calculator provides a convenient way to estimate grades before official results become available.</p>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Common Types of Academic Grades</h2>
+  <section class="seo-section" id="grade-types">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Grade Types</span>
+    <h2 class="section-title">Common Types of Academic Grades</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>Educational institutions use several types of grades to evaluate student performance. Each assessment contributes differently to the final course result. Understanding these grade types helps students interpret their academic records more accurately.</p>
 
     <div class="why-use-grid" style="margin-top:16px;">
@@ -385,18 +424,34 @@
      <div class="why-card"><div class="why-icon">📅</div><h3>Midterm Grade</h3><p>A midterm examination measures student performance during the middle of a course. Many colleges use midterm grades to monitor academic progress before the final examination. Strong midterm results can significantly improve overall course performance.</p></div>
      <div class="why-card"><div class="why-icon">🎓</div><h3>Final Exam Grade</h3><p>The final examination evaluates everything taught throughout the course and usually carries one of the highest weight percentages. A strong final exam score can significantly improve the overall course grade. Preparing consistently throughout the semester often leads to better results.</p></div>
     </div>
+   </div>
+  </section>
 
-    <h2 class="section-heading">How Grades Are Calculated</h2>
+  <section class="seo-section" id="how-calculated">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Methodology</span>
+    <h2 class="section-title">How Grades Are Calculated</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <figure style="margin:16px 0 20px;text-align:center;">
      <img src="grade-calculator.svg" alt="Diagram showing how weighted grades are calculated from assignments, quizzes, midterm and final exam" width="800" height="450" loading="lazy" style="max-width:100%;height:auto;border-radius:10px;" />
     </figure>
     <p>Every educational institution follows a grading policy to evaluate student performance. Teachers first record the score earned for each assessment, then compare that score with the maximum available marks. Some institutions calculate grades using simple percentages. Others assign different weights to assignments, quizzes, projects, and examinations. The weighted scores are combined to produce the overall course grade.</p>
     <p>Understanding your institution's grading policy helps you interpret calculated results more accurately. Our Grade Calculator simplifies this process by organising your scores and estimating your academic performance automatically.</p>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Common Grade Calculation Methods</h2>
+  <section class="seo-section" id="calc-methods">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Methods</span>
+    <h2 class="section-title">Common Grade Calculation Methods</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>Educational institutions use several methods to evaluate student performance. The most common approaches are percentage grading, weighted grading, and average grading. Each method serves a different purpose.</p>
 
-    <h3 style="font-size:16px;font-weight:700;color:var(--text-1);margin:24px 0 10px;">Percentage Grade Calculation</h3>
+    <h3>Percentage Grade Calculation</h3>
     <p>Many schools calculate grades as percentages. This method compares the marks you earned with the total available marks and shows how much of the coursework you completed successfully. Percentage grading is widely used because it is simple to understand and easy to compare. Many institutions later convert percentage scores into letter grades or grade points.</p>
     <div class="grade-ref-wrap" style="margin:16px 0;">
      <div class="table-wrap">
@@ -409,7 +464,7 @@
      </div>
     </div>
 
-    <h3 style="font-size:16px;font-weight:700;color:var(--text-1);margin:24px 0 10px;">Weighted Grade Calculation</h3>
+    <h3>Weighted Grade Calculation</h3>
     <p>Weighted grading gives different importance to different assessments. Large assessments usually contribute more to the final grade than smaller activities. Weighted grading provides a more balanced evaluation because it reflects the importance of each assessment. Many colleges and universities use weighted grading throughout their academic programs.</p>
     <div class="grade-ref-wrap" style="margin:16px 0;">
      <div class="table-wrap">
@@ -436,7 +491,7 @@
      </div>
     </div>
 
-    <h3 style="font-size:16px;font-weight:700;color:var(--text-1);margin:24px 0 10px;">Average Grade Calculation</h3>
+    <h3>Average Grade Calculation</h3>
     <p>Some courses calculate grades using a simple average. In this method, every assessment carries equal value. The calculator combines all scores and divides them by the total number of assessments. This method is commonly used when assignments have the same importance throughout the course.</p>
     <div class="grade-ref-wrap" style="margin:16px 0;">
      <div class="table-wrap">
@@ -448,12 +503,28 @@
       </table>
      </div>
     </div>
+   </div>
+  </section>
 
-    <h2 class="section-heading">GPA vs Percentage: What's the Difference?</h2>
+  <section class="seo-section" id="gpa-vs-percentage">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Comparison</span>
+    <h2 class="section-title">GPA vs Percentage: What's the Difference?</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>Your <strong>GPA</strong> (Grade Point Average) is a weighted number on a fixed scale (4.0, 5.0, or 10.0) that standardises grades across subjects. Your <strong>percentage</strong> is the simple arithmetic mean of all your marks out of 100. Both are shown side-by-side in the result panel so you always have the complete picture.</p>
     <p>Unlike simple average calculators, this tool weights each subject by its credit value, so a 4-credit course contributes more to your GPA than a 1-credit lab, exactly as your institution does.</p>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Understanding Letter Grades</h2>
+  <section class="seo-section" id="letter-grades">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Reference</span>
+    <h2 class="section-title">Understanding Letter Grades</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>Many educational institutions convert percentage scores into letter grades. Letter grades provide a simple way to describe academic performance. The exact percentage range varies between schools and universities.</p>
     <div class="grade-ref-wrap" style="margin:16px 0;">
      <div class="table-wrap">
@@ -476,8 +547,16 @@
      </div>
     </div>
     <p style="font-size:13px;color:var(--text-3);">* These ranges are examples only. Individual institutions may use different grading boundaries.</p>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Weighted Grades vs Average Grades</h2>
+  <section class="seo-section" id="weighted-vs-average">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Comparison</span>
+    <h2 class="section-title">Weighted Grades vs Average Grades</h2>
+   </div></div>
+   <div class="seo-content-card">
+
     <p>Students often confuse weighted grades with average grades. Although both methods calculate academic performance, they do not produce identical results. Understanding the difference helps students interpret calculated grades more accurately.</p>
     <div class="grade-ref-wrap" style="margin:16px 0;">
      <div class="table-wrap">
@@ -491,67 +570,71 @@
       </table>
      </div>
     </div>
+   </div>
+  </section>
 
-    <h2 class="section-heading">Frequently Asked Questions</h2>
-
-    <div style="margin-top:20px;">
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">How do I calculate my final grade?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Your final grade depends on every graded activity completed during the course. Assignments, quizzes, projects, tests, participation, and the final examination may all contribute. The calculator combines these scores according to your grading method.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Can I calculate my current grade before the final exam?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Yes. Many students use the calculator before the final examination. Entering completed assessment scores helps estimate your current academic standing. You can also predict how different final exam scores may affect your overall result.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Can I calculate my target grade?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Yes. You can adjust future assignment or examination scores to estimate what you need to reach your desired grade. The prediction engine helps you set realistic academic goals before the course ends.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Can this calculator calculate weighted grades?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Yes. If your instructor assigns weights to assessments, simply enter those values before calculating. The calculator automatically includes those weights in the final estimate.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Why do my calculated grades differ from my school's results?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Schools may apply grading rules that are not included in a general calculator. Examples include attendance, extra credit, participation, grade rounding, dropped assignments, or institutional weighting policies. Because of these differences, official grades may not exactly match estimated results.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Can I calculate GPA using this Grade Calculator?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">This calculator estimates academic grades and GPA for individual subjects. If you need to calculate your cumulative Grade Point Average across multiple semesters, use a dedicated <a href="https://cgpacalculator.dev/cgpa-calculator" style="color:var(--accent);text-decoration:none;">CGPA Calculator</a> that follows your institution's grading scale.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Does every school use the same grading system?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">No. Schools, colleges, and universities may use different grading policies. Some institutions use percentages. Others use letter grades, GPA, CGPA, or weighted grading systems. Always follow your institution's official grading policy when interpreting results.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Is this calculator free?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Yes. You can use the calculator without registration or subscription fees. There are no limits on the number of calculations you can perform. It works on desktop computers, tablets, and smartphones without installing additional software.</p>
-     </div>
-     <div style="border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px;">
-      <h3 style="font-size:15px;font-weight:700;color:var(--text-1);margin:0 0 8px;">Can teachers and parents use this calculator?</h3>
-      <p style="margin:0;font-size:14px;color:var(--text-2);line-height:1.7;">Yes. Teachers and tutors can use the calculator to estimate grades quickly and verify classroom calculations. Parents can use it to better understand their child's academic progress and estimate future grades.</p>
-     </div>
+  <section class="seo-section faq-section" id="faq">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Common Questions</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+   </div></div>
+   <div class="faq-list">
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>How do I calculate my final grade?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Your final grade depends on every graded activity completed during the course. Assignments, quizzes, projects, tests, participation, and the final examination may all contribute. The calculator combines these scores according to your grading method.</p></div>
     </div>
 
-    <h2 class="section-heading" style="margin-top:36px;">Final Thoughts</h2>
-    <p>Understanding your academic performance becomes much easier when you can calculate grades quickly and accurately. Our Grade Calculator helps you estimate assignment grades, quiz scores, test results, weighted grades, semester grades, and overall course performance from one convenient tool.</p>
-    <p>Use this calculator to prepare for an upcoming exam, track your current progress, or plan the score you need to reach a target grade. Enter your assessment scores, apply weights if your course requires them, and get your estimated result within seconds.</p>
-    <p>Remember that every school, college, and university may follow its own grading policy. This calculator provides reliable estimates based on the information you enter, while your institution's official academic records remain the final authority for grades, transcripts, scholarships, and graduation requirements.</p>
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Can I calculate my current grade before the final exam?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes. Many students use the calculator before the final examination. Entering completed assessment scores helps estimate your current academic standing. You can also predict how different final exam scores may affect your overall result.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Can I calculate my target grade?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes. You can adjust future assignment or examination scores to estimate what you need to reach your desired grade. The prediction engine helps you set realistic academic goals before the course ends.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Can this calculator calculate weighted grades?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes. If your instructor assigns weights to assessments, simply enter those values before calculating. The calculator automatically includes those weights in the final estimate.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Why do my calculated grades differ from my school's results?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Schools may apply grading rules that are not included in a general calculator. Examples include attendance, extra credit, participation, grade rounding, dropped assignments, or institutional weighting policies. Because of these differences, official grades may not exactly match estimated results.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Can I calculate GPA using this Grade Calculator?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>This calculator estimates academic grades and GPA for individual subjects. If you need to calculate your cumulative Grade Point Average across multiple semesters, use a dedicated <a href="https://cgpacalculator.dev/cgpa-calculator" style="color:var(--accent);text-decoration:none;">CGPA Calculator</a> that follows your institution's grading scale.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Does every school use the same grading system?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>No. Schools, colleges, and universities may use different grading policies. Some institutions use percentages. Others use letter grades, GPA, CGPA, or weighted grading systems. Always follow your institution's official grading policy when interpreting results.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Is this calculator free?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes. You can use the calculator without registration or subscription fees. There are no limits on the number of calculations you can perform. It works on desktop computers, tablets, and smartphones without installing additional software.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>Can teachers and parents use this calculator?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes. Teachers and tutors can use the calculator to estimate grades quickly and verify classroom calculations. Parents can use it to better understand their child's academic progress and estimate future grades.</p></div>
+    </div>
 
    </div>
-  </div>
-
-  <!-- RELATED TOOLS -->
+  </section>
+ -->
   <section style="margin-top:40px;">
    <span class="section-eyebrow">More Free Tools</span>
    <h2 class="section-heading" style="margin-bottom:20px;">Related Academic Calculators</h2>
-   <div class="why-use-grid">
-    <a href="https://cgpacalculator.dev/cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">◈</div><h3>CGPA Calculator</h3><p>Once you have your semester grades, use the CGPA Calculator to track your cumulative average across all semesters.</p></a>
-    <a href="https://cgpacalculator.dev/cgpa-to-percentage" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">%</div><h3>CGPA to Percentage</h3><p>Convert your final CGPA to a percentage for job portals, scholarship forms, and university applications.</p></a>
-    <a href="https://cgpacalculator.dev/cgpa-to-gpa" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">↔</div><h3>GPA ↔ CGPA Converter</h3><p>Switch between 4.0 GPA and 10.0 CGPA scales: essential when applying to international universities.</p></a>
-    <a href="https://cgpacalculator.dev/cgpa-to-percentage" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🔢</div><h3>Percentage to CGPA</h3><p>Convert your percentage score back into CGPA using the correct formula for your institution's grading scale.</p></a>
-    <a href="10-point-cgpa-calculator" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">🔟</div><h3>10-Point CGPA Calculator</h3><p>Calculate your CGPA on the 10-point scale used by IIT, NIT, VTU, and other Indian universities.</p></a>
-    <a href="https://cgpacalculator.dev/cgpa-to-gpa" class="why-card" style="text-decoration:none;color:inherit;"><div class="why-icon">📊</div><h3>Semester GPA Calculator</h3><p>Calculate your GPA for any single semester before rolling it into your cumulative CGPA.</p></a>
+   <div class="tool-tiles">
+    <a href="https://cgpacalculator.dev/cgpa-calculator" class="tool-tile"><span class="tool-tile-icon is-scale" aria-hidden="true">4.00</span><span class="tool-tile-text"><h3>CGPA Calculator</h3><span class="tool-tile-sub">Bangladesh · NU, DU, BUET</span></span><svg class="tool-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+    <a href="https://cgpacalculator.dev/cgpa-to-percentage" class="tool-tile"><span class="tool-tile-icon" aria-hidden="true">%</span><span class="tool-tile-text"><h3>CGPA to Percentage</h3><span class="tool-tile-sub">Convert CGPA to %</span></span><svg class="tool-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+    <a href="https://cgpacalculator.dev/cgpa-to-gpa" class="tool-tile"><span class="tool-tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h15"/><path d="M15 4l4 4-4 4"/><path d="M20 16H5"/><path d="M9 12l-4 4 4 4"/></svg></span><span class="tool-tile-text"><h3>GPA ↔ CGPA Converter</h3><span class="tool-tile-sub">Switch 4.0 and 10.0 scales</span></span><svg class="tool-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
+    <a href="https://cgpacalculator.dev/10-point-cgpa-calculator" class="tool-tile"><span class="tool-tile-icon is-scale" aria-hidden="true">10.0</span><span class="tool-tile-text"><h3>10-Point CGPA Calculator</h3><span class="tool-tile-sub">India · IIT, NIT, VTU</span></span><svg class="tool-tile-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg></a>
    </div>
   </section>
 

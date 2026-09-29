@@ -4291,3 +4291,17 @@ th {
 .seo-content-card a:hover,.calculator-section a:hover,.gpa-panel a:hover{text-decoration:underline}
 .seo-content-card h3{font-size:20px;font-weight:600;color:var(--text-1);letter-spacing:-.02em;line-height:1.25;margin:24px 0 10px}
 .seo-content-card .why-card h3{font-size:18px;font-weight:600}
+
+/* ===== Homepage calculator hero-band: make tools the first-impression focal point ===== */
+.calc-hero-band{position:relative;margin:0 -24px 0;padding:32px 24px 40px;background:radial-gradient(1100px 260px at 50% -60px,rgba(37,99,235,.10),transparent),linear-gradient(180deg,#F3F7FF 0%,#FFFFFF 100%);border-bottom:1px solid var(--border)}
+.calc-hero-eyebrow{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:5px 14px;border-radius:999px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent-light);font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.calc-hero-band .section-title{font-size:24px}
+.calc-hero-band .section-note{margin-bottom:22px}
+.calc-scale{position:relative}
+.calc-scale small{display:inline-flex;align-items:center;gap:5px}
+.calc-card{box-shadow:0 2px 8px rgba(15,23,42,.05)}
+.calc-card:hover{box-shadow:0 16px 32px rgba(37,99,235,.20)}
+.calc-card:hover .calc-scale b{transform:scale(1.06)}
+.calc-scale b{display:inline-block;transition:transform var(--transition)}
+@media(max-width:640px){.calc-hero-band{margin:0 -12px 0;padding:22px 16px 28px}.calc-hero-band .section-title{font-size:20px}}
+@media(max-width:420px){.calc-hero-band{margin:0 -10px 0}}

@@ -370,6 +370,48 @@
     const predictBtn = document.getElementById("grPredictBtn");
     const printBtn = document.getElementById("grPrintBtn");
 
+    const calcBtn = document.getElementById("grCalcBtn");
+    const resetBtn = document.getElementById("grResetBtn");
+    const resultPanel = document.getElementById("grResultPanel");
+    const errorEl = document.getElementById("grError");
+
+    function countFilledRows() {
+      let n = 0;
+      document.querySelectorAll("#gradeTableBody .gr-marks").forEach((el) => {
+        if (el.value !== "" && !isNaN(parseFloat(el.value))) n++;
+      });
+      return n;
+    }
+
+    if (calcBtn) calcBtn.addEventListener("click", function() {
+      if (countFilledRows() === 0) {
+        if (errorEl) errorEl.hidden = false;
+        if (resultPanel) resultPanel.hidden = true;
+        return;
+      }
+      if (errorEl) errorEl.hidden = true;
+      recalcGrade();
+      if (resultPanel) {
+        resultPanel.hidden = false;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        resultPanel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      }
+    });
+
+    if (resetBtn) resetBtn.addEventListener("click", function() {
+      document.getElementById("gradeTableBody").innerHTML = "";
+      rowCount = 0;
+      addRow(); addRow(); addRow();
+      if (resultPanel) resultPanel.hidden = true;
+      if (errorEl) errorEl.hidden = true;
+      const pred = document.getElementById("grPredResult");
+      if (pred) pred.className = "pred-result";
+    });
+
+    document.addEventListener("input", function(e) {
+      if (errorEl && !errorEl.hidden && e.target.classList && e.target.classList.contains("gr-marks")) errorEl.hidden = true;
+    });
+
     if (addBtn) addBtn.addEventListener("click", addRow);
     if (predictBtn) predictBtn.addEventListener("click", predictGrade);
     if (printBtn) printBtn.addEventListener("click", () => window.print());

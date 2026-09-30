@@ -4305,3 +4305,147 @@ th {
 .calc-scale b{display:inline-block;transition:transform var(--transition)}
 @media(max-width:640px){.calc-hero-band{margin:0 -12px 0;padding:22px 16px 28px}.calc-hero-band .section-title{font-size:20px}}
 @media(max-width:420px){.calc-hero-band{margin:0 -10px 0}}
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL FOCUS LAYER  (cgpa-to-percentage, cgpa-to-gpa, grade-calculator)
+   Goal: the calculator is the clearly framed focal point of the page,
+   every card/table has a visible edge, and labels are easy to read.
+   ═══════════════════════════════════════════════════════════ */
+.page-tool [hidden]{display:none!important}
+.page-tool{background:#EEF3FA}
+
+/* --- Tool frames: strong edge + halo so the whole tool reads as one object --- */
+.page-tool .converter-card,
+.page-tool .gpa-panel,
+.page-tool .grade-panel,
+.page-tool .grade-result-panel,
+.page-tool .grade-prediction-panel{
+  background:#fff;
+  border:2px solid #7FA3F0;
+  border-radius:16px;
+  padding:0 24px 24px;
+  overflow:hidden;
+  box-shadow:0 0 0 6px rgba(37,99,235,.08),0 18px 40px -16px rgba(30,64,175,.35);
+}
+.page-tool .converter-card{margin-top:24px}
+.page-tool .converter-card::before,
+.page-tool .gpa-panel::before,
+.page-tool .grade-panel::before,
+.page-tool .grade-prediction-panel::before{display:none}
+
+/* --- Header band inside each tool --- */
+.page-tool .tool-head,
+.page-tool .gpa-panel-head{
+  margin:0 -24px 22px;
+  padding:16px 24px;
+  background:linear-gradient(180deg,#EAF1FF,#DFEAFF);
+  border-bottom:2px solid #B9CEF7;
+}
+.page-tool .tool-head .card-label,
+.page-tool .grade-prediction-panel>.card-label,
+.page-tool .grade-result-panel .card-label{
+  display:inline-block;
+  font-family:var(--font);
+  font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:none;
+  color:#fff;background:#2563EB;border-radius:999px;padding:3px 12px;margin-bottom:8px;
+}
+.page-tool .tool-head .card-title,
+.page-tool .gpa-panel-title{
+  font-size:20px;font-weight:700;color:#0F172A;letter-spacing:-.01em;margin:0;
+}
+.page-tool .gpa-panel-sub{font-size:14px;color:#334155;margin:4px 0 0;line-height:1.5}
+
+/* Result + prediction panels need their own header spacing (no .tool-head inside) */
+.page-tool .grade-result-panel,
+.page-tool .grade-prediction-panel{padding-top:22px;margin-top:22px}
+.page-tool .grade-panel{margin-top:24px}
+
+/* --- Two converter panels: distinct colour so the direction is obvious --- */
+.page-tool .gpa-converter-grid{gap:24px;margin-top:24px;align-items:start}
+.page-tool .gpa-panel-b{border-color:#A78BFA;box-shadow:0 0 0 6px rgba(124,58,237,.09),0 18px 40px -16px rgba(91,33,182,.35)}
+.page-tool .gpa-panel-b .gpa-panel-head{background:linear-gradient(180deg,#F3EEFF,#EAE0FF);border-bottom-color:#CDBBFB}
+.page-tool .gpa-panel-b .gpa-field input:focus,
+.page-tool .gpa-panel-b .gpa-field select:focus{border-color:#7C3AED;box-shadow:0 0 0 4px rgba(124,58,237,.16)}
+.page-tool .gpa-panel-b .gpa-result-panel{background:#F5F3FF;border-color:#C4B5FD}
+.page-tool .gpa-panel-b .gpa-result-label,
+.page-tool .gpa-panel-b .gpa-result-value{color:#6D28D9}
+
+/* --- Labels and inputs: larger, darker, sentence case --- */
+.page-tool .conv-field label,
+.page-tool .gpa-field label,
+.page-tool .pred-field label{
+  font-family:var(--font);font-size:14px;font-weight:700;letter-spacing:0;
+  text-transform:none;color:#1E293B;margin-bottom:8px;
+}
+.page-tool .conv-field input,
+.page-tool .conv-field select,
+.page-tool .gpa-field input,
+.page-tool .gpa-field select,
+.page-tool .pred-field select,
+.page-tool .gr-subject,
+.page-tool .gr-marks,
+.page-tool .gr-credit{
+  background:#fff;border:2px solid #B4C2D6;color:#0F172A;
+}
+.page-tool .conv-field input:focus,
+.page-tool .conv-field select:focus,
+.page-tool .gpa-field input:focus,
+.page-tool .gpa-field select:focus,
+.page-tool .gr-subject:focus,
+.page-tool .gr-marks:focus,
+.page-tool .gr-credit:focus{
+  border-color:#2563EB;box-shadow:0 0 0 4px rgba(37,99,235,.16);
+}
+.page-tool .gpa-fields{gap:16px}
+.page-tool .btn-gpa-reset,.page-tool .btn-reset{border:2px solid #B4C2D6;color:#1E293B;background:#fff}
+
+/* --- Result panels: obvious once they appear --- */
+.page-tool .result-panel,
+.page-tool .gpa-result-panel{
+  background:#EAF1FF;border:2px solid #7FA3F0;border-radius:14px;
+}
+.page-tool .result-label,
+.page-tool .gpa-result-label{font-family:var(--font);font-size:15px;letter-spacing:.02em;text-transform:none}
+.page-tool .grade-result-panel .gr-stat{border:2px solid #C9D6EA;background:#F8FAFF}
+.page-tool .grade-result-panel .gr-stat:first-child{border-color:#7FA3F0;background:#EAF1FF}
+.page-tool .gr-stat-label{font-family:var(--font);font-size:12px;letter-spacing:.04em}
+.page-tool .grade-result-panel{animation:fadeSlideUp .25s ease}
+
+/* --- Grade calculator: subject table as a bordered grid --- */
+.page-tool .grade-system-tabs{border:2px solid #C9D6EA;background:#F1F5FB}
+.page-tool .grade-table-header{
+  background:#EAF1FF;border:2px solid #B9CEF7;border-bottom:none;
+  border-radius:12px 12px 0 0;padding:10px 12px;margin:0;
+}
+.page-tool .grade-table-header span{font-family:var(--font);font-size:13px;letter-spacing:0;text-transform:none;color:#1E3A8A}
+.page-tool #gradeTableBody{
+  border:2px solid #B9CEF7;border-radius:0 0 12px 12px;padding:12px 12px 4px;background:#FBFCFF;
+}
+.page-tool .btn-add-subject{margin-top:14px;border-width:2px;background:#fff}
+.page-tool .tool-actions{margin-top:20px}
+.page-tool .tool-error{
+  margin-top:16px;padding:12px 14px;border-radius:10px;
+  background:#FEF2F2;border:2px solid #FCA5A5;color:#991B1B;font-size:15px;font-weight:600;
+}
+
+/* --- Data tables on the page: clear grid, zebra rows, readable header --- */
+.page-tool .table-wrap{border:2px solid #B9CEF7;border-radius:12px;background:#fff}
+.page-tool table{font-size:15px}
+.page-tool thead tr{background:#DFEAFF;border-bottom:2px solid #B9CEF7}
+.page-tool th{font-family:var(--font);font-size:13px;letter-spacing:.01em;text-transform:none;color:#1E3A8A;padding:13px 16px}
+.page-tool td{padding:13px 16px;color:#1E293B;border-bottom:1px solid #DCE5F3;border-right:1px solid #EAF0F9}
+.page-tool td:last-child{border-right:none}
+.page-tool tbody tr:nth-child(even){background:#F6F9FE}
+.page-tool tbody tr:hover{background:#EAF1FF}
+
+/* --- Content sections: visible edges so long pages stay scannable --- */
+.page-tool .seo-section{border:1.5px solid #CBD7EA;box-shadow:0 6px 20px -12px rgba(15,23,42,.18)}
+
+@media(max-width:768px){
+  .page-tool .converter-card,.page-tool .gpa-panel,.page-tool .grade-panel,
+  .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding:0 16px 18px;border-radius:14px}
+  .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding-top:18px}
+  .page-tool .tool-head,.page-tool .gpa-panel-head{margin:0 -16px 18px;padding:14px 16px}
+  .page-tool .gpa-converter-grid{gap:20px}
+}
+@media(prefers-reduced-motion:reduce){.page-tool .grade-result-panel{animation:none}}

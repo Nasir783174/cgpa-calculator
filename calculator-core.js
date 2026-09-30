@@ -124,7 +124,6 @@ function createSemester() {
     <div class="semester-header">
       <div class="semester-title-wrap">
         <span class="semester-num">Semester ${id}</span>
-        <input type="text" class="semester-name-input" placeholder="(optional name)" />
       </div>
       <div class="semester-right-wrap">
         <div class="semester-sgpa-wrap">
@@ -166,7 +165,6 @@ function createSemester() {
     });
     recalcAll();
   });
-  box.querySelector(".semester-name-input").addEventListener("input", recalcAll);
   box.querySelector(`#courses-${id}`).appendChild(createCourseRow(id, 1));
   return box;
 }
@@ -533,7 +531,7 @@ function generatePDF() {
   let semestersHTML = "";
   document.querySelectorAll(".semester-box").forEach((semBox) => {
     const semId = parseInt(semBox.dataset.semId);
-    const semName = semBox.querySelector(".semester-name-input").value.trim() || `Semester ${semId}`;
+    const semName = `Semester ${semId}`;
     const sgpa = document.getElementById(`sgpa-sem-${semId}`)?.textContent || "0.00";
     let rowsHTML = "",
       semCredits = 0;

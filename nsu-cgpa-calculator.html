@@ -22,10 +22,11 @@
  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
  <link rel="preconnect" href="https://fonts.googleapis.com" />
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
+ <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
  <style>:root{--bg-page:#FFFFFF;--bg:#F8FAFC;--bg-card:#FFFFFF;--bg-input:#F8FAFC;--border:#E2E8F0;--border-2:#E2E8F0;--input-border:#CBD5E1;--accent:#2563EB;--accent-light:#1D4ED8;--accent-active:#1E40AF;--accent-soft:#60A5FA;--accent-dim:#EFF6FF;--accent-border:#BFDBFE;--violet:#7C3AED;--violet-light:#8B5CF6;--violet-dim:#F5F3FF;--violet-border:#DDD6FE;--dark:#111827;--dark-2:#1F2937;--text-1:#111827;--text-2:#475569;--text-3:#64748B;--text-4:#94A3B8;--green:#16A34A;--red:#DC2626;--gold:#D97706;--primary:var(--accent);--bg-1:var(--bg);--bg-2:var(--bg);--surface-2:var(--bg);--info:var(--accent);--font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--font-serif:var(--font);--font-mono:var(--font);--radius-sm:8px;--radius:10px;--radius-btn:8px;--radius-input:8px;--radius-card:14px;--radius-lg:16px;--radius-calc:16px;--radius-modal:16px;--sp-xs:4px;--sp-sm:8px;--sp-md:12px;--sp-lg:16px;--sp-xl:24px;--sp-2xl:32px;--sp-3xl:48px;--sp-4xl:64px;--sp-5xl:80px;--sp-6xl:96px;--container-main:1280px;--container-tool:840px;--section-pad:96px;--section-pad-tablet:72px;--section-pad-mobile:48px;--fs-h1:30px;--fs-h2:24px;--fs-h3:20px;--fs-h4:18px;--fs-h5:17px;--fs-h6:15px;--fs-body:18px;--fs-body-lg:19px;--fs-small:15px;--fs-caption:14px;--fs-nav:16px;--fs-btn:16px;--fs-input:17px;--fs-calc-result:44px;--fs-label:12px;--lh-h1:1.15;--lh-h2:1.2;--lh-h3:1.25;--lh-h4:1.3;--lh-h5:1.35;--lh-h6:1.4;--lh-body:1.65;--lh-list:1.8;--lh-small:1.5;--ls-heading:-0.02em;--ls-body:0;--ls-button:0.02em;--shadow-sm:0 1px 4px rgba(15,23,42,.06),0 1px 2px rgba(0,0,0,.04);--shadow:0 4px 20px rgba(37,99,235,.10),0 2px 8px rgba(0,0,0,.05);--transition:.18s ease;--header-h:64px}@media(max-width:768px){:root{--fs-h1:24px;--fs-h2:20px;--fs-h3:18px;--fs-h4:16px;--fs-h5:16px;--fs-h6:15px;--fs-body:17px;--fs-body-lg:18px;--fs-small:14px;--fs-caption:13px;--fs-nav:15px;--fs-btn:16px;--fs-input:16px;--fs-calc-result:36px;--fs-label:11px;--lh-h1:1.2;--lh-h2:1.25;--lh-h3:1.3;--lh-h4:1.3;--lh-body:1.6}}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden;width:100%}body{font-family:var(--font);background:var(--bg-page);color:var(--text-1);font-size:var(--fs-body);font-weight:400;line-height:var(--lh-body);letter-spacing:var(--ls-body);-webkit-font-smoothing:antialiased;width:100%}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font-family:inherit}img,svg{max-width:100%;height:auto}h1,h2,h3,h4,h5,h6{font-family:var(--font);letter-spacing:var(--ls-heading);color:var(--text-1)}h1{font-size:var(--fs-h1);font-weight:700;line-height:var(--lh-h1)}h2{font-size:var(--fs-h2);font-weight:700;line-height:var(--lh-h2)}h3{font-size:var(--fs-h3);font-weight:600;line-height:var(--lh-h3)}.header{position:sticky;top:0;z-index:100;height:var(--header-h);background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(15,23,42,.04)}.header-inner{max-width:var(--container-main);margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text-1);letter-spacing:-.02em}.logo-icon{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-weight:900;flex-shrink:0;box-shadow:0 2px 8px rgba(37,99,235,.30)}.nav-desktop{display:flex;gap:2px}.nav-link{padding:7px 15px;border-radius:8px;font-size:var(--fs-nav);font-weight:500;color:var(--text-2);transition:color var(--transition),background var(--transition)}.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;border-radius:8px}.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height .3s ease}.main-content{max-width:var(--container-main);margin:0 auto;padding:var(--sp-2xl) var(--sp-xl) var(--sp-6xl)}.main-content>h1,.tool-page-wrap>h1,.grade-calc-wrap>h1{font-size:var(--fs-h1);font-weight:700;line-height:var(--lh-h1);color:var(--text-1);letter-spacing:var(--ls-heading);margin-bottom:var(--sp-lg);border-bottom:1px solid var(--border);padding-bottom:var(--sp-sm)}.page-intro{font-size:var(--fs-body-lg);color:var(--text-2);line-height:1.6;max-width:100%;margin-bottom:var(--sp-2xl)}.hero,.tool-hero{background:var(--bg);border-bottom:1px solid var(--border);padding:var(--section-pad) var(--sp-xl)}.hero-inner,.tool-hero-inner{max-width:var(--container-main);margin:0 auto}.hero-title,.tool-hero h1{font-size:var(--fs-h1);font-weight:700;color:var(--text-1);letter-spacing:var(--ls-heading);line-height:var(--lh-h1);margin-bottom:var(--sp-md)}.hero-sub,.tool-hero p{font-size:var(--fs-body);font-weight:400;color:var(--text-2);max-width:620px;line-height:var(--lh-body)}.header{background:rgba(242,245,239,.92)}h1{font-weight:600}h2{font-weight:600}h3{font-weight:600}.logo{font-weight:700;font-size:19px}.logo-icon{background:var(--accent);border-radius:6px}.hero-title,.tool-hero h1{font-family:var(--font-serif)}</style>
- <link rel="stylesheet" href="style.css?v=20260930b" />
- <script defer src="calculator-core.js"></script>
+ <link rel="stylesheet" href="style.css?v=20260930c" />
+ <script defer src="calculator-core.js?v=20260930c"></script>
  <script defer src="scale-na.js"></script>
  <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -283,7 +284,7 @@
  <div class="calc-layout">
   <aside class="calc-sidebar">
 <div class="card result-card">
-<div class="tool-head"><div class="card-label">Live result</div><h2 class="card-title">Overall CGPA</h2></div>
+<div class="tool-head"><h2 class="card-title">Overall CGPA</h2></div>
 <div class="scale-badge">📊 North American 4.0</div>
 <div class="cgpa-display">
 <div class="cgpa-big" id="cgpaDisplay">0.00</div>
@@ -296,7 +297,7 @@
 </div>
 </div>
 <div class="card grade-scale-card" style="margin-top:14px;">
-     <div class="tool-head"><div class="card-label">Grade scale</div></div>
+     <div class="tool-head"><div class="card-title">Grade scale</div></div>
 <div style="font-size:12px;color:var(--text-2);line-height:1.8;margin-top:6px;">A → 4.00 | A− → 3.70 | B+ → 3.30 | B → 3.00 | B− → 2.70 | C → 2.00 | D → 1.00 | F → 0.00</div>
 <a href="https://cgpacalculator.dev/" style="font-size:12px;color:var(--text-3);display:inline-block;margin-top:10px;">← All grading scales</a>
 </div>
@@ -304,9 +305,9 @@
   <div class="calc-main-panel">
 <div class="calculator-section">
 <div class="section-header tool-head">
-<div><span class="section-eyebrow">Semester-wise</span><h2 class="section-title">CGPA Calculator</h2></div>
+<div><h2 class="section-title">CGPA Calculator</h2></div>
 </div>
-<div id="semestersContainer"></div>
+<div id="semestersContainer"><div class="semester-box" data-prerender inert data-sem-id="1"><div class="semester-header"><div class="semester-title-wrap"><span class="semester-num">Semester 1</span><input type="text" class="semester-name-input" placeholder="(optional name)"></div><div class="semester-right-wrap"><div class="semester-sgpa-wrap"><span class="sgpa-tag-label">SGPA</span><span class="sgpa-tag-val">0.00</span></div><button class="btn-delete-semester" title="Remove semester"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button></div></div><div class="courses-container"><div class="course-row" data-sem-id="1" data-course-id="1"><input type="text" class="course-name" placeholder="Course name"><input type="number" class="course-credit" placeholder="Credits" min="0.5" step="0.5"><select class="course-grade" aria-label="Grade"><option value="" disabled="" selected="">Grade</option><option value="4">A  (4.00)</option><option value="3.7">A− (3.70)</option><option value="3.3">B+ (3.30)</option><option value="3">B  (3.00)</option><option value="2.7">B− (2.70)</option><option value="2.3">C+ (2.30)</option><option value="2">C  (2.00)</option><option value="1.7">C− (1.70)</option><option value="1.3">D+ (1.30)</option><option value="1">D  (1.00)</option><option value="0">F  (0.00)</option></select><button class="btn-delete-course" title="Remove course"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div></div><button class="btn-add-course" data-sem-id="1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>+ Add Course</button></div></div>
 <button class="btn-add-semester" id="addSemesterBtn">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
 Add Semester
@@ -316,7 +317,7 @@ Add Semester
  </div>
 
  <div class="card target-card-standalone" id="targetCard">
-<div class="tool-head"><div class="card-label">Goal planning</div><h2 class="card-title">Target CGPA</h2></div>
+<div class="tool-head"><h2 class="card-title">Target CGPA</h2></div>
 <div class="target-form">
 <div class="target-grid">
 <div class="target-field"><label for="currentCGPA">Current CGPA</label><input type="number" id="currentCGPA" min="0" max="4" step="0.01" placeholder="Auto-filled" /></div><div class="target-field"><label for="completedCredits">Completed Credits</label><input type="number" id="completedCredits" min="0" step="1" placeholder="Auto-filled" /></div>
@@ -333,12 +334,12 @@ Download Report
 
  <section class="sgpa-section">
 <div class="section-header tool-head">
-<div><span class="section-eyebrow">Quick Conversion</span><h2 class="section-title">SGPA → CGPA</h2></div>
+<div><h2 class="section-title">SGPA → CGPA</h2></div>
 <div class="sgpa-cgpa-result"><span class="sgpa-label">CGPA</span><span class="sgpa-val" id="sgpaCGPA">0.00</span></div>
 </div>
 <div class="sgpa-table-wrap">
 <div class="sgpa-table-header"><span>Semester</span><span>SGPA</span><span></span></div>
-<div id="sgpaRowsContainer"></div>
+<div id="sgpaRowsContainer"><div class="sgpa-row" data-prerender inert data-row-id="1"><input type="text" class="sgpa-sem-name" placeholder="Semester 1" value="Semester 1"><input type="number" class="sgpa-val-input" placeholder="SGPA" min="0" max="4" step="0.01"><input type="number" class="sgpa-credit-input" placeholder="Credits" min="1" step="1" title="Total credits for this semester"><button class="btn-delete-sgpa" title="Remove row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div></div>
 </div>
 <p id="sgpaMissingCreditWarning" role="alert" style="display:none;font-size:12.5px;color:#D97706;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:8px 12px;margin:0 0 10px;line-height:1.6;font-weight:600;"></p>
 <button class="btn-add-row" id="addSGPARow">

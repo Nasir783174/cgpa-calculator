@@ -572,6 +572,10 @@ function generatePDF() {
 
 // ─── INIT (shared calculator init) ───────────────────────────
 function initCalculator() {
+  // Semester 1 and the first SGPA row ship pre-rendered in the HTML so the
+  // card is fully formed on first paint (no empty box, no layout jump).
+  // Swap those static copies for the live, interactive versions.
+  document.querySelectorAll("[data-prerender]").forEach((el) => el.remove());
   const semContainer = document.getElementById("semestersContainer");
   semContainer.appendChild(createSemester());
   document.getElementById("addSemesterBtn").addEventListener("click", function() {

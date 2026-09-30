@@ -4567,3 +4567,18 @@ th {
 }
 .page-tool .semester-box>.btn-add-course{width:calc(100% - 24px);margin:6px 12px 12px;box-sizing:border-box}
 .page-tool .courses-container{padding-bottom:0}
+
+/* ── Clean headers: title only, no pill labels ── */
+.page-tool .tool-head,
+.page-tool .gpa-panel-head{padding:15px 24px;margin-bottom:20px}
+.page-tool .tool-head-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.page-tool .tool-head-row .btn-grade-print{margin:0}
+.page-tool .grade-result-panel,
+.page-tool .grade-prediction-panel{padding-top:0}
+.page-tool .tool-note{font-size:15px;color:#334155;line-height:1.6;margin:0 0 4px}
+.page-tool .calculator-section>.tool-head,
+.page-tool .sgpa-section>.tool-head{margin-bottom:20px}
+@media(max-width:768px){
+  .page-tool .tool-head,.page-tool .gpa-panel-head{padding:13px 16px;margin-bottom:16px}
+  .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding-top:0}
+}

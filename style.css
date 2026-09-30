@@ -4582,3 +4582,18 @@ th {
   .page-tool .tool-head,.page-tool .gpa-panel-head{padding:13px 16px;margin-bottom:16px}
   .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding-top:0}
 }
+
+/* ── Equal-height first view: Overall CGPA card matches the calculator card ── */
+@media(min-width:861px){
+  .page-tool .calc-layout{align-items:stretch}
+  .page-tool .calc-sidebar{position:static;display:block}
+  .page-tool .card.result-card{
+    position:sticky;top:calc(var(--header-h) + 54px);
+    height:100%;max-height:480px;margin:0;
+    display:flex;flex-direction:column;
+  }
+  .page-tool .result-card .cgpa-display{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8px 0}
+}
+/* slightly tighter calculator card so the first view stays compact */
+.page-tool .semester-box{margin-bottom:12px}
+.page-tool .calculator-section{padding-bottom:20px}

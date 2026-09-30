@@ -4449,3 +4449,121 @@ th {
   .page-tool .gpa-converter-grid{gap:20px}
 }
 @media(prefers-reduced-motion:reduce){.page-tool .grade-result-panel{animation:none}}
+
+/* ═══════════════════════════════════════════════════════════
+   TOOL FOCUS LAYER 2: the six CGPA calculator pages
+   (cgpa-calculator, nsu, 10-point, nigeria, australia, canada)
+   Same visual language as the converter and grade calculator.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Frames */
+.page-tool .card.result-card,
+.page-tool .card.grade-scale-card,
+.page-tool .card.target-card-standalone,
+.page-tool .calculator-section,
+.page-tool .sgpa-section{
+  background:#fff;
+  border:2px solid #7FA3F0;
+  border-radius:16px;
+  padding:0 24px 24px;
+  overflow:hidden;
+  box-shadow:0 0 0 6px rgba(37,99,235,.08),0 18px 40px -16px rgba(30,64,175,.35);
+}
+.page-tool .calc-layout{gap:24px}
+.page-tool .card.grade-scale-card{margin-top:22px!important}
+.page-tool .card.target-card-standalone,
+.page-tool .sgpa-section{margin-top:24px}
+
+/* Header bands (same as the other tools) */
+.page-tool .card .tool-head,
+.page-tool .calculator-section>.tool-head,
+.page-tool .sgpa-section>.tool-head{
+  margin:0 -24px 22px;
+  padding:16px 24px;
+  background:linear-gradient(180deg,#EAF1FF,#DFEAFF);
+  border-bottom:2px solid #B9CEF7;
+}
+.page-tool .calculator-section>.tool-head,
+.page-tool .sgpa-section>.tool-head{align-items:center}
+.page-tool .tool-head .section-eyebrow{
+  display:inline-block;font-family:var(--font);font-size:13px;font-weight:700;
+  letter-spacing:.02em;text-transform:none;color:#fff;background:#2563EB;
+  border-radius:999px;padding:3px 12px;margin-bottom:8px;
+}
+.page-tool .tool-head .section-title,
+.page-tool .tool-head .card-title{font-size:20px;font-weight:700;color:#0F172A;letter-spacing:-.01em;margin:0}
+.page-tool .card.grade-scale-card .tool-head .card-label{margin-bottom:0}
+
+/* Live result card */
+.page-tool .result-card .scale-badge{border:2px solid #B9CEF7;background:#fff;color:#1E3A8A;font-weight:700}
+.page-tool .result-card .cgpa-big{color:#1D4ED8}
+.page-tool .stat-box{border:2px solid #C9D6EA;background:#F8FAFF}
+.page-tool .stat-label{font-family:var(--font);font-size:12px;letter-spacing:.04em}
+.page-tool .grade-scale-card>div:not(.tool-head){color:#1E293B}
+
+/* Semester blocks: each semester is a clearly bordered unit */
+.page-tool .semester-box{border:2px solid #B9CEF7;border-radius:12px;margin-bottom:16px;background:#FBFCFF}
+.page-tool .semester-box:hover{border-color:#7FA3F0}
+.page-tool .semester-header{background:#DFEAFF;border-bottom:2px solid #B9CEF7;padding:12px 16px}
+.page-tool .semester-num{font-family:var(--font);font-size:15px;font-weight:800;letter-spacing:0;text-transform:none;color:#1E3A8A}
+.page-tool .courses-container{padding:12px 12px 0}
+.page-tool .btn-add-course{border-width:2px}
+.page-tool .btn-add-semester,
+.page-tool .btn-add-row{border-width:2px;background:#fff}
+
+/* Inputs: same weight as the other tools */
+.page-tool .course-name,
+.page-tool .course-credit,
+.page-tool .course-grade,
+.page-tool .target-field input,
+.page-tool .sgpa-sem-name,
+.page-tool .sgpa-val-input,
+.page-tool .sgpa-credit-input{
+  background:#fff;border:2px solid #B4C2D6;color:#0F172A;
+}
+.page-tool .course-name:focus,
+.page-tool .course-credit:focus,
+.page-tool .course-grade:focus,
+.page-tool .target-field input:focus,
+.page-tool .sgpa-sem-name:focus,
+.page-tool .sgpa-val-input:focus,
+.page-tool .sgpa-credit-input:focus{
+  border-color:#2563EB;box-shadow:0 0 0 4px rgba(37,99,235,.16);outline:none;
+}
+.page-tool .semester-name-input{background:transparent;border:2px solid transparent;border-bottom-color:#9DB6E6;border-radius:8px;color:#0F172A}
+.page-tool .semester-name-input::placeholder{color:#64748B}
+.page-tool .semester-name-input:hover{background:rgba(255,255,255,.6)}
+.page-tool .semester-name-input:focus{background:#fff;border-color:#2563EB;box-shadow:0 0 0 4px rgba(37,99,235,.16);outline:none}
+
+/* Target CGPA */
+.page-tool .target-field label{
+  font-family:var(--font);font-size:14px;font-weight:700;letter-spacing:0;
+  text-transform:none;color:#1E293B;
+}
+.page-tool .target-result{background:#EAF1FF;border:2px solid #7FA3F0;border-radius:12px}
+.page-tool .target-label{font-family:var(--font);font-size:15px;letter-spacing:.02em;text-transform:none;color:#1E3A8A}
+
+/* SGPA to CGPA table */
+.page-tool .sgpa-table-wrap{border:2px solid #B9CEF7;border-radius:12px;background:#FBFCFF;overflow:hidden}
+.page-tool .sgpa-table-header{
+  background:#EAF1FF;border-bottom:2px solid #B9CEF7;padding:11px 12px;
+  font-family:var(--font);font-size:13px;letter-spacing:0;text-transform:none;color:#1E3A8A;
+}
+.page-tool #sgpaRowsContainer{padding:10px 12px 6px}
+.page-tool .sgpa-cgpa-result{background:#fff;border:2px solid #7FA3F0;border-radius:12px;padding:6px 14px;align-items:center}
+.page-tool .sgpa-label{font-family:var(--font);font-size:12px;letter-spacing:.04em;color:#1E3A8A}
+.page-tool .sgpa-val{font-size:24px;color:#1D4ED8}
+
+@media(max-width:768px){
+  .page-tool .card.result-card,
+  .page-tool .card.grade-scale-card,
+  .page-tool .card.target-card-standalone,
+  .page-tool .calculator-section,
+  .page-tool .sgpa-section{padding:0 16px 18px;border-radius:14px}
+  .page-tool .card .tool-head,
+  .page-tool .calculator-section>.tool-head,
+  .page-tool .sgpa-section>.tool-head{margin:0 -16px 18px;padding:14px 16px}
+  .page-tool .calc-layout{gap:20px}
+}
+.page-tool .semester-box>.btn-add-course{width:calc(100% - 24px);margin:6px 12px 12px;box-sizing:border-box}
+.page-tool .courses-container{padding-bottom:0}

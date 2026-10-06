@@ -26,7 +26,7 @@
 
 .blog-article h1 {
   font-size: var(--fs-h1);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-1);
   letter-spacing: var(--ls-heading);
   line-height: var(--lh-h1);
@@ -35,7 +35,7 @@
 
 .blog-article h2 {
   font-size: var(--fs-h2);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-1);
   letter-spacing: var(--ls-heading);
   line-height: var(--lh-h2);
@@ -99,7 +99,7 @@
 
 .blog-article strong {
   color: var(--text-1);
-  font-weight: 700
+  font-weight: 600
 }
 
 .blog-article img {
@@ -119,7 +119,7 @@
 
 .blog-subhead {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-1);
   margin: 20px 0 10px;
   letter-spacing: 0
@@ -160,7 +160,7 @@
 
 .blog-article pre {
   background: var(--dark);
-  color: #F1F5F9;
+  color: #F1EDE2;
   border-radius: var(--radius);
   padding: 16px 18px;
   overflow-x: auto;
@@ -184,7 +184,7 @@
 }
 
 .blog-cta-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   margin-bottom: 8px;
   color: var(--text-1)
@@ -203,7 +203,7 @@
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   margin: 4px;
   transition: background var(--transition), transform var(--transition)

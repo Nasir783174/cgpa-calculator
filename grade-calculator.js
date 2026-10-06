@@ -219,7 +219,7 @@
     const gpa = totalCredits > 0 ? totalPoints / totalCredits : 0;
     const avgPct = subjectCount > 0 ? totalMarks / subjectCount : 0;
     const status = failCount > 0 ? "Fail" : subjectCount > 0 ? "Pass" : "–";
-    const color = failCount > 0 ? "#DC2626" : "#059669";
+    const color = failCount > 0 ? "#B91C1C" : "#15803D";
 
     const gpaEl = document.getElementById("grGPA");
     const pctEl = document.getElementById("grPct");

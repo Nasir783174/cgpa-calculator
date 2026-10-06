@@ -58,18 +58,6 @@ function getCGPAGrade(cgpa) {
   return "Poor";
 }
 
-function getScaleLabel(scale) {
-  const labels = {
-    standard: "Standard 4.0",
-    na: "North American",
-    ten: "10-Point Scale",
-    nigerian: "Nigerian 5.0",
-    australian: "Australian 7.0",
-    canadian: "Canadian 4.33"
-  };
-  return labels[scale] || "Standard 4.0";
-}
-
 function getScaleLabelFull(scale) {
   const labels = {
     standard: "Standard 4.0 Scale",
@@ -83,11 +71,10 @@ function getScaleLabelFull(scale) {
 }
 
 // ─── COURSE ROW ──────────────────────────────────────────────
-function createCourseRow(semId, courseId) {
+function createCourseRow(semId) {
   const row = document.createElement("div");
   row.className = "course-row";
   row.dataset.semId = semId;
-  row.dataset.courseId = courseId;
   row.innerHTML = `
     <input type="text" class="course-name" placeholder="Course name" />
     <input type="number" class="course-credit" placeholder="Credits" min="0.5" step="0.5" />
@@ -156,7 +143,7 @@ function createSemester() {
   box.querySelector(".btn-add-course").addEventListener("click", function() {
     const semId = parseInt(this.dataset.semId);
     const container = document.getElementById(`courses-${semId}`);
-    const newRow = createCourseRow(semId, container.querySelectorAll(".course-row").length + 1);
+    const newRow = createCourseRow(semId);
     newRow.style.opacity = "0";
     container.appendChild(newRow);
     requestAnimationFrame(() => {
@@ -165,7 +152,7 @@ function createSemester() {
     });
     recalcAll();
   });
-  box.querySelector(`#courses-${id}`).appendChild(createCourseRow(id, 1));
+  box.querySelector(`#courses-${id}`).appendChild(createCourseRow(id));
   return box;
 }
 
@@ -198,16 +185,12 @@ function createSGPARow() {
 
 // ─── CALCULATIONS ─────────────────────────────────────────────
 function calcSGPA(semId) {
-  // Bug fix: a course whose Grade dropdown is left empty (value === "")
-  // used to fall through `parseFloat("") || 0`, silently scoring it as
-  // 0 (an "F") while still counting its credit — dragging the CGPA down
-  // for a course the student simply hasn't graded yet. Such rows are now
-  // skipped entirely (no points, no credit) until a grade is picked.
+  // Courses with no grade selected are skipped (no points, no credit).
   let totalPoints = 0,
     totalCredits = 0;
   document.querySelectorAll(`.course-row[data-sem-id="${semId}"]`).forEach((row) => {
     const gradeRaw = row.querySelector(".course-grade").value;
-    if (gradeRaw === "" || gradeRaw === null) return; // no grade selected — exclude
+    if (gradeRaw === "" || gradeRaw === null) return;
     const credit = parseFloat(row.querySelector(".course-credit").value) || 0;
     const grade = parseFloat(gradeRaw);
     if (isNaN(grade)) return;
@@ -217,8 +200,7 @@ function calcSGPA(semId) {
   return totalCredits > 0 ? totalPoints / totalCredits : 0;
 }
 
-// Returns true if a course row has a credit value entered but no grade
-// selected yet — i.e. it would otherwise be silently mis-scored as 0.
+// True when a course has credits entered but no grade selected yet.
 function courseRowMissingGrade(row) {
   const credit = parseFloat(row.querySelector(".course-credit").value) || 0;
   const gradeRaw = row.querySelector(".course-grade").value;
@@ -236,13 +218,9 @@ function updateMissingGradeUI() {
   });
 }
 
-// Detects retakes: when two or more course rows (in any semester) share the
-// same non-empty Course Name, only the row with the best (highest) grade
-// point is counted toward the overall CGPA. The other attempt(s) are
-// visually muted (dimmed + struck through) and excluded from the totals.
-// Rows with no name entered are never grouped together — each is treated
-// as its own, unique course, since we cannot safely assume two unnamed
-// rows are the same subject.
+// Retakes: when several rows share the same course name, only the best grade
+// counts toward CGPA; the others are dimmed and excluded. Unnamed rows are
+// never grouped.
 function computeOverallTotals() {
   const allRows = Array.from(document.querySelectorAll(".course-row"));
   allRows.forEach((row) => row.classList.remove("course-row-superseded"));
@@ -302,9 +280,7 @@ function recalcAll() {
   const semesters = document.querySelectorAll(".semester-box");
   semesters.forEach((semBox) => {
     const semId = parseInt(semBox.dataset.semId);
-    // Each semester's own SGPA reflects exactly what was taken that
-    // semester — it is never affected by retake deduplication, since that
-    // only applies to the cumulative CGPA below.
+    // SGPA is per-semester and unaffected by retake handling.
     const sgpa = calcSGPA(semId);
     const sgpaEl = document.getElementById(`sgpa-sem-${semId}`);
     if (sgpaEl) sgpaEl.textContent = sgpa.toFixed(2);
@@ -322,20 +298,13 @@ function recalcAll() {
   document.getElementById("stickyCredits").textContent = totalCredits.toFixed(1);
   document.getElementById("stickySemesters").textContent = semesters.length;
   document.getElementById("stickyGrade").textContent = gradeLabel;
-  // Bug fix: Only auto-fill currentCGPA if user is not actively editing it
+  // Auto-fill Current CGPA unless the user is typing in it
   const _currentCGPAEl = document.getElementById("currentCGPA");
   if (document.activeElement !== _currentCGPAEl) {
     _currentCGPAEl.value = cgpa > 0 ? cgpa.toFixed(2) : "";
   }
-  // Bug fix: Target CGPA planner previously read "earned credits" straight
-  // from the course table's totalCredits, with no way to enter/override it.
-  // If someone typed their real Current CGPA by hand (e.g. from their
-  // transcript) without filling in every course above, totalCredits stayed
-  // wrong (often 0) and the Required GPA calculation silently ignored their
-  // actual completed credits. A dedicated, independently-editable
-  // "Completed Credits" field fixes this — it auto-fills from the course
-  // table like Current CGPA does, but the user can correct it to match
-  // whatever Current CGPA they entered.
+  // Completed Credits auto-fills from the course table but stays editable, so a
+  // hand-typed Current CGPA can be matched with its real credits.
   const _completedCreditsEl = document.getElementById("completedCredits");
   if (_completedCreditsEl && document.activeElement !== _completedCreditsEl) {
     _completedCreditsEl.value = totalCredits > 0 ? totalCredits.toFixed(1) : "";
@@ -359,10 +328,7 @@ function calcTarget() {
     requiredEl.textContent = "–";
     return;
   }
-  // Bug fix: a Current CGPA entered without any matching Completed Credits
-  // would previously be silently ignored (earnedCredits defaulted to 0),
-  // making Required GPA equal Target CGPA regardless of current standing.
-  // Now we surface that instead of guessing.
+  // A Current CGPA without Completed Credits would be silently ignored, so ask for it.
   if (currentCGPA > 0 && earnedCredits === 0) {
     requiredEl.textContent = "Enter Completed Credits";
     resultEl.classList.add("target-impossible");
@@ -387,13 +353,12 @@ function calcTarget() {
 }
 
 function calcSGPAtoCGPA() {
-  // Bug fix: Use credit-weighted average instead of simple average
   let weightedTotal = 0,
     totalCredits = 0,
     hasAnyCredit = false;
   let simpleTotal = 0,
     simpleCount = 0;
-  let missingCreditRows = []; // rows that have an SGPA but no credit (Problem 5 fix)
+  const missingCreditRows = []; // rows with an SGPA but no credit
 
   document.querySelectorAll(".sgpa-row").forEach((row) => {
     const sgpaVal = parseFloat(row.querySelector(".sgpa-val-input").value);
@@ -417,9 +382,7 @@ function calcSGPAtoCGPA() {
     }
   });
 
-  // If at least one semester has a credit value, we're in weighted mode.
-  // Any semester with an SGPA but no credit would otherwise be silently
-  // dropped from the result — instead, warn the user and highlight it.
+  // Weighted mode: semesters with an SGPA but no credit are flagged, not silently dropped.
   if (hasAnyCredit && missingCreditRows.length > 0) {
     missingCreditRows.forEach((row) => {
       const creditEl = row.querySelector(".sgpa-credit-input");
@@ -432,11 +395,11 @@ function calcSGPAtoCGPA() {
     (simpleCount > 0 ? simpleTotal / simpleCount : 0);
   document.getElementById("sgpaCGPA").textContent = result.toFixed(2);
 
-  // Show/hide the weighted indicator
+  // Weighted indicator
   const noteEl = document.getElementById("sgpaWeightedNote");
   if (noteEl) noteEl.style.display = hasAnyCredit ? "inline" : "none";
 
-  // Show/hide the missing-credit warning (Problem 5 fix)
+  // Missing-credit warning
   const warnEl = document.getElementById("sgpaMissingCreditWarning");
   if (warnEl) {
     if (hasAnyCredit && missingCreditRows.length > 0) {
@@ -456,12 +419,14 @@ function calcSGPAtoCGPA() {
 
 // ─── UI HELPERS ───────────────────────────────────────────────
 function animateValue(el, from, to, duration) {
+  if (el._animFrame) cancelAnimationFrame(el._animFrame);
   const start = performance.now();
-  requestAnimationFrame(function tick(now) {
+  el._animFrame = requestAnimationFrame(function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
     const ease = progress < 0.5 ? 2 * progress * progress : (4 - 2 * progress) * progress - 1;
     el.textContent = (from + (to - from) * ease).toFixed(2);
-    if (progress < 1) requestAnimationFrame(tick);
+    if (progress < 1) el._animFrame = requestAnimationFrame(tick);
+    else el._animFrame = null;
   });
 }
 
@@ -502,11 +467,19 @@ function closeMobileMenu() {
   document.getElementById("hamburger").classList.remove("active");
 }
 
-// ─── PDF REPORT ───────────────────────────────────────────────
-function generatePDF() {
-  // Bug fix: Calculate CGPA directly to avoid reading an in-progress animated
-  // value, using the same retake-aware totals as the on-screen CGPA so the
-  // report always matches what the page displays.
+// ─── REPORT DOWNLOAD ──────────────────────────────────────────
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, (ch) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[ch]);
+}
+
+function downloadReport() {
+  // Compute directly (not from the animated value) so the report matches the page.
   const { weightedSum: _weightedSum, totalCredits: _totalCreditsCalc } = computeOverallTotals();
   const _cgpaExact = _totalCreditsCalc > 0 ? _weightedSum / _totalCreditsCalc : 0;
   const cgpa = _cgpaExact.toFixed(2);
@@ -524,9 +497,7 @@ function generatePDF() {
   const requiredGPA = document.getElementById("requiredGPA").textContent;
   const completedCreditsEl = document.getElementById("completedCredits");
   const completedCredits = completedCreditsEl ? completedCreditsEl.value : "";
-  // Use the actual Current CGPA input (which may have been typed manually
-  // and differ from the auto-computed course-table cgpa) so the report
-  // matches what the Required GPA was actually calculated from.
+  // Use the typed Current CGPA so the plan matches what Required GPA was based on.
   const currentCGPAForPlan = document.getElementById("currentCGPA").value || cgpa;
   let semestersHTML = "";
   document.querySelectorAll(".semester-box").forEach((semBox) => {
@@ -536,13 +507,12 @@ function generatePDF() {
     let rowsHTML = "",
       semCredits = 0;
     semBox.querySelectorAll(".course-row").forEach((row, idx) => {
-      const name = row.querySelector(".course-name").value.trim() || "Unnamed Course";
+      const name = escapeHTML(row.querySelector(".course-name").value.trim() || "Unnamed Course");
       const credit = row.querySelector(".course-credit").value || "–";
       const gradeEl = row.querySelector(".course-grade");
       const gradeText = gradeEl.selectedIndex > 0 ? gradeEl.options[gradeEl.selectedIndex].text : "–";
       const gradePoint = parseFloat(gradeEl.value) || 0;
-      // Only count credits toward the semester total when a grade was actually
-      // selected, so this footer matches the SGPA shown above it.
+      // Count credits only when a grade is selected, matching the SGPA above.
       if (parseFloat(credit) && !courseRowMissingGrade(row)) semCredits += parseFloat(credit);
       rowsHTML += `<tr style="background:${idx%2===0?"#F4F0E6":"#fff"}"><td style="padding:8px 12px;border-bottom:1px solid #E6E0D2;">${name}</td><td style="padding:8px 12px;border-bottom:1px solid #E6E0D2;text-align:center;">${credit}</td><td style="padding:8px 12px;border-bottom:1px solid #E6E0D2;text-align:center;">${gradeText}</td><td style="padding:8px 12px;border-bottom:1px solid #E6E0D2;text-align:center;font-weight:700;color:#1F4D3A;">${gradePoint>0?gradePoint.toFixed(2):"–"}</td></tr>`;
     });
@@ -570,9 +540,7 @@ function generatePDF() {
 
 // ─── INIT (shared calculator init) ───────────────────────────
 function initCalculator() {
-  // Semester 1 and the first SGPA row ship pre-rendered in the HTML so the
-  // card is fully formed on first paint (no empty box, no layout jump).
-  // Swap those static copies for the live, interactive versions.
+  // Swap the pre-rendered static Semester 1 / SGPA row for live ones.
   document.querySelectorAll("[data-prerender]").forEach((el) => el.remove());
   const semContainer = document.getElementById("semestersContainer");
   semContainer.appendChild(createSemester());
@@ -599,12 +567,11 @@ function initCalculator() {
   document.getElementById("currentCGPA").addEventListener("input", calcTarget);
   const completedCreditsEl = document.getElementById("completedCredits");
   if (completedCreditsEl) completedCreditsEl.addEventListener("input", calcTarget);
-  document.getElementById("downloadPDF").addEventListener("click", generatePDF);
+  document.getElementById("downloadPDF").addEventListener("click", downloadReport);
   document.getElementById("hamburger").addEventListener("click", function() {
     this.classList.toggle("active");
     document.getElementById("mobileMenu").classList.toggle("open");
   });
-  // Dropdown nav close on mobile link click
   document.querySelectorAll(".mobile-nav-link").forEach((link) => {
     link.addEventListener("click", closeMobileMenu);
   });

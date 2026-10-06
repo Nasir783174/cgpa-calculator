@@ -6,9 +6,7 @@
 
   const GRADE_SYSTEMS = {
     4: {
-      label: "4.0 Scale",
-      // Matches scale-standard.js exactly (10 bands) so the Grade Calculator
-      // and the main CGPA Calculator never disagree on the same marks/letter.
+      // Matches scale-standard.js so both calculators agree.
       getGrade: (marks) => {
         if (marks >= 80) return {
           letter: "A+",
@@ -51,10 +49,8 @@
           point: 0
         };
       },
-      passMin: 40,
     },
     5: {
-      label: "5.0 Scale",
       getGrade: (marks) => {
         if (marks >= 80) return {
           letter: "A+",
@@ -93,10 +89,8 @@
           point: 0
         };
       },
-      passMin: 40,
     },
     10: {
-      label: "10.0 Scale",
       getGrade: (marks) => {
         if (marks >= 90) return {
           letter: "O",
@@ -131,7 +125,6 @@
           point: 0
         };
       },
-      passMin: 40,
     },
   };
 
@@ -237,7 +230,6 @@
 
   function predictGrade() {
     const targetGrade = document.getElementById("grTargetGrade").value;
-    const system = getSystem();
 
     const thresholds = {
       4: {

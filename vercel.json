@@ -43,6 +43,16 @@
       "statusCode": 301
     },
     {
+      "source": "/hsc-gpa-calculator",
+      "destination": "/hsc-result-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/hsc-calculator",
+      "destination": "/hsc-result-calculator",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

@@ -462,11 +462,6 @@ function showToast(message) {
   }, 3000);
 }
 
-function closeMobileMenu() {
-  document.getElementById("mobileMenu").classList.remove("open");
-  document.getElementById("hamburger").classList.remove("active");
-}
-
 // ─── REPORT DOWNLOAD ──────────────────────────────────────────
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, (ch) => ({
@@ -568,13 +563,6 @@ function initCalculator() {
   const completedCreditsEl = document.getElementById("completedCredits");
   if (completedCreditsEl) completedCreditsEl.addEventListener("input", calcTarget);
   document.getElementById("downloadPDF").addEventListener("click", downloadReport);
-  document.getElementById("hamburger").addEventListener("click", function() {
-    this.classList.toggle("active");
-    document.getElementById("mobileMenu").classList.toggle("open");
-  });
-  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
-    link.addEventListener("click", closeMobileMenu);
-  });
   const stickyBar = document.getElementById("stickyBar");
   const calcSection = document.querySelector(".calculator-section");
   const stickyObserver = new IntersectionObserver(([entry]) => {
@@ -586,35 +574,5 @@ function initCalculator() {
   });
   if (calcSection) stickyObserver.observe(calcSection);
   recalcAll();
-  document.querySelectorAll(".faq-question").forEach((question) => {
-    question.addEventListener("click", function() {
-      const isOpen = this.getAttribute("aria-expanded") === "true";
-      document.querySelectorAll(".faq-question").forEach((q) => {
-        q.setAttribute("aria-expanded", "false");
-        q.nextElementSibling.classList.remove("open");
-      });
-      if (!isOpen) {
-        this.setAttribute("aria-expanded", "true");
-        this.nextElementSibling.classList.add("open");
-      }
-    });
-  });
-
-  // Nav dropdown click toggle
-  const navDropTrigger = document.getElementById("navDropTrigger");
-  const navDropMenu = document.getElementById("navDropMenu");
-  if (navDropTrigger && navDropMenu) {
-    navDropTrigger.addEventListener("click", function(e) {
-      e.stopPropagation();
-      navDropMenu.classList.toggle("open");
-    });
-    document.addEventListener("click", function() {
-      navDropMenu.classList.remove("open");
-    });
-    navDropMenu.querySelectorAll(".nav-drop-item").forEach((item) => {
-      item.addEventListener("click", function() {
-        navDropMenu.classList.remove("open");
-      });
-    });
-  }
+  // Header menu and FAQ accordion are handled by nav.js
 }

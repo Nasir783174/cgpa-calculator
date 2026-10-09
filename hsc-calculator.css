@@ -47,39 +47,39 @@
 
 /* ---------- Subject rows ---------- */
 .hsc-table{border:2px solid #BFD6C8;border-radius:12px;background:#FBF9F3;overflow:hidden}
-.hsc-head,.hsc-row{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1.25fr) 108px;gap:10px;align-items:start}
-.hsc-head{padding:11px 12px;background:#DDEBE2;border-bottom:2px solid #BFD6C8}
+.hsc-head,.hsc-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.3fr) 84px;gap:12px;align-items:start}
+.hsc-head{padding:11px 14px;background:#DDEBE2;border-bottom:2px solid #BFD6C8}
 .hsc-head span{font-size:13px;font-weight:600;color:#1F4D3A}
 .hsc-head span:last-child{text-align:center}
-#hscRows{padding:10px 12px 4px}
+#hscRows{padding:12px 14px 4px}
 .hsc-row{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #D9D1BF;animation:hscIn .18s ease}
 .hsc-row:last-child{border-bottom:0;margin-bottom:6px}
-.hsc-row.is-optional{background:#F3EBD8;margin:0 -12px 6px;padding:12px;border-bottom:0;border-top:2px solid #E0D3B2}
+.hsc-row.is-optional{background:#F3EBD8;margin:0 -14px 6px;padding:14px;border-bottom:0;border-top:2px solid #E0D3B2}
 .hsc-subject{display:flex;flex-direction:column;gap:4px;min-width:0}
-.hsc-subject-name{font-size:16px;font-weight:600;color:#0F1A15;line-height:1.3;min-height:48px;display:flex;align-items:center}
+.hsc-subject-name:not(.sr-only){font-size:17px;font-weight:600;color:#0F1A15;line-height:1.3;min-height:56px;display:flex;align-items:center;box-sizing:border-box;padding:8px 16px;background:var(--bg-input);border:2px solid #D3CBB8;border-radius:var(--radius-input)}
 .hsc-row:not(.is-optional) .hsc-subject{gap:0}
 .hsc-subject-meta{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--text-3)}
 .hsc-row:not(.is-optional) .hsc-subject-meta{display:none}
 .hsc-row.is-optional .hsc-subject-meta{color:var(--violet)}
-.hsc-select,.hsc-max{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:16px;height:48px;padding:0 32px 0 12px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
+.hsc-select,.hsc-max{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:17px;font-weight:600;height:56px;padding:0 36px 0 16px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 12px center;text-overflow:ellipsis}
+  background-repeat:no-repeat;background-position:right 14px center;background-size:14px;text-overflow:ellipsis}
 .hsc-select:focus,.hsc-max:focus,.hsc-input:focus{border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16)}
 .hsc-marks{min-width:0}
-.hsc-marks-controls{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:8px}
-.hsc-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:17px;font-weight:600;height:48px;padding:0 var(--sp-md);width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.hsc-marks-controls{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:8px}
+.hsc-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:19px;font-weight:600;height:56px;padding:0 16px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
 .hsc-input::placeholder{color:var(--text-3);font-weight:400}
 .hsc-input[aria-invalid="true"]{border-color:#DC2626;background:#FEF2F2}
-.hsc-max{padding-left:10px;font-weight:600}
+.hsc-max{padding-left:12px;padding-right:30px;font-weight:600}
 .hsc-row-error{font-size:12.5px;font-weight:600;color:#991B1B;line-height:1.4;margin-top:4px}
 .hsc-row-error:empty{display:none}
-.hsc-grade{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:48px}
-.hsc-badge{min-width:46px;text-align:center;padding:3px 10px;border-radius:999px;font-size:15px;font-weight:700;background:var(--bg);color:var(--text-2);border:1px solid var(--border)}
+.hsc-grade{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px}
+.hsc-badge{min-width:52px;text-align:center;padding:4px 12px;border-radius:999px;font-size:17px;font-weight:700;background:var(--bg);color:var(--text-2);border:1px solid var(--border)}
 .hsc-badge[data-grade="A+"],.hsc-badge[data-grade="A"]{background:#E4F2E9;color:#14532D;border-color:#B7DCC5}
 .hsc-badge[data-grade="A-"],.hsc-badge[data-grade="B"]{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
 .hsc-badge[data-grade="C"],.hsc-badge[data-grade="D"]{background:#FFF4E0;color:#92400E;border-color:#F2D9A6}
 .hsc-badge[data-grade="F"]{background:#FDECEC;color:#991B1B;border-color:#F5C2C2}
-.hsc-gp{font-size:12.5px;font-weight:600;color:var(--text-3)}
+.hsc-gp{font-size:13px;font-weight:600;color:var(--text-3)}
 .hsc-component{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-2);cursor:pointer}
 .hsc-component input{width:16px;height:16px;accent-color:var(--accent);flex-shrink:0}
 .hsc-note{font-size:13px;color:var(--text-3);line-height:1.55;margin:12px 0 0}
@@ -106,11 +106,14 @@
 @media(max-width:620px){
   .hsc-head{display:none}
   .hsc-row{grid-template-columns:minmax(0,1fr) 84px;gap:8px 10px}
+  .hsc-select,.hsc-max,.hsc-input{height:52px}
+  .hsc-subject-name:not(.sr-only){min-height:52px;font-size:17px}
+  .hsc-grade{min-height:52px}
   .hsc-subject{grid-column:1/-1}
   .hsc-subject-name{min-height:0}
   .hsc-marks{grid-column:1}
   .hsc-grade{grid-column:2;align-self:start}
-  .hsc-marks-controls{grid-template-columns:minmax(0,1fr) 88px}
+  .hsc-marks-controls{grid-template-columns:minmax(0,1fr) 96px}
   .hsc-groups{grid-template-columns:1fr}
   .hsc-actions{grid-template-columns:1fr}
   #hscRows{padding:10px 10px 4px}

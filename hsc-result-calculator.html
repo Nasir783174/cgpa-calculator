@@ -24,9 +24,9 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" media="print" onload="this.media='all'" />
  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css?v=20261008b" />
- <link rel="stylesheet" href="hsc-calculator.css?v=20261009d" />
+ <link rel="stylesheet" href="hsc-calculator.css?v=20261009e" />
  <script defer src="nav.js?v=20261008b"></script>
- <script defer src="hsc-calculator.js?v=20261009d"></script>
+ <script defer src="hsc-calculator.js?v=20261009e"></script>
  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-31G4QMCRXB',{send_page_view:false});window.addEventListener('load',function(){gtag('event','page_view');});</script>
  <script defer>window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlnn53n6p8");});</script>
@@ -153,25 +153,25 @@
      "@type": "HowToStep",
      "position": 1,
      "name": "Select Your Group",
-     "text": "Choose Science, Humanities or Business Studies. The subject list changes to match your group, and you can swap the fourth subject from the drop-down."
+     "text": "Choose Science, Humanities or Business Studies. The subject list changes to match your group, and you can swap the group subjects and the fourth subject from the drop-downs."
     },
     {
      "@type": "HowToStep",
      "position": 2,
-     "name": "Enter Total Marks for Each Subject",
-     "text": "Type the combined total of both papers for each subject and choose the maximum shown on your marksheet (100 or 200). Each subject counts once."
+     "name": "Pick a Grade or Enter Marks",
+     "text": "Choose Grade to select each subject&#8217;s letter grade, or Marks to type the combined total of both papers and the maximum shown on your marksheet (100 or 200). Each subject counts once."
     },
     {
      "@type": "HowToStep",
      "position": 3,
-     "name": "Mark Any Failed Component",
-     "text": "If your marksheet shows a failed paper, MCQ, theory or practical component, tick the failure box for that subject. Totals alone cannot show this."
+     "name": "Add Your Fourth Subject",
+     "text": "Pick your fourth subject and its grade or marks, or leave it empty if you have none. If your marksheet shows F in any paper, MCQ, theory or practical part, choose Grade mode and select F, because totals alone cannot show this."
     },
     {
      "@type": "HowToStep",
      "position": 4,
-     "name": "Read Your GPA and Breakdown",
-     "text": "Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result card, with the full calculation below it."
+     "name": "Press Calculate GPA",
+     "text": "Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result box right below the button. Open Show calculation to see every step."
     }
    ]
   },
@@ -323,18 +323,7 @@
 </div>
  </header>
 
- <!-- STICKY LIVE-RESULT BAR -->
- <div class="sticky-bar" id="hscStickyBar">
-  <div class="sticky-bar-inner">
-   <div class="sticky-item"><span class="sticky-label">HSC GPA</span><span class="sticky-val sticky-grade" id="hscStickyGpa">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Result</span><span class="sticky-val" id="hscStickyStatus">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Subjects</span><span class="sticky-val" id="hscStickyProgress">0 / 7</span></div>
-  </div>
- </div>
-
- <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT -->
  <main class="grade-calc-wrap" id="calculator">
 
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -344,67 +333,40 @@
   </nav>
 
   <h1>HSC Result Calculator</h1>
-  <p class="page-intro">Free HSC result calculator for Bangladesh. Enter your subject marks to get your HSC GPA on the 5.00 scale, the grade for each subject, your fourth subject bonus and your pass or fail status, with every step of the calculation shown.</p>
+  <p class="page-intro">Free HSC result calculator for Bangladesh. Pick a grade or enter marks for each subject, add your fourth subject, and get your HSC GPA on the 5.00 scale with your pass or fail status.</p>
 
   <noscript><p class="tool-error">Enable JavaScript to use this calculator. The grading guide, formula and FAQ below are available without it.</p></noscript>
 
-  <div class="calc-layout" id="hscCalc">
-
-   <!-- RESULT (left column, sticky on desktop) -->
-   <aside class="calc-sidebar" aria-labelledby="hscResultHeading">
-    <div class="card result-card hsc-result" id="hscResultCard">
-     <div class="tool-head"><h2 class="card-title" id="hscResultHeading">Your HSC GPA</h2></div>
-     <div class="cgpa-display">
-      <div class="hsc-big"><output id="hscGpa" aria-live="polite" aria-atomic="true">—</output><span class="hsc-max-label">/ 5.00</span></div>
-      <div class="hsc-status-wrap"><span class="hsc-status" id="hscStatus" data-state="empty">Awaiting marks</span></div>
-     </div>
-     <p class="hsc-message" id="hscMessage">Enter marks for all main subjects to calculate your final GPA. Enter the optional subject too to include its bonus.</p>
-     <div class="stat-row">
-      <div class="stat-box"><span class="stat-label">Main subject GPA</span><span class="stat-val" id="hscMainGpa">—</span></div>
-      <div class="stat-box"><span class="stat-label">Fourth subject bonus</span><span class="stat-val" id="hscBonus">—</span></div>
-      <div class="stat-box"><span class="stat-label">Subjects entered</span><span class="stat-val" id="hscProgress">0 / 7</span></div>
-     </div>
-     <div class="hsc-breakdown">
-      <h3>How your GPA adds up</h3>
-      <div id="hscBreakdown"><p class="hsc-muted">Your grade points and calculation will appear here as you enter marks.</p></div>
-     </div>
-     <p class="hsc-fine">This is an estimate based on the grading and optional-subject rules explained on this page. For your official result, always rely on the result published by your education board.</p>
-     <p class="hsc-fine">Totals alone cannot verify separate paper, theory, MCQ or practical pass requirements. If your marksheet shows a failed required component, tick that subject&#8217;s failure box.</p>
-     <p id="hscAnnounce" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-    </div>
-   </aside>
-
-   <!-- INPUT PANEL -->
-   <div class="calc-main-panel">
-    <form class="calculator-section" id="hscForm" novalidate>
-     <div class="section-header tool-head tool-head-row">
-      <div><h2 class="section-title">Enter Your Marks</h2></div>
-     </div>
-
-     <div class="hsc-block-head"><h3 class="hsc-step-title"><span class="hsc-step">1</span> Select your group</h3><span class="hsc-tag">6 main + 1 optional</span></div>
-     <fieldset class="hsc-groups">
+  <div id="hscCalc">
+   <form class="hsc-card" id="hscForm" novalidate>
+    <div class="hsc-toolbar">
+     <fieldset class="hsc-seg">
       <legend class="sr-only">HSC group</legend>
       <label><input type="radio" name="hscGroup" value="science" checked><span>Science</span></label>
       <label><input type="radio" name="hscGroup" value="humanities"><span>Humanities</span></label>
       <label><input type="radio" name="hscGroup" value="business"><span>Business Studies</span></label>
      </fieldset>
+     <fieldset class="hsc-seg">
+      <legend class="sr-only">Enter by</legend>
+      <label><input type="radio" name="hscMode" value="grade" checked><span>Grade</span></label>
+      <label><input type="radio" name="hscMode" value="marks"><span>Marks</span></label>
+     </fieldset>
+    </div>
 
-     <div class="hsc-block-head"><h3 class="hsc-step-title"><span class="hsc-step">2</span> Enter subject marks</h3><button type="button" class="hsc-link-btn" id="hscExample">Try an example ↗</button></div>
-     <p class="hsc-help">Enter each subject&#8217;s total, combining both papers where applicable. Choose the maximum shown on your marksheet. Each subject counts once.</p>
+    <h2 class="hsc-sec-title">Main subjects <small id="hscMainCount">6</small></h2>
+    <div class="hsc-list" id="hscMainRows"></div>
 
-     <div class="hsc-table">
-      <div class="hsc-head" aria-hidden="true"><span>Subject</span><span>Total marks</span><span>Grade / GP</span></div>
-      <div id="hscRows"></div>
-     </div>
-     <p class="hsc-note">Subject choices must match your registration. Changing a subject clears its marks; choosing another row&#8217;s subject swaps the two.</p>
+    <h2 class="hsc-sec-title">4th subject <small>Optional</small></h2>
+    <div class="hsc-list" id="hscFourthRows"></div>
 
-     <div class="hsc-actions">
-      <button type="submit" class="btn-pdf">Calculate GPA</button>
-      <button type="button" class="hsc-btn-secondary" id="hscReset">Reset</button>
-     </div>
-     <p class="hsc-form-message" id="hscFormMessage" role="status" aria-live="polite"></p>
-    </form>
-   </div>
+    <div class="hsc-actions">
+     <button type="submit" class="btn-pdf">Calculate GPA</button>
+     <button type="button" class="hsc-btn-secondary" id="hscReset">Reset</button>
+    </div>
+    <p class="hsc-form-message" id="hscFormMessage" role="alert"></p>
+
+    <div class="hsc-result" id="hscResult" hidden aria-live="polite"></div>
+   </form>
   </div>
 
   <!-- SEO CONTENT -->
@@ -426,10 +388,10 @@
    </div></div>
    <div class="seo-content-card">
     <div class="how-to-steps">
-     <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Select Your Group</h3><p>Choose Science, Humanities or Business Studies. The subject list changes to match your group, and you can swap the fourth subject from the drop-down.</p></div></div>
-     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Enter Total Marks for Each Subject</h3><p>Type the combined total of both papers for each subject and choose the maximum shown on your marksheet (100 or 200). Each subject counts once.</p></div></div>
-     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Mark Any Failed Component</h3><p>If your marksheet shows a failed paper, MCQ, theory or practical component, tick the failure box for that subject. Totals alone cannot show this.</p></div></div>
-     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Read Your GPA and Breakdown</h3><p>Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result card, with the full calculation below it.</p></div></div>
+     <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Select Your Group</h3><p>Choose Science, Humanities or Business Studies. The subject list changes to match your group, and you can swap the group subjects and the fourth subject from the drop-downs.</p></div></div>
+     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Pick a Grade or Enter Marks</h3><p>Choose Grade to select each subject&#8217;s letter grade, or Marks to type the combined total of both papers and the maximum shown on your marksheet (100 or 200). Each subject counts once.</p></div></div>
+     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Add Your Fourth Subject</h3><p>Pick your fourth subject and its grade or marks, or leave it empty if you have none. If your marksheet shows F in any paper, MCQ, theory or practical part, choose Grade mode and select F, because totals alone cannot show this.</p></div></div>
+     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Press Calculate GPA</h3><p>Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result box right below the button. Open Show calculation to see every step.</p></div></div>
     </div>
    </div>
   </section>
@@ -479,7 +441,7 @@
      <div><span>Effective total</span><span>30.00</span></div>
      <div><span>Final GPA: 30 ÷ 6</span><span>5.00</span></div>
     </div>
-    <p>Select <strong>Try an example</strong> in the calculator to see this with subject marks. It is an illustration, not a student&#8217;s official result.</p>
+    <p>Pick A+, A, A+, A, A+, A for the main subjects and A+ for the fourth subject in the calculator above to see this result. It is an illustration, not a student&#8217;s official result.</p>
    </div>
   </section>
 

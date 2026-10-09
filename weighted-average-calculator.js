@@ -58,6 +58,19 @@
 
   function setText(id, value) { var el = $(id); if (el) el.textContent = value; }
 
+  /* Use-case picker is a radio group (name="wacPreset"). */
+  function getPreset() {
+    var r = document.querySelector('input[name="wacPreset"]:checked');
+    return r ? r.value : 'general';
+  }
+  function setPreset(kind) {
+    var r = document.querySelector('input[name="wacPreset"][value="' + kind + '"]');
+    if (r) r.checked = true;
+  }
+
+  /* The result box stays hidden until the first Calculate / example / import, then updates live. */
+  function revealResult() { var box = $('wacResult'); if (box) box.hidden = false; }
+
   /* ---------- Rows ---------- */
   function createRow(data) {
     data = data || {};
@@ -66,7 +79,7 @@
     el.setAttribute('role', 'listitem');
     serial += 1;
     var id = serial;
-    var titles = LABELS[$('wacPreset').value];
+    var titles = LABELS[getPreset()];
 
     [['label', 'Label (optional)'], ['value', titles[0]], ['weight', titles[1]]].forEach(function (pair) {
       var field = pair[0], title = pair[1];
@@ -104,7 +117,7 @@
   }
 
   function renumber() {
-    var titles = LABELS[$('wacPreset').value];
+    var titles = LABELS[getPreset()];
     Array.prototype.forEach.call(rowsEl.children, function (el, i) {
       [['label', 'Label (optional)', null], ['value', titles[0], titles[0]], ['weight', titles[1], titles[1]]].forEach(function (f) {
         var input = el.querySelector('.' + f[0]);
@@ -269,7 +282,7 @@
 
   /* ---------- Use-case configuration ---------- */
   function configure() {
-    var kind = $('wacPreset').value;
+    var kind = getPreset();
     var titles = LABELS[kind];
     setText('wacValueHead', titles[0]);
     setText('wacWeightHead', titles[1]);
@@ -278,12 +291,13 @@
   }
 
   function loadExample(kind) {
-    kind = kind || $('wacPreset').value;
-    $('wacPreset').value = kind;
+    kind = kind || getPreset();
+    setPreset(kind);
     $('wacScale').value = kind === 'grades' ? 'percent' : 'relative';
     configure();
     loadRows(PRESETS[kind].map(function (p) { return { label: p[0], value: p[1], weight: p[2] }; }));
     setText('wacFormError', '');
+    revealResult();
   }
 
   /* ---------- Copy and CSV ---------- */
@@ -391,10 +405,24 @@
     rowsEl.lastElementChild.querySelector('input').focus();
   });
 
-  $('wacPreset').addEventListener('change', function () {
-    $('wacScale').value = $('wacPreset').value === 'grades' ? 'percent' : 'relative';
-    configure();
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="wacPreset"]'), function (radio) {
+    radio.addEventListener('change', function () {
+      if (!radio.checked) return;
+      $('wacScale').value = radio.value === 'grades' ? 'percent' : 'relative';
+      configure();
+      calculate();
+    });
+  });
+
+  /* Calculate button (and Enter key): show the result box and surface any invalid fields. */
+  $('wacForm').addEventListener('submit', function (event) {
+    event.preventDefault();
     calculate();
+    revealResult();
+    var bad = rowsEl.querySelector('input[aria-invalid="true"]');
+    if (bad) { bad.focus(); return; }
+    var box = $('wacResult');
+    if (box && box.scrollIntoView) box.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
   });
   $('wacExample').addEventListener('click', function () { loadExample(); });
 
@@ -414,8 +442,9 @@
   });
 
   $('wacReset').addEventListener('click', function () {
-    $('wacPreset').value = 'general';
+    setPreset('general');
     $('wacScale').value = 'relative';
+    $('wacResult').hidden = true;
     $('wacDecimals').value = '2';
     decimals = 2;
     ['wacTargetValue', 'wacTargetWeight', 'wacTargetMin', 'wacTargetMax', 'wacPasteData'].forEach(function (id) { $(id).value = ''; });
@@ -433,6 +462,7 @@
       var check = M.analyze(imported, $('wacScale').value);
       if (check.errors.length) throw new Error('Line ' + (check.errors[0].row + 1) + ': ' + check.errors[0].message);
       loadRows(imported);
+      revealResult();
       setText('wacImportError', '');
       setText('wacActionStatus', 'Imported ' + imported.length + ' rows.');
     } catch (e) {

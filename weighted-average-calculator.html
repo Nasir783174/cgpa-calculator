@@ -24,10 +24,10 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" media="print" onload="this.media='all'" />
  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css?v=20261008b" />
- <link rel="stylesheet" href="weighted-average-calculator.css?v=20261008a" />
+ <link rel="stylesheet" href="weighted-average-calculator.css?v=20261009e" />
  <script defer src="nav.js?v=20261008b"></script>
- <script defer src="weighted-math.js?v=20261008a"></script>
- <script defer src="weighted-average-calculator.js?v=20261008a"></script>
+ <script defer src="weighted-math.js?v=20261009e"></script>
+ <script defer src="weighted-average-calculator.js?v=20261009e"></script>
  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-31G4QMCRXB',{send_page_view:false});window.addEventListener('load',function(){gtag('event','page_view');});</script>
  <script defer>window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlnn53n6p8");});</script>
@@ -167,7 +167,7 @@
      "@type": "HowToStep",
      "position": 3,
      "name": "Read the Result and the Steps",
-     "text": "The weighted average, total weight, weighted sum and simple average appear in the result card. The calculation steps table shows each product, weight share and contribution."
+     "text": "The weighted average, total weight, weighted sum and simple average appear in the result box right below the Calculate button. Open Show calculation to see each product, weight share and contribution."
     },
     {
      "@type": "HowToStep",
@@ -309,18 +309,7 @@
 </div>
  </header>
 
- <!-- STICKY LIVE-RESULT BAR -->
- <div class="sticky-bar" id="wacStickyBar">
-  <div class="sticky-bar-inner">
-   <div class="sticky-item"><span class="sticky-label">Weighted avg</span><span class="sticky-val sticky-grade" id="wacStickyAvg">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Total weight</span><span class="sticky-val" id="wacStickyTotal">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Rows</span><span class="sticky-val" id="wacStickyRows">0</span></div>
-  </div>
- </div>
-
- <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT -->
  <main class="grade-calc-wrap" id="calculator">
 
   <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -334,77 +323,87 @@
 
   <noscript><p class="tool-error">Enable JavaScript to use this calculator. The formula, examples and guide below are available without it.</p></noscript>
 
-  <div class="calc-layout" id="wacCalc">
+  <div id="wacCalc">
+   <form class="wac-card" id="wacForm" novalidate>
+    <div class="wac-toolbar">
+     <fieldset class="wac-seg">
+      <legend class="sr-only">Use case</legend>
+      <label><input type="radio" name="wacPreset" value="general" checked><span>General</span></label>
+      <label><input type="radio" name="wacPreset" value="grades"><span>Course grades</span></label>
+      <label><input type="radio" name="wacPreset" value="gpa"><span>GPA by credits</span></label>
+      <label><input type="radio" name="wacPreset" value="price"><span>Avg. price</span></label>
+      <label><input type="radio" name="wacPreset" value="frequency"><span>Frequency</span></label>
+     </fieldset>
+     <div class="wac-field"><label for="wacScale">Weight format</label>
+      <select id="wacScale"><option value="relative">Relative / credits / quantity</option><option value="percent">Percentages (20 = 20%)</option><option value="fraction">Decimal proportions (0.2 = 20%)</option></select>
+     </div>
+    </div>
+    <p class="wac-help" id="wacUseHelp">Use one consistent weight scale. Weights can total any positive number.</p>
 
-   <!-- RESULT (left column, sticky on desktop) -->
-   <aside class="calc-sidebar">
-    <div class="card result-card wac-result">
-     <div class="tool-head"><h2 class="card-title">Weighted Average</h2></div>
-     <div class="cgpa-display">
-      <output class="cgpa-big wac-big" id="wacAverage" aria-live="polite" aria-atomic="true">—</output>
-      <div class="cgpa-grade-label" id="wacStatusLabel">Waiting for valid data</div>
+    <h2 class="wac-sec-title">Values &amp; weights</h2>
+    <div class="wac-table">
+     <div class="wac-head" aria-hidden="true"><span>Label <small>optional</small></span><span id="wacValueHead">Value</span><span id="wacWeightHead">Weight</span><span></span></div>
+     <div id="wacRows" role="list" aria-label="Value and weight rows"></div>
+    </div>
+    <p class="wac-error" id="wacFormError" role="alert"></p>
+
+    <div class="wac-row-actions">
+     <button class="wac-add" id="wacAddRow" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add row</button>
+     <button class="wac-link-btn" id="wacExample" type="button">Try an example ↗</button>
+    </div>
+
+    <details class="wac-details" id="wacImportPanel">
+     <summary>Paste from Excel, Sheets, or CSV</summary>
+     <div class="wac-details-body">
+      <p class="wac-help" id="wacPasteHelp">Paste two columns: value and weight. An optional label can be the first column. A header row is allowed. Use tabs, commas, semicolons, colons, or spaces. Use a dot for decimals; quote comma-grouped numbers in CSV. Labels with spaces need tabs or CSV quotes. Import replaces the rows only if every line is valid.</p>
+      <label for="wacPasteData">Spreadsheet data</label>
+      <textarea id="wacPasteData" rows="5" aria-describedby="wacPasteHelp" placeholder="Value,Weight&#10;80,20&#10;90,30&#10;70,50"></textarea>
+      <button class="wac-btn-secondary" id="wacImport" type="button">Import rows</button>
+      <p class="wac-error" id="wacImportError" role="status"></p>
+     </div>
+    </details>
+
+    <div class="wac-main-actions">
+     <button type="submit" class="btn-pdf">Calculate</button>
+     <button type="button" class="wac-btn-secondary" id="wacReset">Clear all</button>
+    </div>
+
+    <div class="wac-result" id="wacResult" hidden aria-live="polite">
+     <div class="wac-res-head">
+      <div class="wac-res-main">
+       <span class="wac-res-label">Weighted average</span>
+       <output class="wac-big" id="wacAverage" aria-live="polite" aria-atomic="true">—</output>
+      </div>
+      <span class="wac-pill" id="wacStatusLabel">Waiting for valid data</span>
      </div>
      <p class="wac-result-note" id="wacResultNote">Add your values and weights to get started.</p>
+
+     <div class="wac-stats">
+      <div class="wac-stat"><span class="wac-stat-val" id="wacTotal">—</span><span class="wac-stat-label">Total weight</span></div>
+      <div class="wac-stat"><span class="wac-stat-val" id="wacSum">—</span><span class="wac-stat-label">Weighted sum</span></div>
+      <div class="wac-stat"><span class="wac-stat-val" id="wacCount">0</span><span class="wac-stat-label">Rows entered</span></div>
+      <div class="wac-stat"><span class="wac-stat-val" id="wacSimple">—</span><span class="wac-stat-label">Simple average</span></div>
+     </div>
+
      <div class="wac-precision"><label for="wacDecimals">Decimal places</label>
       <select id="wacDecimals"><option>0</option><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select>
      </div>
-     <div class="stat-row">
-      <div class="stat-box"><span class="stat-label">Total weight</span><span class="stat-val" id="wacTotal">—</span></div>
-      <div class="stat-box"><span class="stat-label">Weighted sum</span><span class="stat-val" id="wacSum">—</span></div>
-      <div class="stat-box"><span class="stat-label">Rows entered</span><span class="stat-val" id="wacCount">0</span></div>
-      <div class="stat-box"><span class="stat-label">Simple average</span><span class="stat-val" id="wacSimple">—</span></div>
-     </div>
+
+     <details class="wac-calc-details">
+      <summary>Show calculation <span class="wac-badge" id="wacStepsStatus">Waiting for valid data</span></summary>
+      <div id="wacBreakdown"><p class="wac-help">Your products, normalized weights and contributions will appear here.</p></div>
+      <p class="wac-fine">Weight share = weight ÷ total weight. Contribution = value × weight share. Displayed values are rounded, so rounded shares and contributions may not add up exactly to the displayed total.</p>
+     </details>
+
      <p class="wac-fine">Simple average includes every entered value, even values with zero weight. Only the display is rounded; tiny nonzero values use scientific notation.</p>
      <div class="wac-actions">
-      <button class="btn-pdf" id="wacCopy" type="button" disabled>Copy result &amp; steps</button>
+      <button class="wac-btn-secondary" id="wacCopy" type="button" disabled>Copy result &amp; steps</button>
       <button class="wac-btn-secondary" id="wacExport" type="button" disabled>Download calculation CSV</button>
      </div>
      <p class="wac-status" id="wacActionStatus" role="status"></p>
      <details class="wac-manual" id="wacManualCopy" hidden><summary>Copy text manually</summary><textarea id="wacCopyText" readonly aria-label="Calculation text"></textarea></details>
     </div>
-   </aside>
-
-   <!-- INPUT PANEL -->
-   <div class="calc-main-panel">
-    <div class="calculator-section">
-     <div class="section-header tool-head tool-head-row">
-      <div><h2 class="section-title">Values &amp; Weights</h2></div>
-      <button class="wac-btn-secondary" id="wacReset" type="button" style="width:auto;height:40px;font-size:14px;">Clear all</button>
-     </div>
-
-     <div class="wac-controls">
-      <div class="wac-field"><label for="wacPreset">Use case</label>
-       <select id="wacPreset"><option value="general">General weighted mean</option><option value="grades">Course grades</option><option value="gpa">GPA by credits</option><option value="price">Average purchase price</option><option value="frequency">Frequency table</option></select>
-      </div>
-      <div class="wac-field"><label for="wacScale">Weight format</label>
-       <select id="wacScale"><option value="relative">Relative / credits / quantity</option><option value="percent">Percentages (20 = 20%)</option><option value="fraction">Decimal proportions (0.2 = 20%)</option></select>
-      </div>
-     </div>
-     <p class="wac-help" id="wacUseHelp">Use one consistent weight scale. Weights can total any positive number.</p>
-
-     <div class="wac-table">
-      <div class="wac-head" aria-hidden="true"><span>Label <small>optional</small></span><span id="wacValueHead">Value</span><span id="wacWeightHead">Weight</span><span></span></div>
-      <div id="wacRows" role="list" aria-label="Value and weight rows"></div>
-     </div>
-     <p class="wac-error" id="wacFormError" role="status"></p>
-
-     <div class="wac-row-actions">
-      <button class="wac-add" id="wacAddRow" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add row</button>
-      <button class="wac-link-btn" id="wacExample" type="button">Try an example ↗</button>
-     </div>
-
-     <details class="wac-details" id="wacImportPanel">
-      <summary>Paste from Excel, Sheets, or CSV</summary>
-      <div class="wac-details-body">
-       <p class="wac-help" id="wacPasteHelp">Paste two columns: value and weight. An optional label can be the first column. A header row is allowed. Use tabs, commas, semicolons, colons, or spaces. Use a dot for decimals; quote comma-grouped numbers in CSV. Labels with spaces need tabs or CSV quotes. Import replaces the rows only if every line is valid.</p>
-       <label for="wacPasteData">Spreadsheet data</label>
-       <textarea id="wacPasteData" rows="5" aria-describedby="wacPasteHelp" placeholder="Value,Weight&#10;80,20&#10;90,30&#10;70,50"></textarea>
-       <button class="wac-btn-secondary" id="wacImport" type="button">Import rows</button>
-       <p class="wac-error" id="wacImportError" role="status"></p>
-      </div>
-     </details>
-    </div>
-   </div>
+   </form>
   </div>
 
   <!-- TARGET SCORE -->
@@ -423,13 +422,6 @@
    </div>
    <p class="wac-target-msg" id="wacTargetMessage" role="status">Enter a target average and the remaining weight.</p>
    <p class="wac-fine">The required value is rounded up to your selected decimal places so the displayed score meets the target. For course grades, use a minimum of 0 and a maximum of 100 unless your syllabus allows extra credit.</p>
-  </div>
-
-  <!-- CALCULATION STEPS -->
-  <div class="card target-card-standalone wac-steps">
-   <div class="tool-head"><h2 class="card-title">Calculation Steps</h2><span class="wac-badge" id="wacStepsStatus">Waiting for valid data</span></div>
-   <div id="wacBreakdown"><p class="wac-help">Your products, normalized weights and contributions will appear here.</p></div>
-   <p class="wac-fine">Weight share = weight ÷ total weight. Contribution = value × weight share. Displayed values are rounded, so rounded shares and contributions may not add up exactly to the displayed total.</p>
   </div>
 
   <!-- SEO CONTENT -->
@@ -454,7 +446,7 @@
     <div class="how-to-steps">
      <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Choose a Use Case and Weight Format</h3><p>Pick Course grades, GPA by credits, Average purchase price, Frequency table or General. Then choose how your weights are written: relative numbers such as credits, percentages (20 = 20%), or decimal proportions (0.2 = 20%).</p></div></div>
      <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Enter Values and Weights</h3><p>Type each value and its weight, with an optional label. You can also paste two columns from Excel, Google Sheets or a CSV file. The result updates as you type.</p></div></div>
-     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Read the Result and the Steps</h3><p>The weighted average, total weight, weighted sum and simple average appear in the result card. The calculation steps table shows each product, weight share and contribution.</p></div></div>
+     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Read the Result and the Steps</h3><p>The weighted average, total weight, weighted sum and simple average appear in the result box right below the Calculate button. Open Show calculation to see each product, weight share and contribution.</p></div></div>
      <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Find the Score You Need</h3><p>Open the target section, enter the average you want and the weight of the remaining item, and the calculator shows the minimum value you need to reach it.</p></div></div>
     </div>
    </div>
@@ -524,7 +516,7 @@
       </table>
      </div>
     </div>
-    <p>When weights are frequencies, the weighted average equals the ordinary mean of all the observations they represent. The simple average shown in the result card is the mean of the rows you entered, not of the expanded observations.</p>
+    <p>When weights are frequencies, the weighted average equals the ordinary mean of all the observations they represent. The simple average shown in the result box is the mean of the rows you entered, not of the expanded observations.</p>
    </div>
   </section>
 

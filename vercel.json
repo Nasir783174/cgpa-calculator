@@ -53,6 +53,16 @@
       "statusCode": 301
     },
     {
+      "source": "/ssc-result-calculator",
+      "destination": "/ssc-gpa-calculator",
+      "statusCode": 301
+    },
+    {
+      "source": "/ssc-calculator",
+      "destination": "/ssc-gpa-calculator",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

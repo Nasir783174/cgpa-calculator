@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cgpacalculator.dev/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://cgpacalculator.dev/cgpa-calculator</loc>
@@ -43,6 +43,10 @@
   <url>
     <loc>https://cgpacalculator.dev/weighted-average-calculator</loc>
     <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://cgpacalculator.dev/ssc-gpa-calculator</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://cgpacalculator.dev/hsc-result-calculator</loc>

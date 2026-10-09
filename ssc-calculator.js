@@ -1,47 +1,46 @@
 'use strict';
 /* SSC GPA Calculator (Bangladesh): engine + UI.
-   Engine is pure (no DOM) so it can be verified independently. */
+   The engine is pure (no DOM) so it can be tested on its own in Node. */
 
-const SSC_GRADE_BANDS = Object.freeze([
-  { minimum: 80, letter: 'A+', point: 5 },
-  { minimum: 70, letter: 'A', point: 4 },
-  { minimum: 60, letter: 'A-', point: 3.5 },
-  { minimum: 50, letter: 'B', point: 3 },
-  { minimum: 40, letter: 'C', point: 2 },
-  { minimum: 33, letter: 'D', point: 1 },
-  { minimum: 0, letter: 'F', point: 0 }
+/* ---------- Grading scale (all Bangladesh general education boards) ---------- */
+const SSC_BANDS = Object.freeze([
+  { min: 80, letter: 'A+', point: 5 },
+  { min: 70, letter: 'A', point: 4 },
+  { min: 60, letter: 'A-', point: 3.5 },
+  { min: 50, letter: 'B', point: 3 },
+  { min: 40, letter: 'C', point: 2 },
+  { min: 33, letter: 'D', point: 1 },
+  { min: 0, letter: 'F', point: 0 }
 ]);
 
-const SSC_MAXIMUMS = Object.freeze([50, 100, 200]);
-
+/* max: default full marks. maxChoices: only where sources disagree (ICT 50 vs 100). */
 const SSC_SUBJECTS = Object.freeze({
-  bangla: { name: 'Bangla', label: 'Bangla (1st + 2nd paper)', maximum: 200 },
-  english: { name: 'English', label: 'English (1st + 2nd paper)', maximum: 200 },
-  math: { name: 'General Mathematics', maximum: 100 },
-  religion: { name: 'Religion and Moral Education', maximum: 100 },
-  bgs: { name: 'Bangladesh and Global Studies', maximum: 100 },
-  ict: { name: 'ICT', maximum: 50 },
-  generalScience: { name: 'General Science', maximum: 100 },
-  physics: { name: 'Physics', maximum: 100 },
-  chemistry: { name: 'Chemistry', maximum: 100 },
-  biology: { name: 'Biology', maximum: 100 },
-  higherMath: { name: 'Higher Mathematics', maximum: 100 },
-  accounting: { name: 'Accounting', maximum: 100 },
-  finance: { name: 'Finance and Banking', maximum: 100 },
-  entrepreneurship: { name: 'Business Entrepreneurship', maximum: 100 },
-  geography: { name: 'Geography and Environment', maximum: 100 },
-  history: { name: 'History of Bangladesh and World Civilization', maximum: 100 },
-  civics: { name: 'Civics and Citizenship', maximum: 100 },
-  economics: { name: 'Economics', maximum: 100 },
-  agriculture: { name: 'Agriculture Studies', maximum: 100 },
-  homeScience: { name: 'Home Science', maximum: 100 }
+  bangla: { name: 'Bangla', hint: '1st + 2nd paper', max: 200 },
+  english: { name: 'English', hint: '1st + 2nd paper', max: 200 },
+  math: { name: 'General Mathematics', max: 100 },
+  religion: { name: 'Religion & Moral Education', max: 100 },
+  bgs: { name: 'Bangladesh & Global Studies', max: 100 },
+  ict: { name: 'ICT', max: 50, maxChoices: [50, 100] },
+  generalScience: { name: 'General Science', max: 100 },
+  physics: { name: 'Physics', max: 100 },
+  chemistry: { name: 'Chemistry', max: 100 },
+  biology: { name: 'Biology', max: 100 },
+  higherMath: { name: 'Higher Mathematics', max: 100 },
+  accounting: { name: 'Accounting', max: 100 },
+  finance: { name: 'Finance & Banking', max: 100 },
+  entrepreneurship: { name: 'Business Entrepreneurship', max: 100 },
+  geography: { name: 'Geography & Environment', max: 100 },
+  history: { name: 'History of Bangladesh & World Civilization', max: 100 },
+  civics: { name: 'Civics & Citizenship', max: 100 },
+  economics: { name: 'Economics', max: 100 },
+  agriculture: { name: 'Agriculture Studies', max: 100 },
+  homeScience: { name: 'Home Science', max: 100 }
 });
 
 const SSC_COMMON = ['bangla', 'english', 'math', 'religion', 'bgs', 'ict'];
-const SSC_HUMANITIES_CHOICES = ['geography', 'history', 'civics', 'economics'];
+const SSC_HUM_CHOICES = ['geography', 'history', 'civics', 'economics'];
 
-/* main: ordered rows. A row is a subject id (fixed) or { id, choices } (selectable).
-   optional: default fourth subject and the subjects it may be. */
+/* main: ordered rows. A row is a subject id (fixed) or { id, choices } (selectable). */
 const SSC_GROUPS = Object.freeze({
   science: {
     main: SSC_COMMON.concat(['physics', 'chemistry', { id: 'biology', choices: ['biology', 'higherMath'] }]),
@@ -54,369 +53,374 @@ const SSC_GROUPS = Object.freeze({
   humanities: {
     main: SSC_COMMON.concat([
       'generalScience',
-      { id: 'geography', choices: SSC_HUMANITIES_CHOICES },
-      { id: 'history', choices: SSC_HUMANITIES_CHOICES },
-      { id: 'civics', choices: SSC_HUMANITIES_CHOICES }
+      { id: 'geography', choices: SSC_HUM_CHOICES },
+      { id: 'history', choices: SSC_HUM_CHOICES },
+      { id: 'civics', choices: SSC_HUM_CHOICES }
     ]),
-    optional: { id: 'agriculture', choices: ['agriculture', 'homeScience'].concat(SSC_HUMANITIES_CHOICES) }
+    optional: { id: 'agriculture', choices: ['agriculture', 'homeScience'].concat(SSC_HUM_CHOICES) }
   }
 });
 
-function sscValidateMark(rawValue, maximum) {
-  maximum = maximum || 100;
-  const value = String(rawValue == null ? '' : rawValue).trim();
-  if (!value) return { valid: false, empty: true, message: 'Enter this subject\u2019s total marks.' };
-  if (!SSC_MAXIMUMS.includes(maximum)) return { valid: false, empty: false, message: 'Select a valid maximum.' };
-  if (!/^\d+$/.test(value)) {
-    return { valid: false, empty: false, message: 'Enter a whole-number mark between 0 and ' + maximum + '.' };
+/* ---------- Engine ---------- */
+function sscValidateMark(raw, max) {
+  const v = String(raw == null ? '' : raw).trim();
+  if (!v) return { valid: false, empty: true, message: '' };
+  if (!/^\d+$/.test(v)) return { valid: false, empty: false, message: 'Whole number only' };
+  const mark = Number(v);
+  if (mark > max) return { valid: false, empty: false, message: 'Max is ' + max };
+  return { valid: true, empty: false, mark: mark, message: '' };
+}
+/* Integer comparison (mark*100 >= min*max) so 79.5% can never round up to A+. */
+function sscGradeFromMarks(mark, max) {
+  if (!Number.isInteger(mark) || !Number.isInteger(max) || max <= 0 || mark < 0 || mark > max) return null;
+  return SSC_BANDS.find(b => mark * 100 >= b.min * max).letter;
+}
+function sscPoint(letter) {
+  const b = SSC_BANDS.find(x => x.letter === letter);
+  return b ? b.point : null;
+}
+function sscBonus(point) {
+  return typeof point === 'number' && point >= 0 && point <= 5 ? Math.max(0, point - 2) : null;
+}
+/* Round (numerator / n) to the nearest integer with exact integer maths (half rounds up). */
+function sscDivRound(numerator, n) {
+  const q = Math.floor(numerator / n);
+  const r = numerator - q * n;
+  return 2 * r >= n ? q + 1 : q;
+}
+/* mainLetters: array of letters for the main subjects (length must equal expectedMain).
+   fourthLetter: letter of the fourth subject, or null/undefined when there is none.
+   Returns hundredths so callers never touch floating point GPA values. */
+function sscCalculate(mainLetters, fourthLetter, expectedMain) {
+  if (!Array.isArray(mainLetters) || !Number.isInteger(expectedMain) || expectedMain < 1 || mainLetters.length !== expectedMain) return null;
+  const points = mainLetters.map(sscPoint);
+  if (points.some(p => p === null)) return null;
+  let bonus = 0;
+  if (fourthLetter) {
+    const fp = sscPoint(fourthLetter);
+    if (fp === null) return null;
+    bonus = sscBonus(fp);
   }
-  const mark = Number(value);
-  if (!Number.isFinite(mark) || mark < 0 || mark > maximum) {
-    return { valid: false, empty: false, message: 'Enter a mark between 0 and ' + maximum + '.' };
-  }
-  return { valid: true, empty: false, mark: mark, percentage: mark / maximum * 100, message: '' };
-}
-function sscCalculateGrade(percentage) {
-  if (!Number.isFinite(percentage) || percentage < 0 || percentage > 100) return null;
-  return SSC_GRADE_BANDS.find(b => percentage >= b.minimum).letter;
-}
-function sscCalculateGradePoint(letter) {
-  const band = SSC_GRADE_BANDS.find(b => b.letter === letter);
-  return band ? band.point : null;
-}
-function sscCalculateOptionalBonus(point) {
-  return typeof point === 'number' && Number.isFinite(point) && point >= 0 && point <= 5
-    ? Math.max(0, point - 2) : null;
-}
-function sscDetectFailures(results) {
-  return results.filter(r => r.letter === 'F').map(r => r.name);
-}
-/* options.expectedMain: number of main subjects required (9 Science, 10 Business/Humanities).
-   options.noOptional: true when the student has no fourth subject (bonus = 0). */
-function sscCalculateFinalGPA(mainResults, optionalPoint, options) {
-  options = options || {};
-  const n = options.expectedMain;
-  if (!Number.isInteger(n) || n < 1 || mainResults.length !== n || mainResults.some(r =>
-    !Number.isFinite(r.point) || r.point < 0 || r.point > 5)) return null;
-  const bonus = options.noOptional ? 0 : sscCalculateOptionalBonus(optionalPoint);
-  if (bonus === null) return null;
-  const failed = sscDetectFailures(mainResults);
-  const mainTotal = mainResults.reduce((s, r) => s + r.point, 0);
+  const n = expectedMain;
+  const failed = [];
+  mainLetters.forEach((l, i) => { if (l === 'F') failed.push(i); });
+  const mainTotal = points.reduce((s, p) => s + p, 0);
+  const totalHalves = Math.round((mainTotal + bonus) * 2);
+  const mainHalves = Math.round(mainTotal * 2);
   return {
-    count: n, mainTotal: mainTotal, mainGPA: mainTotal / n, bonus: bonus, effectiveTotal: mainTotal + bonus,
-    failed: failed, passed: failed.length === 0,
-    finalGPA: failed.length ? null : Math.min(5, (mainTotal + bonus) / n)
+    n: n,
+    mainTotal: mainTotal,
+    bonus: bonus,
+    total: totalHalves / 2,
+    mainGpaHundredths: sscDivRound(mainHalves * 50, n),
+    failedIndexes: failed,
+    passed: failed.length === 0,
+    gpaHundredths: failed.length ? null : Math.min(500, sscDivRound(totalHalves * 50, n)),
+    capped: failed.length === 0 && totalHalves * 50 > 500 * n
   };
 }
 const SSCEngine = Object.freeze({
-  validateMark: sscValidateMark, calculateGrade: sscCalculateGrade, calculateGradePoint: sscCalculateGradePoint,
-  calculateOptionalBonus: sscCalculateOptionalBonus, detectFailures: sscDetectFailures,
-  calculateFinalGPA: sscCalculateFinalGPA, GROUPS: SSC_GROUPS, SUBJECTS: SSC_SUBJECTS
+  BANDS: SSC_BANDS, GROUPS: SSC_GROUPS, SUBJECTS: SSC_SUBJECTS,
+  validateMark: sscValidateMark, gradeFromMarks: sscGradeFromMarks, point: sscPoint,
+  bonus: sscBonus, calculate: sscCalculate
 });
 if (typeof module !== 'undefined' && module.exports) module.exports = SSCEngine;
 
+/* ---------- UI ---------- */
 function sscInit() {
   const form = document.getElementById('sscForm');
-  const rowsContainer = document.getElementById('sscRows');
-  const resetButton = document.getElementById('sscReset');
-  const exampleButton = document.getElementById('sscExample');
-  const noneBox = document.getElementById('sscNoFourth');
-  if (!form || !rowsContainer || !resetButton || !exampleButton || !noneBox) return;
+  const mainBox = document.getElementById('sscMainRows');
+  const fourthBox = document.getElementById('sscFourthRows');
+  const resultBox = document.getElementById('sscResult');
+  const msgEl = document.getElementById('sscFormMessage');
+  const resetBtn = document.getElementById('sscReset');
+  const countEl = document.getElementById('sscMainCount');
+  if (!form || !mainBox || !fourthBox || !resultBox || !msgEl || !resetBtn) return;
 
-  let currentGroup = 'science';
+  let group = 'science';
+  let mode = 'grade';
   let rows = [];
   let mainCount = 9;
-  let submitted = false;
-  let announceTimer;
-  const fmt = n => n.toFixed(2);
-  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+
   const mk = (tag, cls, text) => {
     const el = document.createElement(tag);
     if (cls) el.className = cls;
     if (text !== undefined) el.textContent = text;
     return el;
   };
-  const subjectLabel = id => SSC_SUBJECTS[id].label || SSC_SUBJECTS[id].name;
+  const f2 = hundredths => (hundredths / 100).toFixed(2);
+  const gp2 = n => n.toFixed(2);
+  const BN = { '\u09E6': '0', '\u09E7': '1', '\u09E8': '2', '\u09E9': '3', '\u09EA': '4', '\u09EB': '5', '\u09EC': '6', '\u09ED': '7', '\u09EE': '8', '\u09EF': '9' };
+  const cleanDigits = s => s.replace(/[\u09E6-\u09EF]/g, d => BN[d]).replace(/\D/g, '');
+
+  function invalidate() {
+    resultBox.hidden = true;
+    msgEl.textContent = '';
+    rows.forEach(r => { r.el.classList.remove('is-error'); r.err.textContent = ''; });
+  }
+
+  function currentMax(row) { return Number(row.maxEl.value || row.maxEl.dataset.value); }
+
+  function refreshChip(row) {
+    const v = sscValidateMark(row.input.value, currentMax(row));
+    const letter = v.valid ? sscGradeFromMarks(v.mark, currentMax(row)) : null;
+    row.chip.textContent = letter || '\u2014';
+    row.chip.dataset.grade = letter || '';
+    row.err.textContent = !v.valid && !v.empty ? v.message : '';
+    row.input.setAttribute('aria-invalid', String(!v.valid && !v.empty));
+  }
+
+  function setMaxFor(row) {
+    const s = SSC_SUBJECTS[row.subjectId];
+    row.maxWrap.replaceChildren();
+    if (s.maxChoices) {
+      const sel = mk('select', 'ssc-max');
+      s.maxChoices.forEach(m => { const o = mk('option', '', '/ ' + m); o.value = String(m); sel.append(o); });
+      sel.value = String(s.max);
+      sel.setAttribute('aria-label', s.name + ' full marks');
+      sel.addEventListener('change', () => { invalidate(); refreshChip(row); });
+      row.maxEl = sel;
+    } else {
+      const span = mk('span', 'ssc-max-text', '/ ' + s.max);
+      span.dataset.value = String(s.max);
+      row.maxEl = span;
+    }
+    row.maxWrap.append(row.maxEl);
+  }
 
   function clearRow(row) {
+    row.grade.value = '';
     row.input.value = '';
-    row.component.checked = false;
-    row.touched = false;
-    row.maximum.value = String(SSC_SUBJECTS[row.subjectId].maximum);
+    setMaxFor(row);
+    refreshChip(row);
+    row.input.setAttribute('aria-invalid', 'false');
+    row.err.textContent = '';
   }
+
+  function labelRow(row) {
+    const s = SSC_SUBJECTS[row.subjectId];
+    row.grade.setAttribute('aria-label', s.name + ' grade');
+    row.input.setAttribute('aria-label', s.name + ' total marks');
+    if (row.hintEl) row.hintEl.textContent = s.hint || '';
+  }
+
   function changeSubject(row, nextId) {
     if (!row.choices || !row.choices.includes(nextId)) return;
-    const previousId = row.subjectId;
+    const prevId = row.subjectId;
     const other = rows.find(c => c !== row && c.subjectId === nextId);
     if (other) {
       let replacement = null;
-      if (other.choices && other.choices.includes(previousId)) replacement = previousId;
+      if (other.choices && other.choices.includes(prevId)) replacement = prevId;
       else if (other.choices) {
         replacement = other.choices.find(id => id !== nextId && !rows.some(c => c !== other && c !== row && c.subjectId === id));
       }
-      if (!replacement) { row.select.value = previousId; return; }
+      if (!replacement) { row.select.value = prevId; return; }
       other.subjectId = replacement;
       other.select.value = replacement;
       clearRow(other);
+      labelRow(other);
     }
     row.subjectId = nextId;
     row.select.value = nextId;
     clearRow(row);
-    submitted = false;
-    renderResults();
-    setText('sscFormMessage', 'Subject changed. Enter marks again for the changed subjects.');
+    labelRow(row);
+    invalidate();
   }
+
   function createRow(spec, index, optional) {
     const subjectId = typeof spec === 'string' ? spec : spec.id;
     const choices = typeof spec === 'string' ? null : spec.choices;
-    const el = mk('div', 'ssc-row' + (optional ? ' is-optional' : ''));
-    const subjectCell = mk('div', 'ssc-subject');
-    const label = mk('label', 'ssc-subject-name');
-    const meta = mk('span', 'ssc-subject-meta', optional ? 'Fourth / optional subject' : 'Main subject');
-    const row = { subjectId: subjectId, choices: choices, optional: optional, touched: false };
-    if (!choices) {
-      label.htmlFor = 'sscMarks' + index;
-      label.textContent = subjectLabel(subjectId);
-      row.fixedLabel = label;
-      subjectCell.append(label);
-    } else {
-      label.classList.add('sr-only');
-      label.textContent = optional ? 'Choose your fourth subject' : 'Choose subject ' + (index + 1);
-      label.htmlFor = 'sscSubject' + index;
-      row.select = mk('select', 'ssc-select');
+    const row = { subjectId: subjectId, choices: choices, optional: optional };
+    const el = mk('div', 'ssc-row');
+    row.el = el;
+
+    const nameCell = mk('div', 'ssc-name-cell');
+    if (choices) {
+      row.select = mk('select', 'ssc-subject-select');
       row.select.id = 'sscSubject' + index;
-      choices.forEach(id => {
-        const o = mk('option', '', SSC_SUBJECTS[id].name);
-        o.value = id;
-        row.select.append(o);
-      });
+      row.select.setAttribute('aria-label', optional ? 'Fourth subject' : 'Choose subject ' + (index + 1));
+      choices.forEach(id => { const o = mk('option', '', SSC_SUBJECTS[id].name); o.value = id; row.select.append(o); });
       row.select.value = subjectId;
       row.select.addEventListener('change', () => changeSubject(row, row.select.value));
-      subjectCell.append(label, row.select);
+      nameCell.append(row.select);
+    } else {
+      nameCell.append(mk('span', 'ssc-name', SSC_SUBJECTS[subjectId].name));
     }
-    subjectCell.append(meta);
+    row.hintEl = mk('span', 'ssc-hint');
+    nameCell.append(row.hintEl);
 
-    const marksCell = mk('div', 'ssc-marks');
-    const controls = mk('div', 'ssc-marks-controls');
+    const field = mk('div', 'ssc-field');
+
+    row.grade = mk('select', 'ssc-grade');
+    row.grade.id = 'sscGrade' + index;
+    const ph = mk('option', '', optional ? 'None' : 'Grade');
+    ph.value = '';
+    row.grade.append(ph);
+    SSC_BANDS.forEach(b => { const o = mk('option', '', b.letter); o.value = b.letter; row.grade.append(o); });
+    row.grade.addEventListener('change', invalidate);
+
+    const marks = mk('div', 'ssc-marks');
     row.input = mk('input', 'ssc-input');
     row.input.type = 'text';
     row.input.inputMode = 'numeric';
     row.input.autocomplete = 'off';
+    row.input.maxLength = 3;
     row.input.id = 'sscMarks' + index;
-    row.input.placeholder = '\u2014';
-    row.input.setAttribute('aria-describedby', 'sscError' + index);
-    row.maximum = mk('select', 'ssc-max');
-    row.maximum.id = 'sscMax' + index;
-    SSC_MAXIMUMS.forEach(m => {
-      const o = mk('option', '', '/ ' + m);
-      o.value = String(m);
-      row.maximum.append(o);
+    row.input.placeholder = optional ? 'Optional' : 'Marks';
+    row.maxWrap = mk('span', 'ssc-max-wrap');
+    row.chip = mk('span', 'ssc-chip', '\u2014');
+    marks.append(row.input, row.maxWrap, row.chip);
+
+    row.err = mk('p', 'ssc-err');
+    row.err.id = 'sscErr' + index;
+    row.err.setAttribute('role', 'alert');
+    row.input.setAttribute('aria-describedby', row.err.id);
+
+    field.append(row.grade, marks);
+    el.append(nameCell, field, row.err);
+
+    setMaxFor(row);
+    labelRow(row);
+    row.input.addEventListener('input', () => {
+      const cleaned = cleanDigits(row.input.value);
+      if (cleaned !== row.input.value) row.input.value = cleaned;
+      el.classList.remove('is-error');
+      resultBox.hidden = true;
+      msgEl.textContent = '';
+      refreshChip(row);
     });
-    row.maximum.value = String(SSC_SUBJECTS[subjectId].maximum);
-    row.error = mk('p', 'ssc-row-error');
-    row.error.id = 'sscError' + index;
-    controls.append(row.input, row.maximum);
-    marksCell.append(controls, row.error);
-
-    const gradeCell = mk('div', 'ssc-grade');
-    row.badge = mk('span', 'ssc-badge', '\u2014');
-    row.point = mk('span', 'ssc-gp', '\u2014');
-    gradeCell.append(row.badge, row.point);
-
-    const compLabel = mk('label', 'ssc-component');
-    row.component = mk('input');
-    row.component.type = 'checkbox';
-    compLabel.append(row.component, mk('span', '', 'Failed a required paper or component'));
-
-    el.append(subjectCell, marksCell, gradeCell, compLabel);
-    row.el = el;
-    row.input.addEventListener('input', () => { row.touched = true; renderResults(); });
-    row.input.addEventListener('blur', () => { row.touched = true; renderResults(); });
-    row.maximum.addEventListener('change', renderResults);
-    row.component.addEventListener('change', renderResults);
-    rowsContainer.append(el);
     return row;
   }
-  function switchGroup(group) {
-    if (!SSC_GROUPS[group]) return;
-    currentGroup = group;
-    submitted = false;
-    noneBox.checked = false;
-    rowsContainer.replaceChildren();
+
+  function buildGroup(next) {
+    group = next;
     const cfg = SSC_GROUPS[group];
     mainCount = cfg.main.length;
+    mainBox.replaceChildren();
+    fourthBox.replaceChildren();
     rows = cfg.main.map((spec, i) => createRow(spec, i, false));
     rows.push(createRow(cfg.optional, mainCount, true));
-    document.getElementById('sscTag').textContent = mainCount + ' main + 1 fourth subject';
-    renderResults();
-    setText('sscFormMessage', '');
+    rows.slice(0, mainCount).forEach(r => mainBox.append(r.el));
+    fourthBox.append(rows[mainCount].el);
+    if (countEl) countEl.textContent = String(mainCount);
+    invalidate();
   }
+
+  /* Read one row into { name, letter, blank, error } for the active input mode. */
   function readRow(row) {
     const name = SSC_SUBJECTS[row.subjectId].name;
-    const maximum = Number(row.maximum.value);
-    const skipped = row.optional && noneBox.checked;
-    [row.input, row.maximum, row.component].forEach(c => { c.disabled = skipped; });
-    if (row.select) row.select.disabled = skipped;
-    row.el.classList.toggle('is-skipped', skipped);
-    row.input.setAttribute('aria-label', name + ' total marks, out of ' + maximum + (row.optional ? ', fourth subject' : ''));
-    row.maximum.setAttribute('aria-label', name + ' maximum marks');
-    row.component.setAttribute('aria-label', name + ': failed a required paper or component');
-    if (skipped) {
-      row.input.setAttribute('aria-invalid', 'false');
-      row.error.textContent = '';
-      row.badge.textContent = '\u2014';
-      row.badge.dataset.grade = '';
-      row.point.textContent = '\u2014';
-      return { name: name, valid: false, empty: true, skipped: true, letter: null, point: null, optional: true };
+    if (mode === 'grade') {
+      const letter = row.grade.value || null;
+      return { name: name, letter: letter, blank: !letter, error: false };
     }
-    const v = sscValidateMark(row.input.value, maximum);
-    const invalid = !v.valid && (submitted || row.touched || !v.empty);
-    row.input.setAttribute('aria-invalid', String(invalid));
-    row.error.textContent = invalid ? v.message : '';
-    const letter = row.component.checked ? 'F' : v.valid ? sscCalculateGrade(v.percentage) : null;
-    const point = letter === null ? null : sscCalculateGradePoint(letter);
-    row.badge.textContent = letter === null ? '\u2014' : letter;
-    row.badge.dataset.grade = letter === null ? '' : letter;
-    row.point.textContent = point === null ? '\u2014' : fmt(point);
-    return Object.assign({ name: name }, v, { letter: letter, point: point, optional: row.optional, skipped: false });
+    const max = currentMax(row);
+    const v = sscValidateMark(row.input.value, max);
+    if (v.empty) return { name: name, letter: null, blank: true, error: false };
+    if (!v.valid) return { name: name, letter: null, blank: false, error: true };
+    return { name: name, letter: sscGradeFromMarks(v.mark, max), blank: false, error: false };
   }
-  function renderBreakdown(mainResults, optional, noOptional, calc) {
-    const target = document.getElementById('sscBreakdown');
-    if (!target) return;
-    target.replaceChildren();
-    if (!calc) {
-      target.append(mk('p', 'ssc-muted', 'Complete all subjects to see the full calculation.'));
+
+  function showResult(res, main, fourth) {
+    resultBox.replaceChildren();
+    const failedNames = res.failedIndexes.map(i => main[i].name);
+    const head = mk('div', 'ssc-res-head');
+    const big = mk('div', 'ssc-res-big');
+    big.append(mk('span', 'ssc-res-gpa', res.passed ? f2(res.gpaHundredths) : '\u2014'), mk('span', 'ssc-res-max', '/ 5.00'));
+    const pill = mk('span', 'ssc-pill', res.passed ? 'Pass' : 'Fail');
+    pill.dataset.state = res.passed ? 'pass' : 'fail';
+    head.append(big, pill);
+    resultBox.append(head);
+
+    if (!res.passed) {
+      resultBox.append(mk('p', 'ssc-res-note', 'Failed: ' + failedNames.join(', ') + '. No GPA is given when a main subject fails.'));
+    }
+
+    const stats = mk('div', 'ssc-stats');
+    const stat = (label, value) => {
+      const b = mk('div', 'ssc-stat');
+      b.append(mk('span', 'ssc-stat-val', value), mk('span', 'ssc-stat-label', label));
+      return b;
+    };
+    stats.append(
+      stat('Main subjects GPA', f2(res.mainGpaHundredths)),
+      stat('4th subject bonus', fourth.letter ? '+' + gp2(res.bonus) : 'None'),
+      stat('Total points', gp2(res.total))
+    );
+    resultBox.append(stats);
+
+    const det = mk('details', 'ssc-details');
+    det.append(mk('summary', '', 'Show calculation'));
+    const line = (a, b) => {
+      const p = mk('p', 'ssc-line');
+      p.append(mk('strong', '', a + ': '), document.createTextNode(b));
+      det.append(p);
+    };
+    const pts = main.map(r => gp2(sscPoint(r.letter)));
+    line('Main points', pts.join(' + ') + ' = ' + gp2(res.mainTotal));
+    line('4th subject', fourth.letter
+      ? fourth.name + ' ' + fourth.letter + ': max(0, ' + gp2(sscPoint(fourth.letter)) + ' \u2212 2.00) = ' + gp2(res.bonus)
+      : 'not entered, bonus 0.00');
+    line('Total', gp2(res.mainTotal) + ' + ' + gp2(res.bonus) + ' = ' + gp2(res.total));
+    if (res.passed) {
+      line('GPA', gp2(res.total) + ' \u00F7 ' + res.n + ' = ' + (res.total / res.n).toFixed(4) + (res.capped ? ', capped at 5.00' : '') + ' \u2192 ' + f2(res.gpaHundredths));
+    }
+    resultBox.append(det);
+
+    const note = 'Estimate only. Your official result is the one published by your education board.' +
+      (mode === 'marks' ? ' Marks mode cannot see separate MCQ, written or practical pass marks; if your marksheet shows F in any part, choose Grade mode and select F.' : '');
+    resultBox.append(mk('p', 'ssc-fine', note));
+    resultBox.hidden = false;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (resultBox.scrollIntoView) resultBox.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+  }
+
+  function calculate() {
+    invalidate();
+    const read = rows.map(readRow);
+    const main = read.slice(0, mainCount);
+    const fourth = read[mainCount];
+    const problems = [];
+    main.forEach((r, i) => {
+      if (r.blank || r.error) { problems.push(r.name); rows[i].el.classList.add('is-error'); }
+    });
+    if (fourth.error) { problems.push(fourth.name + ' (4th)'); rows[mainCount].el.classList.add('is-error'); }
+    if (problems.length) {
+      msgEl.textContent = (mode === 'grade' ? 'Select a grade for: ' : 'Enter valid marks for: ') + problems.join(', ') + '.';
+      const first = rows.find(r => r.el.classList.contains('is-error'));
+      if (first) (mode === 'grade' ? first.grade : first.input).focus();
       return;
     }
-    const lines = [
-      ['Main GP', mainResults.map(r => fmt(r.point)).join(' + ') + ' = ' + fmt(calc.mainTotal)],
-      [noOptional ? 'Fourth subject' : 'Fourth subject bonus',
-        noOptional ? 'None selected, bonus 0.00' : 'max(0, ' + fmt(optional.point) + ' \u2212 2.00) = ' + fmt(calc.bonus)],
-      ['Effective total', fmt(calc.mainTotal) + ' + ' + fmt(calc.bonus) + ' = ' + fmt(calc.effectiveTotal)]
-    ];
-    if (calc.passed) {
-      lines.push(['Final GPA', 'min(5.00, ' + fmt(calc.effectiveTotal) + ' \u00f7 ' + calc.count + ') = ' + fmt(calc.finalGPA)]);
-    } else {
-      lines.push(['Final GPA', 'Withheld: a main subject failed. Fourth subject points cannot override a failure.']);
-    }
-    lines.forEach(l => {
-      const p = mk('p', 'ssc-line');
-      p.append(mk('strong', '', l[0] + ': '), document.createTextNode(l[1]));
-      target.append(p);
-    });
-    if (calc.passed && calc.effectiveTotal > 5 * calc.count) {
-      target.append(mk('p', 'ssc-muted', 'The uncapped average exceeds 5.00, so the maximum GPA applies.'));
-    }
+    const res = sscCalculate(main.map(r => r.letter), fourth.letter, mainCount);
+    if (!res) { msgEl.textContent = 'Something went wrong. Please check your entries.'; return; }
+    showResult(res, main, fourth);
   }
-  function renderResults() {
-    const results = rows.map(readRow);
-    const mainResults = results.slice(0, mainCount);
-    const optional = results[mainCount];
-    const noOptional = optional.skipped;
-    const counted = results.filter(r => !r.skipped);
-    const total = counted.length;
-    const entered = counted.filter(r => r.valid).length;
-    const mainComplete = mainResults.every(r => r.valid);
-    const optionalReady = noOptional || optional.valid;
-    const complete = mainComplete && optionalReady;
-    const invalid = counted.some(r => !r.valid && !r.empty);
-    const failed = sscDetectFailures(mainResults);
-    const calc = complete
-      ? sscCalculateFinalGPA(mainResults, noOptional ? null : optional.point, { expectedMain: mainCount, noOptional: noOptional })
-      : null;
-    const progress = entered + ' / ' + total;
 
-    setText('sscProgress', progress);
-    setText('sscStickyProgress', progress);
-    setText('sscMainGpa', mainComplete
-      ? fmt(mainResults.reduce((s, r) => s + r.point, 0) / mainCount) + (failed.length ? ' (failed)' : '') : '\u2014');
-    setText('sscBonus', noOptional ? 'None'
-      : optional.point === null ? '\u2014' : '+' + fmt(sscCalculateOptionalBonus(optional.point)));
+  function setMode(next) {
+    if (next === mode) return;
+    if (next === 'grade') {
+      // Carry valid marks over so nothing the user typed is lost.
+      rows.forEach(r => {
+        const v = sscValidateMark(r.input.value, currentMax(r));
+        if (v.valid) r.grade.value = sscGradeFromMarks(v.mark, currentMax(r));
+      });
+    }
+    mode = next;
+    form.dataset.mode = mode;
+    rows.forEach(refreshChip);
+    invalidate();
+  }
 
-    let state = 'empty', status = 'Awaiting marks';
-    let message = 'Enter marks for all main subjects to calculate your final GPA. Enter the fourth subject too to include its bonus.';
-    if (failed.length) {
-      state = 'fail'; status = 'Overall result: Fail';
-      message = 'Failed subject' + (failed.length > 1 ? 's' : '') + ': ' + failed.join(', ') + '. No passing GPA can be reported.';
-    } else if (invalid) {
-      state = 'invalid'; status = 'Check your marks';
-      message = 'Correct the highlighted marks before calculating your final GPA.';
-    } else if (calc && calc.passed) {
-      state = 'pass'; status = 'Overall result: Pass (estimate)';
-      message = noOptional
-        ? 'All ' + mainCount + ' main subjects pass under the rules entered here. No fourth subject bonus is included.'
-        : 'All ' + mainCount + ' main subjects pass under the rules entered here. Your fourth subject bonus is included.';
-    } else if (mainComplete) {
-      status = 'Fourth subject needed';
-      message = 'Your main subjects are complete. Enter the fourth subject marks, or tick that you have no fourth subject.';
-    }
-    const gpaText = calc && calc.passed ? fmt(calc.finalGPA) : '\u2014';
-    setText('sscGpa', gpaText);
-    setText('sscStickyGpa', gpaText);
-    setText('sscStatus', status);
-    setText('sscStickyStatus', state === 'pass' ? 'Pass' : state === 'fail' ? 'Fail' : '\u2014');
-    const statusEl = document.getElementById('sscStatus');
-    if (statusEl) statusEl.dataset.state = state;
-    setText('sscMessage', message);
-    renderBreakdown(mainResults, optional, noOptional, calc);
-    clearTimeout(announceTimer);
-    announceTimer = setTimeout(() => {
-      setText('sscAnnounce', status + '. ' + (calc && calc.passed ? 'Final GPA ' + fmt(calc.finalGPA) + '. ' : '') + message);
-    }, 350);
-    setText('sscFormMessage', '');
-    return counted;
-  }
-  function resetCalculator() {
-    const initial = form.querySelector('input[name="sscGroup"][value="science"]');
-    if (initial) initial.checked = true;
-    switchGroup('science');
-    setText('sscFormMessage', 'Calculator reset. All marks have been cleared.');
-  }
-  function loadExample() {
-    // Three A grades and the rest A+ in the main subjects: (5N - 3) points. A+ fourth subject adds 3 = 5N, so GPA 5.00.
-    noneBox.checked = false;
-    rows.forEach((row, i) => {
-      const pct = row.optional ? 80 : (i < 3 ? 70 : 80);
-      row.maximum.value = String(SSC_SUBJECTS[row.subjectId].maximum);
-      row.input.value = String(pct / 100 * Number(row.maximum.value));
-      row.component.checked = false;
-      row.touched = true;
-    });
-    submitted = false;
-    renderResults();
-    setText('sscFormMessage', 'Example loaded: ' + (5 * mainCount - 3) + ' main grade points + 3 bonus = GPA 5.00.');
-  }
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    submitted = true;
-    const counted = renderResults();
-    const bad = counted.filter(r => !r.valid);
-    if (bad.length) {
-      setText('sscFormMessage', 'Check marks for: ' + bad.map(r => r.name).join(', ') + '.');
-      const idx = rows.findIndex(r => !(r.optional && noneBox.checked) && !sscValidateMark(r.input.value, Number(r.maximum.value)).valid);
-      if (idx >= 0) rows[idx].input.focus();
-    } else {
-      setText('sscFormMessage', 'Calculation updated. See your result and breakdown.');
-    }
+  form.addEventListener('submit', e => { e.preventDefault(); calculate(); });
+  form.querySelectorAll('input[name="sscGroup"]').forEach(i => {
+    i.addEventListener('change', () => { if (i.checked) buildGroup(i.value); });
   });
-  form.querySelectorAll('input[name="sscGroup"]').forEach(input => {
-    input.addEventListener('change', () => { if (input.checked) switchGroup(input.value); });
+  form.querySelectorAll('input[name="sscMode"]').forEach(i => {
+    i.addEventListener('change', () => { if (i.checked) setMode(i.value); });
   });
-  noneBox.addEventListener('change', () => { submitted = false; renderResults(); });
-  resetButton.addEventListener('click', resetCalculator);
-  exampleButton.addEventListener('click', loadExample);
-  switchGroup(currentGroup);
+  resetBtn.addEventListener('click', () => { buildGroup(group); });
 
-  // Sticky live-result bar: shown while the calculator is on screen but the result card is not.
-  const bar = document.getElementById('sscStickyBar');
-  const card = document.getElementById('sscResultCard');
-  const wrap = document.getElementById('sscCalc');
-  if (bar && card && wrap && 'IntersectionObserver' in window) {
-    const seen = { card: true, calc: false };
-    const update = () => bar.classList.toggle('visible', seen.calc && !seen.card);
-    new IntersectionObserver(e => { seen.card = e[0].isIntersecting; update(); }).observe(card);
-    new IntersectionObserver(e => { seen.calc = e[0].isIntersecting; update(); }).observe(wrap);
-  }
+  form.dataset.mode = mode;
+  buildGroup(group);
 }
 if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sscInit);

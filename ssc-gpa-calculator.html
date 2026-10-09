@@ -24,9 +24,9 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" media="print" onload="this.media='all'" />
  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" /></noscript>
   <link rel="stylesheet" href="style.css?v=20261008b" />
- <link rel="stylesheet" href="ssc-calculator.css?v=20261009a" />
+ <link rel="stylesheet" href="ssc-calculator.css?v=20261009b" />
  <script defer src="nav.js?v=20261008b"></script>
- <script defer src="ssc-calculator.js?v=20261009a"></script>
+ <script defer src="ssc-calculator.js?v=20261009b"></script>
  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-31G4QMCRXB',{send_page_view:false});window.addEventListener('load',function(){gtag('event','page_view');});</script>
  <script defer>window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wlnn53n6p8");});</script>
@@ -109,7 +109,7 @@
    "url": "https://cgpacalculator.dev/ssc-gpa-calculator",
    "applicationCategory": "EducationalApplication",
    "operatingSystem": "Web",
-   "description": "Free SSC GPA calculator for Bangladesh. Calculate SSC GPA from subject marks with grades, grade points, the fourth subject bonus, pass or fail status and a step-by-step breakdown.",
+   "description": "Free SSC GPA calculator for Bangladesh. Calculate SSC GPA from subject grades or marks with grade points, grade points, the fourth subject bonus, pass or fail status and a step-by-step breakdown.",
    "offers": {
     "@type": "Offer",
     "price": "0",
@@ -120,8 +120,8 @@
     "SSC GPA on the 5.00 scale",
     "Science, Business Studies and Humanities groups",
     "Fourth subject bonus calculated as GP above 2.00",
-    "Subject grades and grade points from total marks",
-    "Failed paper or component override",
+    "Enter grades or marks for every subject",
+    "Failed main subject detection",
     "Step-by-step calculation breakdown"
    ]
   },
@@ -158,26 +158,26 @@
     {
      "@type": "HowToStep",
      "position": 2,
-     "name": "Enter Total Marks for Each Subject",
-     "text": "Type the combined total for each subject and keep the maximum shown on your marksheet: 200 for Bangla and English (both papers together), 50 for ICT and 100 for most other subjects."
+     "name": "Choose Grade or Marks",
+     "text": "Choose Grade to pick each subject's letter grade straight from your marksheet, or Marks to type each subject's total. Marks are out of 200 for Bangla and English (both papers together), 50 for ICT and 100 for most other subjects."
     },
     {
      "@type": "HowToStep",
      "position": 3,
      "name": "Set Your Fourth Subject",
-     "text": "Pick your fourth subject and enter its marks, or tick the box if you do not have one. Only grade points above 2.00 count as bonus."
+     "text": "Pick your fourth subject and enter its grade or marks. Leave it as None if you do not have one. Only grade points above 2.00 count as bonus."
     },
     {
      "@type": "HowToStep",
      "position": 4,
-     "name": "Mark Any Failed Component",
-     "text": "If your marksheet shows a failed paper, MCQ, theory or practical component, tick the failure box for that subject. Totals alone cannot show this."
+     "name": "Use Grade Mode for Failed Parts",
+     "text": "Marks mode cannot see separate paper, MCQ, written or practical pass marks. If your marksheet shows F in any part, switch to Grade and select F for that subject."
     },
     {
      "@type": "HowToStep",
      "position": 5,
-     "name": "Read Your GPA and Breakdown",
-     "text": "Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result card, with every calculation step below it."
+     "name": "Press Calculate GPA",
+     "text": "Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in a result box. Open Show calculation to see every step."
     }
    ]
   },
@@ -254,7 +254,7 @@
      "name": "Can I calculate SSC GPA without a fourth subject?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Tick the option for no fourth subject and the calculator uses the main subjects only, with a bonus of 0.00."
+      "text": "Yes. Leave the fourth subject as None and the calculator uses the main subjects only, with a bonus of 0.00."
      }
     },
     {
@@ -330,17 +330,6 @@
  </header>
 
 
- <!-- STICKY LIVE-RESULT BAR -->
- <div class="sticky-bar" id="sscStickyBar">
-  <div class="sticky-bar-inner">
-   <div class="sticky-item"><span class="sticky-label">SSC GPA</span><span class="sticky-val sticky-grade" id="sscStickyGpa">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Result</span><span class="sticky-val" id="sscStickyStatus">—</span></div>
-   <div class="sticky-divider"></div>
-   <div class="sticky-item"><span class="sticky-label">Subjects</span><span class="sticky-val" id="sscStickyProgress">0 / 10</span></div>
-  </div>
- </div>
-
  <!-- MAIN CONTENT -->
  <main class="grade-calc-wrap" id="calculator">
 
@@ -351,68 +340,40 @@
   </nav>
 
   <h1>SSC GPA Calculator</h1>
-  <p class="page-intro">Free SSC GPA calculator for Bangladesh. Enter your subject marks to get your SSC GPA on the 5.00 scale, the grade for each subject, your fourth subject bonus and your pass or fail status, with every step of the calculation shown.</p>
+  <p class="page-intro">Free SSC GPA calculator for Bangladesh. Pick a grade or enter marks for each subject, add your fourth subject, and get your SSC GPA on the 5.00 scale with your pass or fail status.</p>
 
   <noscript><p class="tool-error">Enable JavaScript to use this calculator. The grading guide, formula and FAQ below are available without it.</p></noscript>
 
-  <div class="calc-layout" id="sscCalc">
-
-   <!-- RESULT (left column, sticky on desktop) -->
-   <aside class="calc-sidebar" aria-labelledby="sscResultHeading">
-    <div class="card result-card ssc-result" id="sscResultCard">
-     <div class="tool-head"><h2 class="card-title" id="sscResultHeading">Your SSC GPA</h2></div>
-     <div class="cgpa-display">
-      <div class="ssc-big"><output id="sscGpa" aria-live="polite" aria-atomic="true">—</output><span class="ssc-max-label">/ 5.00</span></div>
-      <div class="ssc-status-wrap"><span class="ssc-status" id="sscStatus" data-state="empty">Awaiting marks</span></div>
-     </div>
-     <p class="ssc-message" id="sscMessage">Enter marks for all main subjects to calculate your final GPA. Enter the fourth subject too to include its bonus.</p>
-     <div class="stat-row">
-      <div class="stat-box"><span class="stat-label">Main subject GPA</span><span class="stat-val" id="sscMainGpa">—</span></div>
-      <div class="stat-box"><span class="stat-label">Fourth subject bonus</span><span class="stat-val" id="sscBonus">—</span></div>
-      <div class="stat-box"><span class="stat-label">Subjects entered</span><span class="stat-val" id="sscProgress">0 / 10</span></div>
-     </div>
-     <div class="ssc-breakdown">
-      <h3>How your GPA adds up</h3>
-      <div id="sscBreakdown"><p class="ssc-muted">Your grade points and calculation will appear here as you enter marks.</p></div>
-     </div>
-     <p class="ssc-fine">This is an estimate based on the grading and fourth-subject rules explained on this page. For your official result, always rely on the result published by your education board.</p>
-     <p class="ssc-fine">Totals alone cannot verify separate paper, theory, MCQ or practical pass requirements. If your marksheet shows a failed required component, tick that subject&#8217;s failure box.</p>
-     <p id="sscAnnounce" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-    </div>
-   </aside>
-
-   <!-- INPUT PANEL -->
-   <div class="calc-main-panel">
-    <form class="calculator-section" id="sscForm" novalidate>
-     <div class="section-header tool-head tool-head-row">
-      <div><h2 class="section-title">Enter Your Marks</h2></div>
-     </div>
-
-     <div class="ssc-block-head"><h3 class="ssc-step-title"><span class="ssc-step">1</span> Select your group</h3><span class="ssc-tag" id="sscTag">9 main + 1 fourth subject</span></div>
-     <fieldset class="ssc-groups">
+  <div id="sscCalc">
+   <form class="ssc-card" id="sscForm" novalidate>
+    <div class="ssc-toolbar">
+     <fieldset class="ssc-seg">
       <legend class="sr-only">SSC group</legend>
       <label><input type="radio" name="sscGroup" value="science" checked><span>Science</span></label>
       <label><input type="radio" name="sscGroup" value="humanities"><span>Humanities</span></label>
       <label><input type="radio" name="sscGroup" value="business"><span>Business Studies</span></label>
      </fieldset>
+     <fieldset class="ssc-seg">
+      <legend class="sr-only">Enter by</legend>
+      <label><input type="radio" name="sscMode" value="grade" checked><span>Grade</span></label>
+      <label><input type="radio" name="sscMode" value="marks"><span>Marks</span></label>
+     </fieldset>
+    </div>
 
-     <div class="ssc-block-head"><h3 class="ssc-step-title"><span class="ssc-step">2</span> Enter subject marks</h3><button type="button" class="ssc-link-btn" id="sscExample">Try an example ↗</button></div>
-     <p class="ssc-help">Enter each subject&#8217;s total, combining both papers where applicable. Choose the maximum shown on your marksheet: 200 for Bangla and English, 50 for ICT and 100 for most other subjects.</p>
+    <h2 class="ssc-sec-title">Main subjects <small id="sscMainCount">9</small></h2>
+    <div class="ssc-list" id="sscMainRows"></div>
 
-     <div class="ssc-table">
-      <div class="ssc-head" aria-hidden="true"><span>Subject</span><span>Total marks</span><span>Grade / GP</span></div>
-      <div id="sscRows"></div>
-     </div>
-     <label class="ssc-none"><input type="checkbox" id="sscNoFourth"><span>I do not have a fourth subject</span></label>
-     <p class="ssc-note">Subject choices must match your registration. Changing a subject clears its marks; choosing another row&#8217;s subject swaps the two.</p>
+    <h2 class="ssc-sec-title">4th subject <small>Optional</small></h2>
+    <div class="ssc-list" id="sscFourthRows"></div>
 
-     <div class="ssc-actions">
-      <button type="submit" class="btn-pdf">Calculate GPA</button>
-      <button type="button" class="ssc-btn-secondary" id="sscReset">Reset</button>
-     </div>
-     <p class="ssc-form-message" id="sscFormMessage" role="status" aria-live="polite"></p>
-    </form>
-   </div>
+    <div class="ssc-actions">
+     <button type="submit" class="btn-pdf">Calculate GPA</button>
+     <button type="button" class="ssc-btn-secondary" id="sscReset">Reset</button>
+    </div>
+    <p class="ssc-form-message" id="sscFormMessage" role="alert"></p>
+
+    <div class="ssc-result" id="sscResult" hidden aria-live="polite"></div>
+   </form>
   </div>
 
   <!-- SEO CONTENT -->
@@ -422,7 +383,7 @@
     <h2 class="section-title">What Is the SSC GPA Calculator?</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>The SSC GPA calculator works out your Secondary School Certificate GPA in Bangladesh from your subject marks. It converts each subject&#8217;s total into a letter grade and grade point, applies the fourth subject bonus, checks for failures and shows the final GPA on the 5.00 scale.</p>
+    <p>The SSC GPA calculator works out your Secondary School Certificate GPA in Bangladesh from your subject grades or marks. It converts each subject's total into a letter grade and grade point, applies the fourth subject bonus, checks for failures and shows the final GPA on the 5.00 scale.</p>
     <p>SSC results are reported as GPA, not as a university-style CGPA. After SSC, use the <a href="https://cgpacalculator.dev/hsc-result-calculator">HSC Result Calculator</a> for your college results, the <a href="https://cgpacalculator.dev/cgpa-calculator">CGPA Calculator</a> once you reach university, or the <a href="https://cgpacalculator.dev/cgpa-to-percentage">Percentage Converter</a> when a form asks for a percentage.</p>
    </div>
   </section>
@@ -435,10 +396,10 @@
    <div class="seo-content-card">
     <div class="how-to-steps">
      <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Select Your Group</h3><p>Choose Science, Business Studies or Humanities. The subject list changes to match your group. Science counts 9 main subjects; Business Studies and Humanities count 10.</p></div></div>
-     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Enter Total Marks for Each Subject</h3><p>Type the combined total for each subject and keep the maximum shown on your marksheet: 200 for Bangla and English (both papers together), 50 for ICT and 100 for most other subjects.</p></div></div>
-     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Set Your Fourth Subject</h3><p>Pick your fourth subject and enter its marks, or tick the box if you do not have one. Only grade points above 2.00 count as bonus.</p></div></div>
-     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Mark Any Failed Component</h3><p>If your marksheet shows a failed paper, MCQ, theory or practical component, tick the failure box for that subject. Totals alone cannot show this.</p></div></div>
-     <div class="how-step"><div class="step-num">5</div><div class="step-body"><h3>Read Your GPA and Breakdown</h3><p>Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in the result card, with every calculation step below it.</p></div></div>
+     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Choose Grade or Marks</h3><p>Choose Grade to pick each subject's letter grade straight from your marksheet, or Marks to type each subject's total. Marks are out of 200 for Bangla and English (both papers together), 50 for ICT and 100 for most other subjects.</p></div></div>
+     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Set Your Fourth Subject</h3><p>Pick your fourth subject and enter its grade or marks. Leave it as None if you do not have one. Only grade points above 2.00 count as bonus.</p></div></div>
+     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Use Grade Mode for Failed Parts</h3><p>Marks mode cannot see separate paper, MCQ, written or practical pass marks. If your marksheet shows F in any part, switch to Grade and select F for that subject.</p></div></div>
+     <div class="how-step"><div class="step-num">5</div><div class="step-body"><h3>Press Calculate GPA</h3><p>Your final GPA, pass or fail status, main subject GPA and fourth subject bonus appear in a result box. Open Show calculation to see every step.</p></div></div>
     </div>
    </div>
   </section>
@@ -471,7 +432,7 @@
       <tbody><tr><td>Science</td><td>9</td><td>Bangla, English, Mathematics, Religion, Bangladesh and Global Studies, ICT, Physics, Chemistry, plus Biology or Higher Mathematics</td><td>Higher Mathematics or Biology (whichever is not a main subject), Agriculture Studies, Home Science</td></tr><tr><td>Business Studies</td><td>10</td><td>Bangla, English, Mathematics, Religion, Bangladesh and Global Studies, ICT, General Science, Accounting, Finance and Banking, Business Entrepreneurship</td><td>Agriculture Studies, Home Science</td></tr><tr><td>Humanities</td><td>10</td><td>Bangla, English, Mathematics, Religion, Bangladesh and Global Studies, ICT, General Science, plus three of Geography, History, Civics or Economics</td><td>Agriculture Studies, Home Science, or the remaining Geography, History, Civics or Economics subject</td></tr></tbody>
      </table>
     </div>
-    <p style="margin-top:14px;font-size:13px;color:var(--text-3);">If your registration differs, pick the closest group and adjust the subjects. The divisor is always the number of main subjects shown in the result card.</p>
+    <p style="margin-top:14px;font-size:13px;color:var(--text-3);">If your registration differs, pick the closest group and adjust the subjects. The divisor is always the number of main subjects shown beside Main subjects in the calculator.</p>
    </div>
   </section>
 
@@ -507,7 +468,7 @@
      <div><span>Final GPA: 45 ÷ 9</span><span>5.00</span></div>
     </div>
     <p>A Humanities student with 10 main subjects, a main grade point total of 41.00 and an A− in the fourth subject gets a bonus of 1.50. The GPA is (41.00 + 1.50) ÷ 10 = <strong>4.25</strong>.</p>
-    <p>Select <strong>Try an example</strong> in the calculator to see the first case with subject marks. It is an illustration, not a student&#8217;s official result.</p>
+    <p>These are illustrations, not a student&#8217;s official result.</p>
    </div>
   </section>
 
@@ -563,7 +524,7 @@
     </div>
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>Can I calculate SSC GPA without a fourth subject?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Yes. Tick the option for no fourth subject and the calculator uses the main subjects only, with a bonus of 0.00.</p></div>
+     <div class="faq-answer"><p>Yes. Leave the fourth subject as None and the calculator uses the main subjects only, with a bonus of 0.00.</p></div>
     </div>
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>Can the final SSC GPA exceed 5.00?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>

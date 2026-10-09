@@ -24,28 +24,37 @@
 
 /* ---------- Subject rows (full width) ---------- */
 .ssc-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
-.ssc-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:6px 14px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border-2)}
+.ssc-row{display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1.6fr);gap:8px 20px;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border-2)}
 .ssc-row:last-child{border-bottom:0}
 .ssc-row.is-error{background:#FEF2F2}
 .ssc-name-cell{display:flex;flex-direction:column;gap:2px;min-width:0}
-.ssc-name{font-size:15.5px;font-weight:600;color:#0F1A15;line-height:1.3}
+.ssc-name{font-size:18px;font-weight:600;color:#0F1A15;line-height:1.3}
 .ssc-hint{font-size:12px;color:var(--text-3);line-height:1.2}
 .ssc-hint:empty{display:none}
 #sscCalc [data-mode="grade"] .ssc-hint{display:none}
 .ssc-field{display:flex;align-items:center;justify-content:flex-end;min-width:0}
+
+/* Grade pills: one-tap grade picker that fills the row (the hidden <select> keeps the value) */
+.ssc-pills{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;width:100%}
+.ssc-pill-btn{height:50px;padding:0;font:inherit;font-size:18px;font-weight:700;color:#1A2A23;background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);cursor:pointer;transition:background var(--transition),border-color var(--transition),color var(--transition),box-shadow var(--transition)}
+.ssc-pill-btn:hover{border-color:var(--accent);background:var(--accent-dim)}
+.ssc-pill-btn:focus-visible{outline:none;border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.22)}
+.ssc-pill-btn.is-on,.ssc-pill-btn.is-on:hover{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 6px rgba(31,77,58,.28)}
+#sscCalc [data-mode="grade"] .ssc-grade{display:none}
+#sscCalc [data-mode="marks"] .ssc-pills{display:none}
 .ssc-field>*{min-width:0}
 
 .ssc-grade,.ssc-subject-select,.ssc-max{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:16px;font-weight:600;height:44px;padding:0 32px 0 12px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 12px center;text-overflow:ellipsis}
-.ssc-subject-select{font-size:15.5px}
+.ssc-subject-select{font-size:17px;height:48px}
 .ssc-grade{max-width:180px}
 .ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16)}
 
 .ssc-marks{display:none;align-items:center;gap:8px;width:100%;justify-content:flex-end}
 #sscCalc [data-mode="marks"] .ssc-marks{display:flex}
 #sscCalc [data-mode="marks"] .ssc-grade{display:none}
-.ssc-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:17px;font-weight:600;height:44px;padding:0 12px;width:100%;max-width:120px;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.ssc-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:48px;padding:0 12px;width:100%;max-width:160px;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
 .ssc-input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
 .ssc-input[aria-invalid="true"]{border-color:#DC2626;background:#FEF2F2}
 .ssc-max-wrap{flex:0 0 auto}
@@ -104,7 +113,10 @@
   .ssc-toolbar{flex-direction:column;align-items:stretch}
   .ssc-seg{display:grid;grid-auto-flow:column}
   .ssc-seg span{padding:6px 8px;font-size:14px}
-  .ssc-row{grid-template-columns:1fr;gap:8px;padding:12px}
+  .ssc-row{grid-template-columns:1fr;gap:10px;padding:12px}
+  .ssc-name{font-size:17px}
+  .ssc-pills{gap:4px}
+  .ssc-pill-btn{height:46px;font-size:15px;border-radius:8px}
   .ssc-field{justify-content:stretch}
   .ssc-grade{max-width:none}
   .ssc-marks{justify-content:flex-start}

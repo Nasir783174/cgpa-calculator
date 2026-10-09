@@ -188,8 +188,18 @@ function sscInit() {
     row.maxWrap.append(row.maxEl);
   }
 
+  function paintPills(row) {
+    if (!row.pills) return;
+    row.pills.querySelectorAll('button').forEach(b => {
+      const on = b.dataset.grade === row.grade.value;
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.toggle('is-on', on);
+    });
+  }
+
   function clearRow(row) {
     row.grade.value = '';
+    paintPills(row);
     row.input.value = '';
     setMaxFor(row);
     refreshChip(row);
@@ -200,6 +210,7 @@ function sscInit() {
   function labelRow(row) {
     const s = SSC_SUBJECTS[row.subjectId];
     row.grade.setAttribute('aria-label', s.name + ' grade');
+    if (row.pills) row.pills.setAttribute('aria-label', s.name + ' grade');
     row.input.setAttribute('aria-label', s.name + ' total marks');
     if (row.hintEl) row.hintEl.textContent = s.hint || '';
   }
@@ -257,7 +268,23 @@ function sscInit() {
     ph.value = '';
     row.grade.append(ph);
     SSC_BANDS.forEach(b => { const o = mk('option', '', b.letter); o.value = b.letter; row.grade.append(o); });
-    row.grade.addEventListener('change', invalidate);
+    row.grade.addEventListener('change', () => { paintPills(row); invalidate(); });
+
+    // Tap-to-pick grade buttons (the <select> above stays as the source of truth, hidden by CSS).
+    row.pills = mk('div', 'ssc-pills');
+    row.pills.setAttribute('role', 'group');
+    SSC_BANDS.forEach(b => {
+      const btn = mk('button', 'ssc-pill-btn', b.letter);
+      btn.type = 'button';
+      btn.dataset.grade = b.letter;
+      btn.setAttribute('aria-pressed', 'false');
+      btn.addEventListener('click', () => {
+        row.grade.value = row.grade.value === b.letter ? '' : b.letter; // tap again to unselect
+        row.grade.dispatchEvent(new Event('change'));
+        row.el.classList.remove('is-error');
+      });
+      row.pills.append(btn);
+    });
 
     const marks = mk('div', 'ssc-marks');
     row.input = mk('input', 'ssc-input');
@@ -276,7 +303,7 @@ function sscInit() {
     row.err.setAttribute('role', 'alert');
     row.input.setAttribute('aria-describedby', row.err.id);
 
-    field.append(row.grade, marks);
+    field.append(row.grade, row.pills, marks);
     el.append(nameCell, field, row.err);
 
     setMaxFor(row);
@@ -387,7 +414,7 @@ function sscInit() {
     if (problems.length) {
       msgEl.textContent = (mode === 'grade' ? 'Select a grade for: ' : 'Enter valid marks for: ') + problems.join(', ') + '.';
       const first = rows.find(r => r.el.classList.contains('is-error'));
-      if (first) (mode === 'grade' ? first.grade : first.input).focus();
+      if (first) (mode === 'grade' ? first.pills.querySelector('button') : first.input).focus();
       return;
     }
     const res = sscCalculate(main.map(r => r.letter), fourth.letter, mainCount);
@@ -401,7 +428,7 @@ function sscInit() {
       // Carry valid marks over so nothing the user typed is lost.
       rows.forEach(r => {
         const v = sscValidateMark(r.input.value, currentMax(r));
-        if (v.valid) r.grade.value = sscGradeFromMarks(v.mark, currentMax(r));
+        if (v.valid) { r.grade.value = sscGradeFromMarks(v.mark, currentMax(r)); paintPills(r); }
       });
     }
     mode = next;

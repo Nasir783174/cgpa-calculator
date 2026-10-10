@@ -1,0 +1,154 @@
+/* IELTS Band Score Calculator: page-specific styles.
+   Extends style.css and reuses its design tokens (colours, radii, fonts). */
+/* Base component styles (adapted from the SSC calculator) */
+
+#ieltsCalc{scroll-margin-top:calc(var(--header-h) + 60px);margin:0 0 8px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- Card ---------- */
+.ssc-card{width:100%;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-sizing:border-box}
+
+/* ---------- Toolbar: group + input type ---------- */
+.ssc-toolbar{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;justify-content:space-between;margin:0 0 18px}
+.ssc-seg{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;background:var(--bg);border:1px solid var(--border);border-radius:calc(var(--radius-input) + 4px);border-width:1px;margin:0;min-width:0}
+.ssc-seg label{position:relative;display:block;cursor:pointer}
+.ssc-seg input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.ssc-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:#33433B;border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
+.ssc-seg label:hover span{background:var(--accent-dim)}
+.ssc-seg input:checked+span{background:var(--accent);color:#fff}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(31,77,58,.28)}
+
+/* ---------- Section headings ---------- */
+.ssc-sec-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:#0F1A15;margin:0 0 8px}
+.ssc-sec-title small{font-size:12.5px;font-weight:600;color:var(--text-3);background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:2px 10px}
+.ssc-sec-title + .ssc-list{margin-bottom:22px}
+
+/* ---------- Subject rows (full width) ---------- */
+.ssc-list{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+.ssc-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 16px;align-items:start;padding:12px 16px;border-bottom:1px solid var(--border-2)}
+.ssc-row:last-child{border-bottom:0}
+.ssc-row.is-error{background:#FEF2F2}
+.ssc-name-cell{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ssc-name{display:flex;align-items:center;min-height:56px;padding:8px 18px;box-sizing:border-box;background:var(--bg-input);border:2px solid #D3CBB8;border-radius:var(--radius-input);font-size:18px;font-weight:600;color:#0F1A15;line-height:1.3}
+.ssc-hint{font-size:12px;color:var(--text-3);line-height:1.2}
+.ssc-hint:empty{display:none}
+#ieltsCalc [data-mode="grade"] .ssc-hint{display:none}
+.ssc-field{display:flex;align-items:center;justify-content:flex-end;min-width:0;min-height:56px}
+.ssc-field>*{min-width:0}
+
+.ssc-grade,.ssc-subject-select,.ssc-max{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 40px 0 18px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;background-size:14px;text-overflow:ellipsis}
+.ssc-subject-select{font-size:18px}
+.ssc-grade{max-width:none}
+.ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16)}
+
+.ssc-marks{display:none;align-items:center;gap:8px;width:100%;justify-content:flex-end}
+#ieltsCalc [data-mode="marks"] .ssc-marks{display:flex}
+#ieltsCalc [data-mode="marks"] .ssc-grade{display:none}
+.ssc-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;max-width:none;flex:1;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.ssc-input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
+.ssc-input[aria-invalid="true"]{border-color:#DC2626;background:#FEF2F2}
+.ssc-max-wrap{flex:0 0 auto}
+.ssc-max-text{font-size:17px;font-weight:600;color:var(--text-2);min-width:40px;display:inline-block}
+.ssc-max{width:100px;padding:0 28px 0 12px;background-position:right 10px center}
+.ssc-chip{flex:0 0 auto;min-width:42px;text-align:center;padding:4px 8px;border-radius:999px;font-size:14px;font-weight:700;background:var(--bg);color:var(--text-2);border:1px solid var(--border)}
+.ssc-chip[data-grade="A+"],.ssc-chip[data-grade="A"]{background:#E4F2E9;color:#14532D;border-color:#B7DCC5}
+.ssc-chip[data-grade="A-"],.ssc-chip[data-grade="B"]{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-border)}
+.ssc-chip[data-grade="C"],.ssc-chip[data-grade="D"]{background:#FFF4E0;color:#92400E;border-color:#F2D9A6}
+.ssc-chip[data-grade="F"]{background:#FDECEC;color:#991B1B;border-color:#F5C2C2}
+.ssc-err{grid-column:1/-1;margin:0;font-size:12.5px;font-weight:600;color:#991B1B;line-height:1.3;text-align:right}
+.ssc-err:empty{display:none}
+
+/* ---------- Actions ---------- */
+.ssc-actions{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:4px}
+.ssc-btn-secondary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;padding:0 var(--sp-lg);font-size:15px;font-weight:600;border-radius:var(--radius-btn);border:2px solid #D3CBB8;background:#fff;color:#1A2A23;cursor:pointer;transition:border-color var(--transition),background var(--transition)}
+.ssc-btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
+.ssc-form-message{font-size:14px;font-weight:600;color:#991B1B;margin:10px 0 0;line-height:1.5}
+.ssc-form-message:empty{display:none}
+
+/* ---------- Result box (appears after Calculate) ---------- */
+.ssc-result{margin-top:18px;padding:20px;border:2px solid var(--accent-border);background:var(--accent-dim);border-radius:var(--radius);animation:sscIn .2s ease}
+.ssc-result[hidden]{display:none}
+.ssc-res-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ssc-res-big{display:flex;align-items:baseline;gap:8px}
+.ssc-res-gpa{font-size:clamp(40px,8vw,56px);font-weight:700;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.ssc-res-max{font-size:16px;font-weight:600;color:var(--text-3)}
+.ssc-pill{display:inline-block;padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--border)}
+.ssc-pill[data-state="pass"]{background:#E4F2E9;color:#14532D;border-color:#B7DCC5}
+.ssc-pill[data-state="fail"]{background:#FDECEC;color:#991B1B;border-color:#F5C2C2}
+.ssc-res-note{margin:12px 0 0;font-size:14.5px;font-weight:600;color:#991B1B;line-height:1.5}
+.ssc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.ssc-stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;background:#fff;border:1px solid var(--accent-border);border-radius:10px;text-align:center}
+.ssc-stat-val{font-size:18px;font-weight:700;color:#0F1A15}
+.ssc-stat-label{font-size:12px;font-weight:600;color:var(--text-3);line-height:1.25}
+.ssc-details{margin-top:14px}
+.ssc-details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);padding:4px 0}
+.ssc-line{font-size:14px;color:#2B3B34;line-height:1.6;margin:6px 0 0;overflow-wrap:anywhere}
+.ssc-line strong{color:var(--accent)}
+.ssc-fine{font-size:12.5px;color:var(--text-3);line-height:1.5;margin:12px 0 0}
+
+/* ---------- Formula / example blocks used further down the page ---------- */
+.ssc-formula{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--radius);padding:16px 20px;margin:14px 0;font-size:17px;font-weight:600;color:var(--accent);overflow-x:auto;white-space:nowrap}
+.ssc-example{display:grid;gap:0;margin:14px 0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.ssc-example div{display:flex;justify-content:space-between;gap:12px;padding:11px 16px;font-size:15px;border-bottom:1px solid var(--border-2);background:#fff}
+.ssc-example div:last-child{border-bottom:0;background:var(--accent-dim);font-weight:600;color:var(--accent)}
+.ssc-refs a{display:inline-block;margin:4px 14px 4px 0;color:var(--accent);font-weight:600;font-size:14.5px}
+.ssc-sub-list{margin:0;padding-left:18px}
+
+@keyframes sscIn{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.ssc-result{animation:none}}
+
+/* ---------- Mobile ---------- */
+@media(max-width:620px){
+  .ssc-card{padding:14px}
+  .ssc-toolbar{flex-direction:column;align-items:stretch}
+  .ssc-seg{display:grid;grid-auto-flow:column}
+  .ssc-seg span{padding:6px 8px;font-size:14px}
+  .ssc-row{grid-template-columns:1fr;gap:8px;padding:12px}
+  .ssc-name{min-height:52px;font-size:17px}
+  .ssc-field{min-height:0}
+  .ssc-grade,.ssc-subject-select,.ssc-input,.ssc-max{height:52px}
+  .ssc-field{justify-content:stretch}
+  .ssc-grade{max-width:none}
+  .ssc-marks{justify-content:flex-start}
+  .ssc-input{max-width:none;flex:1}
+  .ssc-err{text-align:left}
+  .ssc-actions{grid-template-columns:1fr}
+  .ssc-stats{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .ssc-stat-val{font-size:16px}
+  .ssc-result{padding:16px}
+}
+
+
+/* ---------- IELTS-specific ---------- */
+#ieltsCalc{scroll-margin-top:calc(var(--header-h) + 60px);margin:0 0 8px}
+.ielts-card{width:100%;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-sizing:border-box}
+.ielts-toolbar{margin:0 0 18px;overflow-x:auto}
+.ielts-toolbar .ssc-seg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:row}
+.ielts-panel[hidden]{display:none}
+.ielts-lead{margin:0 0 16px;font-size:15px;line-height:1.6;color:var(--text-2)}
+.ielts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;margin:0 0 6px}
+.ielts-field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ielts-label{font-size:15px;font-weight:600;color:#0F1A15}
+.ielts-label small{font-size:12.5px;font-weight:600;color:var(--text-3);margin-left:4px}
+.ielts-select{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 40px 0 18px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;background-size:14px}
+.ielts-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.ielts-input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
+.ielts-select:focus,.ielts-input:focus{border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16)}
+.ielts-select.is-error,.ielts-input[aria-invalid="true"]{border-color:#DC2626;background-color:#FEF2F2}
+.ielts-help{margin:6px 0 0;font-size:13px;color:var(--text-3)}
+.ielts-card .ssc-actions{margin-top:16px}
+.ielts-card .ssc-result,.ielts-raw-result{margin-top:18px;padding:20px;border:2px solid var(--accent-border);background:var(--accent-dim);border-radius:var(--radius);animation:sscIn .2s ease}
+.ielts-raw-result[hidden]{display:none}
+.ielts-use{margin-top:14px;max-width:320px}
+.ielts-table td:first-child,.ielts-table th:first-child{font-weight:700}
+@media(max-width:620px){
+  .ielts-card{padding:14px}
+  .ielts-grid{grid-template-columns:1fr}
+  .ielts-toolbar .ssc-seg{grid-template-columns:repeat(2,1fr);grid-auto-flow:row}
+  .ielts-select,.ielts-input{height:52px}
+  .ielts-use{max-width:none;width:100%}
+}

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cgpacalculator.dev/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://cgpacalculator.dev/cgpa-calculator</loc>
@@ -51,6 +51,10 @@
   <url>
     <loc>https://cgpacalculator.dev/hsc-result-calculator</loc>
     <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://cgpacalculator.dev/ielts-band-score-calculator</loc>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://cgpacalculator.dev/cgpa-information</loc>

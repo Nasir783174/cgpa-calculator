@@ -1,207 +1,164 @@
-// Percentage Converter Page JS
-// ─── CGPA ↔ PERCENTAGE CONVERTER ────────────────────────────
-
-(function() {
+/* CGPA <-> Percentage converter page. */
+(function () {
   "use strict";
 
-  if (!document.getElementById("inputValue") || !document.getElementById("formulaSelect")) return;
+  var inputEl = document.getElementById("inputValue");
+  var formulaEl = document.getElementById("formulaSelect");
+  if (!inputEl || !formulaEl) return;
 
-  let mode = "cgpa"; // "cgpa" | "percent"
+  var mode = "cgpa"; // "cgpa" (CGPA -> %) or "percent" (% -> CGPA)
 
-  const FORMULAS = {
+  /* Each conversion: how to calculate, the highest CGPA it supports and how to print the working. */
+  var FORMULAS = {
     cbse: {
-      toPercent: (c) => c * 9.5,
-      toCgpa: (p) => p / 9.5,
-      display: (v) => mode === "cgpa" ?
-        `${v} × 9.5 = ${(v * 9.5).toFixed(2)}%` :
-        `${v} ÷ 9.5 = ${(v / 9.5).toFixed(2)} CGPA`,
+      maxCgpa: 10,
+      toPercent: function (c) {
+        return c * 9.5;
+      },
+      toCgpa: function (p) {
+        return p / 9.5;
+      },
+      working: function (v, r) {
+        return mode === "cgpa" ? v + " × 9.5 = " + r + "%" : v + " ÷ 9.5 = " + r + " CGPA";
+      },
     },
     aicte: {
-      toPercent: (c) => (c - 0.75) * 10,
-      toCgpa: (p) => p / 10 + 0.75,
-      display: (v) => mode === "cgpa" ?
-        `(${v} − 0.75) × 10 = ${((v - 0.75) * 10).toFixed(2)}%` :
-        `(${v} ÷ 10) + 0.75 = ${(v / 10 + 0.75).toFixed(2)} CGPA`,
+      maxCgpa: 10,
+      toPercent: function (c) {
+        return (c - 0.75) * 10;
+      },
+      toCgpa: function (p) {
+        return p / 10 + 0.75;
+      },
+      working: function (v, r) {
+        return mode === "cgpa"
+          ? "(" + v + " − 0.75) × 10 = " + r + "%"
+          : "(" + v + " ÷ 10) + 0.75 = " + r + " CGPA";
+      },
     },
     "10pt": {
-      toPercent: (c) => c * 10,
-      toCgpa: (p) => p / 10,
-      display: (v) => mode === "cgpa" ?
-        `${v} × 10 = ${(v * 10).toFixed(2)}%` :
-        `${v} ÷ 10 = ${(v / 10).toFixed(2)} CGPA`,
+      maxCgpa: 10,
+      toPercent: function (c) {
+        return c * 10;
+      },
+      toCgpa: function (p) {
+        return p / 10;
+      },
+      working: function (v, r) {
+        return mode === "cgpa" ? v + " × 10 = " + r + "%" : v + " ÷ 10 = " + r + " CGPA";
+      },
     },
     "4pt": {
-      toPercent: (c) => (c / 4) * 100,
-      toCgpa: (p) => (p / 100) * 4,
-      display: (v) => mode === "cgpa" ?
-        `(${v} ÷ 4.0) × 100 = ${((v / 4) * 100).toFixed(2)}%` :
-        `(${v} ÷ 100) × 4.0 = ${((v / 100) * 4).toFixed(2)} CGPA`,
+      maxCgpa: 4,
+      toPercent: function (c) {
+        return (c / 4) * 100;
+      },
+      toCgpa: function (p) {
+        return (p / 100) * 4;
+      },
+      working: function (v, r) {
+        return mode === "cgpa"
+          ? "(" + v + " ÷ 4.0) × 100 = " + r + "%"
+          : "(" + v + " ÷ 100) × 4.0 = " + r + " CGPA";
+      },
     },
     "5pt": {
-      toPercent: (c) => c * 20,
-      toCgpa: (p) => p / 20,
-      display: (v) => mode === "cgpa" ?
-        `${v} × 20 = ${(v * 20).toFixed(2)}%` :
-        `${v} ÷ 20 = ${(v / 20).toFixed(2)} CGPA`,
+      maxCgpa: 5,
+      toPercent: function (c) {
+        return c * 20;
+      },
+      toCgpa: function (p) {
+        return p / 20;
+      },
+      working: function (v, r) {
+        return mode === "cgpa" ? v + " × 20 = " + r + "%" : v + " ÷ 20 = " + r + " CGPA";
+      },
     },
   };
 
-  function showError(msg) {
-    const el = document.getElementById("fieldError");
-    el.textContent = msg;
-    el.style.display = "block";
+  var errorEl = document.getElementById("fieldError");
+  var panelEl = document.getElementById("resultPanel");
+  var tabCgpa = document.getElementById("tabCgpa");
+  var tabPct = document.getElementById("tabPct");
+
+  function showError(message) {
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+    inputEl.classList.add("error-shake");
+    setTimeout(function () {
+      inputEl.classList.remove("error-shake");
+    }, 400);
   }
 
-  function clearError() {
-    document.getElementById("fieldError").style.display = "none";
+  function clearOutput() {
+    errorEl.hidden = true;
+    panelEl.classList.remove("visible");
   }
 
-  function hideResult() {
-    document.getElementById("resultPanel").classList.remove("visible");
-  }
-
-  function shakeInput() {
-    const el = document.getElementById("inputValue");
-    el.classList.add("error-shake");
-    setTimeout(() => el.classList.remove("error-shake"), 400);
-  }
-
-  // Bug fix: the input's max attribute must match the CGPA ceiling of the
-  // currently selected formula (4 for "4pt", 5 for "5pt", 10 for the rest),
-  // not a hardcoded 10 — otherwise the native number input allows values
-  // the formula doesn't support until the manual validation in calculate()
-  // catches it.
-  function getMaxCGPAForFormula() {
-    const formula = document.getElementById("formulaSelect").value;
-    return formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
-  }
-
+  /* The number input's max follows the selected scale (4, 5 or 10 for CGPA, 100 for percentage). */
   function updateInputMax() {
-    const inputEl = document.getElementById("inputValue");
-    inputEl.max = mode === "cgpa" ? getMaxCGPAForFormula() : 100;
+    inputEl.max = mode === "cgpa" ? FORMULAS[formulaEl.value].maxCgpa : 100;
   }
 
-  window.switchTab = function(tab) {
-    mode = tab;
-    const inputEl = document.getElementById("inputValue");
-    const labelEl = document.getElementById("inputLabel");
-    const tabCgpa = document.getElementById("tabCgpa");
-    const tabPct = document.getElementById("tabPct");
-    const resultLbl = document.getElementById("resultLabel");
-
-    if (mode === "cgpa") {
-      tabCgpa.classList.add("active");
-      tabCgpa.setAttribute("aria-selected", "true");
-      tabPct.classList.remove("active");
-      tabPct.setAttribute("aria-selected", "false");
-      labelEl.textContent = "Enter CGPA";
-      inputEl.placeholder = "e.g. 8.5";
-      resultLbl.textContent = "Your Percentage";
-    } else {
-      tabPct.classList.add("active");
-      tabPct.setAttribute("aria-selected", "true");
-      tabCgpa.classList.remove("active");
-      tabCgpa.setAttribute("aria-selected", "false");
-      labelEl.textContent = "Enter Percentage";
-      inputEl.placeholder = "e.g. 85";
-      resultLbl.textContent = "Your CGPA";
-    }
-
+  function setMode(next) {
+    mode = next;
+    var isCgpa = mode === "cgpa";
+    tabCgpa.classList.toggle("active", isCgpa);
+    tabCgpa.setAttribute("aria-selected", String(isCgpa));
+    tabPct.classList.toggle("active", !isCgpa);
+    tabPct.setAttribute("aria-selected", String(!isCgpa));
+    document.getElementById("inputLabel").textContent = isCgpa ? "Enter CGPA" : "Enter Percentage";
+    document.getElementById("resultLabel").textContent = isCgpa ? "Your Percentage" : "Your CGPA";
+    inputEl.placeholder = isCgpa ? "e.g. 8.5" : "e.g. 85";
     updateInputMax();
-    clearError();
-    hideResult();
-  };
+    clearOutput();
+  }
 
-  window.calculate = function() {
-    const formula = document.getElementById("formulaSelect").value;
-    const value = parseFloat(document.getElementById("inputValue").value.trim());
-    const fn = FORMULAS[formula];
+  function calculate() {
+    var formula = FORMULAS[formulaEl.value];
+    var value = parseFloat(inputEl.value.trim());
 
-    if (isNaN(value) || value < 0) {
-      showError("Please enter a valid number.");
-      shakeInput();
-      return;
-    }
+    if (isNaN(value) || value < 0) return showError("Please enter a valid number.");
+    if (mode === "cgpa" && value > formula.maxCgpa)
+      return showError("CGPA cannot exceed " + formula.maxCgpa + " for this scale.");
+    if (mode === "percent" && value > 100) return showError("Percentage cannot exceed 100.");
 
-    if (mode === "cgpa") {
-      const maxCGPA = formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
-      if (value > maxCGPA) {
-        showError(`CGPA cannot exceed ${maxCGPA} for this scale.`);
-        shakeInput();
-        return;
-      }
-    } else if (value > 100) {
-      showError("Percentage cannot exceed 100.");
-      shakeInput();
-      return;
-    }
+    errorEl.hidden = true;
+    var result = mode === "cgpa" ? formula.toPercent(value) : formula.toCgpa(value);
+    var rounded = Math.round(result * 100) / 100;
+    document.getElementById("resultValue").textContent = mode === "cgpa" ? rounded + "%" : String(rounded);
+    document.getElementById("resultFormula").textContent =
+      "Formula: " + formula.working(value, result.toFixed(2));
+    panelEl.classList.add("visible");
+  }
 
-    clearError();
-
-    let result, display;
-    if (mode === "cgpa") {
-      result = fn.toPercent(value);
-      display = `${Math.round(result * 100) / 100}%`;
-    } else {
-      result = fn.toCgpa(value);
-      display = `${Math.round(result * 100) / 100}`;
-    }
-
-    document.getElementById("resultValue").textContent = display;
-    document.getElementById("resultFormula").textContent = "Formula: " + fn.display(value);
-    document.getElementById("resultPanel").classList.add("visible");
-  };
-
-  window.resetAll = function() {
-    document.getElementById("inputValue").value = "";
-    clearError();
-    hideResult();
-  };
-
-  window.copyResult = function() {
-    const text = document.getElementById("resultValue").textContent;
-    const btn = document.getElementById("copyBtn");
-
-    function onCopied() {
-      btn.textContent = "Copied!";
-      btn.classList.add("copied");
-      setTimeout(() => {
-        btn.textContent = "Copy";
-        btn.classList.remove("copied");
+  function copyResult() {
+    var button = document.getElementById("copyBtn");
+    window.copyText(document.getElementById("resultValue").textContent).then(function () {
+      button.textContent = "Copied!";
+      button.classList.add("copied");
+      setTimeout(function () {
+        button.textContent = "Copy";
+        button.classList.remove("copied");
       }, 1800);
-    }
-
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(onCopied);
-    } else {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.cssText = "position:fixed;opacity:0;";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-      onCopied();
-    }
-  };
-
-  window.toggleFaq = function(el) {
-    const item = el.closest(".faq-item");
-    const isOpen = item.classList.contains("open");
-    document.querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
-    if (!isOpen) item.classList.add("open");
-  };
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const input = document.getElementById("inputValue");
-    if (input) input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") window.calculate();
     });
+  }
 
-    const formulaSelect = document.getElementById("formulaSelect");
-    if (formulaSelect) formulaSelect.addEventListener("change", updateInputMax);
-
-    // Set the correct max on first load (was previously hardcoded to 10).
-    updateInputMax();
+  tabCgpa.addEventListener("click", function () {
+    setMode("cgpa");
   });
+  tabPct.addEventListener("click", function () {
+    setMode("percent");
+  });
+  document.getElementById("calcBtn").addEventListener("click", calculate);
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    inputEl.value = "";
+    clearOutput();
+  });
+  document.getElementById("copyBtn").addEventListener("click", copyResult);
+  inputEl.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") calculate();
+  });
+  formulaEl.addEventListener("change", updateInputMax);
+  updateInputMax();
 })();

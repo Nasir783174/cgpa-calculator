@@ -1,255 +1,416 @@
-/* Grade calculator page: marks -> letter grade, GPA, average and a "what do I need" predictor. */
-(function () {
-  "use strict";
+// Grade Calculator Page JS
+// ─── GRADE CALCULATOR PAGE ───────────────────────────────────
 
-  var tableBody = document.getElementById("gradeTableBody");
-  if (!tableBody) return;
+(function() {
+  if (!document.getElementById("gradeTableBody")) return;
 
-  /* Grade bands per scale: [minimum marks, letter, grade points]. Highest band first. */
-  var GRADE_SYSTEMS = {
-    4: [
-      [80, "A+", 4],
-      [75, "A", 3.75],
-      [70, "A−", 3.5],
-      [65, "B+", 3.25],
-      [60, "B", 3],
-      [55, "B−", 2.75],
-      [50, "C+", 2.5],
-      [45, "C", 2.25],
-      [40, "D", 2],
-      [0, "F", 0],
-    ],
-    5: [
-      [80, "A+", 5],
-      [75, "A", 4.5],
-      [70, "A−", 4],
-      [65, "B+", 3.5],
-      [60, "B", 3],
-      [55, "B−", 2.5],
-      [50, "C", 2],
-      [40, "D", 1],
-      [0, "F", 0],
-    ],
-    10: [
-      [90, "O", 10],
-      [80, "A+", 9],
-      [70, "A", 8],
-      [60, "B+", 7],
-      [55, "B", 6],
-      [50, "C", 5],
-      [40, "P", 4],
-      [0, "F", 0],
-    ],
+  const GRADE_SYSTEMS = {
+    4: {
+      // Matches scale-standard.js so both calculators agree.
+      getGrade: (marks) => {
+        if (marks >= 80) return {
+          letter: "A+",
+          point: 4
+        };
+        if (marks >= 75) return {
+          letter: "A",
+          point: 3.75
+        };
+        if (marks >= 70) return {
+          letter: "A−",
+          point: 3.5
+        };
+        if (marks >= 65) return {
+          letter: "B+",
+          point: 3.25
+        };
+        if (marks >= 60) return {
+          letter: "B",
+          point: 3
+        };
+        if (marks >= 55) return {
+          letter: "B−",
+          point: 2.75
+        };
+        if (marks >= 50) return {
+          letter: "C+",
+          point: 2.5
+        };
+        if (marks >= 45) return {
+          letter: "C",
+          point: 2.25
+        };
+        if (marks >= 40) return {
+          letter: "D",
+          point: 2
+        };
+        return {
+          letter: "F",
+          point: 0
+        };
+      },
+    },
+    5: {
+      getGrade: (marks) => {
+        if (marks >= 80) return {
+          letter: "A+",
+          point: 5
+        };
+        if (marks >= 75) return {
+          letter: "A",
+          point: 4.5
+        };
+        if (marks >= 70) return {
+          letter: "A−",
+          point: 4
+        };
+        if (marks >= 65) return {
+          letter: "B+",
+          point: 3.5
+        };
+        if (marks >= 60) return {
+          letter: "B",
+          point: 3
+        };
+        if (marks >= 55) return {
+          letter: "B−",
+          point: 2.5
+        };
+        if (marks >= 50) return {
+          letter: "C",
+          point: 2
+        };
+        if (marks >= 40) return {
+          letter: "D",
+          point: 1
+        };
+        return {
+          letter: "F",
+          point: 0
+        };
+      },
+    },
+    10: {
+      getGrade: (marks) => {
+        if (marks >= 90) return {
+          letter: "O",
+          point: 10
+        };
+        if (marks >= 80) return {
+          letter: "A+",
+          point: 9
+        };
+        if (marks >= 70) return {
+          letter: "A",
+          point: 8
+        };
+        if (marks >= 60) return {
+          letter: "B+",
+          point: 7
+        };
+        if (marks >= 55) return {
+          letter: "B",
+          point: 6
+        };
+        if (marks >= 50) return {
+          letter: "C",
+          point: 5
+        };
+        if (marks >= 40) return {
+          letter: "P",
+          point: 4
+        };
+        return {
+          letter: "F",
+          point: 0
+        };
+      },
+    },
   };
-  var DEFAULT_TARGET = "B+";
-  var DEFAULT_CREDITS = 3;
-  var START_ROWS = 3;
 
-  var activeSystem = "4";
+  let activeSystem = "4";
+  let rowCount = 0;
 
-  function byId(id) {
-    return document.getElementById(id);
-  }
-
-  function gradeFor(marks) {
-    var bands = GRADE_SYSTEMS[activeSystem];
-    for (var i = 0; i < bands.length; i++) {
-      if (marks >= bands[i][0]) return { letter: bands[i][1], point: bands[i][2] };
-    }
-  }
-
-  function parseMarks(input) {
-    var value = parseFloat(input.value);
-    return input.value === "" || isNaN(value) ? null : value;
+  function getSystem() {
+    return GRADE_SYSTEMS[activeSystem];
   }
 
   function addRow() {
-    var row = document.createElement("div");
+    rowCount++;
+    const id = rowCount;
+    const row = document.createElement("div");
     row.className = "grade-row";
-    row.innerHTML =
-      '<input class="gr-subject" placeholder="Subject name" aria-label="Subject" />' +
-      '<input type="number" class="gr-marks" placeholder="0–100" min="0" max="100" aria-label="Marks" />' +
-      '<input type="number" class="gr-credit" placeholder="Credits" min="0.5" step="0.5" value="' +
-      DEFAULT_CREDITS +
-      '" aria-label="Credits" />' +
-      '<div class="gr-grade-cell">–</div>' +
-      '<button class="btn-del-gr" aria-label="Remove row">' +
-      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
-      '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
-    tableBody.appendChild(row);
-    recalculate();
+    row.dataset.rowId = id;
+
+    row.innerHTML = `
+      <input class="gr-subject"  placeholder="Subject name" aria-label="Subject" />
+      <input type="number" class="gr-marks"   placeholder="0–100" min="0" max="100" aria-label="Marks" />
+      <input type="number" class="gr-credit"  placeholder="Credits" min="0.5" step="0.5" value="3" aria-label="Credits" />
+      <div class="gr-grade-cell">–</div>
+      <button class="btn-del-gr" aria-label="Remove row">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6"  x2="6"  y2="18"/>
+          <line x1="6"  y1="6"  x2="18" y2="18"/>
+        </svg>
+      </button>`;
+
+    document.getElementById("gradeTableBody").appendChild(row);
+
+    row.querySelector(".gr-marks").addEventListener("input", recalcGrade);
+    row.querySelector(".gr-credit").addEventListener("input", recalcGrade);
+    row.querySelector(".btn-del-gr").addEventListener("click", function() {
+      row.classList.add("removing");
+      setTimeout(() => {
+        row.remove();
+        recalcGrade();
+      }, 180);
+    });
+
+    recalcGrade();
   }
 
-  function recalculate() {
-    var totalPoints = 0,
-      totalCredits = 0,
-      totalMarks = 0,
-      subjects = 0,
-      fails = 0;
+  function recalcGrade() {
+    const rows = document.querySelectorAll("#gradeTableBody .grade-row");
+    const system = getSystem();
+    let totalPoints = 0;
+    let totalCredits = 0;
+    let totalMarks = 0;
+    let subjectCount = 0;
+    let failCount = 0;
 
-    tableBody.querySelectorAll(".grade-row").forEach(function (row) {
-      var marks = parseMarks(row.querySelector(".gr-marks"));
-      var cell = row.querySelector(".gr-grade-cell");
-      if (marks === null) {
-        cell.textContent = "–";
-        cell.className = "gr-grade-cell";
+    rows.forEach((row) => {
+      const marksInput = row.querySelector(".gr-marks");
+      const creditInput = row.querySelector(".gr-credit");
+      const gradeCell = row.querySelector(".gr-grade-cell");
+
+      let marks = parseFloat(marksInput.value);
+      let credit = parseFloat(creditInput.value);
+
+      if (isNaN(marks) || marksInput.value === "") {
+        gradeCell.textContent = "–";
+        gradeCell.className = "gr-grade-cell";
         return;
       }
+
       marks = Math.min(100, Math.max(0, marks));
-      var credit = parseFloat(row.querySelector(".gr-credit").value);
-      if (!credit || credit <= 0) credit = DEFAULT_CREDITS;
+      credit = (!credit || credit <= 0) ? 3 : credit;
 
-      var grade = gradeFor(marks);
-      cell.textContent = grade.letter;
-      cell.className = "gr-grade-cell " + (grade.letter === "F" ? "grade-f" : "grade-pass");
+      const {
+        letter,
+        point
+      } = system.getGrade(marks);
+      gradeCell.textContent = letter;
+      gradeCell.className = "gr-grade-cell " + (letter === "F" ? "grade-f" : "grade-pass");
 
-      totalPoints += grade.point * credit;
+      totalPoints += point * credit;
       totalCredits += credit;
       totalMarks += marks;
-      subjects++;
-      if (grade.letter === "F") fails++;
+      subjectCount++;
+      if (letter === "F") failCount++;
     });
 
-    byId("grGPA").textContent = (totalCredits > 0 ? totalPoints / totalCredits : 0).toFixed(2);
-    byId("grPct").textContent = (subjects > 0 ? totalMarks / subjects : 0).toFixed(1) + "%";
-    var status = byId("grStatus");
-    status.textContent = fails > 0 ? "Fail" : subjects > 0 ? "Pass" : "–";
-    status.classList.toggle("status-fail", fails > 0);
-    status.classList.toggle("status-pass", fails === 0);
-    byId("grSubjects").textContent = subjects;
-  }
+    const gpa = totalCredits > 0 ? totalPoints / totalCredits : 0;
+    const avgPct = subjectCount > 0 ? totalMarks / subjectCount : 0;
+    const status = failCount > 0 ? "Fail" : subjectCount > 0 ? "Pass" : "–";
+    const color = failCount > 0 ? "#B91C1C" : "#15803D";
 
-  function filledMarks() {
-    var list = [];
-    tableBody.querySelectorAll(".gr-marks").forEach(function (input) {
-      var value = parseMarks(input);
-      if (value !== null) list.push(value);
-    });
-    return list;
-  }
+    const gpaEl = document.getElementById("grGPA");
+    const pctEl = document.getElementById("grPct");
+    const statusEl = document.getElementById("grStatus");
+    const subjectsEl = document.getElementById("grSubjects");
 
-  /* Rebuild the "target grade" dropdown from the active scale's bands (F is not a target). */
-  function updateTargetDropdown() {
-    var select = byId("grTargetGrade");
-    select.innerHTML = "";
-    GRADE_SYSTEMS[activeSystem].forEach(function (band) {
-      if (band[1] === "F") return;
-      var option = document.createElement("option");
-      option.value = band[1];
-      option.textContent = band[1] + " (" + band[0] + "%+)";
-      option.selected = band[1] === DEFAULT_TARGET;
-      select.appendChild(option);
-    });
+    if (gpaEl) gpaEl.textContent = gpa.toFixed(2);
+    if (pctEl) pctEl.textContent = avgPct.toFixed(1) + "%";
+    if (statusEl) {
+      statusEl.textContent = status;
+      statusEl.style.color = color;
+    }
+    if (subjectsEl) subjectsEl.textContent = subjectCount;
   }
 
   function predictGrade() {
-    var target = byId("grTargetGrade").value;
-    var needed = 0;
-    GRADE_SYSTEMS[activeSystem].forEach(function (band) {
-      if (band[1] === target) needed = band[0];
+    const targetGrade = document.getElementById("grTargetGrade").value;
+
+    const thresholds = {
+      4: {
+        "A+": 80,
+        "A": 75,
+        "A−": 70,
+        "B+": 65,
+        "B": 60,
+        "B−": 55,
+        "C+": 50,
+        "C": 45,
+        "D": 40
+      },
+      5: {
+        "A+": 80,
+        "A": 75,
+        "A−": 70,
+        "B+": 65,
+        "B": 60,
+        "B−": 55,
+        "C": 50,
+        "D": 40
+      },
+      10: {
+        "O": 90,
+        "A+": 80,
+        "A": 70,
+        "B+": 60,
+        "B": 55,
+        "C": 50,
+        "P": 40
+      },
+    };
+
+    const needed = thresholds[activeSystem][targetGrade];
+    if (needed === undefined) return;
+
+    const rows = document.querySelectorAll("#gradeTableBody .grade-row");
+    let total = 0;
+    let count = 0;
+
+    rows.forEach((row) => {
+      const val = parseFloat(row.querySelector(".gr-marks").value);
+      if (!isNaN(val) && row.querySelector(".gr-marks").value !== "") {
+        total += val;
+        count++;
+      }
     });
-    if (!needed) return;
 
-    var marks = filledMarks();
-    var result = byId("grPredResult");
-    var card = result.querySelector(".pred-result-card");
-    var value = result.querySelector(".pred-stat-val");
-    var label = result.querySelector(".pred-stat-label");
-    var note = result.querySelector(".pred-note");
-    result.classList.add("visible");
+    const resultEl = document.getElementById("grPredResult");
+    const card = resultEl.querySelector(".pred-result-card");
+    const statVal = resultEl.querySelector(".pred-stat-val");
+    const statLbl = resultEl.querySelector(".pred-stat-label");
+    const noteEl = resultEl.querySelector(".pred-note");
 
-    if (!marks.length) {
-      value.textContent = needed + "%";
-      label.textContent = "Avg needed";
+    resultEl.className = "pred-result visible";
+
+    if (count === 0) {
+      statVal.textContent = needed + "%";
+      statLbl.textContent = "Avg needed";
       card.className = "pred-result-card";
-      note.textContent = "Add subject marks first to get a personalised prediction.";
+      noteEl.textContent = "Add subject marks first to get a personalised prediction.";
       return;
     }
 
-    var avg =
-      marks.reduce(function (a, b) {
-        return a + b;
-      }, 0) / marks.length;
+    const avg = total / count;
     if (avg >= needed) {
-      value.textContent = "✓ Met";
-      label.textContent = "Target reached";
+      statVal.textContent = "✓ Met";
+      statLbl.textContent = "Target reached";
       card.className = "pred-result-card pred-achieved";
-      note.textContent =
-        "You're already averaging " + avg.toFixed(1) + "% — you've met the target for " + target + "!";
+      noteEl.textContent = `You're already averaging ${avg.toFixed(1)}% — you've met the target for ${targetGrade}!`;
     } else {
-      value.textContent = needed + "%";
-      label.textContent = "Target avg";
+      statVal.textContent = needed + "%";
+      statLbl.textContent = "Target avg";
       card.className = "pred-result-card";
-      note.textContent =
-        "Aim for at least " +
-        needed +
-        "% average. You're " +
-        (needed - avg).toFixed(1) +
-        "% below the " +
-        target +
-        " threshold right now.";
+      noteEl.textContent = `Aim for at least ${needed}% average. You're ${(needed - avg).toFixed(1)}% below the ${targetGrade} threshold right now.`;
     }
   }
 
-  function resetRows() {
-    tableBody.innerHTML = "";
-    for (var i = 0; i < START_ROWS; i++) addRow();
+  function updateTargetDropdown() {
+    const sel = document.getElementById("grTargetGrade");
+    if (!sel) return;
+    if (activeSystem === "10") {
+      sel.innerHTML = `
+        <option value="O">O (90%+)</option>
+        <option value="A+">A+ (80%+)</option>
+        <option value="A">A (70%+)</option>
+        <option value="B+" selected>B+ (60%+)</option>
+        <option value="B">B (55%+)</option>
+        <option value="C">C (50%+)</option>
+        <option value="P">P (40%+)</option>`;
+    } else if (activeSystem === "5") {
+      sel.innerHTML = `
+        <option value="A+">A+ (80%+)</option>
+        <option value="A">A (75%+)</option>
+        <option value="A−">A− (70%+)</option>
+        <option value="B+" selected>B+ (65%+)</option>
+        <option value="B">B (60%+)</option>
+        <option value="B−">B− (55%+)</option>
+        <option value="C">C (50%+)</option>
+        <option value="D">D (40%+)</option>`;
+    } else {
+      sel.innerHTML = `
+        <option value="A+">A+ (80%+)</option>
+        <option value="A">A (75%+)</option>
+        <option value="A−">A− (70%+)</option>
+        <option value="B+" selected>B+ (65%+)</option>
+        <option value="B">B (60%+)</option>
+        <option value="B−">B− (55%+)</option>
+        <option value="C+">C+ (50%+)</option>
+        <option value="C">C (45%+)</option>
+        <option value="D">D (40%+)</option>`;
+    }
   }
 
-  var resultPanel = byId("grResultPanel");
-  var errorEl = byId("grError");
-
-  document.querySelectorAll(".gsys-tab").forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      activeSystem = tab.dataset.sys;
-      document.querySelectorAll(".gsys-tab").forEach(function (t) {
-        t.classList.toggle("active", t.dataset.sys === activeSystem);
+  document.addEventListener("DOMContentLoaded", function() {
+    // System tabs
+    document.querySelectorAll(".gsys-tab").forEach((tab) => {
+      tab.addEventListener("click", function() {
+        activeSystem = this.dataset.sys;
+        document.querySelectorAll(".gsys-tab").forEach((t) =>
+          t.classList.toggle("active", t.dataset.sys === activeSystem)
+        );
+        updateTargetDropdown();
+        recalcGrade();
       });
-      updateTargetDropdown();
-      recalculate();
     });
-  });
 
-  tableBody.addEventListener("input", function (e) {
-    if (e.target.matches(".gr-marks, .gr-credit")) recalculate();
-    if (e.target.matches(".gr-marks")) errorEl.hidden = true;
-  });
-  tableBody.addEventListener("click", function (e) {
-    var del = e.target.closest(".btn-del-gr");
-    if (!del) return;
-    var row = del.closest(".grade-row");
-    row.classList.add("removing");
-    setTimeout(function () {
-      row.remove();
-      recalculate();
-    }, 180);
-  });
+    const addBtn = document.getElementById("grAddSubjectBtn");
+    const predictBtn = document.getElementById("grPredictBtn");
+    const printBtn = document.getElementById("grPrintBtn");
 
-  byId("grAddSubjectBtn").addEventListener("click", addRow);
-  byId("grPredictBtn").addEventListener("click", predictGrade);
-  byId("grPrintBtn").addEventListener("click", function () {
-    window.print();
-  });
+    const calcBtn = document.getElementById("grCalcBtn");
+    const resetBtn = document.getElementById("grResetBtn");
+    const resultPanel = document.getElementById("grResultPanel");
+    const errorEl = document.getElementById("grError");
 
-  byId("grCalcBtn").addEventListener("click", function () {
-    if (!filledMarks().length) {
-      errorEl.hidden = false;
-      resultPanel.hidden = true;
-      return;
+    function countFilledRows() {
+      let n = 0;
+      document.querySelectorAll("#gradeTableBody .gr-marks").forEach((el) => {
+        if (el.value !== "" && !isNaN(parseFloat(el.value))) n++;
+      });
+      return n;
     }
-    errorEl.hidden = true;
-    recalculate();
-    resultPanel.hidden = false;
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    resultPanel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
-  });
 
-  byId("grResetBtn").addEventListener("click", function () {
-    resetRows();
-    resultPanel.hidden = true;
-    errorEl.hidden = true;
-    byId("grPredResult").classList.remove("visible");
-  });
+    if (calcBtn) calcBtn.addEventListener("click", function() {
+      if (countFilledRows() === 0) {
+        if (errorEl) errorEl.hidden = false;
+        if (resultPanel) resultPanel.hidden = true;
+        return;
+      }
+      if (errorEl) errorEl.hidden = true;
+      recalcGrade();
+      if (resultPanel) {
+        resultPanel.hidden = false;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        resultPanel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      }
+    });
 
-  resetRows();
+    if (resetBtn) resetBtn.addEventListener("click", function() {
+      document.getElementById("gradeTableBody").innerHTML = "";
+      rowCount = 0;
+      addRow(); addRow(); addRow();
+      if (resultPanel) resultPanel.hidden = true;
+      if (errorEl) errorEl.hidden = true;
+      const pred = document.getElementById("grPredResult");
+      if (pred) pred.className = "pred-result";
+    });
+
+    document.addEventListener("input", function(e) {
+      if (errorEl && !errorEl.hidden && e.target.classList && e.target.classList.contains("gr-marks")) errorEl.hidden = true;
+    });
+
+    if (addBtn) addBtn.addEventListener("click", addRow);
+    if (predictBtn) predictBtn.addEventListener("click", predictGrade);
+    if (printBtn) printBtn.addEventListener("click", () => window.print());
+
+    // Start with 3 default rows
+    addRow();
+    addRow();
+    addRow();
+  });
 })();

@@ -1,116 +1,153 @@
-/* GPA <-> CGPA converter page: scales a value from one grading scale to another. */
-(function () {
+// GPA-CGPA Converter Page JS
+// ─── GPA ↔ CGPA CONVERTER PAGE ───────────────────────────────
+
+(function() {
   "use strict";
 
-  var page = document.getElementById("gpaConverterPage");
-  if (!page) return;
-
-  /* Each direction (GPA -> CGPA and CGPA -> GPA) uses the same markup with different ids. */
-  var DIRECTIONS = {
-    gpa: {
-      label: "GPA",
-      input: "gpaInput",
-      from: "gpaScale",
-      to: "cgpaTargetScale",
-      error: "gpaInputError",
-      panel: "gpaToCgpaPanel",
-      value: "gpaToCgpaValue",
-      pct: "gpaToCgpaPct",
-      formula: "gpaToCgpaFormula",
-    },
-    cgpa: {
-      label: "CGPA",
-      input: "cgpaInput",
-      from: "cgpaScale",
-      to: "gpaTargetScale",
-      error: "cgpaInputError",
-      panel: "cgpaToGpaPanel",
-      value: "cgpaToGpaValue",
-      pct: "cgpaToGpaPct",
-      formula: "cgpaToGpaFormula",
-    },
-  };
-
-  function byId(id) {
-    return document.getElementById(id);
+  function toNum(id) {
+    return parseFloat(document.getElementById(id).value) || 0;
   }
 
-  function convert(dir) {
-    var input = byId(dir.input);
-    var panel = byId(dir.panel);
-    var error = byId(dir.error);
-    var raw = input.value.trim();
-    var value = parseFloat(raw);
-    var fromScale = parseFloat(byId(dir.from).value) || 0;
-    var toScale = parseFloat(byId(dir.to).value) || 0;
+  function calcGpaToCgpa() {
+    const gpa = toNum("gpaInput");
+    const fromScale = toNum("gpaScale");
+    const toScale = toNum("cgpaTargetScale");
+    const panel = document.getElementById("gpaToCgpaPanel");
+    const errorEl = document.getElementById("gpaInputError");
+    const inputEl = document.getElementById("gpaInput");
 
-    error.hidden = true;
-    if (raw === "") {
-      panel.classList.remove("visible");
-      return;
-    }
-    if (isNaN(value) || value < 0 || value > fromScale) {
-      error.textContent = "Enter a valid " + dir.label + " between 0 and " + fromScale + ".";
-      error.hidden = false;
-      input.classList.add("error-shake");
-      setTimeout(function () {
-        input.classList.remove("error-shake");
-      }, 400);
+    errorEl.style.display = "none";
+
+    if (document.getElementById("gpaInput").value.trim() === "") {
       panel.classList.remove("visible");
       return;
     }
 
-    var converted = fromScale > 0 ? (value / fromScale) * toScale : 0;
-    var percent = fromScale > 0 ? (value / fromScale) * 100 : 0;
-    byId(dir.value).textContent = converted.toFixed(2);
-    byId(dir.pct).textContent = percent.toFixed(2) + "%";
-    byId(dir.formula).textContent =
-      "Formula: (" + value + " ÷ " + fromScale + ") × " + toScale + " = " + converted.toFixed(2);
+    if (isNaN(parseFloat(document.getElementById("gpaInput").value)) || gpa < 0 || gpa > fromScale) {
+      errorEl.textContent = `Enter a valid GPA between 0 and ${fromScale}.`;
+      errorEl.style.display = "block";
+      inputEl.classList.add("error-shake");
+      setTimeout(() => inputEl.classList.remove("error-shake"), 400);
+      panel.classList.remove("visible");
+      return;
+    }
+
+    const converted = fromScale > 0 ? (gpa / fromScale) * toScale : 0;
+    const percent = fromScale > 0 ? (gpa / fromScale) * 100 : 0;
+
+    document.getElementById("gpaToCgpaValue").textContent = converted.toFixed(2);
+    document.getElementById("gpaToCgpaPct").textContent = percent.toFixed(2) + "%";
+    document.getElementById("gpaToCgpaFormula").textContent =
+      `Formula: (${gpa} ÷ ${fromScale}) × ${toScale} = ${converted.toFixed(2)}`;
     panel.classList.add("visible");
   }
 
-  function reset(dir) {
-    byId(dir.input).value = "";
-    byId(dir.error).hidden = true;
-    byId(dir.panel).classList.remove("visible");
+  function calcCgpaToGpa() {
+    const cgpa = toNum("cgpaInput");
+    const fromScale = toNum("cgpaScale");
+    const toScale = toNum("gpaTargetScale");
+    const panel = document.getElementById("cgpaToGpaPanel");
+    const errorEl = document.getElementById("cgpaInputError");
+    const inputEl = document.getElementById("cgpaInput");
+
+    errorEl.style.display = "none";
+
+    if (document.getElementById("cgpaInput").value.trim() === "") {
+      panel.classList.remove("visible");
+      return;
+    }
+
+    if (isNaN(parseFloat(document.getElementById("cgpaInput").value)) || cgpa < 0 || cgpa > fromScale) {
+      errorEl.textContent = `Enter a valid CGPA between 0 and ${fromScale}.`;
+      errorEl.style.display = "block";
+      inputEl.classList.add("error-shake");
+      setTimeout(() => inputEl.classList.remove("error-shake"), 400);
+      panel.classList.remove("visible");
+      return;
+    }
+
+    const converted = fromScale > 0 ? (cgpa / fromScale) * toScale : 0;
+    const percent = fromScale > 0 ? (cgpa / fromScale) * 100 : 0;
+
+    document.getElementById("cgpaToGpaValue").textContent = converted.toFixed(2);
+    document.getElementById("cgpaToGpaPct").textContent = percent.toFixed(2) + "%";
+    document.getElementById("cgpaToGpaFormula").textContent =
+      `Formula: (${cgpa} ÷ ${fromScale}) × ${toScale} = ${converted.toFixed(2)}`;
+    panel.classList.add("visible");
   }
 
-  function copyResult(button) {
-    var panel = byId(button.dataset.copy);
-    var text =
-      panel.querySelector(".gpa-result-value").textContent +
-      " (" +
-      panel.querySelector(".gpa-result-pct").textContent +
-      ")";
-    window.copyText(text).then(function () {
-      button.textContent = "Copied!";
-      button.classList.add("copied");
-      setTimeout(function () {
-        button.textContent = "Copy";
-        button.classList.remove("copied");
+  if (!document.getElementById("gpaConverterPage")) return;
+
+  window.copyGpaResult = function(panelId) {
+    const panel = document.getElementById(panelId);
+    const text = panel.querySelector(".gpa-result-value").textContent +
+      " (" + panel.querySelector(".gpa-result-pct").textContent + ")";
+    const btn = panel.querySelector(".btn-copy-gpa");
+
+    function onCopied() {
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = "Copy";
+        btn.classList.remove("copied");
       }, 1800);
-    });
-  }
+    }
 
-  Object.keys(DIRECTIONS).forEach(function (key) {
-    var dir = DIRECTIONS[key];
-    var run = function () {
-      convert(dir);
-    };
-    [dir.input, dir.from, dir.to].forEach(function (id) {
-      var el = byId(id);
-      el.addEventListener("input", run);
-      el.addEventListener("change", run);
-    });
-    byId(dir.input).addEventListener("keydown", function (e) {
-      if (e.key === "Enter") run();
-    });
-  });
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onCopied);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.cssText = "position:fixed;opacity:0;";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      onCopied();
+    }
+  };
 
-  page.addEventListener("click", function (e) {
-    var resetBtn = e.target.closest("[data-reset]");
-    if (resetBtn) return reset(DIRECTIONS[resetBtn.dataset.reset]);
-    var copyBtn = e.target.closest("[data-copy]");
-    if (copyBtn) copyResult(copyBtn);
+  window.resetGpaConverter = function(type) {
+    if (type === "gpa") {
+      document.getElementById("gpaInput").value = "";
+      document.getElementById("gpaInputError").style.display = "none";
+      document.getElementById("gpaToCgpaPanel").classList.remove("visible");
+    } else {
+      document.getElementById("cgpaInput").value = "";
+      document.getElementById("cgpaInputError").style.display = "none";
+      document.getElementById("cgpaToGpaPanel").classList.remove("visible");
+    }
+  };
+
+  window.toggleGpaFaq = function(el) {
+    const item = el.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+    el.closest(".faq-list").querySelectorAll(".faq-item.open").forEach((i) => i.classList.remove("open"));
+    if (!isOpen) item.classList.add("open");
+  };
+
+  document.addEventListener("DOMContentLoaded", function() {
+    ["gpaInput", "gpaScale", "cgpaTargetScale"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener("input", calcGpaToCgpa);
+        el.addEventListener("change", calcGpaToCgpa);
+      }
+    });
+
+    ["cgpaInput", "cgpaScale", "gpaTargetScale"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener("input", calcCgpaToGpa);
+        el.addEventListener("change", calcCgpaToGpa);
+      }
+    });
+
+    ["gpaInput", "cgpaInput"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") id === "gpaInput" ? calcGpaToCgpa() : calcCgpaToGpa();
+      });
+    });
   });
 })();

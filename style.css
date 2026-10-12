@@ -4330,3 +4330,15 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .m-group-body .mobile-nav-sub.is-soon:hover{background:transparent}
 @media(max-width:1000px){.nav-pill{display:none}}
 @media(prefers-reduced-motion:reduce){.mega.open{animation:none}.m-group-body,.mega-ico{transition:none}}
+
+
+/* ===== Tools-first pages: calculator sits directly under the H1 ===== */
+.tool-first .main-content>h1,
+.tool-first .tool-page-wrap>h1,
+.tool-first .grade-calc-wrap>h1{margin-bottom:20px}
+/* card titles that are now real <h2> headings keep their original sans look */
+.tool-first .converter-card .tool-head .card-title,
+.tool-first .grade-panel .tool-head .card-title,
+.tool-first .grade-result-panel .card-title,
+.tool-first .grade-prediction-panel .card-title,
+.tool-first .gpa-panel-title{font-family:var(--font)}

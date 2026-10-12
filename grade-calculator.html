@@ -23,7 +23,7 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" media="print" onload="this.media='all'" />
  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;500;600&display=swap" /></noscript>
-  <link rel="stylesheet" href="style.css?v=20261008b" />
+  <link rel="stylesheet" href="style.css?v=20261012a" />
  <script defer src="nav.js?v=20261008b"></script>
  <script defer src="grade-calculator.js?v=20261006b"></script>
  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
@@ -207,7 +207,7 @@
  ]
 }</script>
 </head>
-<body class="page-tool">
+<body class="page-tool tool-first">
 
  <!-- HEADER -->
  <header class="header">
@@ -263,14 +263,10 @@
   </nav>
 
   <h1>Grade Calculator</h1>
-  <p class="page-intro">Calculate your assignment grades, weighted grades, quiz scores, test results, and semester GPA instantly. Enter your marks, apply weights, and see your estimated academic performance in seconds.</p>
-
-
- 
 
   <!-- SUBJECT TABLE -->
   <div class="grade-panel">
-   <div class="tool-head"><div class="card-title">Enter your subjects and marks</div></div>
+   <div class="tool-head"><h2 class="card-title">Enter your subjects and marks</h2></div>
 
    <div class="grade-system-tabs" role="tablist" aria-label="Grading scale">
     <button class="gsys-tab active" data-sys="4" role="tab" aria-selected="true">4.0 Scale</button>
@@ -299,7 +295,7 @@
   <!-- RESULT PANEL (shown after Calculate) -->
   <div class="grade-result-panel" id="grResultPanel" hidden>
    <div class="tool-head tool-head-row">
-    <div><div class="card-title">Your Grade Summary</div></div>
+    <div><h2 class="card-title">Your Grade Summary</h2></div>
     <button class="btn-grade-print" id="grPrintBtn" style="width:auto;padding:9px 20px;font-size:13px;" type="button">
      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
      Print / Save PDF
@@ -316,7 +312,7 @@
 
   <!-- PREDICTION ENGINE -->
   <div class="grade-prediction-panel">
-   <div class="tool-head"><div class="card-title">What Grade Can You Reach?</div></div>
+   <div class="tool-head"><h2 class="card-title">What Grade Can You Reach?</h2></div>
    <p class="tool-note">Select a target grade below to see if your current marks can get you there, and what average you need.</p>
    <div class="pred-form">
     <div class="pred-field">
@@ -349,7 +345,7 @@
   <!-- GRADE REFERENCE -->
   <div class="grade-ref-wrap">
    <span class="card-label">Reference</span>
-   <div class="card-title">Grading Scale Reference</div>
+   <h2 class="card-title">Grading Scale Reference</h2>
    <div class="table-wrap">
     <table>
      <thead><tr><th>Marks Range</th><th>Letter Grade</th><th>4.0 Scale</th><th>5.0 Scale</th><th>10.0 Scale</th><th>Meaning</th></tr></thead>

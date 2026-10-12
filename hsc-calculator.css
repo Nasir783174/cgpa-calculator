@@ -104,15 +104,26 @@
   .hsc-toolbar{flex-direction:column;align-items:stretch}
   .hsc-seg{display:grid;grid-auto-flow:column}
   .hsc-seg span{padding:6px 8px;font-size:14px}
-  .hsc-row{grid-template-columns:1fr;gap:8px;padding:12px}
-  .hsc-name{min-height:52px;font-size:17px}
-  .hsc-field{min-height:0}
-  .hsc-grade,.hsc-subject-select,.hsc-input,.hsc-max{height:52px}
-  .hsc-field{justify-content:stretch}
-  .hsc-grade{max-width:none}
-  .hsc-marks{justify-content:flex-start}
-  .hsc-input{max-width:none;flex:1}
+
+  /* Subject and grade sit side by side: subject left, input right */
+  .hsc-row{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:6px 10px;align-items:start;padding:10px}
+  .hsc-name,.hsc-grade,.hsc-subject-select,.hsc-input,.hsc-max{height:52px;min-height:52px;box-sizing:border-box}
+  .hsc-name{padding:6px 12px;font-size:15.5px;line-height:1.25;overflow-wrap:anywhere}
+  .hsc-subject-select{font-size:14.5px;padding:0 28px 0 12px;background-position:right 10px center}
+  .hsc-grade{font-size:16px;padding:0 30px 0 12px;background-position:right 10px center;max-width:none}
+  .hsc-field{min-height:0;justify-content:stretch}
+  .hsc-hint{font-size:11.5px;line-height:1.25}
   .hsc-err{text-align:left}
+
+  /* Marks mode: input on top, full marks + live grade chip underneath */
+  .hsc-marks{display:none;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 8px;justify-content:stretch}
+  #hscCalc [data-mode="marks"] .hsc-marks{display:grid}
+  .hsc-input{grid-column:1/-1;font-size:16px;padding:0 12px;flex:none}
+  .hsc-max-wrap{grid-column:1;justify-self:start}
+  .hsc-max-text{font-size:15px;min-width:0}
+  .hsc-max{width:92px;font-size:15px;height:40px;min-height:40px;padding:0 24px 0 10px;background-position:right 8px center}
+  .hsc-chip{grid-column:2;justify-self:end}
+
   .hsc-actions{grid-template-columns:1fr}
   .hsc-stats{grid-template-columns:1fr 1fr 1fr;gap:6px}
   .hsc-stat-val{font-size:16px}

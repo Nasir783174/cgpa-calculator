@@ -104,15 +104,26 @@
   .ssc-toolbar{flex-direction:column;align-items:stretch}
   .ssc-seg{display:grid;grid-auto-flow:column}
   .ssc-seg span{padding:6px 8px;font-size:14px}
-  .ssc-row{grid-template-columns:1fr;gap:8px;padding:12px}
-  .ssc-name{min-height:52px;font-size:17px}
-  .ssc-field{min-height:0}
-  .ssc-grade,.ssc-subject-select,.ssc-input,.ssc-max{height:52px}
-  .ssc-field{justify-content:stretch}
-  .ssc-grade{max-width:none}
-  .ssc-marks{justify-content:flex-start}
-  .ssc-input{max-width:none;flex:1}
+
+  /* Subject and grade sit side by side: subject left, input right */
+  .ssc-row{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:6px 10px;align-items:start;padding:10px}
+  .ssc-name,.ssc-grade,.ssc-subject-select,.ssc-input,.ssc-max{height:52px;min-height:52px;box-sizing:border-box}
+  .ssc-name{padding:6px 12px;font-size:15.5px;line-height:1.25;overflow-wrap:anywhere}
+  .ssc-subject-select{font-size:14.5px;padding:0 28px 0 12px;background-position:right 10px center}
+  .ssc-grade{font-size:16px;padding:0 30px 0 12px;background-position:right 10px center;max-width:none}
+  .ssc-field{min-height:0;justify-content:stretch}
+  .ssc-hint{font-size:11.5px;line-height:1.25}
   .ssc-err{text-align:left}
+
+  /* Marks mode: input on top, full marks + live grade chip underneath */
+  .ssc-marks{display:none;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 8px;justify-content:stretch}
+  #sscCalc [data-mode="marks"] .ssc-marks{display:grid}
+  .ssc-input{grid-column:1/-1;font-size:16px;padding:0 12px;flex:none}
+  .ssc-max-wrap{grid-column:1;justify-self:start}
+  .ssc-max-text{font-size:15px;min-width:0}
+  .ssc-max{width:92px;font-size:15px;height:40px;min-height:40px;padding:0 24px 0 10px;background-position:right 8px center}
+  .ssc-chip{grid-column:2;justify-self:end}
+
   .ssc-actions{grid-template-columns:1fr}
   .ssc-stats{grid-template-columns:1fr 1fr 1fr;gap:6px}
   .ssc-stat-val{font-size:16px}

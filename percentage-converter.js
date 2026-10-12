@@ -6,7 +6,7 @@
 
   if (!document.getElementById("inputValue") || !document.getElementById("formulaSelect")) return;
 
-  let mode = "cgpa"; // "cgpa" | "percent"
+  let mode = "cgpa"; // "cgpa" | "percentage"
 
   const FORMULAS = {
     cbse: {
@@ -66,11 +66,7 @@
     setTimeout(() => el.classList.remove("error-shake"), 400);
   }
 
-  // Bug fix: the input's max attribute must match the CGPA ceiling of the
-  // currently selected formula (4 for "4pt", 5 for "5pt", 10 for the rest),
-  // not a hardcoded 10 — otherwise the native number input allows values
-  // the formula doesn't support until the manual validation in calculate()
-  // catches it.
+  // Input max follows the selected formula: 4 for "4pt", 5 for "5pt", 10 for the rest.
   function getMaxCGPAForFormula() {
     const formula = document.getElementById("formulaSelect").value;
     return formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
@@ -201,7 +197,7 @@
     const formulaSelect = document.getElementById("formulaSelect");
     if (formulaSelect) formulaSelect.addEventListener("change", updateInputMax);
 
-    // Set the correct max on first load (was previously hardcoded to 10).
+    // Set the correct max on first load.
     updateInputMax();
   });
 })();

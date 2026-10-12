@@ -430,24 +430,6 @@ function animateValue(el, from, to, duration) {
   });
 }
 
-function updateAllDropdowns() {
-  document.querySelectorAll(".course-grade").forEach((select) => {
-    const current = parseFloat(select.value);
-    const scale = getScale();
-    const match = scale.grades.find((g) => g.value === current);
-    select.innerHTML = buildDropdown(match ? match.value : null);
-  });
-  document.querySelectorAll(".sgpa-val-input").forEach((input) => {
-    input.max = getScaleMax();
-  });
-  const scaleMax = getScaleMax();
-  const currentCGPAEl = document.getElementById("currentCGPA");
-  const targetCGPAEl = document.getElementById("targetCGPA");
-  if (currentCGPAEl) currentCGPAEl.max = scaleMax;
-  if (targetCGPAEl) targetCGPAEl.max = scaleMax;
-  recalcAll();
-}
-
 function showToast(message) {
   const existing = document.querySelector(".toast");
   if (existing) existing.remove();
@@ -562,7 +544,7 @@ function initCalculator() {
   document.getElementById("currentCGPA").addEventListener("input", calcTarget);
   const completedCreditsEl = document.getElementById("completedCredits");
   if (completedCreditsEl) completedCreditsEl.addEventListener("input", calcTarget);
-  document.getElementById("downloadPDF").addEventListener("click", downloadReport);
+  document.getElementById("downloadReportBtn").addEventListener("click", downloadReport);
   const stickyBar = document.getElementById("stickyBar");
   const calcSection = document.querySelector(".calculator-section");
   const stickyObserver = new IntersectionObserver(([entry]) => {

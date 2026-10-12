@@ -339,17 +339,6 @@ ol {
   background: var(--accent-dim)
 }
 
-.mobile-nav-group-header {
-  padding: 8px 24px 6px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border-bottom: 1px solid var(--accent-border)
-}
-
 .mobile-nav-sub {
   padding-left: 32px;
   font-size: 14px;
@@ -958,7 +947,7 @@ ol {
   font-size: 14px
 }
 
-.btn-pdf {
+.btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -976,13 +965,13 @@ ol {
   box-shadow: 0 4px 14px rgba(31,77,58,.30)
 }
 
-.btn-pdf:hover {
+.btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(31,77,58,.40)
 }
 
-.btn-pdf:active {
+.btn-primary:active {
   transform: none
 }
 
@@ -1593,8 +1582,7 @@ tbody tr:hover {
   margin-bottom: 11px
 }
 
-.hero-title,
-.tool-hero h1 {
+.hero-title {
   font-size: var(--fs-h1);
   font-weight: 600;
   color: var(--text-1);
@@ -1603,8 +1591,7 @@ tbody tr:hover {
   margin-bottom: var(--sp-md)
 }
 
-.hero-sub,
-.tool-hero p {
+.hero-sub {
   font-size: var(--fs-body);
   font-weight: 400;
   color: var(--text-2);
@@ -3446,7 +3433,7 @@ tbody tr:hover {
 
   
 
-  .btn-pdf {
+  .btn-primary {
     height: 54px;
     padding: 0 16px;
     font-size: 17px
@@ -3566,68 +3553,6 @@ tbody tr:hover {
   color: var(--accent)
 }
 
-.nav-drop-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 220px;
-  background: #fff;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(31,77,58,.14), 0 2px 8px rgba(0, 0, 0, .06);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(0);
-  transition: opacity .18s, transform .18s;
-  z-index: 200;
-  padding-top: 8px
-}
-
-.nav-drop-menu.open {
-  opacity: 1;
-  pointer-events: auto
-}
-
-.nav-drop-item {
-  display: flex;
-  flex-direction: column;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--border-2);
-  transition: background var(--transition), color var(--transition)
-}
-
-.nav-drop-item:last-child {
-  border-bottom: none
-}
-
-.nav-drop-item:hover {
-  background: var(--accent-dim)
-}
-
-.nav-drop-item:first-child {
-  border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0
-}
-
-.nav-drop-item:last-child {
-  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px)
-}
-
-.nav-drop-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-1)
-}
-
-.nav-drop-item:hover .nav-drop-name {
-  color: var(--accent)
-}
-
-.nav-drop-desc {
-  font-size: 11px;
-  color: var(--text-3);
-  margin-top: 1px
-}
-
 .scales-section {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -3718,18 +3643,13 @@ h3 {
 .grade-badge,
 .uni-country,
 .blog-card-num,
-.pi-letter,
-.pi-val,
 .semester-num,
 .sgpa-table-header,
 .result-formula,
 th,
 .faq-question,
 .breadcrumb,
-.footer-bottom,
-.tool-card-pill,
-.scale-card-range,
-.tool-card-range {
+.footer-bottom {
   font-family: var(--font-mono)
 }
 
@@ -3751,24 +3671,19 @@ th,
   border-radius: 6px
 }
 
-.hero-title,
-.tool-hero h1 {
+.hero-title {
   font-family: var(--font-serif)
 }
 
-.tool-card::before,
-.blog-card::before,
-.scale-card-link::before {
+.blog-card::before {
   display: none
 }
 
-.tool-card,
 .blog-card,
 .card,
 .calculator-section,
 .seo-section,
 .sgpa-section,
-.quick-ref,
 .scales-section,
 .about-section,
 .about-stat-card,
@@ -3777,9 +3692,7 @@ th,
   border-radius: var(--radius)
 }
 
-.tool-card:hover,
 .blog-card:hover,
-.scale-card-link:hover,
 .why-card:hover {
   border-color: var(--accent)
 }
@@ -3788,20 +3701,20 @@ th,
   display: none
 }
 
-.btn-pdf,
+.btn-primary,
 .btn-calculate,
 .btn-predict,
 .btn-cta {
   border-radius: var(--radius-btn)
 }
 
-.btn-pdf:hover,
+.btn-primary:hover,
 .btn-calculate:hover,
 .btn-predict:hover {
   background: var(--accent-light)
 }
 
-.btn-pdf:active,
+.btn-primary:active,
 .btn-calculate:active,
 .btn-predict:active {
   background: var(--accent-active)
@@ -3953,7 +3866,6 @@ th {
 
 /* ===== Homepage calculator hero-band: make tools the first-impression focal point ===== */
 .calc-hero-band{position:relative;margin:0 -24px 0;padding:32px 24px 40px;background:radial-gradient(1100px 260px at 50% -60px,rgba(31,77,58,.10),transparent),linear-gradient(180deg,#F2F7F3 0%,#FFFFFF 100%);border-bottom:1px solid var(--border)}
-.calc-hero-eyebrow{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;padding:5px 14px;border-radius:999px;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent-light);font-size:12.5px;font-weight:600;letter-spacing:.02em}
 .calc-hero-band .section-title{font-size:24px}
 .calc-hero-band .section-note{margin-bottom:22px}
 .calc-scale{position:relative}
@@ -4117,7 +4029,6 @@ th {
 
 /* Frames */
 .page-tool .card.result-card,
-.page-tool .card.grade-scale-card,
 .page-tool .card.target-card-standalone,
 .page-tool .calculator-section,
 .page-tool .sgpa-section{
@@ -4209,7 +4120,6 @@ th {
 
 @media(max-width:768px){
   .page-tool .card.result-card,
-  .page-tool .card.grade-scale-card,
   .page-tool .card.target-card-standalone,
   .page-tool .calculator-section,
   .page-tool .sgpa-section{padding:0 16px 18px;border-radius:14px}
@@ -4276,17 +4186,12 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .nav-dropdown-trigger[aria-expanded="true"]{color:var(--accent);background:var(--accent-dim)}
 .nav-dropdown-trigger[aria-expanded="true"] svg{transform:rotate(180deg);color:var(--accent)}
 .nav-dropdown-trigger:focus-visible,.nav-link:focus-visible,.mega-item:focus-visible,.m-group-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.nav-pill{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:#F3EBD8;color:var(--violet);line-height:1.4}
 
 .mega{position:absolute;top:100%;left:0;padding-top:12px;z-index:300;display:none}
 .mega.open{display:block;animation:megaIn .18s ease both}
 @keyframes megaIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .mega-card{width:min(600px,calc(100vw - 32px));transform:translateX(var(--mx,0px));background:#fff;border:1.5px solid var(--border);border-top:3px solid var(--accent);border-radius:16px;box-shadow:0 24px 60px rgba(20,32,27,.16),0 4px 14px rgba(20,32,27,.06);overflow:hidden}
 .mega-tools .mega-card{width:min(430px,calc(100vw - 32px))}
-.mega-soon .mega-card{width:min(430px,calc(100vw - 32px))}
-.mega-head{padding:16px 20px 12px;background:linear-gradient(180deg,#F1F6F2,#fff);border-bottom:1px solid var(--border-2)}
-.mega-eyebrow{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-.mega-title{display:block;margin-top:3px;font-family:var(--font-serif);font-size:18px;font-weight:600;color:var(--text-1);line-height:1.3}
 .mega-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:10px}
 .mega-grid.one{grid-template-columns:minmax(0,1fr)}
 .mega-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1px solid transparent;transition:background .15s,border-color .15s}
@@ -4298,17 +4203,6 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .mega-name{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:14px;font-weight:600;color:var(--text-1);line-height:1.25}
 .mega-item:hover .mega-name{color:var(--accent)}
 .mega-desc{margin-top:2px;font-size:12px;color:var(--text-3);line-height:1.4}
-.mega-badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--accent);color:#fff;line-height:1.4}
-.mega-badge.soon{background:#F3EBD8;color:var(--violet)}
-.mega-item.is-soon{cursor:default}
-.mega-item.is-soon .mega-ico{background:var(--bg);border-style:dashed;color:var(--text-3)}
-.mega-item.is-soon:hover{background:transparent;border-color:transparent}
-.mega-item.is-soon:hover .mega-ico{background:var(--bg);color:var(--text-3);border-color:var(--accent-border);transform:none}
-.mega-item.is-soon:hover .mega-name{color:var(--text-1)}
-.mega-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:var(--bg);border-top:1px solid var(--border-2);font-size:13px}
-.mega-foot a{font-weight:600;color:var(--accent)}
-.mega-foot a:hover{text-decoration:underline}
-.mega-foot span{color:var(--text-3)}
 
 /* Mobile accordion menu */
 .mobile-menu.open{max-height:calc(100vh - 64px);overflow-y:auto}
@@ -4316,7 +4210,6 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .m-group-btn{display:flex;align-items:center;width:100%;gap:10px;padding:15px 24px;background:#fff;border:0;font-family:inherit;font-size:var(--fs-nav);font-weight:600;color:var(--text-1);text-align:left;cursor:pointer}
 .m-group-btn.active-parent{color:var(--accent)}
 .m-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:1px 9px}
-.m-count.soon{color:var(--violet);background:#F3EBD8;border-color:#E8DCC0}
 .m-group-btn svg{width:18px;height:18px;color:var(--text-3);transition:transform .2s}
 .m-group-btn[aria-expanded="true"] svg{transform:rotate(180deg);color:var(--accent)}
 .m-group-body{display:grid;grid-template-rows:0fr;background:#FBF9F3;transition:grid-template-rows .25s ease}
@@ -4326,9 +4219,6 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .m-name{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--text-1)}
 .m-desc{font-size:12px;font-weight:400;color:var(--text-3)}
 .m-group-body .mobile-nav-sub.current .m-name{color:var(--accent)}
-.m-group-body .mobile-nav-sub.is-soon{cursor:default;opacity:.8}
-.m-group-body .mobile-nav-sub.is-soon:hover{background:transparent}
-@media(max-width:1000px){.nav-pill{display:none}}
 @media(prefers-reduced-motion:reduce){.mega.open{animation:none}.m-group-body,.mega-ico{transition:none}}
 
 

@@ -139,7 +139,6 @@ function ieltsInit() {
     head.append(big);
     const stats = mk('div', 'ssc-stats');
     stats.append(stat(r.averageText, 'Average of 4'), stat(String(r.sum), 'Total of bands'), stat(fmt(r.overall), 'Rounded band'));
-    const frac = r.average - Math.floor(r.average);
     const ruleLine = Math.abs(r.average - r.overall) < 1e-9
       ? 'The average is already a whole or half band, so no rounding is needed.'
       : 'IELTS rounds an average ending in .25 up to the next half band and .75 up to the next whole band; ' + r.averageText + ' rounds ' + (r.overall > r.average ? 'up' : 'down') + ' to ' + fmt(r.overall) + '.';

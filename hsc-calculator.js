@@ -6,7 +6,7 @@
 const HSC_BANDS = Object.freeze([
   { min: 80, letter: 'A+', point: 5 },
   { min: 70, letter: 'A', point: 4 },
-  { min: 60, letter: 'A-', point: 3.5 },
+  { min: 60, letter: 'A−', point: 3.5 },
   { min: 50, letter: 'B', point: 3 },
   { min: 40, letter: 'C', point: 2 },
   { min: 33, letter: 'D', point: 1 },

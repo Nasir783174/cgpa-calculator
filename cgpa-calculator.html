@@ -93,8 +93,17 @@
     "https://cgpa-calculatore.quora.com/"
    ],
    "founder": {
-    "@type": "Person",
-    "name": "Mohammad Nasir"
+    "@id": "https://cgpacalculator.dev/about-me#person"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://cgpacalculator.dev/about-me#person",
+   "name": "Mohammad Nasir",
+   "url": "https://cgpacalculator.dev/about-me",
+   "image": "https://cgpacalculator.dev/mohammad-nasir.webp",
+   "worksFor": {
+    "@id": "https://cgpacalculator.dev/#organization"
    }
   },
   {
@@ -109,12 +118,27 @@
     "@id": "https://cgpacalculator.dev/#website"
    },
    "about": {
-    "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication"
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#webapplication"
    },
    "breadcrumb": {
     "@id": "https://cgpacalculator.dev/cgpa-calculator#breadcrumb"
    },
-   "inLanguage": "en-US"
+   "inLanguage": "en",
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://cgpacalculator.dev/cgpa-calculator.webp",
+    "width": 1112,
+    "height": 625
+   },
+   "author": {
+    "@id": "https://cgpacalculator.dev/about-me#person"
+   },
+   "publisher": {
+    "@id": "https://cgpacalculator.dev/#organization"
+   },
+   "mainEntity": {
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#webapplication"
+   }
   },
   {
    "@type": "BreadcrumbList",
@@ -135,44 +159,62 @@
    ]
   },
   {
-   "@type": "SoftwareApplication",
-   "@id": "https://cgpacalculator.dev/cgpa-calculator#softwareapplication",
+   "@type": "WebApplication",
+   "@id": "https://cgpacalculator.dev/cgpa-calculator#webapplication",
    "name": "CGPA Calculator for Bangladeshi Students",
    "url": "https://cgpacalculator.dev/cgpa-calculator",
+   "description": "A free CGPA calculator for Bangladeshi university students using the UGC 4.00 grading scale (A+ = 4.00, A = 3.75). Add semesters, enter grades and credit hours to get your CGPA and SGPA.",
    "applicationCategory": "EducationalApplication",
-   "applicationSubCategory": "CalculatorApplication",
-   "operatingSystem": "Web",
+   "applicationSubCategory": "CGPA calculator",
+   "operatingSystem": "Any (web browser)",
    "browserRequirements": "Requires JavaScript and HTML5 support",
-   "description": "A free CGPA calculator for Bangladeshi university students using the 4.00 grading scale (A+ = 4.00, A = 3.75). Add semesters, enter grades and credit hours, and get your CGPA and SGPA in seconds. Includes SGPA to CGPA conversion, a target CGPA planner and a downloadable report.",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "audience": {
+    "@type": "Audience",
+    "audienceType": "University students in Bangladesh",
+    "geographicArea": {
+     "@type": "Country",
+     "name": "Bangladesh"
+    }
+   },
    "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
    },
    "featureList": [
-    "Bangladesh 4.00 scale CGPA calculation",
-    "Multi-semester support",
-    "Instant live results",
+    "CGPA calculation on the UGC 4.00 scale",
+    "Multiple semesters with SGPA for each",
+    "Best grade counted for retaken courses",
     "SGPA to CGPA conversion",
     "Target CGPA planner",
-    "Downloadable report export",
-    "Credit-weighted average",
-    "Mobile responsive design"
+    "Downloadable HTML report"
    ],
+   "author": {
+    "@id": "https://cgpacalculator.dev/about-me#person"
+   },
    "publisher": {
     "@id": "https://cgpacalculator.dev/#organization"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#webpage"
    }
   },
   {
    "@type": "FAQPage",
    "@id": "https://cgpacalculator.dev/cgpa-calculator#faq",
+   "url": "https://cgpacalculator.dev/cgpa-calculator",
+   "mainEntityOfPage": {
+    "@id": "https://cgpacalculator.dev/cgpa-calculator#webpage"
+   },
    "mainEntity": [
     {
      "@type": "Question",
      "name": "What is the CGPA grading system in Bangladesh?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Most universities in Bangladesh use a 4.00 scale: A+ = 4.00, A = 3.75, A− = 3.50, B+ = 3.25, B = 3.00, B− = 2.75, C+ = 2.50, C = 2.25, D = 2.00 and F = 0.00. Marks ranges and the rules for failed or retaken courses differ between universities, so check your official grading policy. The full table is in the Bangladesh grading system section above."
+      "text": "The UGC scheme gives A+ = 4.00 (80–100%), A = 3.75, A− = 3.50, B+ = 3.25, B = 3.00, B− = 2.75, C+ = 2.50, C = 2.25, D = 2.00 and F = 0.00 (below 40%). National University and most public universities follow it. Many private universities use their own tables, so check your university's grade table. See the full table above."
      }
     },
     {
@@ -180,23 +222,15 @@
      "name": "How do I calculate CGPA in Bangladesh?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Multiply each course's grade point by its credit hours, add up the weighted points from all your semesters, then divide by your total credit hours: CGPA = Total Weighted Grade Points ÷ Total Credit Hours. For example, courses of 3, 4, 2 and 3 credits with grades A, A+, B+ and A− give 44.25 ÷ 12 = 3.69. The calculator above does this for you as you type. For a manual walkthrough, see our step-by-step CGPA calculation guide."
+      "text": "Multiply each course's grade point by its credit hours, add the results for all semesters, then divide by the total credit hours: CGPA = Total Weighted Grade Points ÷ Total Credit Hours. For example, courses of 3, 4, 2 and 3 credits with grades A, A+, B+ and A− give 44.25 ÷ 12 = 3.69. See the step-by-step CGPA calculation guide for more examples."
      }
     },
     {
      "@type": "Question",
-     "name": "Can I use this CGPA calculator for NU, DU or BUET?",
+     "name": "Can I use this CGPA calculator for NU, DU, BUET or my private university?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes, if your university uses the standard Bangladesh 4.00 scale (A+ = 4.00, A = 3.75). Public universities such as DU, BUET, RU, CU and JU, and National University (NU) colleges, generally do. Some private universities give A = 4.00 and A− = 3.70. If that is your university, use the NSU CGPA Calculator instead. Always check against your official grade table."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What is the difference between SGPA and CGPA?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "SGPA (semester GPA) shows how you did in one semester or term. CGPA (Cumulative Grade Point Average) covers every semester you have completed, so it shows your record over the whole degree. Use the GPA ↔ CGPA Converter to switch between scales, or read our CGPA vs GPA guide."
+      "text": "Yes for NU and for any university that follows the UGC scale, which includes most public universities such as DU, BUET, JU, CU and RU. Private universities differ: some follow the UGC scale (for example BUBT) and others use their own tables. If your table gives A = 4.00 and A− = 3.70, the NSU CGPA Calculator is the one to use. For other scales, see Other Grading Scales. Always confirm with your official grade table."
      }
     },
     {
@@ -204,7 +238,7 @@
      "name": "What is a good CGPA in Bangladesh?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It depends on your goal, your field and your university. On the 4.00 scale, a CGPA of 3.00 or above is generally seen as good, and 3.50 or higher is often seen as excellent. Competitive scholarships, postgraduate programs and international admissions may expect 3.70 or more. Our guide on what is a good CGPA in Bangladesh gives benchmarks by career path."
+      "text": "There is no official cut-off. On the 4.00 scale, 3.00 is a B and 3.50 is an A−, so as a rough guide 3.00 or above is solid and 3.50 or above is strong. Scholarships, employers and postgraduate programs set their own minimum, so check the requirement of the one you are applying to. See what is a good CGPA in Bangladesh."
      }
     },
     {
@@ -212,31 +246,7 @@
      "name": "How do I convert CGPA to percentage?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "On a 4.00 scale, many institutions use a simple proportional formula: Percentage = (CGPA ÷ 4.00) × 100. For example, a CGPA of 3.50 is 87.5%. Some employers and universities use their own conversion, so confirm which one applies before you submit. Our CGPA to Percentage Calculator gives you the result instantly."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What if my university does not use the 4.00 scale?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Use a calculator built for your scale: the NSU CGPA Calculator for the A = 4.00, A− = 3.70 scale, the 10-Point CGPA Calculator for the Indian scale, or the CGPA Calculator Nigeria, CGPA Calculator Australia and CGPA Calculator Canada pages. You can also browse all calculators."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How are credit hours used in CGPA calculation?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Credit hours set the weight of each course, so a course with more credits affects your CGPA more. Multiply each course's grade point by its credit hours, add the weighted grade points together, then divide by the total credit hours completed. CGPA = Total Weighted Grade Points ÷ Total Credit Hours."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "How many semesters are included in CGPA?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "CGPA includes every completed semester in your program. Each semester counts according to the grades you earned and the credit hours you took, and your CGPA is recalculated whenever new results come in. The total number of semesters depends on your program: diploma, bachelor's, master's or doctoral."
+      "text": "There is no single formula that every university and employer accepts. A common rough estimate on the 4.00 scale is Percentage = (CGPA ÷ 4.00) × 100, so a CGPA of 3.50 is about 87.5%. It is only an estimate, because on the UGC scale an A+ (4.00) covers marks from 80 to 100%. If you must submit a percentage, ask which conversion they accept. You can use the CGPA to Percentage Calculator."
      }
     },
     {
@@ -244,7 +254,15 @@
      "name": "What is the minimum passing CGPA?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It varies by university, program and country. On the 4.00 scale, many universities expect students to keep at least a 2.00 CGPA to stay in good academic standing. Some programs set a higher minimum for graduation, scholarships, honours and postgraduate admission, so check your university's academic policy for the exact figure."
+      "text": "On the UGC scale, D (2.00) is the lowest passing grade in a course. The CGPA you need to stay enrolled or to graduate depends on your university and program: some ask for 2.00 and others more. Check your university's academic regulations."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many semesters are included in CGPA?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Every semester you have completed in your program. Your CGPA changes each time a new result is added."
      }
     },
     {
@@ -252,7 +270,7 @@
      "name": "Can you improve your CGPA after graduation?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "In most cases your CGPA is final once your degree is awarded. Before graduation, some universities allow course retakes, grade replacement, appeals or supplementary exams. If your CGPA is already final, you can still strengthen your profile with postgraduate study, certifications, projects and work experience. Read our guide on how to improve your CGPA before you graduate."
+      "text": "In most cases, no. Your CGPA is final once your degree is awarded. Before graduation, some universities allow retakes to improve a grade, so ask yours. Afterwards you can strengthen your profile with postgraduate study, certifications, projects and work experience. See how to improve your CGPA."
      }
     }
    ]
@@ -394,7 +412,7 @@
     <div class="target-grid">
      <div class="target-field">
       <label for="currentCGPA">Current CGPA</label>
-      <input type="number" id="currentCGPA" min="0" max="10" step="0.01" placeholder="Auto-filled" />
+      <input type="number" id="currentCGPA" min="0" max="4" step="0.01" placeholder="Auto-filled" />
      </div>
      <div class="target-field">
       <label for="completedCredits">Completed Credits</label>
@@ -402,7 +420,7 @@
      </div>
      <div class="target-field">
       <label for="targetCGPA">Target CGPA</label>
-      <input type="number" id="targetCGPA" min="0" max="10" step="0.01" placeholder="e.g. 3.75" />
+      <input type="number" id="targetCGPA" min="0" max="4" step="0.01" placeholder="e.g. 3.75" />
      </div>
      <div class="target-field">
       <label for="remainingCredits">Remaining Credits</label>
@@ -438,7 +456,7 @@
     <div id="sgpaRowsContainer"><div class="sgpa-row" data-prerender inert data-row-id="1"><input type="text" class="sgpa-sem-name" placeholder="Semester 1" value="Semester 1"><input type="number" class="sgpa-val-input" placeholder="SGPA" min="0" max="4" step="0.01"><input type="number" class="sgpa-credit-input" placeholder="Credits" min="1" step="1" title="Total credits for this semester"><button class="btn-delete-sgpa" title="Remove row"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div></div>
    </div>
    <p style="font-size:12px;color:var(--text-3);margin:6px 0 10px;line-height:1.6;">
-    💡 Enter credits per semester for a <strong>credit-weighted CGPA</strong>. Leave credits blank for a simple average.
+    Enter credits per semester for a <strong>credit-weighted CGPA</strong>. Leave credits blank for a simple average.
     <span id="sgpaWeightedNote" style="display:none;color:var(--accent);font-weight:600;margin-left:4px;">✓ Weighted</span>
    </p>
    <p id="sgpaMissingCreditWarning" role="alert" style="display:none;font-size:12.5px;color:#B45309;background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:8px 12px;margin:0 0 10px;line-height:1.6;font-weight:600;"></p>
@@ -457,11 +475,32 @@
     <h2 class="section-title">What is a CGPA Calculator?</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>A CGPA calculator works out your Cumulative Grade Point Average, the single number that sums up your results across every semester you have completed. You enter your courses, credit hours and letter grades, and the calculator gives you your CGPA straight away. There is no need to do the multiplication by hand.</p>
-    <p>This CGPA calculator is made for Bangladeshi students. It follows the standard 4.00 grading scale used by Bangladesh universities (A+ = 4.00, A = 3.75, A− = 3.50 and so on). For each course it multiplies the grade point by the credit hours, adds up all of those weighted points, and divides the total by your total credit hours. The answer is your CGPA.</p>
-    <p>A <a href="https://cgpacalculator.dev/cgpa-to-gpa">semester GPA</a> (SGPA) only covers one term. Your CGPA covers your whole degree so far, which is why it is the figure on your transcript and the one people look at first when you apply for something.</p>
-    <p>Universities, employers, scholarship committees and admission offices use CGPA to judge your academic standing, from scholarships and job applications to higher studies and honours. Getting the number right matters.</p>
-    <p>Use this calculator to double-check the CGPA your department gave you, to track your progress after every result, or to set a realistic target for the next semester.</p>
+    <p>A CGPA calculator works out your Cumulative Grade Point Average (CGPA) from your course grades and credit hours. Add your semesters, choose a grade for each course, and it shows your CGPA and the SGPA of each semester.</p>
+    <p>This calculator uses the 4.00 grading scale approved by the University Grants Commission (UGC) of Bangladesh (A+ = 4.00, A = 3.75, A− = 3.50 and so on). National University and most public universities follow this scale. Many private universities use their own tables, so see <a href="#which-scale">Which CGPA Scale Should You Use?</a> before you start.</p>
+    <p>SGPA covers one semester. CGPA covers every semester you have completed, and it is the figure shown on your transcript.</p>
+   </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+     HOW TO USE
+  ══════════════════════════════════════════════════ -->
+  <section class="seo-section" id="how-to-use">
+   <div class="section-header"><div>
+    <span class="section-eyebrow">Step-by-Step Guide</span>
+    <h2 class="section-title">How to Use This CGPA Calculator</h2>
+   </div></div>
+   <div class="seo-content-card">
+    <p>Follow these steps to get your CGPA.</p>
+    <div class="how-to-steps">
+     <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Check your grading scale</h3><p>This calculator uses the UGC 4.00 scale (A+ = 4.00, A = 3.75, A− = 3.50 … F = 0.00). If your university uses a different table, see <a href="#which-scale">Which CGPA Scale Should You Use?</a></p></div></div>
+     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Add your semesters</h3><p>The calculator starts with one semester. Click <strong>Add Semester</strong> for each further semester. Semesters are numbered automatically.</p></div></div>
+     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Enter your courses</h3><p>In each semester, type the course name, the credits (for example 3 or 1.5) and choose the grade. Click <strong>+ Add Course</strong> for more courses. The SGPA of the semester updates as you type.</p></div></div>
+     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Enter retakes</h3><p>If you retook a course, add it again with exactly the same course name. The calculator counts only the best grade for that course. Retake rules differ between universities, so check yours.</p></div></div>
+     <div class="how-step"><div class="step-num">5</div><div class="step-body"><h3>Read your CGPA</h3><p>Your CGPA, total credits and number of semesters appear in the Overall CGPA panel, with a label such as Good or Very Good. The label is only a guide, not an official class. A bar at the top of the page keeps your CGPA in view as you scroll.</p></div></div>
+     <div class="how-step"><div class="step-num">6</div><div class="step-body"><h3>Set a target CGPA</h3><p>In the <strong>Target CGPA</strong> section, enter the CGPA you want and the credits you have left. The calculator shows the GPA you need in those credits.</p></div></div>
+     <div class="how-step"><div class="step-num">7</div><div class="step-body"><h3>Download the report</h3><p>Click <strong>Download Report</strong> to save your semesters, courses, SGPAs and CGPA as an HTML file that you can open in a browser or print.</p></div></div>
+    </div>
+    <p style="margin-top:16px;">Already know your SGPAs? Use the <strong>SGPA → CGPA</strong> section above. Enter each semester's SGPA and credits to get a credit-weighted CGPA.</p>
    </div>
   </section>
 
@@ -470,11 +509,11 @@
   ══════════════════════════════════════════════════ -->
   <section class="seo-section" id="bangladesh-grading-system">
    <div class="section-header"><div>
-    <span class="section-eyebrow">🇧🇩 Bangladesh</span>
+    <span class="section-eyebrow">UGC Grading Scale</span>
     <h2 class="section-title">CGPA Grading System in Bangladesh (4.00 Scale)</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>Most universities in Bangladesh turn your marks into a letter grade and a grade point on a 4.00 scale. The table below shows the pattern this calculator uses, along with the marks ranges commonly applied. The calculator works from the grade point, and marks ranges can differ a little from one university to another.</p>
+    <p>This table is the grading scheme approved by the University Grants Commission (UGC). National University and most public universities follow it, and so do some private universities. Many other private universities use their own tables.</p>
     <div class="table-wrap" style="margin-top:16px;">
      <table>
       <thead><tr><th>Marks (%)</th><th>Letter Grade</th><th>Grade Point</th></tr></thead>
@@ -492,8 +531,8 @@
       </tbody>
      </table>
     </div>
-    <p style="margin-top:16px;">Your <strong>SGPA</strong> is the credit-weighted average of your grade points in one semester. Your <strong>CGPA</strong> is the same calculation across all your semesters. Rules for failed courses and retakes are different at each university, so check your own grading policy before using a result for anything official.</p>
-    <p style="margin-top:10px;">More guides for Bangladeshi students: the Bangla guide <a href="https://cgpacalculator.dev/cgpa-ki">সিজিপিএ (CGPA) কী?</a>, <a href="https://cgpacalculator.dev/good-cgpa">what a good CGPA is in Bangladesh</a>, <a href="https://cgpacalculator.dev/cgpa-for-jobs">whether CGPA matters for jobs</a>, and <a href="https://cgpacalculator.dev/cgpa-for-scholarships">CGPA requirements for scholarships</a>.</p>
+    <p style="margin-top:16px;">Rules for failed courses and retakes depend on your university, so check its grading policy before you use a result for anything official.</p>
+    <p style="margin-top:10px;">Related guides: the Bangla guide <a href="https://cgpacalculator.dev/cgpa-ki">সিজিপিএ (CGPA) কী?</a>, <a href="https://cgpacalculator.dev/good-cgpa">what a good CGPA is in Bangladesh</a>, <a href="https://cgpacalculator.dev/cgpa-for-jobs">whether CGPA matters for jobs</a>, and <a href="https://cgpacalculator.dev/cgpa-for-scholarships">CGPA requirements for scholarships</a>.</p>
    </div>
   </section>
 
@@ -506,7 +545,7 @@
     <h2 class="section-title">Which CGPA Scale Should You Use?</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>Not every university grades the same way. This tool follows the Bangladesh 4.00 scale (A+ = 4.00, A = 3.75), so if your university uses a different system, your result here will be wrong. Find your scale in the table below and open the calculator that matches it.</p>
+    <p>Universities do not all grade the same way. This calculator uses the UGC scale from the table above, so the result will be wrong if your university uses a different one. Find your scale below and use the matching calculator.</p>
     <div class="table-wrap" style="margin-top:16px;">
      <table>
       <thead><tr><th>Grading Scale</th><th>Grading Pattern</th><th>Use This Calculator</th></tr></thead>
@@ -520,7 +559,9 @@
       </tbody>
      </table>
     </div>
-    <p style="margin-top:16px;">Not sure which scale your university uses? Look at your transcript or your university's grading policy. Grade tables can differ even between universities in the same country, so confirm yours before you rely on the result.</p>
+    <p style="margin-top:16px;"><strong>Follows the UGC scale:</strong> National University (NU), most public universities such as DU, BUET, JU, CU and RU, and some private universities such as BUBT.</p>
+    <p style="margin-top:10px;"><strong>Uses its own table:</strong> many private universities, for example NSU, BRAC University, IUB, UIU, ULAB, AIUB and East Delta University. If yours grades A = 4.00 and A− = 3.70, use the <a href="https://cgpacalculator.dev/nsu-cgpa-calculator">NSU CGPA Calculator</a>. Otherwise follow your university's own grade table.</p>
+    <p style="margin-top:10px;">Not sure? Check your transcript or your university's grading policy.</p>
     <p style="margin-top:10px;font-size:13px;color:var(--text-3);">Tip: If your department publishes results year by year instead of semester by semester, add each academic year as one "semester" and enter the total credits for that year.</p>
    </div>
   </section>
@@ -534,11 +575,7 @@
     <h2 class="section-title">CGPA Formula and Calculation Example</h2>
    </div></div>
    <div class="seo-content-card">
-    <figure style="margin:0 0 24px;text-align:center;">
-     <img src="cgpa-calculator.webp" alt="Diagram showing how CGPA is calculated from grade points and credit hours" width="800" height="450" loading="lazy" style="max-width:100%;height:auto;border-radius:10px;" />
-    </figure>
-    <p>CGPA (Cumulative Grade Point Average) is the total weighted grade points you have earned in all your completed courses, divided by the total credit hours you have taken. It measures your performance over the whole degree, not just one semester.</p>
-    <p>A semester GPA looks at one term only. CGPA combines every semester and every course, so it shows how consistent you have been over time.</p>
+    <p>CGPA is the total weighted grade points from all your completed courses, divided by the total credit hours you have taken.</p>
 
     <h3>CGPA Formula</h3>
     <p>The formula is:</p>
@@ -552,14 +589,11 @@
      </div>
     </div>
 
-    <h3>Understanding Grade Points</h3>
-    <p>Each letter grade has a numerical value called a grade point. This calculator uses the Bangladesh 4.00 scale: A+ = 4.00, A = 3.75, A− = 3.50, B+ = 3.25, B = 3.00, B− = 2.75, C+ = 2.50, C = 2.25, D = 2.00 and F = 0.00. See the full <a href="#bangladesh-grading-system">Bangladesh grading system table</a> with marks ranges.</p>
+    <h3>Grade points</h3>
+    <p>Each letter grade has a grade point, taken from the <a href="#bangladesh-grading-system">UGC grading table</a> above (A+ = 4.00, A = 3.75, A− = 3.50 and so on).</p>
 
-    <h3>Understanding Credit Hours</h3>
-    <p>Credit hours show how much a course counts. A university decides a course's credits from its lecture time, lab work and overall workload. Because credits set the weight of a course, a course with more credits moves your CGPA more than one with fewer credits.</p>
-
-    <h3>Why CGPA Uses a Weighted Average</h3>
-    <p>Many students think CGPA is the plain average of their grades, but it is a weighted average. Each course counts in proportion to its credits. An A in a 4-credit physics course adds more grade points than an A in a 2-credit elective. This way your CGPA reflects how much each course matters in your curriculum.</p>
+    <h3>Why credit hours matter</h3>
+    <p>CGPA is a weighted average, so each course counts in proportion to its credits. An A in a 4-credit course adds more grade points than an A in a 2-credit course.</p>
 
     <h3>CGPA Calculation Example</h3>
     <p>Take a student who has completed these four courses:</p>
@@ -599,10 +633,7 @@
      </div>
     </div>
     <p style="margin-top:12px;">So the student's CGPA is <strong>3.69</strong> on the 4.00 scale.</p>
-    <p>Want more worked examples? Read our <a href="https://cgpacalculator.dev/how-to-calculate-cgpa">step-by-step guide to calculating CGPA</a> or the <a href="https://cgpacalculator.dev/cgpa-formula">history behind the CGPA formula</a>.</p>
-
-    <h3>Factors That Affect CGPA</h3>
-    <p>A few things can move your CGPA over time: your grades in high-credit courses, retaken or failed courses, credit transfer rules, extra electives, and your university's own grading policy. Knowing these helps you plan your semesters sensibly.</p>
+    <p>For more worked examples, read our <a href="https://cgpacalculator.dev/how-to-calculate-cgpa">step-by-step guide to calculating CGPA</a> or the <a href="https://cgpacalculator.dev/cgpa-formula">history behind the CGPA formula</a>.</p>
    </div>
   </section>
 
@@ -611,79 +642,15 @@
   ══════════════════════════════════════════════════ -->
   <section class="seo-section" id="why-cgpa-important">
    <div class="section-header"><div>
-    <span class="section-eyebrow">Academic Significance</span>
+    <span class="section-eyebrow">Why It Matters</span>
     <h2 class="section-title">Why CGPA Is Important</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>For most Bangladeshi students, CGPA is the number that follows them after graduation. Universities, scholarship providers, employers and admission committees all look at it when they compare candidates.</p>
-    <p>A strong CGPA can help you with:</p>
-    <div class="why-use-grid" style="margin-top:16px;">
-     <div class="why-card"><div class="why-icon">🎓</div><h3>Scholarships and Financial Aid</h3><p>Many scholarships and stipends set a minimum CGPA. See our <a href="https://cgpacalculator.dev/cgpa-for-scholarships">CGPA for Scholarships</a> guide for typical requirements.</p></div>
-     <div class="why-card"><div class="why-icon">🏆</div><h3>Honours and Awards</h3><p>Merit lists, Dean's List recognition and academic awards usually require a CGPA above a set level.</p></div>
-     <div class="why-card"><div class="why-icon">💼</div><h3>Jobs and Internships</h3><p>Many employers screen applicants by CGPA, especially for first jobs. Our <a href="https://cgpacalculator.dev/cgpa-for-jobs">CGPA for Jobs</a> guide covers what different sectors expect.</p></div>
-     <div class="why-card"><div class="why-icon">✈️</div><h3>Exchange Programs</h3><p>Student exchange programs often ask for a minimum CGPA as part of their eligibility rules.</p></div>
-     <div class="why-card"><div class="why-icon">📚</div><h3>Higher Studies</h3><p>Master's and PhD programs, in Bangladesh and abroad, use CGPA to judge your readiness. A strong record strengthens your application.</p></div>
-     <div class="why-card"><div class="why-icon">📈</div><h3>Tracking Your Progress</h3><p>Checking your CGPA after every result shows you where you are weak and lets you set realistic goals before graduation.</p></div>
-    </div>
-    <p style="margin-top:16px;">Because CGPA covers every semester, it says more about your consistency than any single semester GPA. <a href="https://cgpacalculator.dev/improve-cgpa">Learn how to improve your CGPA</a> with practical strategies.</p>
-   </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-     WHO CAN USE
-  ══════════════════════════════════════════════════ -->
-  <section class="seo-section" id="who-can-use">
-   <div class="section-header"><div>
-    <span class="section-eyebrow">Audience</span>
-    <h2 class="section-title">Who Can Use This CGPA Calculator?</h2>
-   </div></div>
-   <div class="seo-content-card">
-    <p>This calculator is for any student in Bangladesh who wants a quick, accurate CGPA from their grades and credit hours.</p>
-    <div class="how-to-steps">
-     <div class="how-step"><div class="step-num">🎓</div><div class="step-body"><h3>University and College Students</h3><p>Undergraduate students at public and private universities and NU colleges can add each semester and watch their CGPA, credits and standing update as results come in.</p></div></div>
-     <div class="how-step"><div class="step-num">📖</div><div class="step-body"><h3>Master's and Postgraduate Students</h3><p>If you are doing a master's or other postgraduate program, you can track your CGPA across coursework to stay on target for research and further study.</p></div></div>
-     <div class="how-step"><div class="step-num">🏅</div><div class="step-body"><h3>Scholarship Applicants</h3><p>Many scholarships have a minimum CGPA. Check yours here before you apply so you know whether you qualify.</p></div></div>
-     <div class="how-step"><div class="step-num">🌍</div><div class="step-body"><h3>Students Planning to Study Abroad</h3><p>Applying for a master's or PhD overseas? Use this to get your 4.00 scale CGPA ready for your application, then convert it if a university asks for a different scale.</p></div></div>
-     <div class="how-step"><div class="step-num">👩‍🏫</div><div class="step-body"><h3>Teachers and Academic Advisors</h3><p>Teachers and advisors can use it to show students how each course grade changes their overall CGPA.</p></div></div>
-    </div>
-   </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-     UNIVERSITIES
-  ══════════════════════════════════════════════════ -->
-  <section class="seo-section" id="supported-universities">
-   <div class="section-header"><div>
-    <span class="section-eyebrow">Compatibility</span>
-    <h2 class="section-title">Bangladesh Universities That Can Use This CGPA Calculator</h2>
-   </div></div>
-   <div class="seo-content-card">
-    <p>This calculator uses the 4.00 grading scale followed by public universities, National University (NU) colleges and many private universities in Bangladesh, where A+ = 4.00 and A = 3.75. Students at these universities can use it:</p>
-    <p style="line-height:2;font-size:13px;color:var(--text-2);margin-top:12px;">
-     DU, BUET, JU, CU, RU, KU, SUST, JnU, BUTEX, KUET, CUET, RUET, HSTU, PSTU, NU, UIU, DIU, AUST, EWU, ULAB, GUB, SEU, BUFT, SUB, NUB, PRIMEASIA, BUBT, IIUC, AIUB, SU
-    </p>
-    <p style="margin-top:12px;font-size:13px;color:var(--text-3);">Note: if your university gives A = 4.00 and A− = 3.70, use the <a href="https://cgpacalculator.dev/nsu-cgpa-calculator">NSU CGPA Calculator</a> instead. Grading policies differ between universities, so always follow your university's official academic rules for your final CGPA.</p>
-   </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-     HOW TO USE
-  ══════════════════════════════════════════════════ -->
-  <section class="seo-section" id="how-to-use">
-   <div class="section-header"><div>
-    <span class="section-eyebrow">Step-by-Step Guide</span>
-    <h2 class="section-title">How to Use This CGPA Calculator</h2>
-   </div></div>
-   <div class="seo-content-card">
-    <p>It takes about a minute. Follow these steps to get your CGPA:</p>
-    <div class="how-to-steps">
-     <div class="how-step"><div class="step-num">1</div><div class="step-body"><h3>Check Your Grading Scale</h3><p>This calculator uses the Bangladesh <strong>4.00 scale</strong> (A+ = 4.00, A = 3.75, A− = 3.50 … F = 0.00). If your university grades differently, pick a calculator from the <a href="#other-scales">Other Grading Scales</a> section.</p></div></div>
-     <div class="how-step"><div class="step-num">2</div><div class="step-body"><h3>Add Your Semesters</h3><p>The calculator starts with one semester. Click <strong>"Add Semester"</strong> for each additional semester. You can give each one a name if you like.</p></div></div>
-     <div class="how-step"><div class="step-num">3</div><div class="step-body"><h3>Enter Your Courses</h3><p>In each semester, enter the course name, its credit hours and your grade. Click <strong>"Add Course"</strong> for more courses. The SGPA of each semester updates as you type.</p></div></div>
-     <div class="how-step"><div class="step-num">4</div><div class="step-body"><h3>Read Your CGPA</h3><p>Your overall CGPA appears on the left with a progress bar, your letter grade and your total credits. The bar at the top of the page keeps your CGPA in view as you scroll.</p></div></div>
-     <div class="how-step"><div class="step-num">5</div><div class="step-body"><h3>Set a Target CGPA</h3><p>In the <strong>Target CGPA</strong> section, enter the CGPA you want and your remaining credits to see the GPA you need in those credits.</p></div></div>
-     <div class="how-step"><div class="step-num">6</div><div class="step-body"><h3>Download Your Report</h3><p>Click <strong>"Download Report"</strong> to save a clean report of all your semesters, courses, SGPAs and your CGPA, handy for scholarship applications or your own records.</p></div></div>
-    </div>
+    <p>CGPA is the number most people ask for when they look at your academic record. It is used in a few common places.</p>
+    <p><strong>Scholarships.</strong> Many scholarships and stipends set a minimum CGPA. See our <a href="https://cgpacalculator.dev/cgpa-for-scholarships">CGPA for Scholarships</a> guide.</p>
+    <p><strong>Jobs.</strong> Some employers ask for a minimum CGPA in their job circulars. See our <a href="https://cgpacalculator.dev/cgpa-for-jobs">CGPA for Jobs</a> guide.</p>
+    <p><strong>Higher studies.</strong> Master's and PhD programs, in Bangladesh and abroad, usually ask for a minimum CGPA or its equivalent.</p>
+    <p><strong>Honours.</strong> Some universities give honours or a Dean's List place based on CGPA.</p>
    </div>
   </section>
 
@@ -696,8 +663,8 @@
     <h2 class="section-title">How to Improve Your CGPA</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>Improving your CGPA takes steady effort and some planning. Every grade counts in a credit-weighted average, so even a small improvement in a high-credit course can lift your CGPA noticeably over time.</p>
-    <p>For practical strategies, including how to focus on your highest-credit courses and how retakes and grade replacement can help, read our full guide on <a href="https://cgpacalculator.dev/improve-cgpa">how to improve your CGPA</a>.</p>
+    <p>Every course counts in proportion to its credits, so a better grade in a high-credit course raises your CGPA more than the same improvement in a low-credit course. Use the Target CGPA section to see what GPA you need in your remaining credits, and check your university's retake policy before you retake a course.</p>
+    <p>For more, read our guide on <a href="https://cgpacalculator.dev/improve-cgpa">how to improve your CGPA</a>.</p>
    </div>
   </section>
 
@@ -710,7 +677,7 @@
     <h2 class="section-title">CGPA vs GPA</h2>
    </div></div>
    <div class="seo-content-card">
-    <p>Students often mix up GPA and CGPA. They are related, but they measure different things. Here is how they differ.</p>
+    <p>GPA and CGPA are related, but they cover different periods.</p>
     <div class="table-wrap" style="margin-top:16px;">
      <table>
       <thead><tr><th>Aspect</th><th>GPA (Grade Point Average)</th><th>CGPA (Cumulative GPA)</th></tr></thead>
@@ -730,24 +697,6 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════
-     WHY USE OUR CALCULATOR
-  ══════════════════════════════════════════════════ -->
-  <section class="seo-section" id="why-use-us">
-   <div class="section-header"><div>
-    <span class="section-eyebrow">Our Advantage</span>
-    <h2 class="section-title">Why Use Our CGPA Calculator?</h2>
-   </div></div>
-   <div class="why-use-grid">
-    <div class="why-card"><div class="why-icon">⚡</div><h3>Instant Results</h3><p>Your CGPA, SGPA and progress bar update as you type. There is no "Calculate" button to press.</p></div>
-    <div class="why-card"><div class="why-icon">🎯</div><h3>Target CGPA Planner</h3><p>Enter the CGPA you want and your remaining credits, and see the GPA you need. You will know straight away if your target is realistic.</p></div>
-    <div class="why-card"><div class="why-icon">📊</div><h3>Multiple Semesters</h3><p>Add as many semesters and courses as you need. Each semester shows its own SGPA and your overall CGPA covers your whole degree.</p></div>
-    <div class="why-card"><div class="why-icon">📥</div><h3>Downloadable Report</h3><p>Save a neat report of all your semesters, courses and CGPA, useful for scholarship forms and job applications.</p></div>
-    <div class="why-card"><div class="why-icon">🇧🇩</div><h3>Made for Bangladeshi Students</h3><p>Built on the 4.00 scale used in Bangladesh, with separate calculators for NSU-style, Indian, Nigerian, Australian and Canadian scales.</p></div>
-    <div class="why-card"><div class="why-icon">📱</div><h3>Works on Any Device</h3><p>Use it on your phone, tablet or computer. It is free and there is nothing to install.</p></div>
-   </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
      FAQ
   ══════════════════════════════════════════════════ -->
   <section class="seo-section faq-section" id="faq">
@@ -758,57 +707,42 @@
    <div class="faq-list">
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>What is the CGPA grading system in Bangladesh?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Most universities in Bangladesh use a 4.00 scale: A+ = 4.00, A = 3.75, A− = 3.50, B+ = 3.25, B = 3.00, B− = 2.75, C+ = 2.50, C = 2.25, D = 2.00 and F = 0.00. Marks ranges and the rules for failed or retaken courses differ between universities, so check your official grading policy. The full table is in the <a href="#bangladesh-grading-system">Bangladesh grading system</a> section above.</p></div>
+     <div class="faq-answer"><p>The UGC scheme gives A+ = 4.00 (80–100%), A = 3.75, A− = 3.50, B+ = 3.25, B = 3.00, B− = 2.75, C+ = 2.50, C = 2.25, D = 2.00 and F = 0.00 (below 40%). National University and most public universities follow it. Many private universities use their own tables, so check your university's grade table. See the <a href="#bangladesh-grading-system">full table</a> above.</p></div>
     </div>
 
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>How do I calculate CGPA in Bangladesh?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Multiply each course's grade point by its credit hours, add up the weighted points from all your semesters, then divide by your total credit hours: <strong>CGPA = Total Weighted Grade Points ÷ Total Credit Hours.</strong> For example, courses of 3, 4, 2 and 3 credits with grades A, A+, B+ and A− give 44.25 ÷ 12 = 3.69. The calculator above does this for you as you type. For a manual walkthrough, see our <a href="https://cgpacalculator.dev/how-to-calculate-cgpa">step-by-step CGPA calculation guide</a>.</p></div>
+     <div class="faq-answer"><p>Multiply each course's grade point by its credit hours, add the results for all semesters, then divide by the total credit hours: <strong>CGPA = Total Weighted Grade Points ÷ Total Credit Hours.</strong> For example, courses of 3, 4, 2 and 3 credits with grades A, A+, B+ and A− give 44.25 ÷ 12 = 3.69. See the <a href="https://cgpacalculator.dev/how-to-calculate-cgpa">step-by-step CGPA calculation guide</a> for more examples.</p></div>
     </div>
 
     <div class="faq-item">
-     <button class="faq-question" aria-expanded="false"><span>Can I use this CGPA calculator for NU, DU or BUET?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Yes, if your university uses the standard Bangladesh 4.00 scale (A+ = 4.00, A = 3.75). Public universities such as DU, BUET, RU, CU and JU, and National University (NU) colleges, generally do. Some private universities give A = 4.00 and A− = 3.70. If that is your university, use the <a href="https://cgpacalculator.dev/nsu-cgpa-calculator">NSU CGPA Calculator</a> instead. Always check against your official grade table.</p></div>
-    </div>
-
-    <div class="faq-item">
-     <button class="faq-question" aria-expanded="false"><span>What is the difference between SGPA and CGPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>SGPA (semester GPA) shows how you did in one semester or term. CGPA (Cumulative Grade Point Average) covers every semester you have completed, so it shows your record over the whole degree. Use the <a href="https://cgpacalculator.dev/cgpa-to-gpa">GPA ↔ CGPA Converter</a> to switch between scales, or read our <a href="https://cgpacalculator.dev/cgpa-vs-gpa">CGPA vs GPA guide</a>.</p></div>
+     <button class="faq-question" aria-expanded="false"><span>Can I use this CGPA calculator for NU, DU, BUET or my private university?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Yes for NU and for any university that follows the UGC scale, which includes most public universities such as DU, BUET, JU, CU and RU. Private universities differ: some follow the UGC scale (for example BUBT) and others use their own tables. If your table gives A = 4.00 and A− = 3.70, the <a href="https://cgpacalculator.dev/nsu-cgpa-calculator">NSU CGPA Calculator</a> is the one to use. For other scales, see <a href="#other-scales">Other Grading Scales</a>. Always confirm with your official grade table.</p></div>
     </div>
 
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>What is a good CGPA in Bangladesh?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>It depends on your goal, your field and your university. On the 4.00 scale, a CGPA of 3.00 or above is generally seen as good, and 3.50 or higher is often seen as excellent. Competitive scholarships, postgraduate programs and international admissions may expect 3.70 or more. Our guide on <a href="https://cgpacalculator.dev/good-cgpa">what is a good CGPA in Bangladesh</a> gives benchmarks by career path.</p></div>
+     <div class="faq-answer"><p>There is no official cut-off. On the 4.00 scale, 3.00 is a B and 3.50 is an A−, so as a rough guide 3.00 or above is solid and 3.50 or above is strong. Scholarships, employers and postgraduate programs set their own minimum, so check the requirement of the one you are applying to. See <a href="https://cgpacalculator.dev/good-cgpa">what is a good CGPA in Bangladesh</a>.</p></div>
     </div>
 
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>How do I convert CGPA to percentage?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>On a 4.00 scale, many institutions use a simple proportional formula: <strong>Percentage = (CGPA ÷ 4.00) × 100</strong>. For example, a CGPA of 3.50 is 87.5%. Some employers and universities use their own conversion, so confirm which one applies before you submit. Our <a href="https://cgpacalculator.dev/cgpa-to-percentage">CGPA to Percentage Calculator</a> gives you the result instantly.</p></div>
-    </div>
-
-    <div class="faq-item">
-     <button class="faq-question" aria-expanded="false"><span>What if my university does not use the 4.00 scale?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Use a calculator built for your scale: the <a href="https://cgpacalculator.dev/nsu-cgpa-calculator">NSU CGPA Calculator</a> for the A = 4.00, A− = 3.70 scale, the <a href="https://cgpacalculator.dev/10-point-cgpa-calculator">10-Point CGPA Calculator</a> for the Indian scale, or the <a href="https://cgpacalculator.dev/cgpa-calculator-nigeria">CGPA Calculator Nigeria</a>, <a href="https://cgpacalculator.dev/cgpa-calculator-australia">CGPA Calculator Australia</a> and <a href="https://cgpacalculator.dev/cgpa-calculator-canada">CGPA Calculator Canada</a> pages. You can also browse <a href="https://cgpacalculator.dev/">all calculators</a>.</p></div>
-    </div>
-
-    <div class="faq-item">
-     <button class="faq-question" aria-expanded="false"><span>How are credit hours used in CGPA calculation?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>Credit hours set the weight of each course, so a course with more credits affects your CGPA more. Multiply each course's grade point by its credit hours, add the weighted grade points together, then divide by the total credit hours completed. <strong>CGPA = Total Weighted Grade Points ÷ Total Credit Hours.</strong></p></div>
-    </div>
-
-    <div class="faq-item">
-     <button class="faq-question" aria-expanded="false"><span>How many semesters are included in CGPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>CGPA includes every completed semester in your program. Each semester counts according to the grades you earned and the credit hours you took, and your CGPA is recalculated whenever new results come in. The total number of semesters depends on your program: diploma, bachelor's, master's or doctoral.</p></div>
+     <div class="faq-answer"><p>There is no single formula that every university and employer accepts. A common rough estimate on the 4.00 scale is <strong>Percentage = (CGPA ÷ 4.00) × 100</strong>, so a CGPA of 3.50 is about 87.5%. It is only an estimate, because on the UGC scale an A+ (4.00) covers marks from 80 to 100%. If you must submit a percentage, ask which conversion they accept. You can use the <a href="https://cgpacalculator.dev/cgpa-to-percentage">CGPA to Percentage Calculator</a>.</p></div>
     </div>
 
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>What is the minimum passing CGPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>It varies by university, program and country. On the 4.00 scale, many universities expect students to keep at least a 2.00 CGPA to stay in good academic standing. Some programs set a higher minimum for graduation, scholarships, honours and postgraduate admission, so check your university's academic policy for the exact figure.</p></div>
+     <div class="faq-answer"><p>On the UGC scale, D (2.00) is the lowest passing grade in a course. The CGPA you need to stay enrolled or to graduate depends on your university and program: some ask for 2.00 and others more. Check your university's academic regulations.</p></div>
+    </div>
+
+    <div class="faq-item">
+     <button class="faq-question" aria-expanded="false"><span>How many semesters are included in CGPA?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+     <div class="faq-answer"><p>Every semester you have completed in your program. Your CGPA changes each time a new result is added.</p></div>
     </div>
 
     <div class="faq-item">
      <button class="faq-question" aria-expanded="false"><span>Can you improve your CGPA after graduation?</span><svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
-     <div class="faq-answer"><p>In most cases your CGPA is final once your degree is awarded. Before graduation, some universities allow course retakes, grade replacement, appeals or supplementary exams. If your CGPA is already final, you can still strengthen your profile with postgraduate study, certifications, projects and work experience. Read our guide on <a href="https://cgpacalculator.dev/improve-cgpa">how to improve your CGPA</a> before you graduate.</p></div>
+     <div class="faq-answer"><p>In most cases, no. Your CGPA is final once your degree is awarded. Before graduation, some universities allow retakes to improve a grade, so ask yours. Afterwards you can strengthen your profile with postgraduate study, certifications, projects and work experience. See <a href="https://cgpacalculator.dev/improve-cgpa">how to improve your CGPA</a>.</p></div>
     </div>
 
 
@@ -853,12 +787,12 @@
     <h2 class="section-title">CGPA Guides and Articles</h2>
    </div></div>
    <div class="blog-grid">
-    <a href="https://cgpacalculator.dev/what-is-cgpa" class="blog-card"><span class="blog-card-num">01</span><h3>What Is CGPA?</h3><p>Understand what CGPA means, how it differs from GPA, and why universities worldwide use it to measure academic performance.</p><span class="blog-card-arrow">Read guide →</span></a>
-    <a href="https://cgpacalculator.dev/cgpa-formula" class="blog-card"><span class="blog-card-num">02</span><h3>History of the CGPA Formula</h3><p>Follow the formula from Yale's 1785 grades to Bangladesh's UGC scale: the story behind the math.</p><span class="blog-card-arrow">Read guide →</span></a>
-    <a href="https://cgpacalculator.dev/how-to-calculate-cgpa" class="blog-card"><span class="blog-card-num">03</span><h3>How to Calculate CGPA</h3><p>A manual step-by-step walkthrough with worked examples and common mistakes to avoid.</p><span class="blog-card-arrow">Read guide →</span></a>
-    <a href="https://cgpacalculator.dev/good-cgpa" class="blog-card"><span class="blog-card-num">04</span><h3>What Is a Good CGPA?</h3><p>Find out what your CGPA means for jobs, graduate school, and scholarships, with realistic benchmarks by field.</p><span class="blog-card-arrow">Read guide →</span></a>
-    <a href="https://cgpacalculator.dev/cgpa-for-jobs" class="blog-card"><span class="blog-card-num">05</span><h3>Does CGPA Matter for Jobs?</h3><p>Which sectors use CGPA as a filter, the real thresholds, and how to compensate if yours is lower than you want.</p><span class="blog-card-arrow">Read guide →</span></a>
-    <a href="https://cgpacalculator.dev/improve-cgpa" class="blog-card"><span class="blog-card-num">06</span><h3>How to Improve Your CGPA</h3><p>Data-backed strategies: anchor subject targeting, credit weighting, and grade replacement tactics that actually work.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/what-is-cgpa" class="blog-card"><span class="blog-card-num">01</span><h3>What Is CGPA?</h3><p>What CGPA means and how it differs from GPA.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/cgpa-formula" class="blog-card"><span class="blog-card-num">02</span><h3>History of the CGPA Formula</h3><p>A short history of grade point averages, from early Yale grading records to the UGC scale in Bangladesh.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/how-to-calculate-cgpa" class="blog-card"><span class="blog-card-num">03</span><h3>How to Calculate CGPA</h3><p>A manual walkthrough with worked examples.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/good-cgpa" class="blog-card"><span class="blog-card-num">04</span><h3>What Is a Good CGPA?</h3><p>What counts as a good CGPA for jobs, graduate school and scholarships.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/cgpa-for-jobs" class="blog-card"><span class="blog-card-num">05</span><h3>Does CGPA Matter for Jobs?</h3><p>When employers ask for CGPA, and what to do if yours is lower than you want.</p><span class="blog-card-arrow">Read guide →</span></a>
+    <a href="https://cgpacalculator.dev/improve-cgpa" class="blog-card"><span class="blog-card-num">06</span><h3>How to Improve Your CGPA</h3><p>How to raise your CGPA, including credit weighting and retakes.</p><span class="blog-card-arrow">Read guide →</span></a>
    </div>
    <div style="text-align:center;margin-top:24px;">
     <a href="https://cgpacalculator.dev/cgpa-information" style="display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">View All CGPA Guides →</a>

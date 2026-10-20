@@ -6,19 +6,19 @@ const SCALES = {
       value: 7,
       letter: "HD"
     }, {
-      label: "D  (6.00)",
+      label: "D (6.00)",
       value: 6,
       letter: "D"
     }, {
-      label: "C  (5.00)",
+      label: "CR (5.00)",
       value: 5,
-      letter: "C"
+      letter: "CR"
     }, {
-      label: "P  (4.00)",
+      label: "P (4.00)",
       value: 4,
       letter: "P"
     }, {
-      label: "F  (0.00)",
+      label: "F (0.00)",
       value: 0,
       letter: "F"
     }]

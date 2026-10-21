@@ -4223,3 +4223,21 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .tool-first .grade-result-panel .card-title,
 .tool-first .grade-prediction-panel .card-title,
 .tool-first .gpa-panel-title{font-family:var(--font)}
+
+
+/* Mobile usability: 44px tap target for remove-semester, readable tiny labels */
+@media(max-width:620px){
+  .btn-delete-semester{width:44px;height:44px;border-radius:8px}
+  .btn-delete-semester svg{width:18px;height:18px}
+  .sticky-label{font-size:10px;letter-spacing:.02em}
+  .sticky-item{padding:0 7px}
+  .sticky-item:first-child{padding-left:0}
+  .sticky-val{font-size:12px}
+  .sgpa-tag-label{font-size:11px}
+}
+
+/* Very small phones: stack label above value so all 4 stats fit without clipping */
+@media(max-width:360px){
+  .sticky-item{flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;line-height:1.1}
+  .sticky-bar-inner{justify-content:space-between}
+}

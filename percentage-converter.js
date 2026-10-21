@@ -66,15 +66,46 @@
     setTimeout(() => el.classList.remove("error-shake"), 400);
   }
 
-  // Input max follows the selected formula: 4 for "4pt", 5 for "5pt", 10 for the rest.
-  function getMaxCGPAForFormula() {
-    const formula = document.getElementById("formulaSelect").value;
-    return formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
+  // Valid ranges per formula. Max percentage is derived from the max CGPA, so
+  // CBSE tops out at 95% (10 x 9.5) and AICTE at 92.5% ((10 - 0.75) x 10).
+  // That way a percentage can never convert to a CGPA above the scale's maximum.
+  const LIMITS = {
+    cbse:   { maxCgpa: 10, minCgpa: 0 },
+    aicte:  { maxCgpa: 10, minCgpa: 0.75 }, // (CGPA - 0.75) x 10 would go negative below 0.75
+    "10pt": { maxCgpa: 10, minCgpa: 0 },
+    "4pt":  { maxCgpa: 4,  minCgpa: 0 },
+    "5pt":  { maxCgpa: 5,  minCgpa: 0 },
+  };
+
+  function round2(n) {
+    return Math.round(n * 100) / 100;
+  }
+
+  function getLimits(formula) {
+    const l = LIMITS[formula];
+    return {
+      maxCgpa: l.maxCgpa,
+      minCgpa: l.minCgpa,
+      maxPct: round2(Math.min(100, FORMULAS[formula].toPercent(l.maxCgpa))),
+      minPct: 0,
+    };
   }
 
   function updateInputMax() {
+    const formula = document.getElementById("formulaSelect").value;
     const inputEl = document.getElementById("inputValue");
-    inputEl.max = mode === "cgpa" ? getMaxCGPAForFormula() : 100;
+    const lim = getLimits(formula);
+    if (mode === "cgpa") {
+      inputEl.min = lim.minCgpa;
+      inputEl.max = lim.maxCgpa;
+      inputEl.placeholder = `e.g. ${round2(Math.min(8.5, lim.maxCgpa))} (${lim.minCgpa} to ${lim.maxCgpa})`;
+    } else {
+      inputEl.min = lim.minPct;
+      inputEl.max = lim.maxPct;
+      inputEl.placeholder = `e.g. 85 (0 to ${lim.maxPct})`;
+    }
+    // Clear a stale error when the range changes under the user.
+    clearError();
   }
 
   window.switchTab = function(tab) {
@@ -91,7 +122,6 @@
       tabPct.classList.remove("active");
       tabPct.setAttribute("aria-selected", "false");
       labelEl.textContent = "Enter CGPA";
-      inputEl.placeholder = "e.g. 8.5";
       resultLbl.textContent = "Your Percentage";
     } else {
       tabPct.classList.add("active");
@@ -99,7 +129,6 @@
       tabCgpa.classList.remove("active");
       tabCgpa.setAttribute("aria-selected", "false");
       labelEl.textContent = "Enter Percentage";
-      inputEl.placeholder = "e.g. 85";
       resultLbl.textContent = "Your CGPA";
     }
 
@@ -119,15 +148,20 @@
       return;
     }
 
+    const lim = getLimits(formula);
     if (mode === "cgpa") {
-      const maxCGPA = formula === "4pt" ? 4 : formula === "5pt" ? 5 : 10;
-      if (value > maxCGPA) {
-        showError(`CGPA cannot exceed ${maxCGPA} for this scale.`);
+      if (value > lim.maxCgpa) {
+        showError(`CGPA cannot exceed ${lim.maxCgpa} for this scale.`);
         shakeInput();
         return;
       }
-    } else if (value > 100) {
-      showError("Percentage cannot exceed 100.");
+      if (value < lim.minCgpa) {
+        showError(`CGPA cannot be below ${lim.minCgpa} for this scale.`);
+        shakeInput();
+        return;
+      }
+    } else if (value > lim.maxPct) {
+      showError(`Percentage cannot exceed ${lim.maxPct}% for this scale (that equals the maximum CGPA of ${lim.maxCgpa}).`);
       shakeInput();
       return;
     }
@@ -137,10 +171,10 @@
     let result, display;
     if (mode === "cgpa") {
       result = fn.toPercent(value);
-      display = `${Math.round(result * 100) / 100}%`;
+      display = `${round2(result)}%`;
     } else {
       result = fn.toCgpa(value);
-      display = `${Math.round(result * 100) / 100}`;
+      display = `${round2(result)}`;
     }
 
     document.getElementById("resultValue").textContent = display;

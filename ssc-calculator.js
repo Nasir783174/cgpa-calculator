@@ -230,7 +230,7 @@ function sscInit() {
   function createRow(spec, index, optional) {
     const subjectId = typeof spec === 'string' ? spec : spec.id;
     const choices = typeof spec === 'string' ? null : spec.choices;
-    const row = { subjectId: subjectId, choices: choices, optional: optional };
+    const row = { subjectId: subjectId, choices: choices };
     const el = mk('div', 'ssc-row');
     row.el = el;
 

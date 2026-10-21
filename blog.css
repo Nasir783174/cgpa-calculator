@@ -225,40 +225,6 @@
   background: var(--bg)
 }
 
-.blog-toc {
-  background: var(--bg-input);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 22px;
-  margin: 20px 0
-}
-
-.blog-toc-title {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: var(--text-1)
-}
-
-.blog-toc-list {
-  margin: 0;
-  padding-left: 20px;
-  line-height: 1.9;
-  font-size: 14.5px
-}
-
-.blog-toc-list li {
-  color: var(--text-2)
-}
-
-.blog-toc-list a {
-  color: var(--accent)
-}
-
-.blog-toc-list a:hover {
-  text-decoration: underline
-}
-
 .blog-article[lang="bn"],
 .blog-article[lang="bn"] h1,
 .blog-article[lang="bn"] h2,
@@ -274,16 +240,6 @@
 [lang="bn"] .section-heading,
 [lang="bn"] .blog-cta {
   font-family: 'Noto Sans Bengali', 'Inter', sans-serif
-}
-
-.blog-faq-item {
-  border-left: 4px solid var(--accent);
-  padding-left: 20px;
-  margin-bottom: 24px
-}
-
-.blog-faq-item:last-child {
-  margin-bottom: 0
 }
 
 .mt-sm {

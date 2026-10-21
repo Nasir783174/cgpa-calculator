@@ -150,9 +150,6 @@
   function setResultDashes() {
     ['wacAverage', 'wacTotal', 'wacSum', 'wacSimple'].forEach(function (id) { setText(id, '\u2014'); });
     setText('wacCount', '0');
-    setText('wacStickyAvg', '\u2014');
-    setText('wacStickyTotal', '\u2014');
-    setText('wacStickyRows', '0');
     $('wacCopy').disabled = true;
     $('wacExport').disabled = true;
     setText('wacStatusLabel', 'Waiting for valid data');
@@ -194,9 +191,6 @@
     setText('wacSum', fmt(stats.sum));
     setText('wacSimple', fmt(stats.simple));
     setText('wacCount', String(stats.entries.length));
-    setText('wacStickyAvg', average);
-    setText('wacStickyTotal', fmt(stats.total));
-    setText('wacStickyRows', String(stats.entries.length));
     $('wacCopy').disabled = false;
     $('wacExport').disabled = false;
     setText('wacStatusLabel', 'Calculated exactly');
@@ -481,17 +475,6 @@
 
   $('wacCopy').addEventListener('click', copyResult);
   $('wacExport').addEventListener('click', exportCsv);
-
-  /* Sticky live-result bar: appears while the calculator is in view (same pattern as the CGPA calculator). */
-  var bar = $('wacStickyBar');
-  var section = document.querySelector('.calculator-section');
-  if (bar && section && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      var entry = entries[0];
-      if (entry.isIntersecting) bar.classList.add('visible');
-      else if (entry.boundingClientRect.top > 0) bar.classList.remove('visible');
-    }, { threshold: 0, rootMargin: '-60px 0px 0px 0px' }).observe(section);
-  }
 
   configure();
   loadRows([{}, {}, {}]);

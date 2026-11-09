@@ -3795,7 +3795,7 @@ body {
 ::placeholder { color: var(--placeholder); opacity: 1; }
 .page-tool [hidden] { display: none !important; }
 
-h1, h2, h3, h4, h5, h6 { font-family: var(--font); color: var(--text-1); text-wrap: balance; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font); color: var(--text-1); }
 h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); }
 h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); }
 h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
@@ -3888,7 +3888,7 @@ a { color: inherit; }
 .page-home .main-content { padding-top: var(--section-space); }
 .page-home .main-content > h1 {
   font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-display); max-width: 26ch; margin: 0 auto var(--sp-xl); text-align: center;
+  letter-spacing: var(--ls-display); margin: 0 auto var(--sp-xl); text-align: center;
 }
 .page-home .page-intro { text-align: center; margin: 0 auto var(--sp-3xl); font-size: var(--fs-body-lg); max-width: 640px; }
 
@@ -4243,4 +4243,4 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .tool-actions, .conv-buttons { margin-top: var(--sp-lg); }
 .hsc-actions, .ssc-actions { gap: var(--sp-md); margin-top: var(--sp-lg); }
 .page-hero-inner { margin: 0 auto; max-width: 900px; width: 100%; }
-.page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); max-width: 26ch; margin-left: auto; margin-right: auto; }
+.page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); margin-left: auto; margin-right: auto; }

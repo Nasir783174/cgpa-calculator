@@ -138,8 +138,8 @@
 /* ---- 7. Responsive typography: mobile ---- */
 @media (max-width: 640px) {
   :root {
-    --fs-hero: 24px; --fs-display: 24px;
-    --fs-h1: 24px; --fs-h2: 19px; --fs-h3: 16px; --fs-h4: 15px;
+    --fs-hero: 22px; --fs-display: 22px;
+    --fs-h1: 22px; --fs-h2: 18px; --fs-h3: 16px; --fs-h4: 15px;
     --fs-h5: 14px;
     --fs-body: 15px; --fs-body-lg: 17px;
     --fs-small: 13px;

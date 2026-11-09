@@ -74,14 +74,14 @@
   --fw-bold: 700;
 
   /* ---- 3. Type scale (desktop) ---- */
-  --fs-hero: 72px;   --lh-hero: 1.05;
-  --fs-display: 64px; --lh-display: 1.1;
-  --fs-h1: 48px;  --lh-h1: 1.15;
-  --fs-h2: 36px;  --lh-h2: 1.2;
-  --fs-h3: 28px;  --lh-h3: 1.25;
-  --fs-h4: 22px;  --lh-h4: 1.3;
-  --fs-h5: 18px;  --lh-h5: 1.4;
-  --fs-h6: 16px;  --lh-h6: 1.5;
+  --fs-hero: 30px;   --lh-hero: 1.25;
+  --fs-display: 30px; --lh-display: 1.25;
+  --fs-h1: 30px;  --lh-h1: 1.25;
+  --fs-h2: 22px;  --lh-h2: 1.3;
+  --fs-h3: 18px;  --lh-h3: 1.35;
+  --fs-h4: 16px;  --lh-h4: 1.4;
+  --fs-h5: 15px;  --lh-h5: 1.4;
+  --fs-h6: 14px;  --lh-h6: 1.5;
   --fs-body-lg: 18px; --lh-body-lg: 1.6;
   --fs-body: 16px;    --lh-body: 1.5;
   --lh-list: 1.7;
@@ -130,17 +130,17 @@
 /* ---- 7. Responsive typography: tablet ---- */
 @media (max-width: 1024px) {
   :root {
-    --fs-hero: 52px; --fs-display: 48px;
-    --fs-h1: 40px; --fs-h2: 30px; --fs-h3: 24px; --fs-h4: 20px;
+    --fs-hero: 28px; --fs-display: 28px;
+    --fs-h1: 28px; --fs-h2: 21px; --fs-h3: 17px; --fs-h4: 16px;
     --fs-calc-result: 48px;
   }
 }
 /* ---- 7. Responsive typography: mobile ---- */
 @media (max-width: 640px) {
   :root {
-    --fs-hero: 38px; --fs-display: 36px;
-    --fs-h1: 32px; --fs-h2: 26px; --fs-h3: 22px; --fs-h4: 18px;
-    --fs-h5: 17px;
+    --fs-hero: 24px; --fs-display: 24px;
+    --fs-h1: 24px; --fs-h2: 19px; --fs-h3: 16px; --fs-h4: 15px;
+    --fs-h5: 14px;
     --fs-body: 15px; --fs-body-lg: 17px;
     --fs-small: 13px;
     --fs-calc-result: 44px;

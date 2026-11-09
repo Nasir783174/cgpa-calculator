@@ -9,10 +9,10 @@
 .ssc-seg{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;padding:4px;background:var(--bg);border:1px solid var(--border);border-radius:calc(var(--radius-input) + 4px);border-width:1px;margin:0;min-width:0}
 .ssc-seg label{position:relative;display:block;cursor:pointer}
 .ssc-seg input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
-.ssc-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:#33433B;border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
+.ssc-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:var(--text-2-strong);border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
 .ssc-seg label:hover span{background:var(--accent-dim)}
 .ssc-seg input:checked+span{background:var(--accent);color:#fff}
-.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(31,77,58,.28)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(0,117,222,.28)}
 
 /* ---------- Section headings ---------- */
 
@@ -20,9 +20,9 @@
 
 /* ---------- Actions ---------- */
 .ssc-actions{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:4px}
-.ssc-btn-secondary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;padding:0 var(--sp-lg);font-size:15px;font-weight:600;border-radius:var(--radius-btn);border:2px solid #D3CBB8;background:#fff;color:#1A2A23;cursor:pointer;transition:border-color var(--transition),background var(--transition)}
+.ssc-btn-secondary{display:flex;align-items:center;justify-content:center;width:100%;height:52px;padding:0 var(--sp-lg);font-size:15px;font-weight:600;border-radius:var(--radius-btn);border:2px solid var(--border-strong);background:#fff;color:var(--text-1);cursor:pointer;transition:border-color var(--transition),background var(--transition)}
 .ssc-btn-secondary:hover{border-color:var(--accent);background:var(--accent-dim)}
-.ssc-form-message{font-size:14px;font-weight:600;color:#991B1B;margin:10px 0 0;line-height:1.5}
+.ssc-form-message{font-size:14px;font-weight:600;color:var(--red-ink);margin:10px 0 0;line-height:1.5}
 .ssc-form-message:empty{display:none}
 
 /* ---------- Result box (appears after Calculate) ---------- */
@@ -34,13 +34,13 @@
 .ssc-res-max{font-size:16px;font-weight:600;color:var(--text-3)}
 .ssc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
 .ssc-stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 6px;background:#fff;border:1px solid var(--accent-border);border-radius:10px;text-align:center}
-.ssc-stat-val{font-size:18px;font-weight:700;color:#0F1A15}
+.ssc-stat-val{font-size:18px;font-weight:700;color:var(--text-1)}
 .ssc-stat-label{font-size:12px;font-weight:600;color:var(--text-3);line-height:1.25}
 .ssc-details{margin-top:14px}
 .ssc-details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);padding:4px 0}
-.ssc-line{font-size:14px;color:#2B3B34;line-height:1.6;margin:6px 0 0;overflow-wrap:anywhere}
+.ssc-line{font-size:14px;color:var(--text-2-strong);line-height:1.6;margin:6px 0 0;overflow-wrap:anywhere}
 .ssc-line strong{color:var(--accent)}
-.ssc-fine{font-size:12.5px;color:var(--text-3);line-height:1.5;margin:12px 0 0}
+.ssc-fine{font-size:13px;color:var(--text-3);line-height:1.5;margin:12px 0 0}
 
 /* ---------- Formula / example blocks used further down the page ---------- */
 .ssc-formula{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--radius);padding:16px 20px;margin:14px 0;font-size:17px;font-weight:600;color:var(--accent);overflow-x:auto;white-space:nowrap}
@@ -71,15 +71,15 @@
 .ielts-lead{margin:0 0 16px;font-size:15px;line-height:1.6;color:var(--text-2)}
 .ielts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;margin:0 0 6px}
 .ielts-field{display:flex;flex-direction:column;gap:6px;min-width:0}
-.ielts-label{font-size:15px;font-weight:600;color:#0F1A15}
-.ielts-label small{font-size:12.5px;font-weight:600;color:var(--text-3);margin-left:4px}
-.ielts-select{background-color:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 40px 0 18px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
+.ielts-label{font-size:15px;font-weight:600;color:var(--text-1)}
+.ielts-label small{font-size:13px;font-weight:600;color:var(--text-3);margin-left:4px}
+.ielts-select{background-color:#fff;border:2px solid var(--border-strong);border-radius:var(--radius-input);color:var(--text-1);font-size:18px;font-weight:600;height:56px;padding:0 40px 0 18px;width:100%;outline:none;box-sizing:border-box;cursor:pointer;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 16px center;background-size:14px}
-.ielts-input{background:#fff;border:2px solid #D3CBB8;border-radius:var(--radius-input);color:#0F1A15;font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
+.ielts-input{background:#fff;border:2px solid var(--border-strong);border-radius:var(--radius-input);color:var(--text-1);font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
 .ielts-input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
-.ielts-select:focus,.ielts-input:focus{border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16)}
-.ielts-select.is-error,.ielts-input[aria-invalid="true"]{border-color:#DC2626;background-color:#FEF2F2}
+.ielts-select:focus,.ielts-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,117,222,.16)}
+.ielts-select.is-error,.ielts-input[aria-invalid="true"]{border-color:var(--red);background-color:var(--red-bg)}
 .ielts-help{margin:6px 0 0;font-size:13px;color:var(--text-3)}
 .ielts-card .ssc-actions{margin-top:16px}
 .ielts-card .ssc-result,.ielts-raw-result{margin-top:18px;padding:20px;border:2px solid var(--accent-border);background:var(--accent-dim);border-radius:var(--radius);animation:sscIn .2s ease}
@@ -93,3 +93,19 @@
   .ielts-select,.ielts-input{height:52px}
   .ielts-use{max-width:none;width:100%}
 }
+
+/* ---- Notion-style harmonisation (matches style.css tokens) ---- */
+.ssc-seg span{font-size:var(--fs-small);font-weight:500;min-height:36px;color:var(--text-2)}
+.ssc-seg label:hover span{background:rgba(0,0,0,.04)}
+.ssc-seg input:checked+span{background:#fff;color:var(--text-1);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(0,0,0,.06)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(0,117,222,.25)}
+.ssc-seg{background:var(--bg-card)}
+.ssc-btn-secondary{border:1px solid var(--btn-border);height:auto;min-height:44px;padding:12px 20px;font-size:var(--fs-btn);font-weight:500}
+.ssc-btn-secondary:hover{background:var(--bg-card);border-color:var(--btn-border)}
+.ssc-result{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--radius-card)}
+.ssc-res-gpa{color:var(--text-1)}
+.ssc-stat-val{font-weight:600}
+.ielts-select,.ielts-input{border-width:1px;font-size:var(--fs-input);font-weight:500;height:48px;min-height:48px}
+.ielts-select:focus,.ielts-input:focus{box-shadow:0 0 0 3px rgba(0,117,222,.15)}
+.ielts-card .ssc-result,.ielts-raw-result{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--radius-card)}
+.ssc-formula{background:var(--bg-card);border-color:var(--border);color:var(--text-1);font-size:var(--fs-body)}

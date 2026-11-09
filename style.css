@@ -2,52 +2,112 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/source-serif-4-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/source-serif-4-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
-@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/source-serif-4-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 @font-face{font-family:'Noto Sans Bengali';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/noto-sans-bengali-bengali-400-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
 @font-face{font-family:'Noto Sans Bengali';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/noto-sans-bengali-bengali-500-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
 @font-face{font-family:'Noto Sans Bengali';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/noto-sans-bengali-bengali-600-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
 @font-face{font-family:'Noto Sans Bengali';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/noto-sans-bengali-bengali-700-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
 @font-face{font-family:'Noto Sans Bengali';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/noto-sans-bengali-bengali-800-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
-@font-face{font-family:'Noto Serif Bengali';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/noto-serif-bengali-bengali-500-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
-@font-face{font-family:'Noto Serif Bengali';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/noto-serif-bengali-bengali-600-normal.woff2) format('woff2');unicode-range:U+0951-0952,U+0964-0965,U+0980-09FE,U+1CD0,U+1CD2,U+1CD5-1CD6,U+1CD8,U+1CE1,U+1CEA,U+1CED,U+1CF2,U+1CF5-1CF7,U+200C-200D,U+20B9,U+25CC,U+A8F1;}
+
+/* =========================================================================
+   DESIGN TOKENS  (Notion-inspired system)
+   Every colour, size, radius and space used on the site comes from here.
+   ========================================================================= */
 :root {
-  --bg-page: #FAF7F0;
-  --bg: #F4F0E6;
-  --bg-card: #FFFFFF;
-  --bg-input: #FAF7F0;
-  --border: #E6E0D2;
-  --border-2: #E6E0D2;
-  --accent: #1F4D3A;
-  --accent-light: #163828;
-  --accent-active: #10291F;
-  --accent-soft: #7FB59A;
-  --accent-dim: #EAF1EC;
-  --accent-border: #C5D8CC;
-  --violet: #7F6030;
-  --violet-light: #B08D57;
-  --dark: #14201B;
-  --dark-2: #1E2D26;
-  --text-1: #14201B;
-  --text-2: #3F4F47;
-  --text-3: #5A6A62;
-  --green: #15803D;
-  --red: #B91C1C;
-  --gold: #B45309;
+  /* ---- 1. Colour ---- */
+  --white: #FFFFFF;
+  --bg-page: #FFFFFF;            /* main background */
+  --bg: #F9F9F8;                 /* secondary background (off-white) */
+  --bg-card: #F6F5F4;            /* card background (light gray) */
+  --bg-input: #FFFFFF;
+  --surface-2: var(--bg);
   --bg-1: var(--bg);
   --bg-2: var(--bg);
-  --surface-2: var(--bg);
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif:'Source Serif 4','Noto Serif Bengali',Georgia,'Times New Roman',serif;
+
+  --text-1: #000000;             /* primary text */
+  --text-2-strong: rgba(0,0,0,.70); /* subheading */
+  --text-2: rgba(0,0,0,.55);     /* secondary / supporting text */
+  --text-3: rgba(0,0,0,.55);     /* small supporting text (kept AA-readable) */
+  --text-tertiary: #A39E98;      /* tertiary: placeholders, disabled */
+  --placeholder: #A39E98;
+
+  --accent: #0075DE;             /* primary brand blue */
+  --accent-light: #0068C6;       /* primary hover */
+  --accent-active: #005BAB;
+  --accent-bright: #097FE8;      /* accent blue */
+  --accent-deep: #005BAB;        /* deep blue */
+  --accent-soft: #097FE8;
+  --accent-dim: #F2F9FF;         /* blue tint surface */
+  --accent-border: rgba(0,117,222,.22);
+
+  --border: rgba(0,0,0,.10);
+  --border-2: rgba(0,0,0,.10);
+  --border-strong: rgba(0,0,0,.15);
+  --btn-border: #E5E5E5;
+
+  --dark: #000000;               /* primary button */
+  --dark-2: #333333;             /* primary button hover */
+  --violet: #0075DE;
+  --violet-light: #097FE8;
+
+  --red: #F64932;
+  --red-ink: #C42A14;
+  --red-bg: #FEF3F1;
+  --red-border: #F9B8AE;
+  --yellow: #FFB110;
+  --yellow-ink: #8A5A00;
+  --yellow-bg: #FFF8E6;
+  --yellow-border: #F5D88A;
+  --green: #1AAE39;
+  --green-ink: #14612A;
+  --green-bg: #EEF9F0;
+  --green-border: #BFE6C7;
+  --gold: var(--yellow);
+
+  /* ---- 2. Typeface ---- */
+  --font: 'Inter', Arial, sans-serif;
+  --font-serif: var(--font);     /* serif retired: single family */
   --font-mono: var(--font);
-  --radius-sm: 8px;
-  --radius: 10px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---- 3. Type scale (desktop) ---- */
+  --fs-hero: 72px;   --lh-hero: 1.05;
+  --fs-display: 64px; --lh-display: 1.1;
+  --fs-h1: 48px;  --lh-h1: 1.15;
+  --fs-h2: 36px;  --lh-h2: 1.2;
+  --fs-h3: 28px;  --lh-h3: 1.25;
+  --fs-h4: 22px;  --lh-h4: 1.3;
+  --fs-h5: 18px;  --lh-h5: 1.4;
+  --fs-h6: 16px;  --lh-h6: 1.5;
+  --fs-body-lg: 18px; --lh-body-lg: 1.6;
+  --fs-body: 16px;    --lh-body: 1.5;
+  --lh-list: 1.7;
+  --fs-small: 14px;   --lh-small: 1.5;
+  --fs-caption: 12px; --lh-caption: 1.4;
+  --fs-btn: 15px;     --lh-btn: 1.5;
+  --fs-nav: 14px;     --lh-nav: 1.5;
+  --fs-label: 12px;   --lh-label: 1.3;
+  --fs-input: 16px;
+  --fs-calc-result: 56px;
+  --ls-heading: -0.02em;
+  --ls-display: -0.03em;
+  --ls-body: 0;
+  --ls-button: 0;
+
+  /* ---- 5. Radius ---- */
+  --radius-sm: 4px;
+  --radius: 8px;
   --radius-btn: 8px;
   --radius-input: 8px;
-  --radius-card: 14px;
-  --radius-lg: 16px;
+  --radius-card: 12px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-calc: 16px;
+
+  /* ---- 5. Spacing ---- */
   --sp-xs: 4px;
   --sp-sm: 8px;
   --sp-md: 12px;
@@ -55,62 +115,37 @@
   --sp-xl: 24px;
   --sp-2xl: 32px;
   --sp-3xl: 48px;
-  --sp-6xl: 96px;
-  --container-main: 1280px;
-  --fs-h1: 30px;
-  --fs-h2: 24px;
-  --fs-h3: 20px;
-  --fs-h4: 18px;
-  --fs-h5: 17px;
-  --fs-h6: 16px;
-  --fs-body: 18px;
-  --fs-body-lg: 19px;
-  --fs-small: 15px;
-  --fs-caption: 14px;
-  --fs-nav: 16px;
-  --fs-btn: 16px;
-  --fs-input: 17px;
-  --fs-calc-result: 44px;
-  --fs-label: 12px;
-  --lh-h1: 1.15;
-  --lh-h2: 1.2;
-  --lh-h3: 1.25;
-  --lh-h4: 1.3;
-  --lh-h5: 1.35;
-  --lh-h6: 1.4;
-  --lh-body: 1.65;
-  --lh-list: 1.8;
-  --ls-heading: -0.01em;
-  --ls-body: 0;
-  --ls-button: 0.02em;
-  --shadow-sm: 0 1px 4px rgba(20,32,27,.06), 0 1px 2px rgba(0, 0, 0, .04);
-  --shadow: 0 4px 20px rgba(31,77,58,.10), 0 2px 8px rgba(0, 0, 0, .05);
-  --transition: .18s ease;
-  --header-h: 64px
+  --sp-6xl: 80px;
+  --section-space: 80px;
+  --container-main: 1200px;
+
+  /* ---- Elevation (used sparingly; borders do most of the work) ---- */
+  --shadow-sm: none;
+  --shadow: 0 4px 18px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.03), 0 1px 3px rgba(0,0,0,.02);
+  --shadow-pop: 0 16px 48px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.05);
+  --transition: .15s ease;
+  --header-h: 64px;
 }
 
-@media(max-width:768px) {
+/* ---- 7. Responsive typography: tablet ---- */
+@media (max-width: 1024px) {
   :root {
-    --fs-h1: 24px;
-    --fs-h2: 20px;
-    --fs-h3: 18px;
-    --fs-h4: 16px;
-    --fs-h5: 16px;
-    --fs-h6: 15px;
-    --fs-body: 17px;
-    --fs-body-lg: 18px;
-    --fs-small: 14px;
-    --fs-caption: 13px;
-    --fs-nav: 15px;
-    --fs-btn: 16px;
-    --fs-input: 16px;
-    --fs-calc-result: 36px;
-    --fs-label: 11px;
-    --lh-h1: 1.2;
-    --lh-h2: 1.25;
-    --lh-h3: 1.3;
-    --lh-h4: 1.3;
-    --lh-body: 1.6
+    --fs-hero: 52px; --fs-display: 48px;
+    --fs-h1: 40px; --fs-h2: 30px; --fs-h3: 24px; --fs-h4: 20px;
+    --fs-calc-result: 48px;
+  }
+}
+/* ---- 7. Responsive typography: mobile ---- */
+@media (max-width: 640px) {
+  :root {
+    --fs-hero: 38px; --fs-display: 36px;
+    --fs-h1: 32px; --fs-h2: 26px; --fs-h3: 22px; --fs-h4: 18px;
+    --fs-h5: 17px;
+    --fs-body: 15px; --fs-body-lg: 17px;
+    --fs-small: 13px;
+    --fs-calc-result: 44px;
+    --section-space: 48px;
+    --sp-6xl: 48px;
   }
 }
 
@@ -224,7 +259,7 @@ ol {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(20,32,27,.04)
+  box-shadow: 0 1px 0 rgba(0,0,0,.04)
 }
 
 .header-inner {
@@ -256,7 +291,7 @@ ol {
   color: #fff;
   font-weight: 600;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(31,77,58,.30)
+  box-shadow: 0 2px 8px rgba(0,117,222,.30)
 }
 
 .nav-desktop {
@@ -394,11 +429,11 @@ ol {
 }
 
 .sticky-label {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .12em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .sticky-val {
@@ -490,10 +525,10 @@ ol {
 }
 
 .card-label {
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  letter-spacing:0;
+  text-transform:none;
   color: var(--accent);
   margin-bottom: 3px
 }
@@ -540,8 +575,8 @@ ol {
   font-size: 12px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .1em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .stat-row {
@@ -565,11 +600,11 @@ ol {
 }
 
 .stat-label {
-  font-size: 10px;
+  font-size:12px;
   color: var(--text-3);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .stat-val {
@@ -601,10 +636,10 @@ ol {
 
 .section-eyebrow {
   display: block;
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  letter-spacing:0;
+  text-transform:none;
   color: var(--accent);
   margin-bottom: 3px
 }
@@ -648,12 +683,12 @@ ol {
 }
 
 .semester-num {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--accent);
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: .08em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .semester-right-wrap {
@@ -673,11 +708,11 @@ ol {
 }
 
 .sgpa-tag-label {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .06em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .sgpa-tag-val {
@@ -699,7 +734,7 @@ ol {
 
 .btn-delete-semester:hover {
   color: var(--red);
-  background: #FEE2E2
+  background: var(--red-bg)
 }
 
 .courses-container {
@@ -758,7 +793,7 @@ ol {
 .course-credit:focus,
 .course-grade:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .course-grade {
@@ -788,7 +823,7 @@ ol {
 
 .btn-delete-course:hover {
   color: var(--red);
-  background: #FEE2E2
+  background: var(--red-bg)
 }
 
 .btn-add-course {
@@ -858,8 +893,8 @@ ol {
   font-size: var(--fs-label);
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .09em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .target-field input {
@@ -881,7 +916,7 @@ ol {
 
 .target-field input:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .target-field input::placeholder {
@@ -902,11 +937,11 @@ ol {
 }
 
 .target-label {
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .08em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .target-val {
@@ -916,8 +951,8 @@ ol {
 }
 
 .target-result.target-possible {
-  border-color: #BBF7D0;
-  background: #F0FDF4
+  border-color: var(--green-border);
+  background: var(--green-bg)
 }
 
 .target-result.target-possible .target-val {
@@ -935,8 +970,8 @@ ol {
 }
 
 .target-result.target-impossible {
-  border-color: #FECACA;
-  background: #FEE2E2
+  border-color: var(--red-border);
+  background: var(--red-bg)
 }
 
 .target-result.target-impossible .target-val {
@@ -959,13 +994,13 @@ ol {
   background: var(--accent);
   color: #fff;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 14px rgba(31,77,58,.30)
+  box-shadow: 0 4px 14px rgba(0,117,222,.30)
 }
 
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(31,77,58,.40)
+  box-shadow: 0 6px 20px rgba(0,117,222,.40)
 }
 
 .btn-primary:active {
@@ -988,11 +1023,11 @@ ol {
 }
 
 .sgpa-label {
-  font-size: 10px;
+  font-size:12px;
   color: var(--text-3);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .sgpa-val {
@@ -1010,11 +1045,11 @@ ol {
   grid-template-columns: 1fr 120px 100px 36px;
   gap: 7px;
   padding: 7px 10px;
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .1em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .sgpa-row {
@@ -1046,13 +1081,13 @@ ol {
 
 .sgpa-credit-input.sgpa-credit-missing {
   border-color: var(--gold);
-  background: #FFFBEB;
+  background: var(--yellow-bg);
   box-shadow: 0 0 0 1px var(--gold)
 }
 
 .course-grade.course-grade-missing {
   border-color: var(--gold);
-  background: #FFFBEB;
+  background: var(--yellow-bg);
   box-shadow: 0 0 0 1px var(--gold)
 }
 
@@ -1078,7 +1113,7 @@ ol {
 
 .btn-delete-sgpa:hover {
   color: var(--red);
-  background: #FEE2E2
+  background: var(--red-bg)
 }
 
 .btn-add-row {
@@ -1092,8 +1127,8 @@ ol {
   font-size: 12px;
   font-weight: 600;
   transition: all var(--transition);
-  text-transform: uppercase;
-  letter-spacing: .06em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .btn-add-row:hover {
@@ -1202,10 +1237,10 @@ thead tr {
 th {
   padding: 11px 14px;
   text-align: left;
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  text-transform:none;
+  letter-spacing:0;
   white-space: nowrap
 }
 
@@ -1271,12 +1306,12 @@ tbody tr:hover {
 }
 
 .grade-c {
-  background: #F59E0B;
+  background: var(--yellow);
   color: #fff
 }
 
 .grade-d {
-  background: #B45309;
+  background: var(--yellow-ink);
   color: #fff
 }
 
@@ -1329,7 +1364,7 @@ tbody tr:hover {
   color: #fff;
   flex-shrink: 0;
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(31,77,58,.30)
+  box-shadow: 0 2px 8px rgba(0,117,222,.30)
 }
 
 .step-body h3 {
@@ -1462,7 +1497,7 @@ tbody tr:hover {
   opacity: 0;
   transition: opacity .22s, transform .22s;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(31,77,58,.40);
+  box-shadow: 0 4px 20px rgba(0,117,222,.40);
   white-space: nowrap
 }
 
@@ -1567,10 +1602,10 @@ tbody tr:hover {
 
 .hero-eyebrow {
   display: inline-block;
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+  letter-spacing:0;
+  text-transform:none;
   color: var(--accent);
   margin-bottom: 11px
 }
@@ -1671,7 +1706,7 @@ tbody tr:hover {
 }
 
 .blog-card-num {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
   margin-bottom: 9px
@@ -1711,7 +1746,7 @@ tbody tr:hover {
   font-size: 22px;
   font-weight: 600;
   color: #fff;
-  box-shadow: 0 0 0 5px rgba(31,77,58,.25)
+  box-shadow: 0 0 0 5px rgba(0,117,222,.25)
 }
 
 .about-stats {
@@ -1770,10 +1805,10 @@ tbody tr:hover {
 
 .about-section-eyebrow {
   display: block;
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
-  letter-spacing: .13em;
-  text-transform: uppercase;
+  letter-spacing:0;
+  text-transform:none;
   color: var(--accent);
   margin-bottom: 4px
 }
@@ -1962,7 +1997,7 @@ tbody tr:hover {
 .ctab.active {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(31,77,58,.30)
+  box-shadow: 0 2px 8px rgba(0,117,222,.30)
 }
 
 .ctab:not(.active):hover {
@@ -1982,8 +2017,8 @@ tbody tr:hover {
   font-size: var(--fs-label);
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 7px
 }
 
@@ -2006,7 +2041,7 @@ tbody tr:hover {
 .conv-field input:focus,
 .conv-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .conv-buttons {
@@ -2035,7 +2070,7 @@ tbody tr:hover {
 .btn-calculate:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(31,77,58,.30)
+  box-shadow: 0 4px 14px rgba(0,117,222,.30)
 }
 
 .btn-reset {
@@ -2098,8 +2133,8 @@ tbody tr:hover {
   font-size: 18px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .12em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 4px
 }
 
@@ -2182,8 +2217,8 @@ tbody tr:hover {
   font-size: 12px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 5px
 }
 
@@ -2347,8 +2382,8 @@ tbody tr:hover {
   font-size: var(--fs-label);
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 6px
 }
 
@@ -2373,7 +2408,7 @@ tbody tr:hover {
 .gpa-field input:focus,
 .gpa-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .gpa-panel-buttons {
@@ -2429,8 +2464,8 @@ tbody tr:hover {
   font-size: 18px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .12em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 3px
 }
 
@@ -2517,11 +2552,11 @@ tbody tr:hover {
 }
 
 .scale-ref-name {
-  font-size: 11px;
+  font-size:12px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 4px
 }
 
@@ -2589,7 +2624,7 @@ tbody tr:hover {
 .gsys-tab.active {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(31,77,58,.30)
+  box-shadow: 0 2px 8px rgba(0,117,222,.30)
 }
 
 .gsys-tab:not(.active):hover {
@@ -2607,11 +2642,11 @@ tbody tr:hover {
 }
 
 .grade-table-header span {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .1em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .grade-row {
@@ -2669,7 +2704,7 @@ tbody tr:hover {
 .gr-marks:focus,
 .gr-credit:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .gr-grade-cell {
@@ -2683,20 +2718,20 @@ tbody tr:hover {
   font-size: 13px;
   font-weight: 600;
   color: var(--accent);
-  letter-spacing: .04em;
+  letter-spacing:0;
   transition: all var(--transition);
   min-width: 0
 }
 
 .gr-grade-cell.grade-f {
-  background: #FEE2E2;
-  border-color: #FECACA;
-  color: #B91C1C
+  background: var(--red-bg);
+  border-color: var(--red-border);
+  color: var(--red-ink)
 }
 
 .gr-grade-cell.grade-pass {
-  background: #D1FAE5;
-  border-color: #BBF7D0;
+  background: var(--green-border);
+  border-color: var(--green-border);
   color: #15803D
 }
 
@@ -2714,7 +2749,7 @@ tbody tr:hover {
 
 .btn-del-gr:hover {
   color: var(--red);
-  background: #FEE2E2
+  background: var(--red-bg)
 }
 
 .btn-add-subject {
@@ -2774,11 +2809,11 @@ tbody tr:hover {
 }
 
 .gr-stat-label {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .09em;
+  text-transform:none;
+  letter-spacing:0;
   margin-bottom: 6px
 }
 
@@ -2796,7 +2831,7 @@ tbody tr:hover {
 }
 
 .gr-stat-sub {
-  font-size: 11px;
+  font-size:12px;
   color: var(--text-3);
   margin-top: 4px
 }
@@ -2842,8 +2877,8 @@ tbody tr:hover {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-3);
-  text-transform: uppercase;
-  letter-spacing: .09em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .pred-field select {
@@ -2866,7 +2901,7 @@ tbody tr:hover {
 
 .pred-field select:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(31,77,58,.10)
+  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
 }
 
 .btn-predict {
@@ -2885,14 +2920,14 @@ tbody tr:hover {
   cursor: pointer;
   transition: all var(--transition);
   white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(31,77,58,.25);
+  box-shadow: 0 3px 10px rgba(0,117,222,.25);
   align-self: flex-end
 }
 
 .btn-predict:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(31,77,58,.35)
+  box-shadow: 0 5px 16px rgba(0,117,222,.35)
 }
 
 .pred-result {
@@ -2917,8 +2952,8 @@ tbody tr:hover {
 }
 
 .pred-result-card.pred-achieved {
-  background: #F0FDF4;
-  border-color: #BBF7D0
+  background: var(--green-bg);
+  border-color: var(--green-border)
 }
 
 .pred-stat {
@@ -2928,11 +2963,11 @@ tbody tr:hover {
 }
 
 .pred-stat-label {
-  font-size: 10px;
+  font-size:12px;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .1em
+  text-transform:none;
+  letter-spacing:0
 }
 
 .pred-result-card.pred-achieved .pred-stat-label {
@@ -3132,10 +3167,10 @@ tbody tr:hover {
     width: 100%;
     height: 36px;
     justify-content: center;
-    border: 1.5px solid #FECACA;
+    border: 1.5px solid var(--red-border);
     border-radius: var(--radius-sm);
     color: var(--red);
-    background: #FEE2E2;
+    background: var(--red-bg);
     font-size: 12px;
     gap: 5px
   }
@@ -3252,10 +3287,10 @@ tbody tr:hover {
     width: 100%;
     height: 36px;
     justify-content: center;
-    border: 1.5px solid #FECACA;
+    border: 1.5px solid var(--red-border);
     border-radius: var(--radius-sm);
     color: var(--red);
-    background: #FEE2E2;
+    background: var(--red-bg);
     font-size: 12px;
     gap: 5px
   }
@@ -3349,8 +3384,8 @@ tbody tr:hover {
   }
 
   .sticky-label {
-    font-size: 9px;
-    letter-spacing: .08em
+    font-size:12px;
+    letter-spacing:0
   }
 
   .sticky-val {
@@ -3396,9 +3431,9 @@ tbody tr:hover {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #FEE2E2;
+    background: var(--red-bg);
     color: var(--red);
-    border: 1px solid #FECACA;
+    border: 1px solid var(--red-border);
     border-radius: var(--radius-sm)
   }
 
@@ -3453,13 +3488,13 @@ tbody tr:hover {
   }
 
   .semester-num {
-    font-size: 9px
+    font-size:12px
   }
 
   
 
   .sgpa-tag-label {
-    font-size: 9px
+    font-size:12px
   }
 
   .sgpa-tag-val {
@@ -3589,7 +3624,7 @@ tbody tr:hover {
 }
 
 .uni-country {
-  font-size: 11px;
+  font-size:12px;
   color: var(--text-3)
 }
 
@@ -3599,140 +3634,6 @@ tbody tr:hover {
   .uni-list {
     grid-template-columns: 1fr
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
-  letter-spacing: -0.01em
-}
-
-h1 {
-  font-weight: 600
-}
-
-h2 {
-  font-weight: 600
-}
-
-h3 {
-  font-weight: 600
-}
-
-.hero-eyebrow,
-.section-eyebrow,
-.card-label,
-.stat-label,
-.sgpa-label,
-.target-label,
-.about-section-eyebrow,
-.sticky-label,
-.formula-label,
-.result-label,
-.grade-badge,
-.uni-country,
-.blog-card-num,
-.semester-num,
-.sgpa-table-header,
-.result-formula,
-th,
-.faq-question,
-.breadcrumb,
-.footer-bottom {
-  font-family: var(--font-mono)
-}
-
-.faq-question {
-  font-family: var(--font)
-}
-
-.header {
-  background: rgba(242, 245, 239, .92)
-}
-
-.logo {
-  font-weight: 600;
-  font-size: 19px
-}
-
-.logo-icon {
-  background: var(--accent);
-  border-radius: 6px
-}
-
-.hero-title {
-  font-family: var(--font-serif)
-}
-
-.blog-card::before {
-  display: none
-}
-
-.blog-card,
-.card,
-.calculator-section,
-.seo-section,
-.sgpa-section,
-.scales-section,
-.about-section,
-.about-stat-card,
-.why-card,
-.converter-card {
-  border-radius: var(--radius)
-}
-
-.blog-card:hover,
-.why-card:hover {
-  border-color: var(--accent)
-}
-
-.converter-card::before {
-  display: none
-}
-
-.btn-primary,
-.btn-calculate,
-.btn-predict,
-.btn-cta {
-  border-radius: var(--radius-btn)
-}
-
-.btn-primary:hover,
-.btn-calculate:hover,
-.btn-predict:hover {
-  background: var(--accent-light)
-}
-
-.btn-primary:active,
-.btn-calculate:active,
-.btn-predict:active {
-  background: var(--accent-active)
-}
-
-.ctab.active,
-.gsys-tab.active {
-  background: var(--accent)
-}
-
-.footer-logo {
-  font-family: var(--font-serif);
-  font-weight: 600
-}
-
-.faq-item {
-  border-radius: 8px
-}
-
-thead tr {
-  background: var(--accent-dim)
-}
-
-th {
-  color: var(--accent)
 }
 
 .board {
@@ -3745,7 +3646,7 @@ th {
 }
 
 .board h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font);
   color: var(--text-1);
   margin-bottom: 36px
 }
@@ -3763,23 +3664,23 @@ th {
 
 .board .step .sk {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size:12px;
   color: var(--accent);
-  letter-spacing: .05em;
+  letter-spacing:0;
   margin-bottom: 8px;
   display: block;
-  text-transform: uppercase
+  text-transform:none
 }
 
 .board .step h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font);
   font-size: 18px;
   margin-bottom: 6px;
   color: var(--text-1)
 }
 
 .board .step p {
-  font-size: 13.5px;
+  font-size:14px;
   color: var(--text-2);
   line-height: 1.6
 }
@@ -3794,377 +3695,6 @@ th {
     padding: 36px 24px
   }
 }
-/* ===== Tool cards v2: clearer, visual-first (calculators + related tools) ===== */
-:root{--edge:#CFC6B0}
-.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
-.calc-card{display:flex;flex-direction:column;background:#fff;border:2px solid var(--edge);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
-.calc-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.calc-card:focus-visible,.tool-tile:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
-.calc-scale{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:20px 12px 18px;background:linear-gradient(180deg,#EAF1EC,#D5E6DB);border-bottom:2px solid var(--edge);transition:border-color var(--transition)}
-.calc-card:hover .calc-scale{border-bottom-color:var(--accent)}
-.calc-scale small{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#2A6049}
-.calc-scale b{font-size:46px;line-height:1;font-weight:600;letter-spacing:-.03em;color:#163828;font-variant-numeric:tabular-nums}
-.calc-body{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
-.calc-body h3{font-size:17px;line-height:1.3;font-weight:600;color:var(--text-1);margin:0 0 4px}
-.calc-meta{flex:1;font-size:13.5px;line-height:1.45;color:var(--text-2)}
-.calc-btn{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px;height:42px;border-radius:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:600;transition:background var(--transition)}
-.calc-card:hover .calc-btn{background:var(--accent-light)}
-
-.tool-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-.tool-tile{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border:2px solid var(--edge);border-radius:12px;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(20,32,27,.06);transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
-.tool-tile:hover{border-color:var(--accent);box-shadow:0 8px 22px rgba(31,77,58,.16);transform:translateY(-2px)}
-.tool-tile-icon{flex:none;display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:10px;background:var(--accent);color:#fff;font-size:24px;font-weight:600;line-height:1}
-.tool-tile-icon svg{width:26px;height:26px}
-.tool-tile-icon.is-scale{background:var(--accent-dim);color:#163828;border:2px solid var(--accent-border);font-size:15px;letter-spacing:-.02em}
-.tool-tile-text{min-width:0}
-.tool-tile h3{font-size:15.5px;line-height:1.3;font-weight:600;color:var(--text-1);margin:0 0 2px}
-.tool-tile-sub{display:block;font-size:13px;line-height:1.4;color:var(--text-2)}
-.tool-tile-arrow{flex:none;margin-left:auto;color:var(--accent);transition:transform var(--transition)}
-.tool-tile:hover .tool-tile-arrow{transform:translateX(3px)}
-
-@media(max-width:980px){.tool-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:900px){.calc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){
- .calc-grid{gap:12px}
- .calc-scale{padding:16px 8px 14px}
- .calc-scale b{font-size:34px}
- .calc-body{padding:12px 12px 14px}
- .calc-body h3{font-size:15px}
- .calc-meta{font-size:12.5px}
- .calc-btn{height:38px;font-size:13px;margin-top:10px}
- .tool-tiles{grid-template-columns:1fr}
-}
-
-/* ===== Shared page hero (all pages) ===== */
-.page-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0F2A20 0%,#153B2C 55%,#1F4D3A 100%);color:#fff;text-align:center;padding:40px 24px 48px}
-.page-hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate%2870 60%29 rotate%28-8%29'%3E%3Cpath d='M0 40 60 12l60 28-60 28z'/%3E%3Cpath d='M28 54v26c0 10 64 10 64 0V54'/%3E%3Cpath d='M120 40v34'/%3E%3C/g%3E%3Cg transform='translate%28150 170%29'%3E%3Crect width='90' height='112' rx='10'/%3E%3Crect x='14' y='14' width='62' height='24' rx='4'/%3E%3Cpath d='M20 56h8M41 56h8M62 56h8M20 76h8M41 76h8M62 76h8M20 96h8M41 96h8M62 96h8'/%3E%3C/g%3E%3Cg transform='translate%28980 40%29 rotate%2810%29'%3E%3Cpath d='M0 130 14 96 96 14l24 24-82 82z'/%3E%3Cpath d='M14 96l24 24'/%3E%3C/g%3E%3Cg transform='translate%281010 180%29'%3E%3Cpath d='M70 0H8l40 50L8 100h62'/%3E%3C/g%3E%3Cg transform='translate%28420 200%29'%3E%3Cpath d='M0 0h70v70H0z'/%3E%3Cpath d='M14 46 28 30l14 10 14-24'/%3E%3C/g%3E%3Cg transform='translate%28760 30%29'%3E%3Ccircle cx='34' cy='34' r='34'/%3E%3Cpath d='M34 18v18l12 8'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat;opacity:.07;pointer-events:none}
-.page-hero-inner{position:relative;max-width:820px;margin:0 auto}
-.page-hero .breadcrumb{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin:0 0 20px;padding:0;border:0;background:none;font-size:13px;line-height:1.4;color:#8C978F}
-.page-hero .breadcrumb a{color:#D3CBB8;text-decoration:none}
-.page-hero .breadcrumb a:hover{color:#fff;text-decoration:underline}
-.page-hero .breadcrumb-sep{color:#5A6A62;margin:0}
-.page-hero-eyebrow{display:inline-block;margin:0 0 14px;padding:5px 14px;border:1px solid rgba(147,197,253,.45);background:rgba(31,77,58,.28);color:#D5E6DB;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.page-hero h1{font-family:var(--font);font-size:clamp(26px,4.2vw,38px);line-height:1.22;font-weight:600;letter-spacing:-.02em;color:#fff;margin:0 0 14px;padding:0;border:0}
-.page-hero-sub{max-width:660px;margin:0 auto;font-size:clamp(15px,1.8vw,17px);line-height:1.6;color:#D3CBB8}
-
-@media(max-width:640px) {
-.page-hero{padding:28px 18px 34px}.page-hero .breadcrumb{margin-bottom:16px;font-size:12px}
-}
-
-/* ===== Consistency fixes ===== */
-.seo-content-card a,.calculator-section a,.gpa-panel a,.scale-ref-card p a{color:var(--accent);text-decoration:none}
-.seo-content-card a:hover,.calculator-section a:hover,.gpa-panel a:hover{text-decoration:underline}
-.seo-content-card h3{font-size:20px;font-weight:600;color:var(--text-1);letter-spacing:-.02em;line-height:1.25;margin:24px 0 10px}
-.seo-content-card .why-card h3{font-size:18px;font-weight:600}
-
-/* ===== Homepage calculator hero-band: make tools the first-impression focal point ===== */
-.calc-hero-band{position:relative;margin:0 -24px 0;padding:32px 24px 40px;background:radial-gradient(1100px 260px at 50% -60px,rgba(31,77,58,.10),transparent),linear-gradient(180deg,#F2F7F3 0%,#FFFFFF 100%);border-bottom:1px solid var(--border)}
-.calc-hero-band .section-title{font-size:24px}
-.calc-hero-band .section-note{margin-bottom:22px}
-.calc-scale{position:relative}
-.calc-scale small{display:inline-flex;align-items:center;gap:5px}
-.calc-card{box-shadow:0 2px 8px rgba(20,32,27,.05)}
-.calc-card:hover{box-shadow:0 16px 32px rgba(31,77,58,.20)}
-.calc-card:hover .calc-scale b{transform:scale(1.06)}
-.calc-scale b{display:inline-block;transition:transform var(--transition)}
-@media(max-width:640px){.calc-hero-band{margin:0 -12px 0;padding:22px 16px 28px}.calc-hero-band .section-title{font-size:20px}}
-@media(max-width:420px){.calc-hero-band{margin:0 -10px 0}}
-
-/* ═══════════════════════════════════════════════════════════
-   TOOL FOCUS LAYER  (cgpa-to-percentage, cgpa-to-gpa, grade-calculator)
-   Goal: the calculator is the clearly framed focal point of the page,
-   every card/table has a visible edge, and labels are easy to read.
-   ═══════════════════════════════════════════════════════════ */
-.page-tool [hidden]{display:none!important}
-.page-tool{background:#F1EDE2}
-
-/* --- Tool frames: strong edge + halo so the whole tool reads as one object --- */
-.page-tool .converter-card,
-.page-tool .gpa-panel,
-.page-tool .grade-panel,
-.page-tool .grade-result-panel,
-.page-tool .grade-prediction-panel{
-  background:#fff;
-  border:2px solid #7FB59A;
-  border-radius:16px;
-  padding:0 24px 24px;
-  overflow:hidden;
-  box-shadow:0 0 0 6px rgba(31,77,58,.08),0 18px 40px -16px rgba(30,64,175,.35);
-}
-.page-tool .converter-card{margin-top:24px}
-.page-tool .converter-card::before,
-.page-tool .gpa-panel::before,
-.page-tool .grade-panel::before,
-.page-tool .grade-prediction-panel::before{display:none}
-
-/* --- Header band inside each tool --- */
-.page-tool .tool-head,
-.page-tool .gpa-panel-head{
-  margin:0 -24px 22px;
-  background:linear-gradient(180deg,#EAF1EC,#DDEBE2);
-  border-bottom:2px solid #BFD6C8;
-}
-.page-tool .tool-head .card-label,
-.page-tool .grade-prediction-panel>.card-label,
-.page-tool .grade-result-panel .card-label{
-  display:inline-block;
-  font-family:var(--font);
-  font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:none;
-  color:#fff;background:#1F4D3A;border-radius:999px;padding:3px 12px;margin-bottom:8px;
-}
-.page-tool .tool-head .card-title,
-.page-tool .gpa-panel-title{
-  font-size:20px;font-weight:600;color:#0F1A15;letter-spacing:-.01em;margin:0;
-}
-.page-tool .gpa-panel-sub{font-size:14px;color:#2B3B34;margin:4px 0 0;line-height:1.5}
-
-/* Result + prediction panels need their own header spacing (no .tool-head inside) */
-.page-tool .grade-result-panel,
-.page-tool .grade-prediction-panel{margin-top:22px}
-.page-tool .grade-panel{margin-top:24px}
-
-/* --- Two converter panels: distinct colour so the direction is obvious --- */
-.page-tool .gpa-converter-grid{gap:24px;margin-top:24px;align-items:start}
-.page-tool .gpa-panel-b{border-color:#C9AE7C;box-shadow:0 0 0 6px rgba(138,106,58,.09),0 18px 40px -16px rgba(91,33,182,.35)}
-.page-tool .gpa-panel-b .gpa-panel-head{background:linear-gradient(180deg,#F6EFDF,#EFE3C8);border-bottom-color:#DCCB9F}
-.page-tool .gpa-panel-b .gpa-field input:focus,
-.page-tool .gpa-panel-b .gpa-field select:focus{border-color:#8A6A3A;box-shadow:0 0 0 4px rgba(138,106,58,.16)}
-.page-tool .gpa-panel-b .gpa-result-panel{background:#F6EFDF;border-color:#D9C497}
-.page-tool .gpa-panel-b .gpa-result-label,
-.page-tool .gpa-panel-b .gpa-result-value{color:#6E5229}
-
-/* --- Labels and inputs: larger, darker, sentence case --- */
-.page-tool .conv-field label,
-.page-tool .gpa-field label,
-.page-tool .pred-field label{
-  font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:0;
-  text-transform:none;color:#1A2A23;margin-bottom:8px;
-}
-.page-tool .conv-field input,
-.page-tool .conv-field select,
-.page-tool .gpa-field input,
-.page-tool .gpa-field select,
-.page-tool .pred-field select,
-.page-tool .gr-subject,
-.page-tool .gr-marks,
-.page-tool .gr-credit{
-  background:#fff;border:2px solid #D3CBB8;color:#0F1A15;
-}
-.page-tool .conv-field input:focus,
-.page-tool .conv-field select:focus,
-.page-tool .gpa-field input:focus,
-.page-tool .gpa-field select:focus,
-.page-tool .gr-subject:focus,
-.page-tool .gr-marks:focus,
-.page-tool .gr-credit:focus{
-  border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16);
-}
-.page-tool .gpa-fields{gap:16px}
-.page-tool .btn-gpa-reset,.page-tool .btn-reset{border:2px solid #D3CBB8;color:#1A2A23;background:#fff}
-
-/* --- Result panels: obvious once they appear --- */
-.page-tool .result-panel,
-.page-tool .gpa-result-panel{
-  background:#EAF1EC;border:2px solid #7FB59A;border-radius:14px;
-}
-.page-tool .result-label,
-.page-tool .gpa-result-label{font-family:var(--font);font-size:15px;letter-spacing:.02em;text-transform:none}
-.page-tool .grade-result-panel .gr-stat{border:2px solid #D9D1BF;background:#F8FAFF}
-.page-tool .grade-result-panel .gr-stat:first-child{border-color:#7FB59A;background:#EAF1EC}
-.page-tool .gr-stat-label{font-family:var(--font);font-size:12px;letter-spacing:.04em}
-.page-tool .grade-result-panel{animation:fadeSlideUp .25s ease}
-
-/* --- Grade calculator: subject table as a bordered grid --- */
-.page-tool .grade-system-tabs{border:2px solid #D9D1BF;background:#F1EDE2}
-.page-tool .grade-table-header{
-  background:#EAF1EC;border:2px solid #BFD6C8;border-bottom:none;
-  border-radius:12px 12px 0 0;padding:10px 12px;margin:0;
-}
-.page-tool .grade-table-header span{font-family:var(--font);font-size:13px;letter-spacing:0;text-transform:none;color:#1F4D3A}
-.page-tool #gradeTableBody{
-  border:2px solid #BFD6C8;border-radius:0 0 12px 12px;padding:12px 12px 4px;background:#FBF9F3;
-}
-.page-tool .btn-add-subject{margin-top:14px;border-width:2px;background:#fff}
-.page-tool .tool-actions{margin-top:20px}
-.page-tool .tool-error{
-  margin-top:16px;padding:12px 14px;border-radius:10px;
-  background:#FEF2F2;border:2px solid #FCA5A5;color:#991B1B;font-size:15px;font-weight:600;
-}
-
-/* --- Data tables on the page: clear grid, zebra rows, readable header --- */
-.page-tool .table-wrap{border:2px solid #BFD6C8;border-radius:12px;background:#fff}
-.page-tool table{font-size:15px}
-.page-tool thead tr{background:#DDEBE2;border-bottom:2px solid #BFD6C8}
-.page-tool th{font-family:var(--font);font-size:13px;letter-spacing:.01em;text-transform:none;color:#1F4D3A;padding:13px 16px}
-.page-tool td{padding:13px 16px;color:#1A2A23;border-bottom:1px solid #E6E0D2;border-right:1px solid #EFEADC}
-.page-tool td:last-child{border-right:none}
-.page-tool tbody tr:nth-child(even){background:#F6F9FE}
-.page-tool tbody tr:hover{background:#EAF1EC}
-
-/* --- Content sections: visible edges so long pages stay scannable --- */
-.page-tool .seo-section{border:1.5px solid #DDD5C3;box-shadow:0 6px 20px -12px rgba(20,32,27,.18)}
-
-@media(max-width:768px){
-  .page-tool .converter-card,.page-tool .gpa-panel,.page-tool .grade-panel,
-  .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding:0 16px 18px;border-radius:14px}
-  .page-tool .tool-head,.page-tool .gpa-panel-head{margin:0 -16px 18px}
-  .page-tool .gpa-converter-grid{gap:20px}
-}
-@media(prefers-reduced-motion:reduce){.page-tool .grade-result-panel{animation:none}}
-
-/* ═══════════════════════════════════════════════════════════
-   TOOL FOCUS LAYER 2: the six CGPA calculator pages
-   (cgpa-calculator, nsu, 10-point, nigeria, australia, canada)
-   Same visual language as the converter and grade calculator.
-   ═══════════════════════════════════════════════════════════ */
-
-/* Frames */
-.page-tool .card.result-card,
-.page-tool .card.target-card-standalone,
-.page-tool .calculator-section,
-.page-tool .sgpa-section{
-  background:#fff;
-  border:2px solid #7FB59A;
-  border-radius:16px;
-  padding:0 24px 24px;
-  overflow:hidden;
-  box-shadow:0 0 0 6px rgba(31,77,58,.08),0 18px 40px -16px rgba(30,64,175,.35);
-}
-.page-tool .calc-layout{gap:24px}
-
-.page-tool .card.target-card-standalone,
-.page-tool .sgpa-section{margin-top:24px}
-
-/* Header bands (same as the other tools) */
-.page-tool .card .tool-head,
-.page-tool .calculator-section>.tool-head,
-.page-tool .sgpa-section>.tool-head{
-  margin:0 -24px 22px;
-  padding:16px 24px;
-  background:linear-gradient(180deg,#EAF1EC,#DDEBE2);
-  border-bottom:2px solid #BFD6C8;
-}
-.page-tool .calculator-section>.tool-head,
-.page-tool .sgpa-section>.tool-head{align-items:center}
-.page-tool .tool-head .section-eyebrow{
-  display:inline-block;font-family:var(--font);font-size:13px;font-weight:600;
-  letter-spacing:.02em;text-transform:none;color:#fff;background:#1F4D3A;
-  border-radius:999px;padding:3px 12px;margin-bottom:8px;
-}
-.page-tool .tool-head .section-title,
-.page-tool .tool-head .card-title{font-size:20px;font-weight:600;color:#0F1A15;letter-spacing:-.01em;margin:0}
-
-/* Live result card */
-
-.page-tool .result-card .cgpa-big{color:#163828}
-.page-tool .stat-box{border:2px solid #D9D1BF;background:#F8FAFF}
-.page-tool .stat-label{font-family:var(--font);font-size:12px;letter-spacing:.04em}
-
-/* Semester blocks: each semester is a clearly bordered unit */
-.page-tool .semester-box{border:2px solid #BFD6C8;border-radius:12px;background:#FBF9F3}
-.page-tool .semester-box:hover{border-color:#7FB59A}
-.page-tool .semester-header{background:#DDEBE2;border-bottom:2px solid #BFD6C8;padding:12px 16px}
-.page-tool .semester-num{font-family:var(--font);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:#1F4D3A}
-.page-tool .courses-container{padding:12px 12px 0}
-.page-tool .btn-add-course{border-width:2px}
-.page-tool .btn-add-semester,
-.page-tool .btn-add-row{border-width:2px;background:#fff}
-
-/* Inputs: same weight as the other tools */
-.page-tool .course-name,
-.page-tool .course-credit,
-.page-tool .course-grade,
-.page-tool .target-field input,
-.page-tool .sgpa-sem-name,
-.page-tool .sgpa-val-input,
-.page-tool .sgpa-credit-input{
-  background:#fff;border:2px solid #D3CBB8;color:#0F1A15;
-}
-.page-tool .course-name:focus,
-.page-tool .course-credit:focus,
-.page-tool .course-grade:focus,
-.page-tool .target-field input:focus,
-.page-tool .sgpa-sem-name:focus,
-.page-tool .sgpa-val-input:focus,
-.page-tool .sgpa-credit-input:focus{
-  border-color:#1F4D3A;box-shadow:0 0 0 4px rgba(31,77,58,.16);outline:none;
-}
-
-/* Target CGPA */
-.page-tool .target-field label{
-  font-family:var(--font);font-size:14px;font-weight:600;letter-spacing:0;
-  text-transform:none;color:#1A2A23;
-}
-.page-tool .target-result{background:#EAF1EC;border:2px solid #7FB59A;border-radius:12px}
-.page-tool .target-label{font-family:var(--font);font-size:15px;letter-spacing:.02em;text-transform:none;color:#1F4D3A}
-
-/* SGPA to CGPA table */
-.page-tool .sgpa-table-wrap{border:2px solid #BFD6C8;border-radius:12px;background:#FBF9F3;overflow:hidden}
-.page-tool .sgpa-table-header{
-  background:#EAF1EC;border-bottom:2px solid #BFD6C8;padding:11px 12px;
-  font-family:var(--font);font-size:13px;letter-spacing:0;text-transform:none;color:#1F4D3A;
-}
-.page-tool #sgpaRowsContainer{padding:10px 12px 6px}
-.page-tool .sgpa-cgpa-result{background:#fff;border:2px solid #7FB59A;border-radius:12px;padding:6px 14px;align-items:center}
-.page-tool .sgpa-label{font-family:var(--font);font-size:12px;letter-spacing:.04em;color:#1F4D3A}
-.page-tool .sgpa-val{font-size:24px;color:#163828}
-
-@media(max-width:768px){
-  .page-tool .card.result-card,
-  .page-tool .card.target-card-standalone,
-  .page-tool .calculator-section,
-  .page-tool .sgpa-section{padding:0 16px 18px;border-radius:14px}
-  .page-tool .card .tool-head,
-  .page-tool .calculator-section>.tool-head,
-  .page-tool .sgpa-section>.tool-head{margin:0 -16px 18px;padding:14px 16px}
-  .page-tool .calc-layout{gap:20px}
-}
-.page-tool .semester-box>.btn-add-course{width:calc(100% - 24px);margin:6px 12px 12px;box-sizing:border-box}
-.page-tool .courses-container{padding-bottom:0}
-
-/* ── Clean headers: title only, no pill labels ── */
-.page-tool .tool-head,
-.page-tool .gpa-panel-head{padding:15px 24px;margin-bottom:20px}
-.page-tool .tool-head-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.page-tool .tool-head-row .btn-grade-print{margin:0}
-.page-tool .grade-result-panel,
-.page-tool .grade-prediction-panel{padding-top:0}
-.page-tool .tool-note{font-size:15px;color:#2B3B34;line-height:1.6;margin:0 0 4px}
-.page-tool .calculator-section>.tool-head,
-.page-tool .sgpa-section>.tool-head{margin-bottom:20px}
-@media(max-width:768px){
-  .page-tool .tool-head,.page-tool .gpa-panel-head{padding:13px 16px;margin-bottom:16px}
-  .page-tool .grade-result-panel,.page-tool .grade-prediction-panel{padding-top:0}
-}
-
-/* ── Equal-height first view: Overall CGPA card matches the calculator card ── */
-@media(min-width:861px){
-  .page-tool .calc-layout{align-items:stretch}
-  .page-tool .calc-sidebar{position:static;display:block}
-  .page-tool .card.result-card{
-    position:sticky;top:calc(var(--header-h) + 54px);
-    height:100%;max-height:480px;margin:0;
-    display:flex;flex-direction:column;
-  }
-  .page-tool .result-card .cgpa-display{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8px 0}
-}
-/* slightly tighter calculator card so the first view stays compact */
-.page-tool .semester-box{margin-bottom:12px}
-.page-tool .calculator-section{padding-bottom:20px}
-
-/* ===== Ivory scholar theme (palette + type refinements) ===== */
-html{background:var(--bg-page)}
-::selection{background:#D5E6DB;color:#14201B}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-h1,h2{font-weight:600;letter-spacing:-.01em}
-h1,h2,h3,h4{text-wrap:balance}
-.calc-card,.tool-tile{border-width:1px;box-shadow:0 1px 2px rgba(20,32,27,.05)}
-.calc-card:hover,.tool-tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(31,77,58,.12)}
-.calc-scale{border-bottom-width:1px}
-.calc-scale b,.error-code{font-family:var(--font-serif);font-weight:500;letter-spacing:-.02em}
-.calc-btn,.btn-cta,.btn-calculate{letter-spacing:.01em}
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
 /* =====================================================================
    Header mega menu (3 categories). Shared by every page via nav.js.
    Categories: CGPA Calculators / SSC & HSC / Tools
@@ -4181,7 +3711,7 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .mega{position:absolute;top:100%;left:0;padding-top:12px;z-index:300;display:none}
 .mega.open{display:block;animation:megaIn .18s ease both}
 @keyframes megaIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.mega-card{width:min(600px,calc(100vw - 32px));transform:translateX(var(--mx,0px));background:#fff;border:1.5px solid var(--border);border-top:3px solid var(--accent);border-radius:16px;box-shadow:0 24px 60px rgba(20,32,27,.16),0 4px 14px rgba(20,32,27,.06);overflow:hidden}
+.mega-card{width:min(600px,calc(100vw - 32px));transform:translateX(var(--mx,0px));background:#fff;border:1.5px solid var(--border);border-top:3px solid var(--accent);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.16),0 4px 14px rgba(0,0,0,.06);overflow:hidden}
 .mega-tools .mega-card{width:min(430px,calc(100vw - 32px))}
 .mega-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:10px}
 .mega-grid.one{grid-template-columns:minmax(0,1fr)}
@@ -4200,10 +3730,10 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .m-group{border-bottom:1px solid var(--border-2)}
 .m-group-btn{display:flex;align-items:center;width:100%;gap:10px;padding:15px 24px;background:#fff;border:0;font-family:inherit;font-size:var(--fs-nav);font-weight:600;color:var(--text-1);text-align:left;cursor:pointer}
 .m-group-btn.active-parent{color:var(--accent)}
-.m-count{margin-left:auto;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:1px 9px}
+.m-count{margin-left:auto;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:1px 9px}
 .m-group-btn svg{width:18px;height:18px;color:var(--text-3);transition:transform .2s}
 .m-group-btn[aria-expanded="true"] svg{transform:rotate(180deg);color:var(--accent)}
-.m-group-body{display:grid;grid-template-rows:0fr;background:#FBF9F3;transition:grid-template-rows .25s ease}
+.m-group-body{display:grid;grid-template-rows:0fr;background:var(--bg);transition:grid-template-rows .25s ease}
 .m-group-body.open{grid-template-rows:1fr}
 .m-group-body>div{overflow:hidden}
 .m-group-body .mobile-nav-sub{display:flex;flex-direction:column;gap:2px;padding:11px 24px 11px 32px}
@@ -4229,11 +3759,11 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 @media(max-width:620px){
   .btn-delete-semester{width:44px;height:44px;border-radius:8px}
   .btn-delete-semester svg{width:18px;height:18px}
-  .sticky-label{font-size:10px;letter-spacing:.02em}
+  .sticky-label{font-size:12px;letter-spacing:.02em}
   .sticky-item{padding:0 7px}
   .sticky-item:first-child{padding-left:0}
   .sticky-val{font-size:12px}
-  .sgpa-tag-label{font-size:11px}
+  .sgpa-tag-label{font-size:12px}
 }
 
 /* Very small phones: stack label above value so all 4 stats fit without clipping */
@@ -4241,3 +3771,476 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
   .sticky-item{flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;line-height:1.1}
   .sticky-bar-inner{justify-content:space-between}
 }
+
+/* =========================================================================
+   NOTION-STYLE COMPONENT LAYER
+   Applies the tokens above to every component. Later rules win on purpose,
+   so this is the single place to tune the look of the whole site.
+   ========================================================================= */
+
+/* ---------- Base ---------- */
+html { background: var(--bg-page); }
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--text-1);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: rgba(0,117,222,.18); color: var(--text-1); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+::placeholder { color: var(--placeholder); opacity: 1; }
+.page-tool [hidden] { display: none !important; }
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font); color: var(--text-1); text-wrap: balance; }
+h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+h5 { font-size: var(--fs-h5); line-height: var(--lh-h5); font-weight: var(--fw-semibold); }
+h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); font-weight: var(--fw-semibold); }
+p { text-wrap: pretty; }
+a { color: inherit; }
+
+/* ---------- Header + navigation ---------- */
+.header {
+  background: rgba(255,255,255,.88);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+}
+.header-inner { max-width: var(--container-main); }
+.logo { gap: 10px; font-size: var(--fs-h6); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+.logo-icon {
+  width: 28px; height: 28px; border-radius: var(--radius);
+  background: var(--dark); color: #fff; box-shadow: none; font-size: 12px;
+}
+.nav-link, button.nav-dropdown-trigger {
+  font-size: var(--fs-nav); line-height: var(--lh-nav); font-weight: var(--fw-medium);
+  color: var(--text-1); padding: 6px 12px; border-radius: var(--radius);
+}
+.nav-link:hover, .nav-dropdown-trigger:hover { color: var(--text-1); background: var(--bg-card); }
+.nav-link.active { color: var(--accent); background: transparent; }
+.nav-dropdown-trigger[aria-expanded="true"] { color: var(--text-1); background: var(--bg-card); }
+.nav-dropdown-trigger[aria-expanded="true"] svg { color: var(--text-1); }
+.nav-desktop { gap: 2px; }
+.hamburger span { background: var(--text-1); }
+@media (max-width: 900px) { .nav-dropdown-trigger, .nav-link { padding: 6px 10px; font-size: var(--fs-nav); } }
+
+.mega-card {
+  border: 1px solid var(--border); border-top: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-pop);
+}
+.mega-item { border: 0; border-radius: var(--radius); padding: 10px 12px; }
+.mega-item:hover, .mega-item.current { background: var(--bg-card); border-color: transparent; }
+.mega-ico {
+  flex: 0 0 36px; height: 36px; border-radius: var(--radius);
+  background: var(--bg-card); border: 1px solid var(--border); color: var(--text-1);
+  font-size: var(--fs-caption); font-weight: var(--fw-semibold);
+}
+.mega-item:hover .mega-ico { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); transform: none; }
+.mega-name { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
+.mega-item:hover .mega-name { color: var(--text-1); }
+.mega-desc { font-size: var(--fs-caption); color: var(--text-2); }
+
+.mobile-menu { background: #fff; }
+.mobile-nav-link { font-size: var(--fs-body); color: var(--text-1); padding: 14px 24px; }
+.mobile-nav-link:hover, .mobile-nav-sub:hover { color: var(--text-1); background: var(--bg-card); }
+.m-group-btn { font-size: var(--fs-body); color: var(--text-1); }
+.m-group-btn.active-parent { color: var(--accent); }
+.m-group-body { background: var(--bg); }
+.m-count { color: var(--text-2); background: var(--bg-card); border-color: var(--border); font-weight: var(--fw-medium); }
+.m-name { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
+.m-desc { font-size: var(--fs-caption); color: var(--text-2); }
+
+/* ---------- Page frame + headings ---------- */
+.main-content, .tool-page-wrap, .grade-calc-wrap, .blog-page-wrap, .hub-wrap {
+  max-width: var(--container-main);
+  padding: var(--sp-3xl) var(--sp-xl) var(--section-space);
+}
+.main-content > h1, .tool-page-wrap > h1, .grade-calc-wrap > h1 {
+  font-size: var(--fs-h1); font-weight: var(--fw-bold); line-height: var(--lh-h1);
+  letter-spacing: var(--ls-heading); color: var(--text-1);
+  border: 0; padding: 0; margin: 0 0 var(--sp-lg);
+}
+.page-intro, .hero-sub {
+  font-size: var(--fs-body-lg); line-height: var(--lh-body-lg);
+  color: var(--text-2); max-width: 720px; margin-bottom: var(--sp-2xl);
+}
+.section-note { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-2); max-width: 720px; margin-bottom: var(--sp-xl); }
+.section-header { margin-bottom: var(--sp-lg); align-items: flex-end; }
+.section-eyebrow, .hero-eyebrow, .card-label, .about-section-eyebrow {
+  display: block; font-size: var(--fs-label); line-height: var(--lh-label);
+  font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); margin-bottom: var(--sp-xs);
+}
+.section-title { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); color: var(--text-1); }
+.card-title { font-size: var(--fs-h5); line-height: var(--lh-h5); font-weight: var(--fw-semibold); letter-spacing: 0; color: var(--text-1); margin-bottom: var(--sp-lg); }
+.hero-title { font-size: var(--fs-h1); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); line-height: var(--lh-h1); color: var(--text-1); }
+.mt-section { margin-top: var(--section-space); }
+
+.breadcrumb { font-size: var(--fs-small); line-height: var(--lh-small); color: var(--text-2); gap: 6px; margin-bottom: var(--sp-lg); }
+.breadcrumb a { color: var(--text-2); }
+.breadcrumb a:hover { color: var(--text-1); text-decoration: underline; }
+
+/* ---------- Homepage hero ---------- */
+.page-home .main-content { padding-top: var(--section-space); }
+.page-home .main-content > h1 {
+  font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-display); max-width: 26ch; margin: 0 auto var(--sp-xl); text-align: center;
+}
+.page-home .page-intro { text-align: center; margin: 0 auto var(--sp-3xl); font-size: var(--fs-body-lg); max-width: 640px; }
+
+/* ---------- Sticky result bar ---------- */
+.sticky-bar { background: rgba(255,255,255,.92); border-bottom: 1px solid var(--border); }
+.sticky-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
+.sticky-val { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
+.sticky-grade { color: var(--accent); }
+
+/* ---------- Buttons ---------- */
+/* Primary: solid black */
+.btn-primary, .btn-calculate, .btn-predict, .btn-cta, .btn-copy, .btn-copy-gpa, .blog-cta-btn, .wac-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-sm);
+  height: auto; min-height: 44px; padding: 12px 20px;
+  font-family: var(--font); font-size: var(--fs-btn); line-height: var(--lh-btn); font-weight: var(--fw-medium);
+  letter-spacing: 0; text-decoration: none;
+  background: var(--dark); color: #fff; border: 0; border-radius: var(--radius-btn);
+  box-shadow: none; transform: none;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.btn-primary:hover, .btn-calculate:hover, .btn-predict:hover, .btn-cta:hover, .btn-copy:hover, .btn-copy-gpa:hover, .blog-cta-btn:hover, .wac-btn-primary:hover {
+  background: var(--dark-2); color: #fff; transform: none; box-shadow: none; text-decoration: none;
+}
+.btn-primary:active, .btn-calculate:active, .btn-predict:active, .btn-cta:active, .btn-copy:active, .btn-copy-gpa:active { background: #000; transform: none; }
+.btn-primary { width: 100%; }
+/* Secondary: white with hairline border */
+.btn-reset, .btn-gpa-reset, .btn-grade-print, .btn-add-subject, .btn-add-semester, .btn-add-row, .btn-add-course,
+.blog-cta-btn-secondary, .wac-btn-secondary, .ssc-btn-secondary, .hsc-btn-secondary, .wac-link-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-sm);
+  padding: 12px 20px; min-height: 44px;
+  font-family: var(--font); font-size: var(--fs-btn); line-height: var(--lh-btn); font-weight: var(--fw-medium); letter-spacing: 0;
+  background: #fff; color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
+  box-shadow: none; text-decoration: none;
+  transition: background var(--transition), border-color var(--transition);
+}
+.btn-reset:hover, .btn-gpa-reset:hover, .btn-grade-print:hover, .btn-add-subject:hover, .btn-add-semester:hover, .btn-add-row:hover, .btn-add-course:hover,
+.blog-cta-btn-secondary:hover, .wac-btn-secondary:hover, .ssc-btn-secondary:hover, .hsc-btn-secondary:hover, .wac-link-btn:hover {
+  background: var(--bg-card); color: var(--text-1); border-color: var(--btn-border); transform: none; text-decoration: none;
+}
+.btn-add-semester, .btn-add-row, .btn-add-subject { width: 100%; border-style: dashed; border-color: var(--border-strong); }
+.btn-add-course { width: calc(100% - 24px); margin: var(--sp-sm) var(--sp-md) var(--sp-md); min-height: 40px; padding: 8px 16px; font-size: var(--fs-small); border-style: dashed; border-color: var(--border-strong); }
+.btn-delete-semester, .btn-delete-course, .btn-delete-sgpa, .btn-del-gr { border-radius: var(--radius); color: var(--text-2); }
+.btn-delete-semester:hover, .btn-delete-course:hover, .btn-delete-sgpa:hover, .btn-del-gr:hover { background: var(--red-bg); color: var(--red-ink); }
+.conv-buttons, .gpa-panel-buttons, .tool-actions { display: flex; flex-wrap: wrap; gap: var(--sp-md); }
+.btn-calculate, .btn-predict { min-width: 160px; }
+.blog-cta-btn { padding: 12px 20px; font-size: var(--fs-btn); font-weight: var(--fw-medium); margin: var(--sp-xs); }
+
+/* ---------- Forms ---------- */
+label, .conv-field label, .gpa-field label, .pred-field label, .target-field label, .field-label {
+  font-family: var(--font); font-size: var(--fs-small); line-height: var(--lh-small);
+  font-weight: var(--fw-medium); letter-spacing: 0; text-transform: none; color: var(--text-1);
+}
+input, select, textarea { font-family: var(--font); font-size: var(--fs-input); }
+.course-name, .course-credit, .course-grade, .target-field input, .sgpa-sem-name, .sgpa-val-input, .sgpa-credit-input,
+.conv-field input, .conv-field select, .gpa-field input, .gpa-field select, .pred-field select,
+.gr-subject, .gr-marks, .gr-credit {
+  background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-input);
+  color: var(--text-1); font-size: var(--fs-input); font-weight: var(--fw-regular);
+  box-shadow: none; outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.course-name:hover, .course-credit:hover, .course-grade:hover, .target-field input:hover,
+.conv-field input:hover, .conv-field select:hover, .gpa-field input:hover, .gpa-field select:hover { border-color: rgba(0,0,0,.28); }
+.course-name:focus, .course-credit:focus, .course-grade:focus, .target-field input:focus, .sgpa-sem-name:focus, .sgpa-val-input:focus, .sgpa-credit-input:focus,
+.conv-field input:focus, .conv-field select:focus, .gpa-field input:focus, .gpa-field select:focus, .pred-field select:focus,
+.gr-subject:focus, .gr-marks:focus, .gr-credit:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,117,222,.15); outline: none;
+}
+.course-name::placeholder, .course-credit::placeholder, .target-field input::placeholder, input::placeholder { color: var(--placeholder); }
+
+/* ---------- Cards + panels ---------- */
+.card, .calculator-section, .sgpa-section, .converter-card, .gpa-panel, .grade-panel, .grade-result-panel, .grade-prediction-panel {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-calc); box-shadow: none; padding: var(--sp-xl);
+}
+.card::before, .converter-card::before, .gpa-panel::before, .grade-panel::before, .grade-prediction-panel::before,
+.blog-card::before, .scale-ref-card::before, .about-stat-card::before { display: none; }
+.card + .card { margin-top: var(--sp-xl); }
+
+.tool-head, .gpa-panel-head {
+  margin: 0 0 var(--sp-lg); padding: 0; background: none; border: 0;
+}
+.tool-head .card-title, .tool-head .section-title, .gpa-panel-title {
+  font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: var(--fw-semibold);
+  letter-spacing: -0.01em; color: var(--text-1); margin: 0;
+}
+.tool-head .card-label, .tool-head .section-eyebrow { display: none; }
+.gpa-panel-sub, .tool-note { font-size: var(--fs-small); line-height: var(--lh-small); color: var(--text-2); margin: var(--sp-xs) 0 0; }
+.tool-head-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-md); }
+.tool-head-row .btn-grade-print { margin: 0; }
+.calculator-section > .tool-head, .sgpa-section > .tool-head { align-items: center; }
+.tool-error {
+  margin-top: var(--sp-lg); padding: var(--sp-md) var(--sp-lg); border-radius: var(--radius);
+  background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red-ink);
+  font-size: var(--fs-small); font-weight: var(--fw-medium);
+}
+
+/* Calculator layout */
+.calc-layout { gap: var(--sp-xl); }
+.page-tool .calc-layout { align-items: stretch; }
+.page-tool .calc-sidebar { position: static; display: block; }
+.page-tool .card.target-card-standalone, .page-tool .sgpa-section { margin-top: var(--sp-xl); }
+.page-tool .gpa-converter-grid { gap: var(--sp-xl); margin-top: var(--sp-xl); align-items: start; }
+.page-tool .converter-card { margin-top: var(--sp-xl); }
+.page-tool .grade-panel, .page-tool .grade-result-panel, .page-tool .grade-prediction-panel { margin-top: var(--sp-xl); }
+.page-tool .gpa-fields { gap: var(--sp-lg); }
+@media (min-width: 861px) {
+  .page-tool .card.result-card { position: sticky; top: calc(var(--header-h) + 54px); height: 100%; max-height: 480px; margin: 0; display: flex; flex-direction: column; }
+  .page-tool .result-card .cgpa-display { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: var(--sp-sm) 0; }
+}
+.page-tool .semester-box { margin-bottom: var(--sp-md); }
+.page-tool .semester-box > .btn-add-course { width: calc(100% - 24px); margin: var(--sp-sm) var(--sp-md) var(--sp-md); }
+.page-tool .courses-container { padding: var(--sp-md) var(--sp-md) 0; }
+@media (max-width: 768px) {
+  .card, .calculator-section, .sgpa-section, .converter-card, .gpa-panel, .grade-panel, .grade-result-panel, .grade-prediction-panel { padding: var(--sp-lg); border-radius: var(--radius-card); }
+  .calc-layout { gap: var(--sp-lg); }
+}
+
+/* Result display */
+.cgpa-display { text-align: center; }
+.cgpa-big { font-size: var(--fs-calc-result); font-weight: var(--fw-bold); color: var(--text-1); letter-spacing: -0.03em; line-height: 1; }
+.page-tool .result-card .cgpa-big { color: var(--text-1); }
+.cgpa-bar-wrap { height: 4px; background: var(--border); }
+.cgpa-bar { background: var(--accent); }
+.cgpa-grade-label { font-size: var(--fs-small); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--accent); }
+.stat-box, .gr-stat { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+.stat-label, .gr-stat-label, .sgpa-label, .target-label, .result-label, .gpa-result-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
+.stat-val { font-size: var(--fs-h5); font-weight: var(--fw-semibold); color: var(--text-1); }
+.result-panel, .gpa-result-panel, .target-result {
+  background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-card);
+}
+.page-tool .grade-result-panel .gr-stat:first-child { border-color: var(--accent-border); background: var(--accent-dim); }
+.target-result.target-possible { background: var(--green-bg); border-color: var(--green-border); }
+.target-result.target-possible .target-val { color: var(--green-ink); }
+.page-tool .target-label { color: var(--text-2); }
+.page-tool .sgpa-val, .sgpa-val { font-size: var(--fs-h4); color: var(--text-1); }
+.page-tool .sgpa-cgpa-result { background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-card); }
+.page-tool .sgpa-label { color: var(--text-2); }
+
+/* Semester blocks */
+.semester-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.semester-box:hover { border-color: var(--border-strong); box-shadow: none; }
+.semester-header, .page-tool .semester-header { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--sp-md) var(--sp-lg); }
+.semester-num, .page-tool .semester-num { font-size: var(--fs-small); font-weight: var(--fw-semibold); letter-spacing: 0; color: var(--text-1); }
+.semester-sgpa-wrap { background: #fff; border: 1px solid var(--border); }
+.sgpa-tag-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
+.sgpa-tag-val { font-size: var(--fs-small); font-weight: var(--fw-semibold); color: var(--text-1); }
+.page-tool .sgpa-table-wrap, .page-tool .grade-system-tabs { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
+.page-tool .sgpa-table-header, .page-tool .grade-table-header {
+  background: var(--bg); border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: var(--sp-md);
+  font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2);
+}
+.page-tool .grade-table-header span { font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text-2); }
+.page-tool #sgpaRowsContainer, .page-tool #gradeTableBody { background: #fff; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 var(--radius-card) var(--radius-card); padding: var(--sp-md) var(--sp-md) var(--sp-xs); }
+.page-tool .sgpa-table-wrap #sgpaRowsContainer { border: 0; }
+
+/* Tabs: segmented control */
+.grade-system-tabs, .ctabs, .calc-tabs { display: flex; gap: var(--sp-xs); padding: var(--sp-xs); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); }
+.ctab, .gsys-tab {
+  flex: 1; padding: 8px 16px; border-radius: var(--radius); border: 1px solid transparent;
+  font-size: var(--fs-small); font-weight: var(--fw-medium); color: var(--text-2); background: transparent; box-shadow: none;
+}
+.ctab:not(.active):hover, .gsys-tab:not(.active):hover { color: var(--text-1); background: rgba(0,0,0,.04); }
+.ctab.active, .gsys-tab.active { background: #fff; color: var(--text-1); border-color: var(--border); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+
+/* Grade colour chips: keep text readable on light fills */
+.grade-badge { font-size: var(--fs-caption); font-weight: var(--fw-semibold); letter-spacing: 0; }
+.grade-a-plus { background: var(--green); color: #fff; }
+.grade-a { background: var(--accent); color: #fff; }
+.grade-a-minus { background: var(--accent-bright); color: #fff; }
+.grade-b-plus { background: var(--accent-deep); color: #fff; }
+.grade-b { background: #5C6A78; color: #fff; }
+.grade-b-minus { background: #8A857F; color: #fff; }
+.grade-c-plus, .grade-c { background: var(--yellow); color: #000; }
+.grade-d { background: #E07B00; color: #fff; }
+.grade-f { background: var(--red); color: #fff; }
+
+/* ---------- Home: tool grid ---------- */
+.calc-hero-band { background: none; border: 0; margin: 0; padding: 0; position: static; }
+.calc-hero-band .section-title { font-size: var(--fs-h2); }
+.calc-hero-band .section-note { margin-bottom: var(--sp-xl); }
+.calc-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--sp-lg); margin-top: var(--sp-lg); }
+.calc-card {
+  display: flex; flex-direction: column; background: #fff; color: inherit; text-decoration: none;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.calc-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow); transform: none; }
+.calc-card:focus-visible, .tool-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.calc-scale {
+  display: flex; align-items: center; justify-content: center; padding: var(--sp-2xl) var(--sp-lg);
+  background: var(--bg-card); border-bottom: 1px solid var(--border);
+}
+.calc-scale small { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
+.calc-scale b, .error-code {
+  font-family: var(--font); font-size: 48px; line-height: 1; font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-display); color: var(--text-1); font-variant-numeric: tabular-nums;
+}
+.calc-card:hover .calc-scale b { transform: none; }
+.calc-body { display: flex; flex-direction: column; flex: 1; padding: var(--sp-lg) var(--sp-lg) var(--sp-lg); }
+.calc-body h3 { font-size: var(--fs-h5); line-height: var(--lh-h5); font-weight: var(--fw-semibold); letter-spacing: 0; margin: 0 0 var(--sp-xs); }
+.calc-meta { flex: 1; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--text-2); }
+.calc-btn {
+  margin-top: var(--sp-lg); display: flex; align-items: center; justify-content: center; gap: var(--sp-sm);
+  height: auto; min-height: 44px; padding: 12px 20px;
+  font-size: var(--fs-btn); font-weight: var(--fw-medium); line-height: var(--lh-btn); letter-spacing: 0;
+  background: #fff; color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.calc-card:hover .calc-btn { background: var(--dark); color: #fff; border-color: var(--dark); }
+.tool-tiles { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--sp-lg); margin-top: var(--sp-lg); }
+.tool-tile { display: flex; align-items: center; gap: var(--sp-md); padding: var(--sp-lg); background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: none; }
+.tool-tile:hover { border-color: var(--border-strong); box-shadow: var(--shadow); transform: none; }
+.tool-tile-icon { width: 44px; height: 44px; border-radius: var(--radius); background: var(--dark); color: #fff; font-size: var(--fs-h5); }
+.tool-tile-icon.is-scale { background: var(--bg-card); color: var(--text-1); border: 1px solid var(--border); font-size: var(--fs-small); }
+.tool-tile h3 { font-size: var(--fs-body); font-weight: var(--fw-semibold); letter-spacing: 0; }
+.tool-tile-sub { font-size: var(--fs-small); color: var(--text-2); }
+.tool-tile-arrow { color: var(--text-2); }
+@media (max-width: 980px) { .tool-tiles { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 900px) { .calc-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 600px) {
+  .calc-grid { gap: var(--sp-md); }
+  .calc-scale { padding: var(--sp-xl) var(--sp-sm); }
+  .calc-scale b { font-size: 36px; }
+  .calc-body { padding: var(--sp-md); }
+  .calc-body h3 { font-size: var(--fs-body); }
+  .calc-meta { font-size: var(--fs-caption); }
+  .calc-btn { min-height: 40px; padding: 8px 12px; font-size: var(--fs-small); margin-top: var(--sp-md); }
+  .tool-tiles { grid-template-columns: 1fr; }
+}
+
+/* ---------- Page hero (information hub) ---------- */
+.page-hero { background: var(--bg-page); color: var(--text-1); text-align: center; padding: var(--section-space) var(--sp-xl) var(--sp-3xl); border-bottom: 1px solid var(--border); }
+.page-hero::before { display: none; }
+.page-hero-inner { max-width: 820px; }
+.page-hero .breadcrumb { justify-content: center; color: var(--text-2); margin-bottom: var(--sp-xl); }
+.page-hero .breadcrumb a { color: var(--text-2); }
+.page-hero .breadcrumb a:hover { color: var(--text-1); }
+.page-hero .breadcrumb-sep { color: var(--text-tertiary); }
+.page-hero-eyebrow {
+  display: inline-block; margin: 0 0 var(--sp-lg); padding: 4px 10px; border: 0; border-radius: 999px;
+  background: var(--accent-dim); color: var(--accent-bright); font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: 0;
+}
+.page-hero h1 {
+  font-size: var(--fs-display); line-height: var(--lh-display); font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-display); color: var(--text-1); margin: 0 0 var(--sp-lg);
+}
+.page-hero-sub { max-width: 640px; margin: 0 auto; font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--text-2); }
+@media (max-width: 640px) { .page-hero { padding: var(--sp-3xl) var(--sp-lg) var(--sp-2xl); } }
+
+/* ---------- Content sections ---------- */
+.seo-section { background: transparent; border: 0; border-radius: 0; padding: 0; box-shadow: none; margin-top: var(--section-space); }
+.seo-section .section-title { font-size: var(--fs-h2); }
+.seo-content-card p, .seo-content-card li { font-size: var(--fs-body); line-height: 1.65; color: var(--text-1); }
+.seo-content-card h3 { font-size: var(--fs-h4); line-height: var(--lh-h4); font-weight: var(--fw-semibold); letter-spacing: -0.01em; color: var(--text-1); margin: var(--sp-2xl) 0 var(--sp-md); }
+.seo-content-card .why-card h3 { font-size: var(--fs-h5); }
+.seo-content-card a, .calculator-section a, .gpa-panel a, .scale-ref-card p a, .blog-article a { color: var(--accent); text-decoration: none; }
+.seo-content-card a:hover, .calculator-section a:hover, .gpa-panel a:hover, .blog-article a:hover { text-decoration: underline; }
+.why-card, .blog-card, .scale-ref-card, .about-stat-card, .uni-item, .hub-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: none; transform: none;
+}
+.why-card:hover, .blog-card:hover, .scale-ref-card:hover, .about-stat-card:hover, .uni-item:hover { border-color: var(--border-strong); box-shadow: none; transform: none; }
+.why-card h3, .blog-card h3 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); letter-spacing: 0; }
+.why-card p, .blog-card p, .scale-ref-card p { font-size: var(--fs-small); color: var(--text-2); }
+.scale-ref-name { color: var(--text-1); }
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
+.faq-item:hover { border-color: var(--border-strong); box-shadow: none; }
+.faq-question { font-family: var(--font); font-size: var(--fs-body); font-weight: var(--fw-semibold); padding: var(--sp-lg) var(--sp-xl); }
+.faq-question:hover { color: var(--text-1); }
+.faq-a, .faq-answer { font-size: var(--fs-body); color: var(--text-1); }
+
+/* Tables */
+.table-wrap, .page-tool .table-wrap { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
+table { font-size: var(--fs-small); }
+thead tr, .page-tool thead tr { background: var(--bg-card); border-bottom: 1px solid var(--border); }
+th, .page-tool th { font-family: var(--font); font-size: var(--fs-caption); font-weight: var(--fw-semibold); letter-spacing: 0; color: var(--text-2); text-align: left; padding: var(--sp-md) var(--sp-lg); }
+td, .page-tool td { padding: var(--sp-md) var(--sp-lg); color: var(--text-1); border-bottom: 1px solid var(--border); border-right: 0; }
+tbody tr:last-child td { border-bottom: 0; }
+.page-tool tbody tr:nth-child(even) { background: transparent; }
+tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
+
+/* Steps board */
+.board { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-calc); }
+.board h2 { font-family: var(--font); }
+.board .step .sk { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); text-transform: none; }
+
+/* Blog / article */
+.blog-article h1 { font-size: var(--fs-h1); font-weight: var(--fw-bold); letter-spacing: var(--ls-heading); line-height: var(--lh-h1); margin-bottom: var(--sp-md); }
+.blog-article h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); line-height: var(--lh-h2); letter-spacing: var(--ls-heading); border-left: 0; padding-left: 0; margin: var(--sp-3xl) 0 var(--sp-md); }
+.blog-article h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: var(--lh-h3); margin: var(--sp-2xl) 0 var(--sp-sm); }
+.blog-article h4 { font-size: var(--fs-h4); }
+.blog-article p, .blog-article li { font-size: var(--fs-body); color: var(--text-1); line-height: 1.65; max-width: 760px; }
+.blog-article strong { color: var(--text-1); }
+.blog-article pre { background: #000; color: #F6F5F4; border-radius: var(--radius-card); }
+.blog-article code { background: var(--bg-card); border-radius: var(--radius-sm); }
+.blog-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-calc); }
+.blog-cta-sub { color: var(--text-2); }
+.pub-date, .blog-figure figcaption, .hub-date { font-size: var(--fs-small); color: var(--text-2); }
+.hub-card h2 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); letter-spacing: 0; }
+.hub-card:hover, .hub-card:focus-within { border-color: var(--border-strong); box-shadow: none; }
+.hub-excerpt { font-size: var(--fs-small); color: var(--text-2); }
+.hub-more { box-shadow: none; border: 1px solid var(--btn-border); background: #fff; color: var(--text-1); font-size: var(--fs-small); font-weight: var(--fw-medium); }
+.hub-card:hover .hub-more { box-shadow: none; background: var(--bg-card); }
+.hub-more i { background: var(--dark); }
+.hub-card:hover .hub-more i { background: var(--dark-2); }
+.hub-thumb-fallback { background: var(--bg-card); color: var(--text-1); }
+.hub-thumb-fallback span { color: var(--text-2); }
+.hub-grid { gap: var(--sp-xl); }
+[lang="bn"] body, [lang="bn"] h1, [lang="bn"] h2, [lang="bn"] h3 { line-height: 1.4; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--bg); border-top: 1px solid var(--border); margin-top: var(--section-space); }
+.footer-inner { padding: var(--sp-3xl) var(--sp-xl); }
+.footer-logo { font-family: var(--font); font-weight: var(--fw-semibold); font-size: var(--fs-h6); }
+.footer-author { font-size: var(--fs-body); font-weight: var(--fw-semibold); }
+.footer-bio, .footer-link { font-size: var(--fs-small); color: var(--text-2); }
+.footer-link:hover { color: var(--text-1); }
+.footer-social-link { border: 1px solid var(--border); border-radius: var(--radius); color: var(--text-2); background: #fff; }
+.footer-social-link:hover { color: #fff; background: var(--dark); border-color: var(--dark); }
+.footer-bottom { font-size: var(--fs-small); color: var(--text-2); border-top: 1px solid var(--border); }
+
+/* Toast */
+.toast { background: var(--dark); color: #fff; border-radius: var(--radius); font-size: var(--fs-small); font-weight: var(--fw-medium); box-shadow: var(--shadow-pop); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Mobile spacing (section spacing: 48px) ---------- */
+@media (max-width: 640px) {
+  .main-content, .tool-page-wrap, .grade-calc-wrap, .blog-page-wrap, .hub-wrap { padding: var(--sp-2xl) var(--sp-lg) var(--section-space); }
+  .page-home .main-content { padding-top: var(--sp-3xl); }
+  .seo-section { margin-top: var(--section-space); }
+  .faq-question { padding: var(--sp-md) var(--sp-lg); }
+  .footer-inner { padding: var(--sp-2xl) var(--sp-lg); }
+  .page-intro, .hero-sub { font-size: var(--fs-body-lg); }
+}
+
+/* Section rhythm: 80px desktop / 48px mobile between page sections */
+.main-content > section, .tool-page-wrap > section, .grade-calc-wrap > section, .blog-page-wrap > section { margin-top: var(--section-space); }
+.main-content > section.calc-hero-band:first-of-type { margin-top: 0; }
+
+/* Standalone page heroes (about, contact) sit flush under the header */
+.main-content .about-hero-standalone, .main-content .contact-hero-standalone { margin: calc(-1 * var(--sp-3xl)) calc(-1 * var(--sp-xl)) var(--sp-2xl); background: var(--bg); padding: var(--section-space) 0 var(--sp-3xl); }
+.about-avatar { box-shadow: none !important; }
+@media (max-width: 640px) { .main-content .about-hero-standalone, .main-content .contact-hero-standalone { margin: calc(-1 * var(--sp-2xl)) calc(-1 * var(--sp-lg)) var(--sp-xl); padding: var(--sp-3xl) 0 var(--sp-2xl); } }
+.contact-card { border-radius: var(--radius-lg); box-shadow: none; }
+.contact-card h3 { font-size: var(--fs-h5); }
+.table-wrap + p, .table-wrap + .section-note, .table-wrap + ul, .table-wrap + h3 { margin-top: var(--sp-lg); }
+.page-tool .grade-system-tabs, .grade-system-tabs { background: rgba(0,0,0,.05); border: 0; border-radius: var(--radius-card); margin-bottom: var(--sp-lg); }
+.page-tool .btn-add-subject, .btn-add-subject { margin-top: var(--sp-md); }
+.tool-actions, .conv-buttons { margin-top: var(--sp-lg); }
+.hsc-actions, .ssc-actions { gap: var(--sp-md); margin-top: var(--sp-lg); }
+.page-hero-inner { margin: 0 auto; max-width: 900px; width: 100%; }
+.page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); max-width: 26ch; margin-left: auto; margin-right: auto; }

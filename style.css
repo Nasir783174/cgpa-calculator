@@ -3885,7 +3885,7 @@ a { color: inherit; }
 .breadcrumb a:hover { color: var(--text-1); text-decoration: underline; }
 
 /* ---------- Homepage hero ---------- */
-.page-home .main-content { padding-top: var(--section-space); }
+.page-home .main-content { padding-top: var(--sp-2xl); }
 .page-home .main-content > h1 {
   font-size: var(--fs-hero); line-height: var(--lh-hero); font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-display); margin: 0 auto var(--sp-xl); text-align: center;
@@ -4121,7 +4121,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 }
 
 /* ---------- Page hero (information hub) ---------- */
-.page-hero { background: var(--bg-page); color: var(--text-1); text-align: center; padding: var(--section-space) var(--sp-xl) var(--sp-3xl); border-bottom: 1px solid var(--border); }
+.page-hero { background: var(--bg-page); color: var(--text-1); text-align: center; padding: var(--sp-2xl) var(--sp-xl); border-bottom: 1px solid var(--border); }
 .page-hero::before { display: none; }
 .page-hero-inner { max-width: var(--container-main); }
 .page-hero .breadcrumb { justify-content: center; color: var(--text-2); margin-bottom: var(--sp-xl); }
@@ -4137,7 +4137,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
   letter-spacing: var(--ls-display); color: var(--text-1); margin: 0 0 var(--sp-lg);
 }
 .page-hero-sub { max-width: none; margin: 0 auto; font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--text-2); }
-@media (max-width: 640px) { .page-hero { padding: var(--sp-3xl) var(--sp-lg) var(--sp-2xl); } }
+@media (max-width: 640px) { .page-hero { padding: var(--sp-xl) var(--sp-lg); } }
 
 /* ---------- Content sections ---------- */
 .seo-section { background: transparent; border: 0; border-radius: 0; padding: 0; box-shadow: none; margin-top: var(--section-space); }
@@ -4220,7 +4220,7 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 /* ---------- Mobile spacing (section spacing: 48px) ---------- */
 @media (max-width: 640px) {
   .main-content, .tool-page-wrap, .grade-calc-wrap, .blog-page-wrap, .hub-wrap { padding: var(--sp-2xl) var(--sp-lg) var(--section-space); }
-  .page-home .main-content { padding-top: var(--sp-3xl); }
+  .page-home .main-content { padding-top: var(--sp-xl); }
   .seo-section { margin-top: var(--section-space); }
   .faq-question { padding: var(--sp-md) var(--sp-lg); }
   .footer-inner { padding: var(--sp-2xl) var(--sp-lg); }

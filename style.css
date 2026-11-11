@@ -14,54 +14,57 @@
    Every colour, size, radius and space used on the site comes from here.
    ========================================================================= */
 :root {
-  /* ---- 1. Colour ---- */
-  --white: #FFFFFF;
-  --bg-page: #FFFFFF;            /* main background */
-  --bg: #F9F9F8;                 /* secondary background (off-white) */
-  --bg-card: #F6F5F4;            /* card background (light gray) */
-  --bg-input: #FFFFFF;
+  /* ---- 1. Colour (Navy + Gold theme) ---- */
+  color-scheme: dark;
+  --white: #131A2E;
+  --bg-page: #0B1020;            /* main background */
+  --bg: #0F1526;                 /* secondary background */
+  --bg-card: #131A2E;            /* card background */
+  --bg-input: #0F1526;
+  --bg-raised: #1A2340;          /* boxes that sit inside cards */
   --surface-2: var(--bg);
   --bg-1: var(--bg);
   --bg-2: var(--bg);
 
-  --text-1: #000000;             /* primary text */
-  --text-2-strong: rgba(0,0,0,.70); /* subheading */
-  --text-2: rgba(0,0,0,.55);     /* secondary / supporting text */
-  --text-3: rgba(0,0,0,.55);     /* small supporting text (kept AA-readable) */
-  --text-tertiary: #A39E98;      /* tertiary: placeholders, disabled */
-  --placeholder: #A39E98;
+  --text-1: #E8ECF5;             /* primary text */
+  --text-2-strong: rgba(232,236,245,.80); /* subheading */
+  --text-2: #8A94AD;             /* secondary / supporting text */
+  --text-3: #8A94AD;             /* small supporting text */
+  --text-tertiary: #7C86A2;      /* placeholders, disabled */
+  --placeholder: #7C86A2;
 
-  --accent: #0075DE;             /* primary brand blue */
-  --accent-light: #0068C6;       /* primary hover */
-  --accent-active: #005BAB;
-  --accent-bright: #097FE8;      /* accent blue */
-  --accent-deep: #005BAB;        /* deep blue */
-  --accent-soft: #097FE8;
-  --accent-dim: #F2F9FF;         /* blue tint surface */
-  --accent-border: rgba(0,117,222,.22);
+  --accent: #F5B544;             /* primary brand gold */
+  --accent-light: #FFC25E;       /* primary hover */
+  --accent-active: #E0A030;
+  --accent-bright: #F7C066;
+  --accent-deep: #E0A030;
+  --accent-soft: #F7C066;
+  --accent-dim: rgba(245,181,68,.12);   /* gold tint surface */
+  --accent-border: rgba(245,181,68,.28);
+  --on-accent: #0B1020;          /* text on gold */
 
-  --border: rgba(0,0,0,.10);
-  --border-2: rgba(0,0,0,.10);
-  --border-strong: rgba(0,0,0,.15);
-  --btn-border: #E5E5E5;
+  --border: #232C47;
+  --border-2: #232C47;
+  --border-strong: #2F3B5E;
+  --btn-border: #2A3454;
 
-  --dark: #000000;               /* primary button */
-  --dark-2: #333333;             /* primary button hover */
-  --violet: #0075DE;
-  --violet-light: #097FE8;
+  --dark: #F5B544;               /* primary button */
+  --dark-2: #FFC25E;             /* primary button hover */
+  --violet: #F5B544;
+  --violet-light: #F7C066;
 
   --red: #F64932;
-  --red-ink: #C42A14;
-  --red-bg: #FEF3F1;
-  --red-border: #F9B8AE;
+  --red-ink: #FCA5A5;
+  --red-bg: rgba(248,113,113,.12);
+  --red-border: rgba(248,113,113,.35);
   --yellow: #FFB110;
-  --yellow-ink: #8A5A00;
-  --yellow-bg: #FFF8E6;
-  --yellow-border: #F5D88A;
+  --yellow-ink: #FCD34D;
+  --yellow-bg: rgba(245,181,68,.12);
+  --yellow-border: rgba(245,181,68,.35);
   --green: #1AAE39;
-  --green-ink: #14612A;
-  --green-bg: #EEF9F0;
-  --green-border: #BFE6C7;
+  --green-ink: #6EE7B7;
+  --green-bg: rgba(52,211,153,.12);
+  --green-border: rgba(52,211,153,.35);
   --gold: var(--yellow);
 
   /* ---- 2. Typeface ---- */
@@ -154,14 +157,12 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0
-}
+  padding: 0}
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  width: 100%
-}
+  width: 100%}
 
 body {
   font-family: var(--font);
@@ -172,33 +173,28 @@ body {
   line-height: var(--lh-body);
   letter-spacing: var(--ls-body);
   -webkit-font-smoothing: antialiased;
-  width: 100%
-}
+  width: 100%}
 
 a {
   text-decoration: none;
-  color: inherit
-}
+  color: inherit}
 
 button {
   cursor: pointer;
   border: none;
   background: none;
-  font-family: inherit
-}
+  font-family: inherit}
 
 input,
 select,
 textarea {
   font-family: inherit;
-  font-size: var(--fs-input)
-}
+  font-size: var(--fs-input)}
 
 img,
 svg {
   max-width: 100%;
-  height: auto
-}
+  height: auto}
 
 h1,
 h2,
@@ -206,50 +202,41 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 h1 {
   font-size: var(--fs-h1);
-  line-height: var(--lh-h1)
-}
+  line-height: var(--lh-h1)}
 
 h2 {
   font-size: var(--fs-h2);
-  line-height: var(--lh-h2)
-}
+  line-height: var(--lh-h2)}
 
 h3 {
   font-size: var(--fs-h3);
-  line-height: var(--lh-h3)
-}
+  line-height: var(--lh-h3)}
 
 h4 {
   font-size: var(--fs-h4);
   font-weight: 600;
-  line-height: var(--lh-h4)
-}
+  line-height: var(--lh-h4)}
 
 h5 {
   font-size: var(--fs-h5);
   font-weight: 600;
-  line-height: var(--lh-h5)
-}
+  line-height: var(--lh-h5)}
 
 h6 {
   font-size: var(--fs-h6);
   font-weight: 600;
-  line-height: var(--lh-h6)
-}
+  line-height: var(--lh-h6)}
 
 ul,
 ol {
-  line-height: var(--lh-list)
-}
+  line-height: var(--lh-list)}
 
 .mt-section {
-  margin-top: 36px
-}
+  margin-top: 36px}
 
 .header {
   position: sticky;
@@ -259,8 +246,7 @@ ol {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(0,0,0,.04)
-}
+  box-shadow: 0 1px 0 rgba(0,0,0,.04)}
 
 .header-inner {
   max-width: var(--container-main);
@@ -270,16 +256,14 @@ ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px
-}
+  gap: 20px}
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--text-1);
-  letter-spacing: -.02em
-}
+  letter-spacing: -.02em}
 
 .logo-icon {
   width: 32px;
@@ -288,15 +272,13 @@ ol {
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,117,222,.30)
-}
+  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
 
 .nav-desktop {
-  display: flex
-}
+  display: flex}
 
 .nav-link {
   padding: 7px 15px;
@@ -304,26 +286,22 @@ ol {
   font-size: var(--fs-nav);
   font-weight: 500;
   color: var(--text-2);
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .nav-link:hover {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .nav-link.active {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   padding: 6px;
-  border-radius: 8px
-}
+  border-radius: 8px}
 
 .hamburger span {
   width: 20px;
@@ -331,30 +309,25 @@ ol {
   background: var(--text-2);
   border-radius: 2px;
   display: block;
-  transition: transform .22s, opacity .22s
-}
+  transition: transform .22s, opacity .22s}
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg)
-}
+  transform: translateY(7px) rotate(45deg)}
 
 .hamburger.active span:nth-child(2) {
-  opacity: 0
-}
+  opacity: 0}
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg)
-}
+  transform: translateY(-7px) rotate(-45deg)}
 
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: #fff;
+  background: var(--bg-card);
   border-bottom: 1px solid var(--border);
   max-height: 0;
   overflow: hidden;
-  transition: max-height .3s ease
-}
+  transition: max-height .3s ease}
 
 .mobile-nav-link {
   display: block;
@@ -363,44 +336,38 @@ ol {
   font-weight: 500;
   color: var(--text-2);
   border-bottom: 1px solid var(--border-2);
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .mobile-nav-link:hover {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .mobile-nav-sub {
   padding-left: 32px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .mobile-nav-sub:hover {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .sticky-bar {
   position: sticky;
   top: var(--header-h);
   z-index: 90;
-  background: rgba(255, 255, 255, .97);
+  background: rgba(11,16,32,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   opacity: 0;
   transform: translateY(-6px);
   pointer-events: none;
-  transition: opacity .22s, transform .22s
-}
+  transition: opacity .22s, transform .22s}
 
 .sticky-bar.visible {
   opacity: 1;
   transform: none;
-  pointer-events: auto
-}
+  pointer-events: auto}
 
 .sticky-bar-inner {
   max-width: var(--container-main);
@@ -408,49 +375,41 @@ ol {
   padding: 0 24px;
   height: 46px;
   display: flex;
-  align-items: center
-}
+  align-items: center}
 
 .sticky-item {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 0 18px
-}
+  padding: 0 18px}
 
 .sticky-item:first-child {
-  padding-left: 0
-}
+  padding-left: 0}
 
 .sticky-divider {
   width: 1px;
   height: 20px;
-  background: var(--border)
-}
+  background: var(--border)}
 
 .sticky-label {
   font-size:12px;
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .sticky-val {
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .sticky-grade {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .main-content {
   max-width: var(--container-main);
   margin: 0 auto;
-  padding: var(--sp-2xl) var(--sp-xl) var(--sp-6xl)
-}
+  padding: var(--sp-2xl) var(--sp-xl) var(--sp-6xl)}
 
 .main-content>h1,
 .tool-page-wrap>h1,
@@ -462,32 +421,28 @@ ol {
   letter-spacing: var(--ls-heading);
   margin-bottom: var(--sp-lg);
   border-bottom: 1px solid var(--border);
-  padding-bottom: var(--sp-sm)
-}
+  padding-bottom: var(--sp-sm)}
 
 .page-intro {
   font-size: var(--fs-body-lg);
   color: var(--text-2);
   line-height: 1.6;
   max-width: 100%;
-  margin-bottom: var(--sp-2xl)
-}
+  margin-bottom: var(--sp-2xl)}
 
 .section-note {
   font-size: var(--fs-small);
   color: var(--text-2);
   line-height: 1.7;
   margin-bottom: 16px;
-  max-width: 100%
-}
+  max-width: 100%}
 
 .tool-page-wrap,
 .grade-calc-wrap {
   max-width: var(--container-main);
   margin: 0 auto;
   padding: var(--sp-2xl) var(--sp-xl) var(--sp-6xl);
-  width: 100%
-}
+  width: 100%}
 
 .calc-layout {
   display: grid;
@@ -495,20 +450,17 @@ ol {
   gap: 18px;
   align-items: start;
   width: 100%;
-  min-width: 0
-}
+  min-width: 0}
 
 .calc-sidebar {
   position: sticky;
   top: calc(var(--header-h) + 54px);
-  min-width: 0
-}
+  min-width: 0}
 
 .calc-main-panel {
   min-width: 0;
   width: 100%;
-  overflow: visible
-}
+  overflow: visible}
 
 .card {
   background: var(--bg-card);
@@ -517,12 +469,10 @@ ol {
   padding: var(--sp-xl);
   box-shadow: var(--shadow-sm);
   position: relative;
-  overflow: visible
-}
+  overflow: visible}
 
 .card+.card {
-  margin-top: var(--sp-xl)
-}
+  margin-top: var(--sp-xl)}
 
 .card-label {
   font-size:12px;
@@ -530,21 +480,18 @@ ol {
   letter-spacing:0;
   text-transform:none;
   color: var(--accent);
-  margin-bottom: 3px
-}
+  margin-bottom: 3px}
 
 .card-title {
   font-size: var(--fs-h5);
   font-weight: 600;
   color: var(--text-1);
   margin-bottom: var(--sp-lg);
-  letter-spacing: var(--ls-heading)
-}
+  letter-spacing: var(--ls-heading)}
 
 .cgpa-display {
   text-align: center;
-  padding: 12px 0 10px
-}
+  padding: 12px 0 10px}
 
 .cgpa-big {
   font-size: var(--fs-calc-result);
@@ -552,32 +499,28 @@ ol {
   color: var(--accent);
   letter-spacing: -.02em;
   line-height: 1;
-  margin-bottom: var(--sp-md)
-}
+  margin-bottom: var(--sp-md)}
 
 .cgpa-bar-wrap {
   height: 6px;
   background: var(--border);
   border-radius: 99px;
   margin-bottom: 8px;
-  overflow: hidden
-}
+  overflow: hidden}
 
 .cgpa-bar {
   height: 100%;
   width: 0%;
   background: var(--accent);
   border-radius: 99px;
-  transition: width .5s cubic-bezier(.4, 0, .2, 1)
-}
+  transition: width .5s cubic-bezier(.4, 0, .2, 1)}
 
 .cgpa-grade-label {
   font-size: 12px;
   font-weight: 600;
   color: var(--accent);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .stat-row {
   display: grid;
@@ -585,8 +528,7 @@ ol {
   gap: 9px;
   margin-top: 14px;
   padding-top: 14px;
-  border-top: 1px solid var(--border-2)
-}
+  border-top: 1px solid var(--border-2)}
 
 .stat-box {
   display: flex;
@@ -596,22 +538,19 @@ ol {
   padding: 10px;
   background: var(--bg-input);
   border-radius: var(--radius);
-  border: 1px solid var(--border)
-}
+  border: 1px solid var(--border)}
 
 .stat-label {
   font-size:12px;
   color: var(--text-3);
   font-weight: 600;
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .stat-val {
   font-size: 19px;
   font-weight: 600;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .calculator-section {
   background: var(--bg-card);
@@ -622,8 +561,7 @@ ol {
   position: relative;
   overflow: visible;
   width: 100%;
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .section-header {
   display: flex;
@@ -631,8 +569,7 @@ ol {
   justify-content: space-between;
   margin-bottom: 18px;
   flex-wrap: wrap;
-  gap: 10px
-}
+  gap: 10px}
 
 .section-eyebrow {
   display: block;
@@ -641,28 +578,24 @@ ol {
   letter-spacing:0;
   text-transform:none;
   color: var(--accent);
-  margin-bottom: 3px
-}
+  margin-bottom: 3px}
 
 .section-title {
   font-size: var(--fs-h4);
   font-weight: 600;
   color: var(--text-1);
-  letter-spacing: var(--ls-heading)
-}
+  letter-spacing: var(--ls-heading)}
 
 .semester-box {
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
   margin-bottom: 10px;
   overflow: hidden;
-  transition: border-color var(--transition), box-shadow var(--transition)
-}
+  transition: border-color var(--transition), box-shadow var(--transition)}
 
 .semester-box:hover {
   border-color: var(--accent-soft);
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .semester-header {
   display: flex;
@@ -671,16 +604,14 @@ ol {
   padding: 10px 14px;
   background: var(--accent-dim);
   border-bottom: 1px solid var(--accent-border);
-  gap: 9px
-}
+  gap: 9px}
 
 .semester-title-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
   flex: 1;
-  min-width: 0
-}
+  min-width: 0}
 
 .semester-num {
   font-size:12px;
@@ -688,38 +619,33 @@ ol {
   color: var(--accent);
   white-space: nowrap;
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .semester-right-wrap {
   display: flex;
   align-items: center;
-  gap: 8px
-}
+  gap: 8px}
 
 .semester-sgpa-wrap {
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 3px 10px;
-  background: #fff;
+  background: var(--bg-raised);
   border: 1.5px solid var(--accent-border);
-  border-radius: 99px
-}
+  border-radius: 99px}
 
 .sgpa-tag-label {
   font-size:12px;
   font-weight: 600;
   color: var(--accent);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .sgpa-tag-val {
   font-size: 13px;
   font-weight: 600;
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .btn-delete-semester {
   width: 28px;
@@ -729,41 +655,34 @@ ol {
   align-items: center;
   justify-content: center;
   color: var(--text-3);
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .btn-delete-semester:hover {
   color: var(--red);
-  background: var(--red-bg)
-}
+  background: var(--red-bg)}
 
 .courses-container {
   padding: 10px 13px;
   display: flex;
   flex-direction: column;
-  gap: 7px
-}
+  gap: 7px}
 
 .course-row {
   display: grid;
   grid-template-columns: minmax(0, 42%) minmax(0, 22%) minmax(0, 28%) 28px;
   gap: 6px;
-  align-items: center
-}
+  align-items: center}
 
 .course-row.removing {
   opacity: 0;
-  transition: opacity .2s
-}
+  transition: opacity .2s}
 
 .course-row-superseded {
-  opacity: .45
-}
+  opacity: .45}
 
 .course-row-superseded .course-name,
 .course-row-superseded .course-grade {
-  text-decoration: line-through
-}
+  text-decoration: line-through}
 
 .course-name,
 .course-credit,
@@ -781,33 +700,28 @@ ol {
   transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
   appearance: none;
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .course-name::placeholder,
 .course-credit::placeholder {
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .course-name:focus,
 .course-credit:focus,
 .course-grade:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .course-grade {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 7px center;
   padding-right: 26px;
-  cursor: pointer
-}
+  cursor: pointer}
 
 .course-grade option {
-  background: #fff;
-  color: var(--text-1)
-}
+  background: var(--bg-input);
+  color: var(--text-1)}
 
 .btn-delete-course {
   width: 28px;
@@ -818,13 +732,11 @@ ol {
   justify-content: center;
   color: var(--text-3);
   flex-shrink: 0;
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .btn-delete-course:hover {
   color: var(--red);
-  background: var(--red-bg)
-}
+  background: var(--red-bg)}
 
 .btn-add-course {
   display: flex;
@@ -841,14 +753,12 @@ ol {
   font-weight: 600;
   letter-spacing: .03em;
   transition: all var(--transition);
-  width: calc(100% - 26px)
-}
+  width: calc(100% - 26px)}
 
 .btn-add-course:hover {
   background: var(--accent-border);
   border-color: var(--accent);
-  border-style: solid
-}
+  border-style: solid}
 
 .btn-add-semester {
   display: flex;
@@ -863,39 +773,33 @@ ol {
   color: var(--text-3);
   font-size: 14px;
   font-weight: 600;
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .btn-add-semester:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .target-card-standalone {
-  margin-top: 18px
-}
+  margin-top: 18px}
 
 .target-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-bottom: 13px
-}
+  margin-bottom: 13px}
 
 .target-field {
   display: flex;
   flex-direction: column;
-  gap: 5px
-}
+  gap: 5px}
 
 .target-field label {
   font-size: var(--fs-label);
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .target-field input {
   background: var(--bg-input);
@@ -911,19 +815,16 @@ ol {
   -webkit-appearance: none;
   appearance: none;
   box-sizing: border-box;
-  width: 100%
-}
+  width: 100%}
 
 .target-field input:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .target-field input::placeholder {
   color: var(--text-3);
   font-weight: 400;
-  font-size: 13px
-}
+  font-size: 13px}
 
 .target-result {
   display: flex;
@@ -933,51 +834,42 @@ ol {
   border-radius: var(--radius);
   background: var(--bg-input);
   border: 1.5px solid var(--border);
-  margin-bottom: 14px
-}
+  margin-bottom: 14px}
 
 .target-label {
   font-size:12px;
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .target-val {
   font-size: 22px;
   font-weight: 600;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .target-result.target-possible {
   border-color: var(--green-border);
-  background: var(--green-bg)
-}
+  background: var(--green-bg)}
 
 .target-result.target-possible .target-val {
-  color: var(--green)
-}
+  color: var(--green)}
 
 .target-result.target-achieved {
   border-color: var(--accent-border);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .target-result.target-achieved .target-val {
   color: var(--accent);
-  font-size: 14px
-}
+  font-size: 14px}
 
 .target-result.target-impossible {
   border-color: var(--red-border);
-  background: var(--red-bg)
-}
+  background: var(--red-bg)}
 
 .target-result.target-impossible .target-val {
   color: var(--red);
-  font-size: 14px
-}
+  font-size: 14px}
 
 .btn-primary {
   display: flex;
@@ -992,20 +884,17 @@ ol {
   letter-spacing: var(--ls-button);
   border-radius: var(--radius-btn);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 14px rgba(0,117,222,.30)
-}
+  box-shadow: 0 4px 14px rgba(245,181,68,.30)}
 
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,117,222,.40)
-}
+  box-shadow: 0 6px 20px rgba(245,181,68,.40)}
 
 .btn-primary:active {
-  transform: none
-}
+  transform: none}
 
 .sgpa-section {
   background: var(--bg-card);
@@ -1013,32 +902,27 @@ ol {
   border-radius: var(--radius-lg);
   padding: 22px;
   margin-top: 18px;
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .sgpa-cgpa-result {
   display: flex;
   flex-direction: column;
-  align-items: flex-end
-}
+  align-items: flex-end}
 
 .sgpa-label {
   font-size:12px;
   color: var(--text-3);
   font-weight: 600;
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .sgpa-val {
   font-size: 22px;
   font-weight: 600;
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .sgpa-table-wrap {
-  margin-bottom: 10px
-}
+  margin-bottom: 10px}
 
 .sgpa-table-header {
   display: grid;
@@ -1049,16 +933,14 @@ ol {
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .sgpa-row {
   display: grid;
   grid-template-columns: 1fr 120px 100px 36px;
   gap: 7px;
   align-items: center;
-  padding: 3px 0
-}
+  padding: 3px 0}
 
 .sgpa-sem-name,
 .sgpa-val-input,
@@ -1076,29 +958,24 @@ ol {
   transition: border-color var(--transition);
   -webkit-appearance: none;
   appearance: none;
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .sgpa-credit-input.sgpa-credit-missing {
   border-color: var(--gold);
   background: var(--yellow-bg);
-  box-shadow: 0 0 0 1px var(--gold)
-}
+  box-shadow: 0 0 0 1px var(--gold)}
 
 .course-grade.course-grade-missing {
   border-color: var(--gold);
   background: var(--yellow-bg);
-  box-shadow: 0 0 0 1px var(--gold)
-}
+  box-shadow: 0 0 0 1px var(--gold)}
 
 .sgpa-sem-name:focus,
 .sgpa-val-input:focus {
-  border-color: var(--accent-soft)
-}
+  border-color: var(--accent-soft)}
 
 .sgpa-sem-name::placeholder {
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .btn-delete-sgpa {
   width: 30px;
@@ -1108,13 +985,11 @@ ol {
   align-items: center;
   justify-content: center;
   color: var(--text-3);
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .btn-delete-sgpa:hover {
   color: var(--red);
-  background: var(--red-bg)
-}
+  background: var(--red-bg)}
 
 .btn-add-row {
   display: flex;
@@ -1128,14 +1003,12 @@ ol {
   font-weight: 600;
   transition: all var(--transition);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .btn-add-row:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .seo-section {
   background: var(--bg-card);
@@ -1144,19 +1017,16 @@ ol {
   padding: 30px 26px;
   margin-top: 18px;
   box-shadow: var(--shadow-sm);
-  overflow: visible
-}
+  overflow: visible}
 
 .seo-content-card p {
   font-size: 15px;
   color: var(--text-2);
   line-height: 1.8;
-  margin-bottom: 12px
-}
+  margin-bottom: 12px}
 
 .seo-content-card p:last-child {
-  margin-bottom: 0
-}
+  margin-bottom: 0}
 
 .formula-display {
   background: var(--accent-dim);
@@ -1164,28 +1034,24 @@ ol {
   border-radius: var(--radius);
   padding: 18px 22px;
   margin: 16px 0;
-  overflow-x: auto
-}
+  overflow-x: auto}
 
 .formula-inner {
   display: flex;
   align-items: center;
   gap: 14px;
-  flex-wrap: wrap
-}
+  flex-wrap: wrap}
 
 .formula-label {
   font-size: 15px;
   font-weight: 600;
   color: var(--accent);
-  white-space: nowrap
-}
+  white-space: nowrap}
 
 .formula-fraction {
   display: flex;
   flex-direction: column;
-  align-items: center
-}
+  align-items: center}
 
 .formula-top {
   font-size: 14px;
@@ -1193,16 +1059,14 @@ ol {
   color: var(--text-1);
   padding-bottom: 5px;
   border-bottom: 2px solid var(--accent);
-  text-align: center
-}
+  text-align: center}
 
 .formula-bottom {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-2);
   padding-top: 5px;
-  text-align: center
-}
+  text-align: center}
 
 .table-wrap {
   overflow-x: auto;
@@ -1210,8 +1074,7 @@ ol {
   border-radius: var(--radius);
   border: 1px solid var(--border);
   width: 100%;
-  display: block
-}
+  display: block}
 
 .table-responsive {
   overflow-x: auto;
@@ -1220,19 +1083,16 @@ ol {
   display: block;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  margin-bottom: 24px
-}
+  margin-bottom: 24px}
 
 table {
   width: 100%;
   min-width: 400px;
   border-collapse: collapse;
-  font-size: 14px
-}
+  font-size: 14px}
 
 thead tr {
-  border-bottom: 1px solid var(--accent-border)
-}
+  border-bottom: 1px solid var(--accent-border)}
 
 th {
   padding: 11px 14px;
@@ -1241,23 +1101,19 @@ th {
   font-weight: 600;
   text-transform:none;
   letter-spacing:0;
-  white-space: nowrap
-}
+  white-space: nowrap}
 
 td {
   padding: 11px 14px;
   color: var(--text-2);
   border-bottom: 1px solid var(--border-2);
-  vertical-align: middle
-}
+  vertical-align: middle}
 
 tbody tr:last-child td {
-  border-bottom: none
-}
+  border-bottom: none}
 
 tbody tr:hover {
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .grade-badge {
   display: inline-flex;
@@ -1267,75 +1123,61 @@ tbody tr:hover {
   padding: 2px 9px;
   border-radius: 99px;
   font-size: 12px;
-  font-weight: 600
-}
+  font-weight: 600}
 
 .grade-a-plus {
   background: var(--green);
-  color: #fff
-}
+  color: #fff}
 
 .grade-a {
   background: var(--accent);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-a-minus {
   background: var(--accent-light);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-b-plus {
   background: var(--violet);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-b {
   background: var(--violet-light);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-b-minus {
   background: var(--text-3);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-c-plus {
   background: var(--gold);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-c {
   background: var(--yellow);
-  color: #fff
-}
+  color: var(--on-accent)}
 
 .grade-d {
   background: var(--yellow-ink);
-  color: #fff
-}
+  color: #fff}
 
 .grade-f {
   background: var(--red);
-  color: #fff
-}
+  color: #fff}
 
 .how-to-steps {
   display: flex;
   flex-direction: column;
-  margin-top: 14px
-}
+  margin-top: 14px}
 
 .how-step {
   display: flex;
   gap: 14px;
   position: relative;
-  padding-bottom: 22px
-}
+  padding-bottom: 22px}
 
 .how-step:last-child {
-  padding-bottom: 0
-}
+  padding-bottom: 0}
 
 .how-step::before {
   content: '';
@@ -1344,12 +1186,10 @@ tbody tr:hover {
   top: 30px;
   bottom: 0;
   width: 1px;
-  background: var(--border)
-}
+  background: var(--border)}
 
 .how-step:last-child::before {
-  display: none
-}
+  display: none}
 
 .step-num {
   width: 28px;
@@ -1361,81 +1201,69 @@ tbody tr:hover {
   justify-content: center;
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color: var(--on-accent);
   flex-shrink: 0;
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(0,117,222,.30)
-}
+  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
 
 .step-body h3 {
   font-size: var(--fs-h6);
   font-weight: 600;
   color: var(--text-1);
-  margin-bottom: var(--sp-xs)
-}
+  margin-bottom: var(--sp-xs)}
 
 .step-body p {
   font-size: 14px;
   color: var(--text-2);
-  line-height: 1.7
-}
+  line-height: 1.7}
 
 .why-use-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-xl);
-  margin-top: var(--sp-sm)
-}
+  margin-top: var(--sp-sm)}
 
 .why-card {
   background: var(--bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-card);
   padding: 28px;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition)
-}
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition)}
 
 .why-card:hover {
   border-color: var(--accent-soft);
   box-shadow: var(--shadow);
-  transform: translateY(-2px)
-}
+  transform: translateY(-2px)}
 
 .why-icon {
   font-size: 32px;
-  margin-bottom: var(--sp-sm)
-}
+  margin-bottom: var(--sp-sm)}
 
 .why-card h3 {
   font-size: var(--fs-h4);
   font-weight: 600;
   color: var(--text-1);
-  margin-bottom: var(--sp-xs)
-}
+  margin-bottom: var(--sp-xs)}
 
 .why-card p {
   font-size: var(--fs-body);
   color: var(--text-2);
-  line-height: 1.55
-}
+  line-height: 1.55}
 
 .faq-list {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  margin-top: 8px
-}
+  margin-top: 8px}
 
 .faq-item {
   border: 1.5px solid var(--border);
   overflow: hidden;
-  transition: border-color var(--transition), box-shadow var(--transition)
-}
+  transition: border-color var(--transition), box-shadow var(--transition)}
 
 .faq-item:hover {
   border-color: var(--accent-soft);
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .faq-question {
   width: 100%;
@@ -1449,39 +1277,32 @@ tbody tr:hover {
   font-weight: 600;
   color: var(--text-1);
   background: none;
-  transition: color var(--transition)
-}
+  transition: color var(--transition)}
 
 .faq-question:hover {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .faq-chevron {
   flex-shrink: 0;
   color: var(--text-3);
-  transition: transform .22s
-}
+  transition: transform .22s}
 
 .faq-question[aria-expanded="true"] .faq-chevron {
-  transform: rotate(180deg)
-}
+  transform: rotate(180deg)}
 
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height .28s ease
-}
+  transition: max-height .28s ease}
 
 .faq-answer.open {
-  max-height: 300px
-}
+  max-height: 300px}
 
 .faq-answer p {
   padding: 0 18px 18px;
   font-size: 14px;
   color: var(--text-2);
-  line-height: 1.75
-}
+  line-height: 1.75}
 
 .toast {
   position: fixed;
@@ -1489,7 +1310,7 @@ tbody tr:hover {
   left: 50%;
   transform: translateX(-50%) translateY(14px);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 14px;
   font-weight: 600;
   padding: 10px 22px;
@@ -1497,20 +1318,17 @@ tbody tr:hover {
   opacity: 0;
   transition: opacity .22s, transform .22s;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(0,117,222,.40);
-  white-space: nowrap
-}
+  box-shadow: 0 4px 20px rgba(245,181,68,.40);
+  white-space: nowrap}
 
 .toast-visible {
   opacity: 1;
-  transform: translateX(-50%) translateY(0)
-}
+  transform: translateX(-50%) translateY(0)}
 
 .footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
-  margin-top: 64px
-}
+  margin-top: 64px}
 
 .footer-inner {
   max-width: var(--container-main);
@@ -1520,8 +1338,7 @@ tbody tr:hover {
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  flex-wrap: wrap
-}
+  flex-wrap: wrap}
 
 .footer-logo {
   font-size: 16px;
@@ -1530,49 +1347,41 @@ tbody tr:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  letter-spacing: -.02em
-}
+  letter-spacing: -.02em}
 
 .footer-author {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-1);
-  margin-bottom: 2px
-}
+  margin-bottom: 2px}
 
 .footer-bio {
   font-size: 16px;
-  color: var(--text-2)
-}
+  color: var(--text-2)}
 
 .footer-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 14px
-}
+  gap: 14px}
 
 .footer-links {
   display: flex;
-  gap: 20px
-}
+  gap: 20px}
 
 .footer-link {
   font-size: 16px;
   color: var(--text-2);
-  transition: color var(--transition)
-}
+  transition: color var(--transition)}
 
 .footer-link:hover {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .footer-social {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  max-width: 320px
-}
+  max-width: 320px}
 
 .footer-social-link {
   width: 36px;
@@ -1583,22 +1392,19 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   color: var(--text-2);
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .footer-social-link:hover {
-  color: #fff;
+  color: var(--on-accent);
   border-color: var(--accent);
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .footer-bottom {
   border-top: 1px solid var(--border);
   text-align: center;
   padding: 14px 24px;
   font-size: 16px;
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .hero-eyebrow {
   display: inline-block;
@@ -1607,8 +1413,7 @@ tbody tr:hover {
   letter-spacing:0;
   text-transform:none;
   color: var(--accent);
-  margin-bottom: 11px
-}
+  margin-bottom: 11px}
 
 .hero-title {
   font-size: var(--fs-h1);
@@ -1616,16 +1421,14 @@ tbody tr:hover {
   color: var(--text-1);
   letter-spacing: var(--ls-heading);
   line-height: var(--lh-h1);
-  margin-bottom: var(--sp-md)
-}
+  margin-bottom: var(--sp-md)}
 
 .hero-sub {
   font-size: var(--fs-body);
   font-weight: 400;
   color: var(--text-2);
   max-width: none;
-  line-height: var(--lh-body)
-}
+  line-height: var(--lh-body)}
 
 .breadcrumb {
   font-size: 13px;
@@ -1634,21 +1437,17 @@ tbody tr:hover {
   align-items: center;
   gap: 5px;
   flex-wrap: wrap;
-  padding: 14px 0 0
-}
+  padding: 14px 0 0}
 
 .breadcrumb a {
   color: var(--text-3);
-  transition: color var(--transition)
-}
+  transition: color var(--transition)}
 
 .breadcrumb a:hover {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .breadcrumb-sep {
-  opacity: .5
-}
+  opacity: .5}
 
 .back-link {
   display: inline-flex;
@@ -1661,21 +1460,18 @@ tbody tr:hover {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-2);
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .back-link:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-xl);
-  margin-top: var(--sp-lg)
-}
+  margin-top: var(--sp-lg)}
 
 .blog-card {
   display: flex;
@@ -1686,8 +1482,7 @@ tbody tr:hover {
   padding: 28px;
   transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
   position: relative;
-  overflow: hidden
-}
+  overflow: hidden}
 
 .blog-card::before {
   content: '';
@@ -1696,43 +1491,37 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .blog-card:hover {
   border-color: var(--accent-soft);
   box-shadow: var(--shadow);
-  transform: translateY(-2px)
-}
+  transform: translateY(-2px)}
 
 .blog-card-num {
   font-size:12px;
   font-weight: 600;
   color: var(--text-3);
-  margin-bottom: 9px
-}
+  margin-bottom: 9px}
 
 .blog-card h3 {
   font-size: var(--fs-h4);
   font-weight: 600;
   color: var(--text-1);
   margin-bottom: 7px;
-  line-height: 1.4
-}
+  line-height: 1.4}
 
 .blog-card p {
   font-size: var(--fs-body);
   color: var(--text-2);
   line-height: 1.55;
-  flex: 1
-}
+  flex: 1}
 
 .blog-card-arrow {
   margin-top: 13px;
   font-size: 16px;
   font-weight: 600;
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .about-avatar {
   flex-shrink: 0;
@@ -1745,15 +1534,13 @@ tbody tr:hover {
   justify-content: center;
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
-  box-shadow: 0 0 0 5px rgba(0,117,222,.25)
-}
+  color: var(--on-accent);
+  box-shadow: 0 0 0 5px rgba(245,181,68,.25)}
 
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 13px
-}
+  gap: 13px}
 
 .about-stat-card {
   background: var(--bg-card);
@@ -1764,12 +1551,10 @@ tbody tr:hover {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition)
-}
+  transition: box-shadow var(--transition)}
 
 .about-stat-card:hover {
-  box-shadow: var(--shadow)
-}
+  box-shadow: var(--shadow)}
 
 .about-stat-card::before {
   content: '';
@@ -1778,30 +1563,26 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .about-stat-num {
   font-size: 28px;
   color: var(--accent);
   line-height: 1;
   margin-bottom: 5px;
-  font-weight: 600
-}
+  font-weight: 600}
 
 .about-stat-label {
   font-size: 12px;
   color: var(--text-3);
-  font-weight: 500
-}
+  font-weight: 500}
 
 .about-section {
   background: var(--bg-card);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px 28px;
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .about-section-eyebrow {
   display: block;
@@ -1810,8 +1591,7 @@ tbody tr:hover {
   letter-spacing:0;
   text-transform:none;
   color: var(--accent);
-  margin-bottom: 4px
-}
+  margin-bottom: 4px}
 
 .about-section-title {
   font-size: var(--fs-h2);
@@ -1819,26 +1599,22 @@ tbody tr:hover {
   font-weight: 600;
   margin-bottom: var(--sp-md);
   letter-spacing: var(--ls-heading);
-  line-height: var(--lh-h2)
-}
+  line-height: var(--lh-h2)}
 
 .about-section p {
   font-size: var(--fs-body);
   color: var(--text-2);
   line-height: var(--lh-body);
-  margin-bottom: var(--sp-sm)
-}
+  margin-bottom: var(--sp-sm)}
 
 .about-section p:last-child {
-  margin-bottom: 0
-}
+  margin-bottom: 0}
 
 .skills-list {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  margin-top: 12px
-}
+  margin-top: 12px}
 
 .skill-item {
   display: flex;
@@ -1848,33 +1624,28 @@ tbody tr:hover {
   background: var(--bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition)
-}
+  transition: border-color var(--transition)}
 
 .skill-item:hover {
-  border-color: var(--accent-soft)
-}
+  border-color: var(--accent-soft)}
 
 .skill-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--accent);
-  flex-shrink: 0
-}
+  flex-shrink: 0}
 
 .skill-item span {
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-2)
-}
+  color: var(--text-2)}
 
 .trust-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 12px
-}
+  margin-top: 12px}
 
 .trust-card {
   display: flex;
@@ -1884,46 +1655,39 @@ tbody tr:hover {
   background: var(--bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition)
-}
+  transition: border-color var(--transition)}
 
 .trust-card:hover {
-  border-color: var(--accent-soft)
-}
+  border-color: var(--accent-soft)}
 
 .trust-icon {
   font-size: 16px;
   flex-shrink: 0;
-  margin-top: 1px
-}
+  margin-top: 1px}
 
 .trust-card p {
   font-size: 14px;
   color: var(--text-2);
   line-height: 1.6;
-  margin: 0
-}
+  margin: 0}
 
 .about-cta {
   background: var(--accent);
   border-radius: var(--radius-lg);
   padding: 30px;
-  text-align: center
-}
+  text-align: center}
 
 .about-cta h3 {
   font-size: var(--fs-h3);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
   margin-bottom: var(--sp-sm);
-  letter-spacing: var(--ls-heading)
-}
+  letter-spacing: var(--ls-heading)}
 
 .about-cta p {
   font-size: 15px;
-  color: rgba(255, 255, 255, .85);
-  margin-bottom: 18px
-}
+  color: rgba(11,16,32,.80);
+  margin-bottom: 18px}
 
 .btn-cta {
   display: inline-flex;
@@ -1936,18 +1700,16 @@ tbody tr:hover {
   font-weight: 600;
   letter-spacing: var(--ls-button);
   border-radius: var(--radius-btn);
-  background: #fff;
+  background: var(--bg-raised);
   color: var(--accent);
   transition: all var(--transition);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .15)
-}
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .15)}
 
 .btn-cta:hover {
   background: var(--accent-dim);
   color: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .20)
-}
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .20)}
 
 .converter-card {
   background: var(--bg-card);
@@ -1957,8 +1719,7 @@ tbody tr:hover {
   box-shadow: var(--shadow);
   margin-top: var(--sp-xl);
   position: relative;
-  overflow: visible
-}
+  overflow: visible}
 
 .converter-card::before {
   content: '';
@@ -1967,8 +1728,7 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .converter-tabs {
   display: flex;
@@ -1977,8 +1737,7 @@ tbody tr:hover {
   background: var(--bg);
   padding: 5px;
   border-radius: var(--radius);
-  border: 1px solid var(--border)
-}
+  border: 1px solid var(--border)}
 
 .ctab {
   flex: 1;
@@ -1991,26 +1750,22 @@ tbody tr:hover {
   border: none;
   cursor: pointer;
   transition: all var(--transition);
-  text-align: center
-}
+  text-align: center}
 
 .ctab.active {
   background: var(--accent);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,117,222,.30)
-}
+  color: var(--on-accent);
+  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
 
 .ctab:not(.active):hover {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .conv-fields {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 20px
-}
+  margin-bottom: 20px}
 
 .conv-field label {
   display: block;
@@ -2019,8 +1774,7 @@ tbody tr:hover {
   color: var(--text-3);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 7px
-}
+  margin-bottom: 7px}
 
 .conv-field input,
 .conv-field select {
@@ -2035,19 +1789,16 @@ tbody tr:hover {
   color: var(--text-1);
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .conv-field input:focus,
 .conv-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .conv-buttons {
   display: flex;
-  gap: 10px
-}
+  gap: 10px}
 
 .btn-calculate {
   flex: 1;
@@ -2061,17 +1812,15 @@ tbody tr:hover {
   letter-spacing: var(--ls-button);
   border-radius: var(--radius-btn);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   cursor: pointer;
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .btn-calculate:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0,117,222,.30)
-}
+  box-shadow: 0 4px 14px rgba(245,181,68,.30)}
 
 .btn-reset {
   display: inline-flex;
@@ -2087,13 +1836,11 @@ tbody tr:hover {
   color: var(--text-2);
   border: 1.5px solid var(--border);
   cursor: pointer;
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .btn-reset:hover {
   border-color: var(--accent);
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .result-panel {
   margin-top: 22px;
@@ -2101,24 +1848,20 @@ tbody tr:hover {
   border: 1.5px solid var(--accent-border);
   border-radius: var(--radius-lg);
   padding: 22px 24px;
-  display: none
-}
+  display: none}
 
 .result-panel.visible {
   display: block;
-  animation: fadeSlideUp .22s ease
-}
+  animation: fadeSlideUp .22s ease}
 
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(8px)
-  }
+    transform: translateY(8px)}
 
   to {
     opacity: 1;
-    transform: translateY(0)
-  }
+    transform: translateY(0)}
 }
 
 .result-row {
@@ -2126,8 +1869,7 @@ tbody tr:hover {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap
-}
+  flex-wrap: wrap}
 
 .result-label {
   font-size: 18px;
@@ -2135,22 +1877,19 @@ tbody tr:hover {
   color: var(--accent);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 4px
-}
+  margin-bottom: 4px}
 
 .result-value {
   font-size: var(--fs-calc-result);
   font-weight: 600;
   color: var(--accent);
   letter-spacing: -.02em;
-  line-height: 1
-}
+  line-height: 1}
 
 .result-formula {
   font-size: 13px;
   color: var(--text-3);
-  margin-top: 5px
-}
+  margin-top: 5px}
 
 .btn-copy {
   padding: 0 var(--sp-lg);
@@ -2159,7 +1898,7 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   background: var(--dark);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: var(--radius-btn);
   font-size: var(--fs-caption);
@@ -2168,24 +1907,20 @@ tbody tr:hover {
   cursor: pointer;
   transition: all var(--transition);
   white-space: nowrap;
-  flex-shrink: 0
-}
+  flex-shrink: 0}
 
 .btn-copy:hover {
   background: var(--dark-2);
-  transform: translateY(-1px)
-}
+  transform: translateY(-1px)}
 
 .btn-copy.copied {
-  background: var(--green)
-}
+  background: var(--green)}
 
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-xl);
-  margin-top: var(--sp-2xl)
-}
+  margin-top: var(--sp-2xl)}
 
 .info-card {
   background: var(--bg-card);
@@ -2194,8 +1929,7 @@ tbody tr:hover {
   padding: var(--sp-xl);
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition)
-}
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition)}
 
 .info-card::before {
   content: '';
@@ -2204,14 +1938,12 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .info-card:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
-  box-shadow: var(--shadow)
-}
+  box-shadow: var(--shadow)}
 
 .info-card-name {
   font-size: 12px;
@@ -2219,22 +1951,19 @@ tbody tr:hover {
   color: var(--accent);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 5px
-}
+  margin-bottom: 5px}
 
 .info-card-formula {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-1);
   letter-spacing: -.02em;
-  margin-bottom: 5px
-}
+  margin-bottom: 5px}
 
 .info-card-desc {
   font-size: 12px;
   color: var(--text-3);
-  line-height: 1.5
-}
+  line-height: 1.5}
 
 .section-heading {
   font-size: var(--fs-h2);
@@ -2244,15 +1973,13 @@ tbody tr:hover {
   line-height: var(--lh-h2);
   margin: var(--sp-3xl) 0 var(--sp-md);
   border-left: 3px solid var(--accent);
-  padding-left: var(--sp-lg)
-}
+  padding-left: var(--sp-lg)}
 
 .section-desc {
   font-size: 14px;
   color: var(--text-3);
   margin-bottom: 16px;
-  line-height: 1.6
-}
+  line-height: 1.6}
 
 .faq-q {
   width: 100%;
@@ -2268,22 +1995,18 @@ tbody tr:hover {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  transition: color var(--transition)
-}
+  transition: color var(--transition)}
 
 .faq-q:hover {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .faq-q svg {
   flex-shrink: 0;
   transition: transform .22s ease;
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .faq-item.open .faq-q svg {
-  transform: rotate(180deg)
-}
+  transform: rotate(180deg)}
 
 .faq-a {
   max-height: 0;
@@ -2292,48 +2015,40 @@ tbody tr:hover {
   padding: 0 18px;
   font-size: 14px;
   color: var(--text-2);
-  line-height: 1.65
-}
+  line-height: 1.65}
 
 .faq-item.open .faq-a {
   max-height: 220px;
-  padding: 0 18px 16px
-}
+  padding: 0 18px 16px}
 
 .error-shake {
   animation: shake .35s ease;
-  border-color: var(--red) !important
-}
+  border-color: var(--red) !important}
 
 @keyframes shake {
 
   0%,
   100% {
-    transform: translateX(0)
-  }
+    transform: translateX(0)}
 
   25% {
-    transform: translateX(-5px)
-  }
+    transform: translateX(-5px)}
 
   75% {
-    transform: translateX(5px)
-  }
+    transform: translateX(5px)}
 }
 
 .field-error {
   font-size: 12px;
   color: var(--red);
   margin-top: 5px;
-  font-weight: 600
-}
+  font-weight: 600}
 
 .gpa-converter-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
-  margin-top: 28px
-}
+  margin-top: 28px}
 
 .gpa-panel {
   background: var(--bg-card);
@@ -2342,8 +2057,7 @@ tbody tr:hover {
   padding: 24px;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .gpa-panel::before {
   content: '';
@@ -2352,30 +2066,26 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .gpa-panel-title {
   font-size: var(--fs-h5);
   font-weight: 600;
   color: var(--text-1);
   letter-spacing: var(--ls-heading);
-  margin-bottom: var(--sp-xs)
-}
+  margin-bottom: var(--sp-xs)}
 
 .gpa-panel-sub {
   font-size: 12px;
   color: var(--text-3);
   margin-bottom: 18px;
-  line-height: 1.5
-}
+  line-height: 1.5}
 
 .gpa-fields {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 16px
-}
+  margin-bottom: 16px}
 
 .gpa-field label {
   display: block;
@@ -2384,8 +2094,7 @@ tbody tr:hover {
   color: var(--text-3);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 6px
-}
+  margin-bottom: 6px}
 
 .gpa-field input,
 .gpa-field select {
@@ -2402,19 +2111,16 @@ tbody tr:hover {
   transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
   appearance: none;
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .gpa-field input:focus,
 .gpa-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .gpa-panel-buttons {
   display: flex;
-  gap: 8px
-}
+  gap: 8px}
 
 .btn-gpa-reset {
   padding: 0 var(--sp-lg);
@@ -2430,13 +2136,11 @@ tbody tr:hover {
   font-weight: 600;
   letter-spacing: var(--ls-button);
   cursor: pointer;
-  transition: all var(--transition)
-}
+  transition: all var(--transition)}
 
 .btn-gpa-reset:hover {
   border-color: var(--accent);
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .gpa-result-panel {
   margin-top: 16px;
@@ -2444,21 +2148,18 @@ tbody tr:hover {
   border: 1.5px solid var(--accent-border);
   border-radius: var(--radius-lg);
   padding: 18px;
-  display: none
-}
+  display: none}
 
 .gpa-result-panel.visible {
   display: block;
-  animation: fadeSlideUp .22s ease
-}
+  animation: fadeSlideUp .22s ease}
 
 .gpa-result-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  flex-wrap: wrap
-}
+  flex-wrap: wrap}
 
 .gpa-result-label {
   font-size: 18px;
@@ -2466,28 +2167,24 @@ tbody tr:hover {
   color: var(--accent);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 3px
-}
+  margin-bottom: 3px}
 
 .gpa-result-value {
   font-size: var(--fs-calc-result);
   font-weight: 600;
   color: var(--accent);
   letter-spacing: -.02em;
-  line-height: 1
-}
+  line-height: 1}
 
 .gpa-result-pct {
   font-size: 13px;
   color: var(--text-3);
-  margin-top: 3px
-}
+  margin-top: 3px}
 
 .gpa-result-formula {
   font-size: 12px;
   color: var(--text-3);
-  margin-top: 5px
-}
+  margin-top: 5px}
 
 .btn-copy-gpa {
   padding: 0 var(--sp-lg);
@@ -2496,7 +2193,7 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   background: var(--dark);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: var(--radius-btn);
   font-size: var(--fs-caption);
@@ -2506,24 +2203,20 @@ tbody tr:hover {
   transition: all var(--transition);
   white-space: nowrap;
   flex-shrink: 0;
-  align-self: flex-start
-}
+  align-self: flex-start}
 
 .btn-copy-gpa:hover {
   background: var(--dark-2);
-  transform: translateY(-1px)
-}
+  transform: translateY(-1px)}
 
 .btn-copy-gpa.copied {
-  background: var(--green)
-}
+  background: var(--green)}
 
 .scale-ref-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-xl);
-  margin-top: var(--sp-xl)
-}
+  margin-top: var(--sp-xl)}
 
 .scale-ref-card {
   background: var(--bg-card);
@@ -2532,8 +2225,7 @@ tbody tr:hover {
   padding: var(--sp-lg) var(--sp-xl);
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition)
-}
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition)}
 
 .scale-ref-card::before {
   content: '';
@@ -2542,14 +2234,12 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .scale-ref-card:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
-  box-shadow: var(--shadow)
-}
+  box-shadow: var(--shadow)}
 
 .scale-ref-name {
   font-size:12px;
@@ -2557,22 +2247,19 @@ tbody tr:hover {
   color: var(--accent);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 4px
-}
+  margin-bottom: 4px}
 
 .scale-ref-val {
   font-size: 17px;
   font-weight: 600;
   color: var(--text-1);
   letter-spacing: -.02em;
-  margin-bottom: 3px
-}
+  margin-bottom: 3px}
 
 .scale-ref-desc {
   font-size: 12px;
   color: var(--text-3);
-  line-height: 1.5
-}
+  line-height: 1.5}
 
 .grade-panel {
   background: var(--bg-card);
@@ -2582,8 +2269,7 @@ tbody tr:hover {
   box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
-  margin-bottom: 18px
-}
+  margin-bottom: 18px}
 
 .grade-panel::before {
   content: '';
@@ -2592,8 +2278,7 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--accent)
-}
+  background: var(--accent)}
 
 .grade-system-tabs {
   display: flex;
@@ -2603,8 +2288,7 @@ tbody tr:hover {
   padding: 5px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  flex-wrap: wrap
-}
+  flex-wrap: wrap}
 
 .gsys-tab {
   flex: 1;
@@ -2618,19 +2302,16 @@ tbody tr:hover {
   border: none;
   cursor: pointer;
   transition: all var(--transition);
-  text-align: center
-}
+  text-align: center}
 
 .gsys-tab.active {
   background: var(--accent);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,117,222,.30)
-}
+  color: var(--on-accent);
+  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
 
 .gsys-tab:not(.active):hover {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .grade-table-header {
   display: grid;
@@ -2638,16 +2319,14 @@ tbody tr:hover {
   gap: 8px;
   padding: 0 0 8px;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 10px
-}
+  margin-bottom: 10px}
 
 .grade-table-header span {
   font-size:12px;
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .grade-row {
   display: grid;
@@ -2655,25 +2334,21 @@ tbody tr:hover {
   gap: 8px;
   align-items: center;
   margin-bottom: 8px;
-  animation: rowIn .18s ease
-}
+  animation: rowIn .18s ease}
 
 @keyframes rowIn {
   from {
     opacity: 0;
-    transform: translateY(6px)
-  }
+    transform: translateY(6px)}
 
   to {
     opacity: 1;
-    transform: translateY(0)
-  }
+    transform: translateY(0)}
 }
 
 .grade-row.removing {
   opacity: 0;
-  transition: opacity .18s
-}
+  transition: opacity .18s}
 
 .gr-subject,
 .gr-marks,
@@ -2691,21 +2366,18 @@ tbody tr:hover {
   transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
   appearance: none;
-  box-sizing: border-box
-}
+  box-sizing: border-box}
 
 .gr-subject::placeholder,
 .gr-marks::placeholder,
 .gr-credit::placeholder {
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .gr-subject:focus,
 .gr-marks:focus,
 .gr-credit:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .gr-grade-cell {
   display: flex;
@@ -2720,20 +2392,17 @@ tbody tr:hover {
   color: var(--accent);
   letter-spacing:0;
   transition: all var(--transition);
-  min-width: 0
-}
+  min-width: 0}
 
 .gr-grade-cell.grade-f {
   background: var(--red-bg);
   border-color: var(--red-border);
-  color: var(--red-ink)
-}
+  color: var(--red-ink)}
 
 .gr-grade-cell.grade-pass {
   background: var(--green-border);
   border-color: var(--green-border);
-  color: #15803D
-}
+  color: #34D399}
 
 .btn-del-gr {
   width: 30px;
@@ -2744,13 +2413,11 @@ tbody tr:hover {
   justify-content: center;
   color: var(--text-3);
   flex-shrink: 0;
-  transition: color var(--transition), background var(--transition)
-}
+  transition: color var(--transition), background var(--transition)}
 
 .btn-del-gr:hover {
   color: var(--red);
-  background: var(--red-bg)
-}
+  background: var(--red-bg)}
 
 .btn-add-subject {
   display: flex;
@@ -2767,14 +2434,12 @@ tbody tr:hover {
   font-weight: 600;
   letter-spacing: .03em;
   transition: all var(--transition);
-  margin-top: 6px
-}
+  margin-top: 6px}
 
 .btn-add-subject:hover {
   background: var(--accent-border);
   border-color: var(--accent);
-  border-style: solid
-}
+  border-style: solid}
 
 .grade-result-panel {
   background: var(--bg-card);
@@ -2782,14 +2447,12 @@ tbody tr:hover {
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow-sm);
-  margin-bottom: 18px
-}
+  margin-bottom: 18px}
 
 .grade-result-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px
-}
+  gap: 12px}
 
 .gr-stat {
   display: flex;
@@ -2800,13 +2463,11 @@ tbody tr:hover {
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
   text-align: center;
-  transition: border-color var(--transition), box-shadow var(--transition)
-}
+  transition: border-color var(--transition), box-shadow var(--transition)}
 
 .gr-stat:first-child {
   border-color: var(--accent-border);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .gr-stat-label {
   font-size:12px;
@@ -2814,27 +2475,23 @@ tbody tr:hover {
   color: var(--text-3);
   text-transform:none;
   letter-spacing:0;
-  margin-bottom: 6px
-}
+  margin-bottom: 6px}
 
 .gr-stat-val {
   font-size: 26px;
   font-weight: 600;
   color: var(--text-1);
-  line-height: 1
-}
+  line-height: 1}
 
 .gr-stat:first-child .gr-stat-val {
   color: var(--accent);
   font-size: 40px;
-  font-weight: 600
-}
+  font-weight: 600}
 
 .gr-stat-sub {
   font-size:12px;
   color: var(--text-3);
-  margin-top: 4px
-}
+  margin-top: 4px}
 
 .grade-prediction-panel {
   background: var(--bg-card);
@@ -2844,8 +2501,7 @@ tbody tr:hover {
   box-shadow: var(--shadow-sm);
   margin-bottom: 18px;
   position: relative;
-  overflow: hidden
-}
+  overflow: hidden}
 
 .grade-prediction-panel::before {
   content: '';
@@ -2854,32 +2510,28 @@ tbody tr:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-soft))
-}
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft))}
 
 .pred-form {
   display: flex;
   gap: 12px;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin-top: 16px
-}
+  margin-top: 16px}
 
 .pred-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
   flex: 1;
-  min-width: 130px
-}
+  min-width: 130px}
 
 .pred-field label {
   font-size: 16px;
   font-weight: 600;
   color: var(--text-3);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .pred-field select {
   background: var(--bg-input);
@@ -2896,13 +2548,11 @@ tbody tr:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 8px center;
-  cursor: pointer
-}
+  cursor: pointer}
 
 .pred-field select:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(0,117,222,.10)
-}
+  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
 
 .btn-predict {
   padding: 0 var(--sp-lg);
@@ -2911,7 +2561,7 @@ tbody tr:hover {
   align-items: center;
   justify-content: center;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: var(--radius-btn);
   font-size: var(--fs-btn);
@@ -2920,25 +2570,21 @@ tbody tr:hover {
   cursor: pointer;
   transition: all var(--transition);
   white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(0,117,222,.25);
-  align-self: flex-end
-}
+  box-shadow: 0 3px 10px rgba(245,181,68,.25);
+  align-self: flex-end}
 
 .btn-predict:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(0,117,222,.35)
-}
+  box-shadow: 0 5px 16px rgba(245,181,68,.35)}
 
 .pred-result {
   margin-top: 16px;
   display: none;
-  animation: fadeSlideUp .22s ease
-}
+  animation: fadeSlideUp .22s ease}
 
 .pred-result.visible {
-  display: block
-}
+  display: block}
 
 .pred-result-card {
   display: flex;
@@ -2948,45 +2594,38 @@ tbody tr:hover {
   padding: 16px 18px;
   background: var(--accent-dim);
   border: 1.5px solid var(--accent-border);
-  border-radius: var(--radius)
-}
+  border-radius: var(--radius)}
 
 .pred-result-card.pred-achieved {
   background: var(--green-bg);
-  border-color: var(--green-border)
-}
+  border-color: var(--green-border)}
 
 .pred-stat {
   display: flex;
   flex-direction: column;
-  gap: 2px
-}
+  gap: 2px}
 
 .pred-stat-label {
   font-size:12px;
   font-weight: 600;
   color: var(--accent);
   text-transform:none;
-  letter-spacing:0
-}
+  letter-spacing:0}
 
 .pred-result-card.pred-achieved .pred-stat-label {
-  color: #15803D
-}
+  color: #34D399}
 
 .pred-stat-val {
   font-size: 22px;
   font-weight: 600;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .pred-note {
   font-size: 13px;
   color: var(--text-2);
   line-height: 1.6;
   flex: 1;
-  min-width: 160px
-}
+  min-width: 160px}
 
 .grade-ref-wrap {
   background: var(--bg-card);
@@ -2994,8 +2633,7 @@ tbody tr:hover {
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow-sm);
-  margin-bottom: 18px
-}
+  margin-bottom: 18px}
 
 .btn-grade-print {
   display: flex;
@@ -3010,32 +2648,26 @@ tbody tr:hover {
   letter-spacing: var(--ls-button);
   border-radius: var(--radius-btn);
   background: var(--dark);
-  color: #fff;
+  color: var(--on-accent);
   transition: background var(--transition), transform var(--transition);
-  margin-top: var(--sp-sm)
-}
+  margin-top: var(--sp-sm)}
 
 .btn-grade-print:hover {
   background: var(--dark-2);
-  transform: translateY(-1px)
-}
+  transform: translateY(-1px)}
 
 @media(max-width:1024px) {
   .why-use-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    grid-template-columns: repeat(2, 1fr)}
 
   .blog-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    grid-template-columns: repeat(2, 1fr)}
 
   .info-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    grid-template-columns: repeat(2, 1fr)}
 
   .scale-ref-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    grid-template-columns: repeat(2, 1fr)}
 
   
 }
@@ -3043,20 +2675,17 @@ tbody tr:hover {
 @media(max-width:860px) {
   .calc-layout {
     grid-template-columns: 1fr;
-    width: 100%
-  }
+    width: 100%}
 
   .calc-sidebar {
     position: static;
     width: 100%;
-    display: contents
-  }
+    display: contents}
 
   
 
   .gpa-converter-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   /* Reorder mobile calculator sections:
      1. Semester-wise CGPA Calculator
@@ -3064,88 +2693,69 @@ tbody tr:hover {
      3. (Goal Planning & SGPA->CGPA follow naturally after calc-layout in the DOM)
      4. Grade Scale (kept at the very end, hidden by default on mobile) */
   .calc-main-panel {
-    order: 1
-  }
+    order: 1}
 
   .result-card {
-    order: 2
-  }
+    order: 2}
 
   
 }
 
 @media(max-width:768px) {
   .nav-desktop {
-    display: none
-  }
+    display: none}
 
   .hamburger {
-    display: flex
-  }
+    display: flex}
 
   .mobile-menu {
-    display: flex
-  }
+    display: flex}
 
   .target-grid {
-    grid-template-columns: 1fr 1fr
-  }
+    grid-template-columns: 1fr 1fr}
 
   .why-use-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .blog-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .about-stats {
-    grid-template-columns: 1fr 1fr
-  }
+    grid-template-columns: 1fr 1fr}
 
   .trust-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .seo-section {
-    padding: 20px 16px
-  }
+    padding: 20px 16px}
 
   .blog-card,
   .why-card {
-    padding: 22px
-  }
+    padding: 22px}
 
   .conv-fields {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .btn-calculate,
   .btn-predict {
-    height: 54px
-  }
+    height: 54px}
 
   .grade-result-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
+    grid-template-columns: repeat(2, 1fr)}
 
   .info-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .scale-ref-grid {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .semester-header {
     flex-wrap: wrap;
-    gap: 6px
-  }
+    gap: 6px}
 
   .semester-title-wrap {
     min-width: 0;
-    flex: 1 1 auto
-  }
+    flex: 1 1 auto}
 
   .course-row {
     display: flex;
@@ -3154,14 +2764,12 @@ tbody tr:hover {
     padding: 10px;
     background: var(--bg-input);
     border: 1.5px solid var(--border-2);
-    border-radius: var(--radius)
-  }
+    border-radius: var(--radius)}
 
   .course-name,
   .course-credit,
   .course-grade {
-    width: 100%
-  }
+    width: 100%}
 
   .btn-delete-course {
     width: 100%;
@@ -3172,22 +2780,18 @@ tbody tr:hover {
     color: var(--red);
     background: var(--red-bg);
     font-size: 12px;
-    gap: 5px
-  }
+    gap: 5px}
 
   .btn-delete-course::after {
     content: 'Remove';
     font-size: 12px;
-    font-weight: 600
-  }
+    font-weight: 600}
 
   .sgpa-table-header {
-    display: none
-  }
+    display: none}
 
   .sgpa-row {
-    grid-template-columns: 1fr minmax(0, 85px) minmax(0, 75px) 34px
-  }
+    grid-template-columns: 1fr minmax(0, 85px) minmax(0, 75px) 34px}
 }
 
 @media(max-width:600px) {
@@ -3197,73 +2801,60 @@ tbody tr:hover {
 
   html {
     overflow-x: hidden;
-    width: 100%
-  }
+    width: 100%}
 
   body {
-    width: 100%
-  }
+    width: 100%}
 
   .main-content,
   .tool-page-wrap,
   .grade-calc-wrap {
     padding: 14px 12px 60px;
     width: 100%;
-    box-sizing: border-box
-  }
+    box-sizing: border-box}
 
   .main-content>h1,
   .tool-page-wrap>h1,
   .grade-calc-wrap>h1 {
-    margin-bottom: 16px
-  }
+    margin-bottom: 16px}
 
   .page-intro {
     font-size: var(--fs-body-lg);
-    margin-bottom: 20px
-  }
+    margin-bottom: 20px}
 
   .calculator-section,
   .grade-panel,
   .converter-card {
-    padding: 13px 11px
-  }
+    padding: 13px 11px}
 
   .card,
   .gpa-panel,
   .grade-ref-wrap,
   .grade-result-panel,
   .grade-prediction-panel {
-    padding: 14px 12px
-  }
+    padding: 14px 12px}
 
   .sgpa-section {
-    padding: 13px 11px
-  }
+    padding: 13px 11px}
 
   .seo-section {
-    padding: 16px 12px
-  }
+    padding: 16px 12px}
 
   .semester-header {
     padding: 9px 11px;
     flex-wrap: wrap;
-    gap: 5px
-  }
+    gap: 5px}
 
   .semester-title-wrap {
     flex: 1 1 100%;
-    min-width: 0
-  }
+    min-width: 0}
 
   .semester-right-wrap {
     flex: 1 1 auto;
-    justify-content: space-between
-  }
+    justify-content: space-between}
 
   .semester-sgpa-wrap {
-    flex-shrink: 0
-  }
+    flex-shrink: 0}
 
   .course-row {
     display: flex;
@@ -3272,16 +2863,14 @@ tbody tr:hover {
     padding: 10px 11px;
     background: var(--bg-input);
     border: 1.5px solid var(--border-2);
-    border-radius: var(--radius)
-  }
+    border-radius: var(--radius)}
 
   .course-name,
   .course-credit,
   .course-grade {
     width: 100%;
     padding: 0 var(--sp-sm);
-    box-sizing: border-box
-  }
+    box-sizing: border-box}
 
   .btn-delete-course {
     width: 100%;
@@ -3292,69 +2881,56 @@ tbody tr:hover {
     color: var(--red);
     background: var(--red-bg);
     font-size: 12px;
-    gap: 5px
-  }
+    gap: 5px}
 
   .btn-delete-course::after {
     content: 'Remove';
     font-size: 12px;
-    font-weight: 600
-  }
+    font-weight: 600}
 
   .courses-container {
     padding: 9px 11px;
-    gap: 8px
-  }
+    gap: 8px}
 
   .btn-add-course {
     margin: 4px 0 9px;
     width: 100%;
     font-size: 13px;
-    padding: 10px
-  }
+    padding: 10px}
 
   .btn-add-semester {
     font-size: 13px;
-    padding: 12px
-  }
+    padding: 12px}
 
   .target-grid {
     grid-template-columns: 1fr;
-    gap: 8px
-  }
+    gap: 8px}
 
   .target-card-standalone {
-    margin-top: 14px
-  }
+    margin-top: 14px}
 
   .sgpa-table-header {
-    display: none
-  }
+    display: none}
 
   .sgpa-row {
     grid-template-columns: 1fr minmax(0, 80px) minmax(0, 70px) 32px;
-    gap: 5px
-  }
+    gap: 5px}
 
   .sgpa-sem-name,
   .sgpa-val-input,
   .sgpa-credit-input {
-    padding: 0 var(--sp-sm)
-  }
+    padding: 0 var(--sp-sm)}
 
   .cgpa-big,
   .result-value,
   .gpa-result-value {
-    font-size: var(--fs-calc-result)
-  }
+    font-size: var(--fs-calc-result)}
 
   .stat-val {
-    font-size: 16px
-  }
+    font-size: 16px}
 
   .stat-row {
-    gap: 7px
-  }
+    gap: 7px}
 
   .sticky-bar-inner {
     overflow-x: auto;
@@ -3363,46 +2939,36 @@ tbody tr:hover {
     min-height: 40px;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none
-  }
+    scrollbar-width: none}
 
   .sticky-bar-inner::-webkit-scrollbar {
-    display: none
-  }
+    display: none}
 
   .sticky-bar {
-    height: 40px
-  }
+    height: 40px}
 
   .sticky-item {
     padding: 0 10px;
-    flex-shrink: 0
-  }
+    flex-shrink: 0}
 
   .sticky-item:first-child {
-    padding-left: 0
-  }
+    padding-left: 0}
 
   .sticky-label {
     font-size:12px;
-    letter-spacing:0
-  }
+    letter-spacing:0}
 
   .sticky-val {
-    font-size: 12px
-  }
+    font-size: 12px}
 
   .sticky-divider {
-    flex-shrink: 0
-  }
+    flex-shrink: 0}
 
   .about-stats {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 
   .section-header {
-    margin-bottom: 14px
-  }
+    margin-bottom: 14px}
 
   .grade-row {
     display: flex;
@@ -3413,19 +2979,16 @@ tbody tr:hover {
     background: var(--bg-input);
     border: 1.5px solid var(--border-2);
     border-radius: var(--radius);
-    position: relative
-  }
+    position: relative}
 
   .gr-subject,
   .gr-marks,
   .gr-credit {
-    width: 100%
-  }
+    width: 100%}
 
   .gr-grade-cell {
     width: 100%;
-    height: 38px
-  }
+    height: 38px}
 
   .btn-del-gr {
     position: absolute;
@@ -3434,28 +2997,22 @@ tbody tr:hover {
     background: var(--red-bg);
     color: var(--red);
     border: 1px solid var(--red-border);
-    border-radius: var(--radius-sm)
-  }
+    border-radius: var(--radius-sm)}
 
   .grade-table-header {
-    display: none
-  }
+    display: none}
 
   .grade-result-grid {
-    grid-template-columns: 1fr 1fr
-  }
+    grid-template-columns: 1fr 1fr}
 
   .pred-form {
-    flex-direction: column
-  }
+    flex-direction: column}
 
   .pred-field {
-    width: 100%
-  }
+    width: 100%}
 
   .btn-predict {
-    width: 100%
-  }
+    width: 100%}
 
   
 
@@ -3464,93 +3021,75 @@ tbody tr:hover {
   .btn-primary {
     height: 54px;
     padding: 0 16px;
-    font-size: 17px
-  }
+    font-size: 17px}
 }
 
 @media(max-width:420px) {
   .main-content,
   .tool-page-wrap,
   .grade-calc-wrap {
-    padding: 10px 10px 52px
-  }
+    padding: 10px 10px 52px}
 
   .calculator-section {
-    padding: 10px 9px
-  }
+    padding: 10px 9px}
 
   .card {
-    padding: 12px 10px
-  }
+    padding: 12px 10px}
 
   .semester-header {
-    padding: 8px 10px
-  }
+    padding: 8px 10px}
 
   .semester-num {
-    font-size:12px
-  }
+    font-size:12px}
 
   
 
   .sgpa-tag-label {
-    font-size:12px
-  }
+    font-size:12px}
 
   .sgpa-tag-val {
-    font-size: 12px
-  }
+    font-size: 12px}
 
   .sgpa-row {
     grid-template-columns: 1fr minmax(0, 72px) minmax(0, 64px) 30px;
-    gap: 4px
-  }
+    gap: 4px}
 
   .sgpa-sem-name,
   .sgpa-val-input,
   .sgpa-credit-input {
-    padding: 0 6px
-  }
+    padding: 0 6px}
 
   .courses-container {
     padding: 8px 9px;
-    gap: 7px
-  }
+    gap: 7px}
 
   .course-name,
   .course-credit,
   .course-grade {
-    padding: 0 6px
-  }
+    padding: 0 6px}
 
   .btn-add-course {
     font-size: 12px;
-    padding: 9px
-  }
+    padding: 9px}
 
   .btn-add-semester {
     font-size: 12px;
-    padding: 11px
-  }
+    padding: 11px}
 
   .target-field input {
-    padding: 0 var(--sp-sm)
-  }
+    padding: 0 var(--sp-sm)}
 
   .target-val {
-    font-size: 18px
-  }
+    font-size: 18px}
 
   .stat-val {
-    font-size: 15px
-  }
+    font-size: 15px}
 }
 
 .nav-dropdown {
   position: relative;
   display: flex;
-  align-items: center
-}
+  align-items: center}
 
 .nav-dropdown-trigger {
   display: flex;
@@ -3563,23 +3102,19 @@ tbody tr:hover {
   color: var(--text-2);
   cursor: pointer;
   transition: color var(--transition), background var(--transition);
-  user-select: none
-}
+  user-select: none}
 
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active-parent {
   color: var(--accent);
-  background: var(--accent-dim)
-}
+  background: var(--accent-dim)}
 
 .nav-dropdown-trigger svg {
   transition: transform .2s;
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 .nav-dropdown-trigger:hover svg {
-  color: var(--accent)
-}
+  color: var(--accent)}
 
 .scales-section {
   background: var(--bg-card);
@@ -3587,15 +3122,13 @@ tbody tr:hover {
   border-radius: var(--radius-lg);
   padding: 30px 26px;
   margin-top: 18px;
-  box-shadow: var(--shadow-sm)
-}
+  box-shadow: var(--shadow-sm)}
 
 .uni-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  margin-top: 12px
-}
+  margin-top: 12px}
 
 .uni-item {
   display: flex;
@@ -3605,35 +3138,29 @@ tbody tr:hover {
   background: var(--bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition)
-}
+  transition: border-color var(--transition)}
 
 .uni-item:hover {
-  border-color: var(--accent-soft)
-}
+  border-color: var(--accent-soft)}
 
 .uni-flag {
   font-size: 16px;
-  flex-shrink: 0
-}
+  flex-shrink: 0}
 
 .uni-name {
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .uni-country {
   font-size:12px;
-  color: var(--text-3)
-}
+  color: var(--text-3)}
 
 @media(max-width:768px) {
   
 
   .uni-list {
-    grid-template-columns: 1fr
-  }
+    grid-template-columns: 1fr}
 }
 
 .board {
@@ -3642,25 +3169,21 @@ tbody tr:hover {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 56px 44px;
-  margin-top: 18px
-}
+  margin-top: 18px}
 
 .board h2 {
   font-family: var(--font);
   color: var(--text-1);
-  margin-bottom: 36px
-}
+  margin-bottom: 36px}
 
 .board .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px
-}
+  gap: 32px}
 
 .board .step {
   border-left: 1px solid var(--border);
-  padding-left: 18px
-}
+  padding-left: 18px}
 
 .board .step .sk {
   font-family: var(--font-mono);
@@ -3669,31 +3192,26 @@ tbody tr:hover {
   letter-spacing:0;
   margin-bottom: 8px;
   display: block;
-  text-transform:none
-}
+  text-transform:none}
 
 .board .step h3 {
   font-family: var(--font);
   font-size: 18px;
   margin-bottom: 6px;
-  color: var(--text-1)
-}
+  color: var(--text-1)}
 
 .board .step p {
   font-size:14px;
   color: var(--text-2);
-  line-height: 1.6
-}
+  line-height: 1.6}
 
 @media(max-width:768px) {
   .board .steps {
     grid-template-columns: 1fr;
-    gap: 24px
-  }
+    gap: 24px}
 
   .board {
-    padding: 36px 24px
-  }
+    padding: 36px 24px}
 }
 /* =====================================================================
    Header mega menu (3 categories). Shared by every page via nav.js.
@@ -3711,7 +3229,7 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .mega{position:absolute;top:100%;left:0;padding-top:12px;z-index:300;display:none}
 .mega.open{display:block;animation:megaIn .18s ease both}
 @keyframes megaIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.mega-card{width:min(600px,calc(100vw - 32px));transform:translateX(var(--mx,0px));background:#fff;border:1.5px solid var(--border);border-top:3px solid var(--accent);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.16),0 4px 14px rgba(0,0,0,.06);overflow:hidden}
+.mega-card{width:min(600px,calc(100vw - 32px));transform:translateX(var(--mx,0px));background:var(--bg-card);border:1.5px solid var(--border);border-top:3px solid var(--accent);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.16),0 4px 14px rgba(0,0,0,.06);overflow:hidden}
 .mega-tools .mega-card{width:min(430px,calc(100vw - 32px))}
 .mega-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:10px}
 .mega-grid.one{grid-template-columns:minmax(0,1fr)}
@@ -3719,7 +3237,7 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 .mega-item:hover,.mega-item.current{background:var(--accent-dim);border-color:var(--accent-border)}
 .mega-ico{flex:0 0 42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:13px;font-weight:700;letter-spacing:-.01em;transition:background .15s,color .15s,border-color .15s,transform .15s}
 .mega-ico svg{width:20px;height:20px}
-.mega-item:hover .mega-ico{background:var(--accent);border-color:var(--accent);color:#fff;transform:scale(1.05)}
+.mega-item:hover .mega-ico{background:var(--accent);border-color:var(--accent);color:var(--on-accent);transform:scale(1.05)}
 .mega-text{display:flex;flex-direction:column;min-width:0}
 .mega-name{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:14px;font-weight:600;color:var(--text-1);line-height:1.25}
 .mega-item:hover .mega-name{color:var(--accent)}
@@ -3728,7 +3246,7 @@ button.nav-dropdown-trigger{background:none;border:0;font-family:inherit;font-si
 /* Mobile accordion menu */
 .mobile-menu.open{max-height:calc(100vh - 64px);overflow-y:auto}
 .m-group{border-bottom:1px solid var(--border-2)}
-.m-group-btn{display:flex;align-items:center;width:100%;gap:10px;padding:15px 24px;background:#fff;border:0;font-family:inherit;font-size:var(--fs-nav);font-weight:600;color:var(--text-1);text-align:left;cursor:pointer}
+.m-group-btn{display:flex;align-items:center;width:100%;gap:10px;padding:15px 24px;background:var(--bg-card);border:0;font-family:inherit;font-size:var(--fs-nav);font-weight:600;color:var(--text-1);text-align:left;cursor:pointer}
 .m-group-btn.active-parent{color:var(--accent)}
 .m-count{margin-left:auto;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:999px;padding:1px 9px}
 .m-group-btn svg{width:18px;height:18px;color:var(--text-3);transition:transform .2s}
@@ -3790,7 +3308,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-::selection { background: rgba(0,117,222,.18); color: var(--text-1); }
+::selection { background: rgba(245,181,68,.18); color: var(--text-1); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 ::placeholder { color: var(--placeholder); opacity: 1; }
 .page-tool [hidden] { display: none !important; }
@@ -3807,7 +3325,7 @@ a { color: inherit; }
 
 /* ---------- Header + navigation ---------- */
 .header {
-  background: rgba(255,255,255,.88);
+  background: rgba(11,16,32,.88);
   border-bottom: 1px solid var(--border);
   box-shadow: none;
 }
@@ -3815,7 +3333,7 @@ a { color: inherit; }
 .logo { gap: 10px; font-size: var(--fs-h6); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
 .logo-icon {
   width: 28px; height: 28px; border-radius: var(--radius);
-  background: var(--dark); color: #fff; box-shadow: none; font-size: 12px;
+  background: var(--dark); color: var(--on-accent); box-shadow: none; font-size: 12px;
 }
 .nav-link, button.nav-dropdown-trigger {
   font-size: var(--fs-nav); line-height: var(--lh-nav); font-weight: var(--fw-medium);
@@ -3845,7 +3363,7 @@ a { color: inherit; }
 .mega-item:hover .mega-name { color: var(--text-1); }
 .mega-desc { font-size: var(--fs-caption); color: var(--text-2); }
 
-.mobile-menu { background: #fff; }
+.mobile-menu { background: var(--bg-card); }
 .mobile-nav-link { font-size: var(--fs-body); color: var(--text-1); padding: 14px 24px; }
 .mobile-nav-link:hover, .mobile-nav-sub:hover { color: var(--text-1); background: var(--bg-card); }
 .m-group-btn { font-size: var(--fs-body); color: var(--text-1); }
@@ -3893,7 +3411,7 @@ a { color: inherit; }
 .page-home .page-intro { text-align: center; margin: 0 auto var(--sp-3xl); font-size: var(--fs-body-lg); max-width: none; }
 
 /* ---------- Sticky result bar ---------- */
-.sticky-bar { background: rgba(255,255,255,.92); border-bottom: 1px solid var(--border); }
+.sticky-bar { background: rgba(11,16,32,.92); border-bottom: 1px solid var(--border); }
 .sticky-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
 .sticky-val { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
 .sticky-grade { color: var(--accent); }
@@ -3905,14 +3423,14 @@ a { color: inherit; }
   height: auto; min-height: 44px; padding: 12px 20px;
   font-family: var(--font); font-size: var(--fs-btn); line-height: var(--lh-btn); font-weight: var(--fw-medium);
   letter-spacing: 0; text-decoration: none;
-  background: var(--dark); color: #fff; border: 0; border-radius: var(--radius-btn);
+  background: var(--dark); color: var(--on-accent); border: 0; border-radius: var(--radius-btn);
   box-shadow: none; transform: none;
   transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 .btn-primary:hover, .btn-calculate:hover, .btn-predict:hover, .btn-cta:hover, .btn-copy:hover, .btn-copy-gpa:hover, .blog-cta-btn:hover, .wac-btn-primary:hover {
-  background: var(--dark-2); color: #fff; transform: none; box-shadow: none; text-decoration: none;
+  background: var(--dark-2); color: var(--on-accent); transform: none; box-shadow: none; text-decoration: none;
 }
-.btn-primary:active, .btn-calculate:active, .btn-predict:active, .btn-cta:active, .btn-copy:active, .btn-copy-gpa:active { background: #000; transform: none; }
+.btn-primary:active, .btn-calculate:active, .btn-predict:active, .btn-cta:active, .btn-copy:active, .btn-copy-gpa:active { background: #070B16; transform: none; }
 .btn-primary { width: 100%; }
 /* Secondary: white with hairline border */
 .btn-reset, .btn-gpa-reset, .btn-grade-print, .btn-add-subject, .btn-add-semester, .btn-add-row, .btn-add-course,
@@ -3920,7 +3438,7 @@ a { color: inherit; }
   display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-sm);
   padding: 12px 20px; min-height: 44px;
   font-family: var(--font); font-size: var(--fs-btn); line-height: var(--lh-btn); font-weight: var(--fw-medium); letter-spacing: 0;
-  background: #fff; color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
+  background: var(--bg-raised); color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
   box-shadow: none; text-decoration: none;
   transition: background var(--transition), border-color var(--transition);
 }
@@ -3945,17 +3463,17 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .course-name, .course-credit, .course-grade, .target-field input, .sgpa-sem-name, .sgpa-val-input, .sgpa-credit-input,
 .conv-field input, .conv-field select, .gpa-field input, .gpa-field select, .pred-field select,
 .gr-subject, .gr-marks, .gr-credit {
-  background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-input);
+  background: var(--bg-input); border: 1px solid var(--border-strong); border-radius: var(--radius-input);
   color: var(--text-1); font-size: var(--fs-input); font-weight: var(--fw-regular);
   box-shadow: none; outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 .course-name:hover, .course-credit:hover, .course-grade:hover, .target-field input:hover,
-.conv-field input:hover, .conv-field select:hover, .gpa-field input:hover, .gpa-field select:hover { border-color: rgba(0,0,0,.28); }
+.conv-field input:hover, .conv-field select:hover, .gpa-field input:hover, .gpa-field select:hover { border-color: rgba(232,236,245,.28); }
 .course-name:focus, .course-credit:focus, .course-grade:focus, .target-field input:focus, .sgpa-sem-name:focus, .sgpa-val-input:focus, .sgpa-credit-input:focus,
 .conv-field input:focus, .conv-field select:focus, .gpa-field input:focus, .gpa-field select:focus, .pred-field select:focus,
 .gr-subject:focus, .gr-marks:focus, .gr-credit:focus {
-  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,117,222,.15); outline: none;
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,181,68,.15); outline: none;
 }
 .course-name::placeholder, .course-credit::placeholder, .target-field input::placeholder, input::placeholder { color: var(--placeholder); }
 
@@ -4014,35 +3532,35 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .cgpa-bar-wrap { height: 4px; background: var(--border); }
 .cgpa-bar { background: var(--accent); }
 .cgpa-grade-label { font-size: var(--fs-small); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--accent); }
-.stat-box, .gr-stat { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+.stat-box, .gr-stat { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius); }
 .stat-label, .gr-stat-label, .sgpa-label, .target-label, .result-label, .gpa-result-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
 .stat-val { font-size: var(--fs-h5); font-weight: var(--fw-semibold); color: var(--text-1); }
 .result-panel, .gpa-result-panel, .target-result {
-  background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-card);
+  background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-card);
 }
 .page-tool .grade-result-panel .gr-stat:first-child { border-color: var(--accent-border); background: var(--accent-dim); }
 .target-result.target-possible { background: var(--green-bg); border-color: var(--green-border); }
 .target-result.target-possible .target-val { color: var(--green-ink); }
 .page-tool .target-label { color: var(--text-2); }
 .page-tool .sgpa-val, .sgpa-val { font-size: var(--fs-h4); color: var(--text-1); }
-.page-tool .sgpa-cgpa-result { background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-card); }
+.page-tool .sgpa-cgpa-result { background: var(--bg-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-card); }
 .page-tool .sgpa-label { color: var(--text-2); }
 
 /* Semester blocks */
-.semester-box { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.semester-box { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius-card); }
 .semester-box:hover { border-color: var(--border-strong); box-shadow: none; }
 .semester-header, .page-tool .semester-header { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--sp-md) var(--sp-lg); }
 .semester-num, .page-tool .semester-num { font-size: var(--fs-small); font-weight: var(--fw-semibold); letter-spacing: 0; color: var(--text-1); }
-.semester-sgpa-wrap { background: #fff; border: 1px solid var(--border); }
+.semester-sgpa-wrap { background: var(--bg-raised); border: 1px solid var(--border); }
 .sgpa-tag-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
 .sgpa-tag-val { font-size: var(--fs-small); font-weight: var(--fw-semibold); color: var(--text-1); }
-.page-tool .sgpa-table-wrap, .page-tool .grade-system-tabs { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
+.page-tool .sgpa-table-wrap, .page-tool .grade-system-tabs { background: var(--bg-raised); border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
 .page-tool .sgpa-table-header, .page-tool .grade-table-header {
   background: var(--bg); border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: var(--sp-md);
   font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2);
 }
 .page-tool .grade-table-header span { font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text-2); }
-.page-tool #sgpaRowsContainer, .page-tool #gradeTableBody { background: #fff; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 var(--radius-card) var(--radius-card); padding: var(--sp-md) var(--sp-md) var(--sp-xs); }
+.page-tool #sgpaRowsContainer, .page-tool #gradeTableBody { background: var(--bg-raised); border: 1px solid var(--border); border-top: 0; border-radius: 0 0 var(--radius-card) var(--radius-card); padding: var(--sp-md) var(--sp-md) var(--sp-xs); }
 .page-tool .sgpa-table-wrap #sgpaRowsContainer { border: 0; }
 
 /* Tabs: segmented control */
@@ -4051,18 +3569,18 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
   flex: 1; padding: 8px 16px; border-radius: var(--radius); border: 1px solid transparent;
   font-size: var(--fs-small); font-weight: var(--fw-medium); color: var(--text-2); background: transparent; box-shadow: none;
 }
-.ctab:not(.active):hover, .gsys-tab:not(.active):hover { color: var(--text-1); background: rgba(0,0,0,.04); }
-.ctab.active, .gsys-tab.active { background: #fff; color: var(--text-1); border-color: var(--border); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.ctab:not(.active):hover, .gsys-tab:not(.active):hover { color: var(--text-1); background: rgba(232,236,245,.04); }
+.ctab.active, .gsys-tab.active { background: var(--accent); color:var(--on-accent); border-color: var(--border); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 
 /* Grade colour chips: keep text readable on light fills */
 .grade-badge { font-size: var(--fs-caption); font-weight: var(--fw-semibold); letter-spacing: 0; }
 .grade-a-plus { background: var(--green); color: #fff; }
-.grade-a { background: var(--accent); color: #fff; }
-.grade-a-minus { background: var(--accent-bright); color: #fff; }
-.grade-b-plus { background: var(--accent-deep); color: #fff; }
-.grade-b { background: #5C6A78; color: #fff; }
-.grade-b-minus { background: #8A857F; color: #fff; }
-.grade-c-plus, .grade-c { background: var(--yellow); color: #000; }
+.grade-a { background: var(--accent); color: var(--on-accent); }
+.grade-a-minus { background: var(--accent-bright); color: var(--on-accent); }
+.grade-b-plus { background: var(--accent-deep); color: var(--on-accent); }
+.grade-b { background: #5C6A78; color: var(--on-accent); }
+.grade-b-minus { background: #8A857F; color: var(--on-accent); }
+.grade-c-plus, .grade-c { background: var(--yellow); color: var(--on-accent); }
 .grade-d { background: #E07B00; color: #fff; }
 .grade-f { background: var(--red); color: #fff; }
 
@@ -4072,7 +3590,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .calc-hero-band .section-note { margin-bottom: var(--sp-xl); }
 .calc-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--sp-lg); margin-top: var(--sp-lg); }
 .calc-card {
-  display: flex; flex-direction: column; background: #fff; color: inherit; text-decoration: none;
+  display: flex; flex-direction: column; background: var(--bg-card); color: inherit; text-decoration: none;
   border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: none;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
@@ -4095,14 +3613,14 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
   margin-top: var(--sp-lg); display: flex; align-items: center; justify-content: center; gap: var(--sp-sm);
   height: auto; min-height: 44px; padding: 12px 20px;
   font-size: var(--fs-btn); font-weight: var(--fw-medium); line-height: var(--lh-btn); letter-spacing: 0;
-  background: #fff; color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
+  background: var(--bg-raised); color: var(--text-1); border: 1px solid var(--btn-border); border-radius: var(--radius-btn);
   transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
-.calc-card:hover .calc-btn { background: var(--dark); color: #fff; border-color: var(--dark); }
+.calc-card:hover .calc-btn { background: var(--dark); color: var(--on-accent); border-color: var(--dark); }
 .tool-tiles { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--sp-lg); margin-top: var(--sp-lg); }
-.tool-tile { display: flex; align-items: center; gap: var(--sp-md); padding: var(--sp-lg); background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: none; }
+.tool-tile { display: flex; align-items: center; gap: var(--sp-md); padding: var(--sp-lg); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: none; }
 .tool-tile:hover { border-color: var(--border-strong); box-shadow: var(--shadow); transform: none; }
-.tool-tile-icon { width: 44px; height: 44px; border-radius: var(--radius); background: var(--dark); color: #fff; font-size: var(--fs-h5); }
+.tool-tile-icon { width: 44px; height: 44px; border-radius: var(--radius); background: var(--dark); color: var(--on-accent); font-size: var(--fs-h5); }
 .tool-tile-icon.is-scale { background: var(--bg-card); color: var(--text-1); border: 1px solid var(--border); font-size: var(--fs-small); }
 .tool-tile h3 { font-size: var(--fs-body); font-weight: var(--fw-semibold); letter-spacing: 0; }
 .tool-tile-sub { font-size: var(--fs-small); color: var(--text-2); }
@@ -4154,14 +3672,14 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .why-card h3, .blog-card h3 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); letter-spacing: 0; }
 .why-card p, .blog-card p, .scale-ref-card p { font-size: var(--fs-small); color: var(--text-2); }
 .scale-ref-name { color: var(--text-1); }
-.faq-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
 .faq-item:hover { border-color: var(--border-strong); box-shadow: none; }
 .faq-question { font-family: var(--font); font-size: var(--fs-body); font-weight: var(--fw-semibold); padding: var(--sp-lg) var(--sp-xl); }
 .faq-question:hover { color: var(--text-1); }
 .faq-a, .faq-answer { font-size: var(--fs-body); color: var(--text-1); }
 
 /* Tables */
-.table-wrap, .page-tool .table-wrap { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
+.table-wrap, .page-tool .table-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-card); box-shadow: none; }
 table { font-size: var(--fs-small); }
 thead tr, .page-tool thead tr { background: var(--bg-card); border-bottom: 1px solid var(--border); }
 th, .page-tool th { font-family: var(--font); font-size: var(--fs-caption); font-weight: var(--fw-semibold); letter-spacing: 0; color: var(--text-2); text-align: left; padding: var(--sp-md) var(--sp-lg); }
@@ -4182,7 +3700,7 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .blog-article h4 { font-size: var(--fs-h4); }
 .blog-article p, .blog-article li { font-size: var(--fs-body); color: var(--text-1); line-height: 1.65; max-width: none; }
 .blog-article strong { color: var(--text-1); }
-.blog-article pre { background: #000; color: #F6F5F4; border-radius: var(--radius-card); }
+.blog-article pre { background: #070B16; color: #F6F5F4; border-radius: var(--radius-card); }
 .blog-article code { background: var(--bg-card); border-radius: var(--radius-sm); }
 .blog-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-calc); }
 .blog-cta-sub { color: var(--text-2); }
@@ -4190,7 +3708,7 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .hub-card h2 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); letter-spacing: 0; }
 .hub-card:hover, .hub-card:focus-within { border-color: var(--border-strong); box-shadow: none; }
 .hub-excerpt { font-size: var(--fs-small); color: var(--text-2); }
-.hub-more { box-shadow: none; border: 1px solid var(--btn-border); background: #fff; color: var(--text-1); font-size: var(--fs-small); font-weight: var(--fw-medium); }
+.hub-more { box-shadow: none; border: 1px solid var(--btn-border); background: var(--bg-card); color: var(--text-1); font-size: var(--fs-small); font-weight: var(--fw-medium); }
 .hub-card:hover .hub-more { box-shadow: none; background: var(--bg-card); }
 .hub-more i { background: var(--dark); }
 .hub-card:hover .hub-more i { background: var(--dark-2); }
@@ -4206,12 +3724,12 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .footer-author { font-size: var(--fs-body); font-weight: var(--fw-semibold); }
 .footer-bio, .footer-link { font-size: var(--fs-small); color: var(--text-2); }
 .footer-link:hover { color: var(--text-1); }
-.footer-social-link { border: 1px solid var(--border); border-radius: var(--radius); color: var(--text-2); background: #fff; }
-.footer-social-link:hover { color: #fff; background: var(--dark); border-color: var(--dark); }
+.footer-social-link { border: 1px solid var(--border); border-radius: var(--radius); color: var(--text-2); background: var(--bg-card); }
+.footer-social-link:hover { color: var(--on-accent); background: var(--dark); border-color: var(--dark); }
 .footer-bottom { font-size: var(--fs-small); color: var(--text-2); border-top: 1px solid var(--border); }
 
 /* Toast */
-.toast { background: var(--dark); color: #fff; border-radius: var(--radius); font-size: var(--fs-small); font-weight: var(--fw-medium); box-shadow: var(--shadow-pop); }
+.toast { background: var(--dark); color: var(--on-accent); border-radius: var(--radius); font-size: var(--fs-small); font-weight: var(--fw-medium); box-shadow: var(--shadow-pop); }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -4238,89 +3756,18 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .contact-card { border-radius: var(--radius-lg); box-shadow: none; }
 .contact-card h3 { font-size: var(--fs-h5); }
 .table-wrap + p, .table-wrap + .section-note, .table-wrap + ul, .table-wrap + h3 { margin-top: var(--sp-lg); }
-.page-tool .grade-system-tabs, .grade-system-tabs { background: rgba(0,0,0,.05); border: 0; border-radius: var(--radius-card); margin-bottom: var(--sp-lg); }
+.page-tool .grade-system-tabs, .grade-system-tabs { background: rgba(232,236,245,.05); border: 0; border-radius: var(--radius-card); margin-bottom: var(--sp-lg); }
 .page-tool .btn-add-subject, .btn-add-subject { margin-top: var(--sp-md); }
 .tool-actions, .conv-buttons { margin-top: var(--sp-lg); }
 .hsc-actions, .ssc-actions { gap: var(--sp-md); margin-top: var(--sp-lg); }
 .page-hero-inner { margin: 0 auto; max-width: var(--container-main); width: 100%; }
 .page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); margin-left: auto; margin-right: auto; }
 
-/* =========================================================================
-   UNIFIED PAGE SPACING (single source of truth - keep this block LAST)
-   Every page type (home, tools, calculators, blog, hub, legal) now uses the
-   same rhythm so visitors never see a different gap from page to page:
-
-     header
-       ↓ 24px  (16px on mobile)             <- page top padding
-     breadcrumb
-       ↓ 16px                               <- breadcrumb → heading
-     h1
-       ↓ 16px                               <- heading → first content block
-     content ...
-       ↓ section-space (80px / 48px mobile) <- bottom padding
-     footer
-
-   Old causes of uneven gaps: wrapper padding set differently in style.css /
-   blog.css, extra padding on .breadcrumb, an invisible sticky bar taking
-   46px of layout, different h1 margins (8/16/20/24px), first content blocks
-   with their own margin-top, and blog.css overriding mobile side padding.
-   ========================================================================= */
-
-/* 1. Page frame: same top / side / bottom padding for every wrapper */
-main.main-content,
-main.tool-page-wrap,
-main.grade-calc-wrap,
-main.blog-page-wrap,
-main.hub-wrap,
-.page-home main.main-content {
-  padding-top: var(--sp-xl);
-  padding-bottom: var(--section-space);
-}
-
-/* 2. Breadcrumb: no hidden padding, same distance to heading everywhere */
-.breadcrumb { padding-top: 0; }
-main .breadcrumb { margin-bottom: var(--sp-lg); }
-.blog-page-wrap .breadcrumb { margin-bottom: 0; }          /* spacing handled by .blog-article */
-.blog-page-wrap .blog-article { margin-top: var(--sp-lg); } /* = breadcrumb → heading */
-
-/* 3. Heading → first content block: always 16px */
-.page-tool main > h1,
-.tool-first main > h1 { margin-bottom: var(--sp-lg) !important; }
-.page-tool main > h1 + *,
-.page-tool main > h1 + noscript + *,
-.tool-first main > h1 + *,
-.tool-first main > h1 + noscript + * { margin-top: 0 !important; }
-
-/* 4. Last block never adds extra space above the footer */
-main > :last-child { margin-bottom: 0; }
-
-/* 5. Sticky result bar: fixed under the header, takes no layout space */
-.sticky-bar {
-  position: fixed;
-  top: var(--header-h);
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
-/* 6. Mobile: same side padding (16px) and smaller top padding everywhere */
-@media (max-width: 640px) {
-  main.main-content,
-  main.tool-page-wrap,
-  main.grade-calc-wrap,
-  main.blog-page-wrap,
-  main.hub-wrap,
-  .page-home main.main-content {
-    padding-top: var(--sp-lg);
-    padding-left: var(--sp-lg);
-    padding-right: var(--sp-lg);
-    padding-bottom: var(--section-space);
-  }
-}
-
-/* 7. Hub hero band (cgpa-information) and homepage heading follow the same rhythm */
-.page-hero { padding-top: var(--sp-xl); }
-.page-home main > h1 { margin-bottom: var(--sp-lg) !important; }
-@media (max-width: 640px) {
-  .page-hero { padding-top: var(--sp-lg); }
+/* ---------- Navy + Gold theme: final adjustments ---------- */
+.about-cta .btn-cta { background: var(--on-accent); color: var(--accent); box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+.about-cta .btn-cta:hover { background: var(--bg-card); color: var(--accent-light); }
+input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-1);
+  box-shadow: 0 0 0 1000px var(--bg-input) inset;
+  caret-color: var(--text-1);
 }

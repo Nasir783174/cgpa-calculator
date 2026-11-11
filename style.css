@@ -4244,3 +4244,83 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .hsc-actions, .ssc-actions { gap: var(--sp-md); margin-top: var(--sp-lg); }
 .page-hero-inner { margin: 0 auto; max-width: var(--container-main); width: 100%; }
 .page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); margin-left: auto; margin-right: auto; }
+
+/* =========================================================================
+   UNIFIED PAGE SPACING (single source of truth - keep this block LAST)
+   Every page type (home, tools, calculators, blog, hub, legal) now uses the
+   same rhythm so visitors never see a different gap from page to page:
+
+     header
+       ↓ 24px  (16px on mobile)             <- page top padding
+     breadcrumb
+       ↓ 16px                               <- breadcrumb → heading
+     h1
+       ↓ 16px                               <- heading → first content block
+     content ...
+       ↓ section-space (80px / 48px mobile) <- bottom padding
+     footer
+
+   Old causes of uneven gaps: wrapper padding set differently in style.css /
+   blog.css, extra padding on .breadcrumb, an invisible sticky bar taking
+   46px of layout, different h1 margins (8/16/20/24px), first content blocks
+   with their own margin-top, and blog.css overriding mobile side padding.
+   ========================================================================= */
+
+/* 1. Page frame: same top / side / bottom padding for every wrapper */
+main.main-content,
+main.tool-page-wrap,
+main.grade-calc-wrap,
+main.blog-page-wrap,
+main.hub-wrap,
+.page-home main.main-content {
+  padding-top: var(--sp-xl);
+  padding-bottom: var(--section-space);
+}
+
+/* 2. Breadcrumb: no hidden padding, same distance to heading everywhere */
+.breadcrumb { padding-top: 0; }
+main .breadcrumb { margin-bottom: var(--sp-lg); }
+.blog-page-wrap .breadcrumb { margin-bottom: 0; }          /* spacing handled by .blog-article */
+.blog-page-wrap .blog-article { margin-top: var(--sp-lg); } /* = breadcrumb → heading */
+
+/* 3. Heading → first content block: always 16px */
+.page-tool main > h1,
+.tool-first main > h1 { margin-bottom: var(--sp-lg) !important; }
+.page-tool main > h1 + *,
+.page-tool main > h1 + noscript + *,
+.tool-first main > h1 + *,
+.tool-first main > h1 + noscript + * { margin-top: 0 !important; }
+
+/* 4. Last block never adds extra space above the footer */
+main > :last-child { margin-bottom: 0; }
+
+/* 5. Sticky result bar: fixed under the header, takes no layout space */
+.sticky-bar {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+/* 6. Mobile: same side padding (16px) and smaller top padding everywhere */
+@media (max-width: 640px) {
+  main.main-content,
+  main.tool-page-wrap,
+  main.grade-calc-wrap,
+  main.blog-page-wrap,
+  main.hub-wrap,
+  .page-home main.main-content {
+    padding-top: var(--sp-lg);
+    padding-left: var(--sp-lg);
+    padding-right: var(--sp-lg);
+    padding-bottom: var(--section-space);
+  }
+}
+
+/* 7. Hub hero band (cgpa-information) and homepage heading follow the same rhythm */
+.page-hero { padding-top: var(--sp-xl); }
+.page-home main > h1 { margin-bottom: var(--sp-lg) !important; }
+@media (max-width: 640px) {
+  .page-hero { padding-top: var(--sp-lg); }
+}

@@ -461,7 +461,7 @@ ol {
 
 .calc-sidebar {
   position: sticky;
-  top: calc(var(--header-h) + 54px);
+  top: calc(var(--header-h) + var(--sp-xl));
   min-width: 0}
 
 .calc-main-panel {
@@ -3521,7 +3521,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .page-tool .grade-panel, .page-tool .grade-result-panel, .page-tool .grade-prediction-panel { margin-top: var(--sp-xl); }
 .page-tool .gpa-fields { gap: var(--sp-lg); }
 @media (min-width: 861px) {
-  .page-tool .card.result-card { position: sticky; top: calc(var(--header-h) + 54px); height: 100%; max-height: 480px; margin: 0; display: flex; flex-direction: column; }
+  .page-tool .card.result-card { position: sticky; top: calc(var(--header-h) + var(--sp-xl)); height: 100%; max-height: 480px; margin: 0; display: flex; flex-direction: column; }
   .page-tool .result-card .cgpa-display { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: var(--sp-sm) 0; }
 }
 .page-tool .semester-box { margin-bottom: var(--sp-md); }
@@ -3777,4 +3777,36 @@ input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
   -webkit-text-fill-color: var(--text-1);
   box-shadow: 0 0 0 1000px var(--bg-input) inset;
   caret-color: var(--text-1);
+}
+
+/* ---------- Header → content gap fix ----------
+   The old spacing stacked: page padding-top (48px) + breadcrumb padding-top (14px)
+   + the (invisible) sticky bar's own height. Now the breadcrumb sits 16px under the header
+   (12px on mobile). */
+.main-content:has(> .breadcrumb:first-child),
+.tool-page-wrap:has(> .breadcrumb:first-child),
+.grade-calc-wrap:has(> .breadcrumb:first-child),
+.blog-page-wrap:has(> .breadcrumb:first-child),
+.hub-wrap:has(> .breadcrumb:first-child) { padding-top: var(--sp-lg); }
+.main-content > .breadcrumb:first-child,
+.tool-page-wrap > .breadcrumb:first-child,
+.grade-calc-wrap > .breadcrumb:first-child,
+.blog-page-wrap > .breadcrumb:first-child,
+.hub-wrap > .breadcrumb:first-child { padding-top: 0; }
+@media (max-width: 640px) {
+  .main-content:has(> .breadcrumb:first-child),
+  .tool-page-wrap:has(> .breadcrumb:first-child),
+  .grade-calc-wrap:has(> .breadcrumb:first-child),
+  .blog-page-wrap:has(> .breadcrumb:first-child),
+  .hub-wrap:has(> .breadcrumb:first-child) { padding-top: var(--sp-md); }
+}
+
+/* ---------- Sticky stats bar: mobile only ---------- */
+@media (min-width: 769px) {
+  .sticky-bar { display: none !important; }
+}
+@media (max-width: 768px) {
+  /* zero-height wrapper so the bar floats over the page instead of pushing content down */
+  .sticky-bar { height: 0 !important; min-height: 0; border-bottom: 0; background: transparent; backdrop-filter: none; overflow: visible; }
+  .sticky-bar-inner { position: absolute; left: 0; right: 0; top: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 }

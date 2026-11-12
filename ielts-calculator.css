@@ -64,7 +64,7 @@
 
 /* ---------- IELTS-specific ---------- */
 #ieltsCalc{scroll-margin-top:calc(var(--header-h) + 60px);margin:0 0 8px}
-.ielts-card{width:100%;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-sizing:border-box}
+.ielts-card{width:100%;background:#FFFFFF;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-sizing:border-box}
 .ielts-toolbar{margin:0 0 18px;overflow-x:auto}
 .ielts-toolbar .ssc-seg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:row}
 .ielts-panel[hidden]{display:none}
@@ -97,7 +97,7 @@
 /* ---- Notion-style harmonisation (matches style.css tokens) ---- */
 .ssc-seg span{font-size:var(--fs-small);font-weight:500;min-height:36px;color:var(--text-2)}
 .ssc-seg label:hover span{background:rgba(18,36,43,.04)}
-.ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(0,0,0,.06)}
+.ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(18,36,43,.06)}
 .ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.25)}
 .ssc-seg{background:var(--bg-card)}
 .ssc-btn-secondary{border:1px solid var(--btn-border);height:auto;min-height:44px;padding:12px 20px;font-size:var(--fs-btn);font-weight:500}
@@ -107,5 +107,5 @@
 .ssc-stat-val{font-weight:600}
 .ielts-select,.ielts-input{border-width:1px;font-size:var(--fs-input);font-weight:500;height:48px;min-height:48px}
 .ielts-select:focus,.ielts-input:focus{box-shadow:0 0 0 3px rgba(14,116,144,.15)}
-.ielts-card .ssc-result,.ielts-raw-result{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--radius-card)}
+.ielts-card .ssc-result,.ielts-raw-result{border:1px solid var(--border);background:#FFFFFF;border-radius:var(--radius-card)}
 .ssc-formula{background:var(--bg-card);border-color:var(--border);color:var(--text-1);font-size:var(--fs-body)}

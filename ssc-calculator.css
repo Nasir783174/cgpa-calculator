@@ -15,7 +15,7 @@
 .ssc-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:var(--text-2-strong);border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
 .ssc-seg label:hover span{background:var(--accent-dim)}
 .ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent)}
-.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,181,68,.28)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.28)}
 
 /* ---------- Section headings ---------- */
 .ssc-sec-title{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:var(--text-1);margin:0 0 8px}
@@ -40,7 +40,7 @@
   background-repeat:no-repeat;background-position:right 16px center;background-size:14px;text-overflow:ellipsis}
 .ssc-subject-select{font-size:18px}
 .ssc-grade{max-width:none}
-.ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16)}
+.ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16)}
 
 .ssc-marks{display:none;align-items:center;gap:8px;width:100%;justify-content:flex-end}
 #sscCalc [data-mode="marks"] .ssc-marks{display:flex}
@@ -130,9 +130,9 @@
 
 /* ---- Notion-style harmonisation (matches style.css tokens) ---- */
 .ssc-seg span{font-size:var(--fs-small);font-weight:500;min-height:36px;color:var(--text-2)}
-.ssc-seg label:hover span{background:rgba(232,236,245,.04)}
+.ssc-seg label:hover span{background:rgba(18,36,43,.04)}
 .ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(0,0,0,.06)}
-.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,181,68,.25)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.25)}
 .ssc-seg{background:var(--bg-card)}
 .ssc-btn-secondary{border:1px solid var(--btn-border);height:auto;min-height:44px;padding:12px 20px;font-size:var(--fs-btn);font-weight:500}
 .ssc-btn-secondary:hover{background:var(--bg-card);border-color:var(--btn-border)}
@@ -142,6 +142,6 @@
 .ssc-name,.ssc-grade,.ssc-subject-select,.ssc-max,.ssc-input{border-width:1px;font-size:var(--fs-input);font-weight:500;height:48px;min-height:48px}
 .ssc-name{padding:8px 16px;line-height:1.3}
 .ssc-field{min-height:48px}
-.ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{box-shadow:0 0 0 3px rgba(245,181,68,.15)}
+.ssc-grade:focus,.ssc-subject-select:focus,.ssc-max:focus,.ssc-input:focus{box-shadow:0 0 0 3px rgba(14,116,144,.15)}
 .ssc-list{border-radius:var(--radius-card)}
 .ssc-sec-title{font-size:var(--fs-body)}

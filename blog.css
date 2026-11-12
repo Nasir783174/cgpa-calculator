@@ -134,8 +134,8 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace}
 
 .blog-article pre {
-  background: #070B16;
-  color: #E8ECF5;
+  background: #12242B;
+  color: #E6F1F3;
   border-radius: var(--radius);
   padding: 16px 18px;
   overflow-x: auto;

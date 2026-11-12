@@ -14,57 +14,57 @@
    Every colour, size, radius and space used on the site comes from here.
    ========================================================================= */
 :root {
-  /* ---- 1. Colour (Navy + Gold theme) ---- */
-  color-scheme: dark;
-  --white: #131A2E;
-  --bg-page: #0B1020;            /* main background */
-  --bg: #0F1526;                 /* secondary background */
-  --bg-card: #131A2E;            /* card background */
-  --bg-input: #0F1526;
-  --bg-raised: #1A2340;          /* boxes that sit inside cards */
+  /* ---- 1. Colour (Ocean + Sand theme) ---- */
+  color-scheme: light;
+  --white: #FFFFFF;
+  --bg-page: #F7F4EE;            /* main background (sand) */
+  --bg: #F1ECE1;                 /* secondary background */
+  --bg-card: #FFFFFF;            /* card background */
+  --bg-input: #FFFFFF;
+  --bg-raised: #FBF8F2;          /* boxes that sit inside cards */
   --surface-2: var(--bg);
   --bg-1: var(--bg);
   --bg-2: var(--bg);
 
-  --text-1: #E8ECF5;             /* primary text */
-  --text-2-strong: rgba(232,236,245,.80); /* subheading */
-  --text-2: #8A94AD;             /* secondary / supporting text */
-  --text-3: #8A94AD;             /* small supporting text */
-  --text-tertiary: #7C86A2;      /* placeholders, disabled */
-  --placeholder: #7C86A2;
+  --text-1: #12242B;             /* primary text */
+  --text-2-strong: rgba(18,36,43,.78); /* subheading */
+  --text-2: #5B6D74;             /* secondary / supporting text */
+  --text-3: #5B6D74;             /* small supporting text */
+  --text-tertiary: #7C8B91;      /* placeholders, disabled */
+  --placeholder: #7C8B91;
 
-  --accent: #F5B544;             /* primary brand gold */
-  --accent-light: #FFC25E;       /* primary hover */
-  --accent-active: #E0A030;
-  --accent-bright: #F7C066;
-  --accent-deep: #E0A030;
-  --accent-soft: #F7C066;
-  --accent-dim: rgba(245,181,68,.12);   /* gold tint surface */
-  --accent-border: rgba(245,181,68,.28);
-  --on-accent: #0B1020;          /* text on gold */
+  --accent: #0E7490;             /* primary brand ocean teal */
+  --accent-light: #0B5F77;       /* primary hover */
+  --accent-active: #094E63;
+  --accent-bright: #0891B2;
+  --accent-deep: #0B5F77;
+  --accent-soft: #0891B2;
+  --accent-dim: #E0F2F5;         /* teal tint surface */
+  --accent-border: rgba(14,116,144,.25);
+  --on-accent: #FFFFFF;          /* text on teal */
 
-  --border: #232C47;
-  --border-2: #232C47;
-  --border-strong: #2F3B5E;
-  --btn-border: #2A3454;
+  --border: #E6DFD0;
+  --border-2: #E6DFD0;
+  --border-strong: #D6CDB9;
+  --btn-border: #DDD4C1;
 
-  --dark: #F5B544;               /* primary button */
-  --dark-2: #FFC25E;             /* primary button hover */
-  --violet: #F5B544;
-  --violet-light: #F7C066;
+  --dark: #0E7490;               /* primary button */
+  --dark-2: #0B5F77;             /* primary button hover */
+  --violet: #0E7490;
+  --violet-light: #0891B2;
 
   --red: #F64932;
-  --red-ink: #FCA5A5;
-  --red-bg: rgba(248,113,113,.12);
-  --red-border: rgba(248,113,113,.35);
+  --red-ink: #C42A14;
+  --red-bg: #FEF3F1;
+  --red-border: #F9B8AE;
   --yellow: #FFB110;
-  --yellow-ink: #FCD34D;
-  --yellow-bg: rgba(245,181,68,.12);
-  --yellow-border: rgba(245,181,68,.35);
-  --green: #1AAE39;
-  --green-ink: #6EE7B7;
-  --green-bg: rgba(52,211,153,.12);
-  --green-border: rgba(52,211,153,.35);
+  --yellow-ink: #8A5A00;
+  --yellow-bg: #FFF8E6;
+  --yellow-border: #F5D88A;
+  --green: #0A8A5F;
+  --green-ink: #14612A;
+  --green-bg: #EEF9F0;
+  --green-border: #BFE6C7;
   --gold: var(--yellow);
 
   /* ---- 2. Typeface ---- */
@@ -275,7 +275,7 @@ ol {
   color: var(--on-accent);
   font-weight: 600;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
+  box-shadow: 0 2px 8px rgba(14,116,144,.30)}
 
 .nav-desktop {
   display: flex}
@@ -356,7 +356,7 @@ ol {
   position: sticky;
   top: var(--header-h);
   z-index: 90;
-  background: rgba(11,16,32,.97);
+  background: rgba(247,244,238,.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   opacity: 0;
@@ -710,7 +710,7 @@ ol {
 .course-credit:focus,
 .course-grade:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .course-grade {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
@@ -819,7 +819,7 @@ ol {
 
 .target-field input:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .target-field input::placeholder {
   color: var(--text-3);
@@ -886,12 +886,12 @@ ol {
   background: var(--accent);
   color: var(--on-accent);
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 14px rgba(245,181,68,.30)}
+  box-shadow: 0 4px 14px rgba(14,116,144,.30)}
 
 .btn-primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245,181,68,.40)}
+  box-shadow: 0 6px 20px rgba(14,116,144,.40)}
 
 .btn-primary:active {
   transform: none}
@@ -1151,11 +1151,11 @@ tbody tr:hover {
 
 .grade-c-plus {
   background: var(--gold);
-  color: var(--on-accent)}
+  color: #12242B}
 
 .grade-c {
   background: var(--yellow);
-  color: var(--on-accent)}
+  color: #12242B}
 
 .grade-d {
   background: var(--yellow-ink);
@@ -1204,7 +1204,7 @@ tbody tr:hover {
   color: var(--on-accent);
   flex-shrink: 0;
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
+  box-shadow: 0 2px 8px rgba(14,116,144,.30)}
 
 .step-body h3 {
   font-size: var(--fs-h6);
@@ -1318,7 +1318,7 @@ tbody tr:hover {
   opacity: 0;
   transition: opacity .22s, transform .22s;
   z-index: 9999;
-  box-shadow: 0 4px 20px rgba(245,181,68,.40);
+  box-shadow: 0 4px 20px rgba(14,116,144,.40);
   white-space: nowrap}
 
 .toast-visible {
@@ -1535,7 +1535,7 @@ tbody tr:hover {
   font-size: 22px;
   font-weight: 600;
   color: var(--on-accent);
-  box-shadow: 0 0 0 5px rgba(245,181,68,.25)}
+  box-shadow: 0 0 0 5px rgba(14,116,144,.25)}
 
 .about-stats {
   display: grid;
@@ -1686,7 +1686,7 @@ tbody tr:hover {
 
 .about-cta p {
   font-size: 15px;
-  color: rgba(11,16,32,.80);
+  color: rgba(255,255,255,.85);
   margin-bottom: 18px}
 
 .btn-cta {
@@ -1755,7 +1755,7 @@ tbody tr:hover {
 .ctab.active {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
+  box-shadow: 0 2px 8px rgba(14,116,144,.30)}
 
 .ctab:not(.active):hover {
   color: var(--accent);
@@ -1794,7 +1794,7 @@ tbody tr:hover {
 .conv-field input:focus,
 .conv-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .conv-buttons {
   display: flex;
@@ -1820,7 +1820,7 @@ tbody tr:hover {
 .btn-calculate:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(245,181,68,.30)}
+  box-shadow: 0 4px 14px rgba(14,116,144,.30)}
 
 .btn-reset {
   display: inline-flex;
@@ -2116,7 +2116,7 @@ tbody tr:hover {
 .gpa-field input:focus,
 .gpa-field select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .gpa-panel-buttons {
   display: flex;
@@ -2307,7 +2307,7 @@ tbody tr:hover {
 .gsys-tab.active {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 2px 8px rgba(245,181,68,.30)}
+  box-shadow: 0 2px 8px rgba(14,116,144,.30)}
 
 .gsys-tab:not(.active):hover {
   color: var(--accent);
@@ -2377,7 +2377,7 @@ tbody tr:hover {
 .gr-marks:focus,
 .gr-credit:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .gr-grade-cell {
   display: flex;
@@ -2402,7 +2402,7 @@ tbody tr:hover {
 .gr-grade-cell.grade-pass {
   background: var(--green-border);
   border-color: var(--green-border);
-  color: #34D399}
+  color: #15803D}
 
 .btn-del-gr {
   width: 30px;
@@ -2552,7 +2552,7 @@ tbody tr:hover {
 
 .pred-field select:focus {
   border-color: var(--accent-soft);
-  box-shadow: 0 0 0 3px rgba(245,181,68,.10)}
+  box-shadow: 0 0 0 3px rgba(14,116,144,.10)}
 
 .btn-predict {
   padding: 0 var(--sp-lg);
@@ -2570,13 +2570,13 @@ tbody tr:hover {
   cursor: pointer;
   transition: all var(--transition);
   white-space: nowrap;
-  box-shadow: 0 3px 10px rgba(245,181,68,.25);
+  box-shadow: 0 3px 10px rgba(14,116,144,.25);
   align-self: flex-end}
 
 .btn-predict:hover {
   background: var(--accent-light);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(245,181,68,.35)}
+  box-shadow: 0 5px 16px rgba(14,116,144,.35)}
 
 .pred-result {
   margin-top: 16px;
@@ -2613,7 +2613,7 @@ tbody tr:hover {
   letter-spacing:0}
 
 .pred-result-card.pred-achieved .pred-stat-label {
-  color: #34D399}
+  color: #15803D}
 
 .pred-stat-val {
   font-size: 22px;
@@ -3308,7 +3308,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-::selection { background: rgba(245,181,68,.18); color: var(--text-1); }
+::selection { background: rgba(14,116,144,.18); color: var(--text-1); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 ::placeholder { color: var(--placeholder); opacity: 1; }
 .page-tool [hidden] { display: none !important; }
@@ -3325,7 +3325,7 @@ a { color: inherit; }
 
 /* ---------- Header + navigation ---------- */
 .header {
-  background: rgba(11,16,32,.88);
+  background: rgba(247,244,238,.88);
   border-bottom: 1px solid var(--border);
   box-shadow: none;
 }
@@ -3411,7 +3411,7 @@ a { color: inherit; }
 .page-home .page-intro { text-align: center; margin: 0 auto var(--sp-3xl); font-size: var(--fs-body-lg); max-width: none; }
 
 /* ---------- Sticky result bar ---------- */
-.sticky-bar { background: rgba(11,16,32,.92); border-bottom: 1px solid var(--border); }
+.sticky-bar { background: rgba(247,244,238,.92); border-bottom: 1px solid var(--border); }
 .sticky-label { font-size: var(--fs-caption); font-weight: var(--fw-medium); letter-spacing: 0; color: var(--text-2); }
 .sticky-val { font-size: var(--fs-small); font-weight: var(--fw-semibold); }
 .sticky-grade { color: var(--accent); }
@@ -3430,7 +3430,7 @@ a { color: inherit; }
 .btn-primary:hover, .btn-calculate:hover, .btn-predict:hover, .btn-cta:hover, .btn-copy:hover, .btn-copy-gpa:hover, .blog-cta-btn:hover, .wac-btn-primary:hover {
   background: var(--dark-2); color: var(--on-accent); transform: none; box-shadow: none; text-decoration: none;
 }
-.btn-primary:active, .btn-calculate:active, .btn-predict:active, .btn-cta:active, .btn-copy:active, .btn-copy-gpa:active { background: #070B16; transform: none; }
+.btn-primary:active, .btn-calculate:active, .btn-predict:active, .btn-cta:active, .btn-copy:active, .btn-copy-gpa:active { background: #12242B; transform: none; }
 .btn-primary { width: 100%; }
 /* Secondary: white with hairline border */
 .btn-reset, .btn-gpa-reset, .btn-grade-print, .btn-add-subject, .btn-add-semester, .btn-add-row, .btn-add-course,
@@ -3469,11 +3469,11 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 .course-name:hover, .course-credit:hover, .course-grade:hover, .target-field input:hover,
-.conv-field input:hover, .conv-field select:hover, .gpa-field input:hover, .gpa-field select:hover { border-color: rgba(232,236,245,.28); }
+.conv-field input:hover, .conv-field select:hover, .gpa-field input:hover, .gpa-field select:hover { border-color: rgba(18,36,43,.28); }
 .course-name:focus, .course-credit:focus, .course-grade:focus, .target-field input:focus, .sgpa-sem-name:focus, .sgpa-val-input:focus, .sgpa-credit-input:focus,
 .conv-field input:focus, .conv-field select:focus, .gpa-field input:focus, .gpa-field select:focus, .pred-field select:focus,
 .gr-subject:focus, .gr-marks:focus, .gr-credit:focus {
-  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,181,68,.15); outline: none;
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(14,116,144,.15); outline: none;
 }
 .course-name::placeholder, .course-credit::placeholder, .target-field input::placeholder, input::placeholder { color: var(--placeholder); }
 
@@ -3569,7 +3569,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
   flex: 1; padding: 8px 16px; border-radius: var(--radius); border: 1px solid transparent;
   font-size: var(--fs-small); font-weight: var(--fw-medium); color: var(--text-2); background: transparent; box-shadow: none;
 }
-.ctab:not(.active):hover, .gsys-tab:not(.active):hover { color: var(--text-1); background: rgba(232,236,245,.04); }
+.ctab:not(.active):hover, .gsys-tab:not(.active):hover { color: var(--text-1); background: rgba(18,36,43,.04); }
 .ctab.active, .gsys-tab.active { background: var(--accent); color:var(--on-accent); border-color: var(--border); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 
 /* Grade colour chips: keep text readable on light fills */
@@ -3580,7 +3580,7 @@ input, select, textarea { font-family: var(--font); font-size: var(--fs-input); 
 .grade-b-plus { background: var(--accent-deep); color: var(--on-accent); }
 .grade-b { background: #5C6A78; color: var(--on-accent); }
 .grade-b-minus { background: #8A857F; color: var(--on-accent); }
-.grade-c-plus, .grade-c { background: var(--yellow); color: var(--on-accent); }
+.grade-c-plus, .grade-c { background: var(--yellow); color: #12242B; }
 .grade-d { background: #E07B00; color: #fff; }
 .grade-f { background: var(--red); color: #fff; }
 
@@ -3700,7 +3700,7 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .blog-article h4 { font-size: var(--fs-h4); }
 .blog-article p, .blog-article li { font-size: var(--fs-body); color: var(--text-1); line-height: 1.65; max-width: none; }
 .blog-article strong { color: var(--text-1); }
-.blog-article pre { background: #070B16; color: #F6F5F4; border-radius: var(--radius-card); }
+.blog-article pre { background: #12242B; color: #F6F5F4; border-radius: var(--radius-card); }
 .blog-article code { background: var(--bg-card); border-radius: var(--radius-sm); }
 .blog-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-calc); }
 .blog-cta-sub { color: var(--text-2); }
@@ -3756,7 +3756,7 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .contact-card { border-radius: var(--radius-lg); box-shadow: none; }
 .contact-card h3 { font-size: var(--fs-h5); }
 .table-wrap + p, .table-wrap + .section-note, .table-wrap + ul, .table-wrap + h3 { margin-top: var(--sp-lg); }
-.page-tool .grade-system-tabs, .grade-system-tabs { background: rgba(232,236,245,.05); border: 0; border-radius: var(--radius-card); margin-bottom: var(--sp-lg); }
+.page-tool .grade-system-tabs, .grade-system-tabs { background: rgba(18,36,43,.05); border: 0; border-radius: var(--radius-card); margin-bottom: var(--sp-lg); }
 .page-tool .btn-add-subject, .btn-add-subject { margin-top: var(--sp-md); }
 .tool-actions, .conv-buttons { margin-top: var(--sp-lg); }
 .hsc-actions, .ssc-actions { gap: var(--sp-md); margin-top: var(--sp-lg); }
@@ -3764,8 +3764,8 @@ tbody tr:hover, .page-tool tbody tr:hover { background: var(--bg); }
 .page-hero h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-heading); font-weight: var(--fw-bold); margin-left: auto; margin-right: auto; }
 
 /* ---------- Navy + Gold theme: final adjustments ---------- */
-.about-cta .btn-cta { background: var(--on-accent); color: var(--accent); box-shadow: 0 4px 14px rgba(0,0,0,.35); }
-.about-cta .btn-cta:hover { background: var(--bg-card); color: var(--accent-light); }
+.about-cta .btn-cta { background: #fff; color: var(--accent); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
+.about-cta .btn-cta:hover { background: var(--accent-dim); color: var(--accent-light); }
 input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {
   -webkit-text-fill-color: var(--text-1);
   box-shadow: 0 0 0 1000px var(--bg-input) inset;

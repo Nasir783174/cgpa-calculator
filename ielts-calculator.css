@@ -12,7 +12,7 @@
 .ssc-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:var(--text-2-strong);border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
 .ssc-seg label:hover span{background:var(--accent-dim)}
 .ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent)}
-.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,181,68,.28)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.28)}
 
 /* ---------- Section headings ---------- */
 
@@ -78,7 +78,7 @@
   background-repeat:no-repeat;background-position:right 16px center;background-size:14px}
 .ielts-input{background:var(--bg-input);border:2px solid var(--border-strong);border-radius:var(--radius-input);color:var(--text-1);font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition)}
 .ielts-input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
-.ielts-select:focus,.ielts-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16)}
+.ielts-select:focus,.ielts-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16)}
 .ielts-select.is-error,.ielts-input[aria-invalid="true"]{border-color:var(--red);background-color:var(--red-bg)}
 .ielts-help{margin:6px 0 0;font-size:13px;color:var(--text-3)}
 .ielts-card .ssc-actions{margin-top:16px}
@@ -96,9 +96,9 @@
 
 /* ---- Notion-style harmonisation (matches style.css tokens) ---- */
 .ssc-seg span{font-size:var(--fs-small);font-weight:500;min-height:36px;color:var(--text-2)}
-.ssc-seg label:hover span{background:rgba(232,236,245,.04)}
+.ssc-seg label:hover span{background:rgba(18,36,43,.04)}
 .ssc-seg input:checked+span{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(0,0,0,.06)}
-.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,181,68,.25)}
+.ssc-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.25)}
 .ssc-seg{background:var(--bg-card)}
 .ssc-btn-secondary{border:1px solid var(--btn-border);height:auto;min-height:44px;padding:12px 20px;font-size:var(--fs-btn);font-weight:500}
 .ssc-btn-secondary:hover{background:var(--bg-card);border-color:var(--btn-border)}
@@ -106,6 +106,6 @@
 .ssc-res-gpa{color:var(--text-1)}
 .ssc-stat-val{font-weight:600}
 .ielts-select,.ielts-input{border-width:1px;font-size:var(--fs-input);font-weight:500;height:48px;min-height:48px}
-.ielts-select:focus,.ielts-input:focus{box-shadow:0 0 0 3px rgba(245,181,68,.15)}
+.ielts-select:focus,.ielts-input:focus{box-shadow:0 0 0 3px rgba(14,116,144,.15)}
 .ielts-card .ssc-result,.ielts-raw-result{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--radius-card)}
 .ssc-formula{background:var(--bg-card);border-color:var(--border);color:var(--text-1);font-size:var(--fs-body)}

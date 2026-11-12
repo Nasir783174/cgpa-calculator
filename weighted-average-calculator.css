@@ -16,7 +16,7 @@
 .wac-seg span{display:flex;align-items:center;justify-content:center;min-height:40px;padding:6px 16px;text-align:center;font-size:14.5px;font-weight:600;color:var(--text-2-strong);border-radius:var(--radius-input);white-space:nowrap;transition:background var(--transition),color var(--transition)}
 .wac-seg label:hover span{background:var(--accent-dim)}
 .wac-seg input:checked+span{background:var(--accent);color:var(--on-accent)}
-.wac-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,181,68,.28)}
+.wac-seg input:focus-visible+span{box-shadow:0 0 0 3px rgba(14,116,144,.28)}
 .wac-field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .wac-field>label,.wac-precision>label{font-size:13px;font-weight:600;color:var(--text-1)}
 
@@ -27,7 +27,7 @@
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 14px center;background-size:14px}
 .page-tool .wac-precision select{width:auto;min-width:96px;height:44px;font-size:15px}
-.page-tool .wac-field select:focus,.page-tool .wac-precision select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16)}
+.page-tool .wac-field select:focus,.page-tool .wac-precision select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16)}
 .wac-help{font-size:14.5px;color:var(--text-2-strong);line-height:1.6;margin:0 0 14px}
 .wac-error{font-size:14px;font-weight:600;color:var(--red-ink);line-height:1.5;margin:8px 0 0}
 .wac-error:empty{display:none}
@@ -49,7 +49,7 @@
 .wac-cell input{background:var(--bg-input);border:2px solid var(--border-strong);border-radius:var(--radius-input);color:var(--text-1);font-size:18px;font-weight:600;height:56px;padding:0 18px;width:100%;outline:none;box-sizing:border-box;-webkit-appearance:none;appearance:none;transition:border-color var(--transition),box-shadow var(--transition),background var(--transition)}
 .wac-cell input.label{background:var(--bg-input)}
 .wac-cell input::placeholder{color:var(--text-3);font-weight:400;font-size:15px}
-.wac-cell input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16);background:var(--bg-input)}
+.wac-cell input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16);background:var(--bg-input)}
 .wac-cell input[aria-invalid="true"]{border-color:var(--red);background:var(--red-bg)}
 .wac-row-error{font-size:13px;font-weight:600;color:var(--red-ink);line-height:1.4;margin-top:4px}
 .wac-row-error:empty{display:none}
@@ -77,7 +77,7 @@
 .wac-details-body{padding:0 16px 16px}
 .wac-details-body label{display:block;font-size:14px;font-weight:600;color:var(--text-1);margin:10px 0 6px}
 .wac-details textarea,.wac-manual textarea{background:var(--bg-input);border:2px solid var(--border-strong);border-radius:var(--radius-input);color:var(--text-1);font:inherit;font-size:15px;padding:10px 12px;width:100%;box-sizing:border-box;resize:vertical;outline:none}
-.wac-details textarea:focus,.wac-manual textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16)}
+.wac-details textarea:focus,.wac-manual textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16)}
 .wac-details .wac-btn-secondary{width:auto;display:inline-flex;margin-top:10px;height:44px}
 
 /* ---------- Result box (appears after Calculate, then updates live) ---------- */
@@ -111,7 +111,7 @@
 
 /* ---------- Target card: same boxed inputs ---------- */
 .page-tool .wac-target-grid .target-field input{height:56px;font-size:18px;font-weight:600;border:2px solid var(--border-strong);border-radius:var(--radius-input);padding:0 18px;box-sizing:border-box}
-.page-tool .wac-target-grid .target-field input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,181,68,.16);outline:none}
+.page-tool .wac-target-grid .target-field input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,116,144,.16);outline:none}
 
 /* ---------- Target card ---------- */
 .wac-target-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -191,7 +191,7 @@
 
 /* ---- Notion-style harmonisation ---- */
 .wac-cell input,.page-tool .wac-target-grid .target-field input{border-width:1px;font-size:var(--fs-input);font-weight:500;height:48px}
-.wac-cell input:focus,.page-tool .wac-target-grid .target-field input:focus{box-shadow:0 0 0 3px rgba(245,181,68,.15)}
+.wac-cell input:focus,.page-tool .wac-target-grid .target-field input:focus{box-shadow:0 0 0 3px rgba(14,116,144,.15)}
 .wac-remove{height:48px}
 .wac-add{border:1px dashed var(--border-strong);background:var(--bg-raised);color:var(--text-1);font-weight:500;font-size:var(--fs-btn);border-radius:var(--radius-btn)}
 .wac-add:hover{background:var(--bg-card);border-color:var(--border-strong)}
@@ -203,7 +203,7 @@
 .wac-stat-val{font-weight:600}
 .wac-seg{background:var(--bg-card)}
 .wac-seg span{font-size:var(--fs-small);font-weight:500;color:var(--text-2)}
-.wac-seg label:hover span{background:rgba(232,236,245,.04)}
+.wac-seg label:hover span{background:rgba(18,36,43,.04)}
 .wac-seg input:checked+span{background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 1px var(--border),0 1px 2px rgba(0,0,0,.06)}
 .wac-head span{color:var(--text-2);font-size:var(--fs-caption);font-weight:500}
 .wac-big{color:var(--text-1)}
@@ -213,4 +213,4 @@
 .wac-tag{background:var(--dark)}
 .wac-target-result.wac-state-ok .target-val{color:var(--green-ink)}
 .page-tool .wac-field select,.page-tool .wac-precision select{border-width:1px;font-weight:500;font-size:var(--fs-input);height:48px}
-.page-tool .wac-field select:focus,.page-tool .wac-precision select:focus{box-shadow:0 0 0 3px rgba(245,181,68,.15)}
+.page-tool .wac-field select:focus,.page-tool .wac-precision select:focus{box-shadow:0 0 0 3px rgba(14,116,144,.15)}
